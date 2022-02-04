@@ -16,9 +16,9 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Header = lazy(() => import('../components/Header/Header' /* webpackChunkName: "header-view" */));
 const HomeView = lazy(() => import('../views/HomeView/HomeView' /* webpackChunkName: "home-view" */));
-const LoginView = lazy(() => import('../views/LoginView/LoginView' /* webpackChunkName: "login-view" */));
 const RegisterView  = lazy(() => import('../views/RegisterView/RegisterView' /* webpackChunkName: "register-view" */));
-const ContactsView  = lazy(() => import('../views/ContactsView/ContactsView' /* webpackChunkName: "contacts-view" */))
+const MainView  = lazy(() => import('../views/MainView/MainView' /* webpackChunkName: "contacts-view" */))
+const StatisticsView = lazy(() => import('../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */));
 
 function App() {
 
@@ -36,15 +36,15 @@ function App() {
   
   return (
     <div className="app">
-        <Suspense fallback={ <Loader type="ThreeDots" color="blue" height={80} width={80} />}>
+        <Suspense fallback={ <Loader type="ThreeDots" color="orange" height={80} width={80} />}>
             <Header isAuth={isAuth}/>
         {(isFetchingCurrent)
-          ? <Loader type="ThreeDots" color="blue" height={80} width={80} />
+          ? <Loader type="ThreeDots" color="orange" height={80} width={80} />
           : <Routes>
               <Route path="/" element={<PublicRoute isAuth={isAuth} component={HomeView} />} />
-              <Route path="/login" element={<PublicRoute isAuth={isAuth} component={LoginView} />} />
               <Route path="/register" element={<PublicRoute isAuth={isAuth} component={RegisterView} />} />
-              <Route path="/contacts" element={<PrivateRoute isAuth={isAuth} component={ContactsView} />} />
+              <Route path="/main" element={<PrivateRoute isAuth={isAuth} component={MainView} />} />
+              <Route path="/statistics" element={<PrivateRoute isAuth={isAuth} component={StatisticsView} />} />
           </Routes>}
       </Suspense>
       

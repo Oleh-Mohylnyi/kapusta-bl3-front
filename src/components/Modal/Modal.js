@@ -1,6 +1,5 @@
 import { Component } from 'react';
 import { createPortal } from 'react-dom';
-import Form from '../Form/Form';
 import './modal.css';
 
 const modalRoot = document.querySelector('#modal-root');
@@ -31,7 +30,7 @@ export default class Modal extends Component {
             <div className="Overlay"
                 onClick={this.handleOverlay}>
               <div className="Modal">
-                <Form/>
+                <></>
               </div>
             </div>,
             modalRoot
