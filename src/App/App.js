@@ -36,6 +36,7 @@ function App() {
   
   return (
     <div className="app">
+      <p>ВПЕРЕД!)</p>
         <Suspense fallback={ <Loader type="ThreeDots" color="orange" height={80} width={80} />}>
             <Header isAuth={isAuth}/>
         {(isFetchingCurrent)
