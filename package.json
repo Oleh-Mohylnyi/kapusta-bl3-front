@@ -68,5 +68,9 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.{js,css,md}": "prettier --write"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Oleh-Mohylnyi/kapusta-bl3-front"
   }
 }

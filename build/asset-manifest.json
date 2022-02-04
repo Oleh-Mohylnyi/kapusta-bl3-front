@@ -10,8 +10,8 @@
     "login-view.js": "/kapusta-bl3-front/static/js/login-view.b54da796.chunk.js",
     "login-view.js.map": "/kapusta-bl3-front/static/js/login-view.b54da796.chunk.js.map",
     "main.css": "/kapusta-bl3-front/static/css/main.6f9c5c7a.chunk.css",
-    "main.js": "/kapusta-bl3-front/static/js/main.4e843267.chunk.js",
-    "main.js.map": "/kapusta-bl3-front/static/js/main.4e843267.chunk.js.map",
+    "main.js": "/kapusta-bl3-front/static/js/main.c3614113.chunk.js",
+    "main.js.map": "/kapusta-bl3-front/static/js/main.c3614113.chunk.js.map",
     "register-view.js": "/kapusta-bl3-front/static/js/register-view.9e2ff239.chunk.js",
     "register-view.js.map": "/kapusta-bl3-front/static/js/register-view.9e2ff239.chunk.js.map",
     "runtime-main.js": "/kapusta-bl3-front/static/js/runtime-main.92cdb297.js",
@@ -30,6 +30,6 @@
     "static/css/7.6081b7d4.chunk.css",
     "static/js/7.fcd0d2b2.chunk.js",
     "static/css/main.6f9c5c7a.chunk.css",
-    "static/js/main.4e843267.chunk.js"
+    "static/js/main.c3614113.chunk.js"
   ]
 }
