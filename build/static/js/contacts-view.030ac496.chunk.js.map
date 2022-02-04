@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/MainView/MainView.js"],"names":["MainView"],"mappings":"uLAAe,SAASA,IAEpB,OACA","file":"static/js/contacts-view.030ac496.chunk.js","sourcesContent":["export default function MainView() {\n\n    return (\n    <>\n    </>\n)\n}"],"sourceRoot":""}

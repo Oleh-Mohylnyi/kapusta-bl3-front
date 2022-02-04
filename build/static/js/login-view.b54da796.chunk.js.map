@@ -1,0 +1,1 @@
+{"version":3,"sources":["views/StatisticsView/StatisticsView.js"],"names":["StatisticsView"],"mappings":"uLACe,SAASA,IAEpB,OACE","file":"static/js/login-view.b54da796.chunk.js","sourcesContent":["\nexport default function StatisticsView() {\n\n    return (\n      <></>\n    )\n}"],"sourceRoot":""}

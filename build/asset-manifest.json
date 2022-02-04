@@ -1,0 +1,35 @@
+{
+  "files": {
+    "contacts-view.js": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/contacts-view.030ac496.chunk.js",
+    "contacts-view.js.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/contacts-view.030ac496.chunk.js.map",
+    "header-view.css": "/Oleh-Mohylnyi/kapusta-bl3-front/static/css/header-view.a0c5704b.chunk.css",
+    "header-view.js": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/header-view.cf9dc0d4.chunk.js",
+    "header-view.js.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/header-view.cf9dc0d4.chunk.js.map",
+    "home-view.js": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/home-view.b3242a9b.chunk.js",
+    "home-view.js.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/home-view.b3242a9b.chunk.js.map",
+    "login-view.js": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/login-view.b54da796.chunk.js",
+    "login-view.js.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/login-view.b54da796.chunk.js.map",
+    "main.css": "/Oleh-Mohylnyi/kapusta-bl3-front/static/css/main.6f9c5c7a.chunk.css",
+    "main.js": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/main.c3b99631.chunk.js",
+    "main.js.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/main.c3b99631.chunk.js.map",
+    "register-view.js": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/register-view.9e2ff239.chunk.js",
+    "register-view.js.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/register-view.9e2ff239.chunk.js.map",
+    "runtime-main.js": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/runtime-main.c4c3c81d.js",
+    "runtime-main.js.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/runtime-main.c4c3c81d.js.map",
+    "static/css/7.6081b7d4.chunk.css": "/Oleh-Mohylnyi/kapusta-bl3-front/static/css/7.6081b7d4.chunk.css",
+    "static/js/7.fcd0d2b2.chunk.js": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/7.fcd0d2b2.chunk.js",
+    "static/js/7.fcd0d2b2.chunk.js.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/7.fcd0d2b2.chunk.js.map",
+    "index.html": "/Oleh-Mohylnyi/kapusta-bl3-front/index.html",
+    "static/css/7.6081b7d4.chunk.css.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/css/7.6081b7d4.chunk.css.map",
+    "static/css/header-view.a0c5704b.chunk.css.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/css/header-view.a0c5704b.chunk.css.map",
+    "static/css/main.6f9c5c7a.chunk.css.map": "/Oleh-Mohylnyi/kapusta-bl3-front/static/css/main.6f9c5c7a.chunk.css.map",
+    "static/js/7.fcd0d2b2.chunk.js.LICENSE.txt": "/Oleh-Mohylnyi/kapusta-bl3-front/static/js/7.fcd0d2b2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.c4c3c81d.js",
+    "static/css/7.6081b7d4.chunk.css",
+    "static/js/7.fcd0d2b2.chunk.js",
+    "static/css/main.6f9c5c7a.chunk.css",
+    "static/js/main.c3b99631.chunk.js"
+  ]
+}
