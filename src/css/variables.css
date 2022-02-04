@@ -1,0 +1,20 @@
+:root {
+  --accent-color: #ff751d;
+  --additional-accent-color: #ffdac0;
+
+  --title-color: #000000;
+  --main-text-color: #52555f;
+  --additional-text-color: #c7ccdc;
+
+  --bg-tab-costs: #fefefe;
+  --bg-tab-incomes: #fafbfd;
+  --bg-color: #f5f6fb;
+
+  --costs-text-color: #e53935;
+  --incomes-text-color: #407946;
+
+  --box-shadow-mobile: 5px 10px 20px 0px #aab2c566;
+  --box-shadow-tablet-desktop: 0px 10px 60px 0px #aab2c533;
+
+  --font-family: "Roboto", sans-serif;
+}
