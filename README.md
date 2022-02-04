@@ -1,3 +1,5 @@
+https://kapusta-smart-finances.netlify.app/
+
 # kapusta-bl3-front
 
 1. Клонируете себе dev(main) :
