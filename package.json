@@ -2,9 +2,9 @@
   "name": "kapusta-bl3-front",
   "version": "0.1.0",
   "description": "",
-  "private": true,
+  "main": "index.js",
   "author": "bl3",
-  "homepage": "https://github.com/Oleh-Mohylnyi/kapusta-bl3-front",
+  "homepage": "https://Oleh-Mohylnyi.github.io/kapusta-bl3-front",
   "dependencies": {
     "@reduxjs/toolkit": "^1.6.2",
     "@testing-library/jest-dom": "^5.14.1",
