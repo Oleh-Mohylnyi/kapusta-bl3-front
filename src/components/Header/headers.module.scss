@@ -1,0 +1,21 @@
+
+.container {
+    padding-left: 50px;
+    padding-right: 50px;
+    background-color:grey;
+    background-size: 100%;
+    position: relative;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px, solid, #2A363B;
+}
+
+.title {
+    text-decoration: none;
+    color: black ; 
+    cursor: pointer;
+}
