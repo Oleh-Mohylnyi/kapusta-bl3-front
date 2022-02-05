@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Loader from "react-loader-spinner";
 import { Route, Routes } from 'react-router-dom';
-import { PrivateRoute } from "../routes/PrivateRoute";
+// import { PrivateRoute } from "../routes/PrivateRoute";
 import { PublicRoute } from "../routes/PublicRoute";
 import { useDispatch, useSelector } from 'react-redux';
 import {currentUser} from '../redux/auth/operations'
@@ -16,8 +16,10 @@ import 'react-toastify/dist/ReactToastify.css';
 
 const Header = lazy(() => import('../components/Header/Header' /* webpackChunkName: "header-view" */));
 const HomeView = lazy(() => import('../views/HomeView/HomeView' /* webpackChunkName: "home-view" */));
-const RegisterView  = lazy(() => import('../views/RegisterView/RegisterView' /* webpackChunkName: "register-view" */));
-const MainView  = lazy(() => import('../views/MainView/MainView' /* webpackChunkName: "contacts-view" */))
+
+const RegisterView = lazy(() => import('../views/RegisterView/RegisterView' /* webpackChunkName: "register-view" */));
+
+const MainView = lazy(() => import('../views/MainView/MainView' /* webpackChunkName: "contacts-view" */));
 const StatisticsView = lazy(() => import('../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */));
 
 function App() {
@@ -36,14 +38,12 @@ function App() {
   
   return (
     <div className="app">
-      <p>EASYGOING ВПЕРЕД!!!</p>
         <Suspense fallback={ <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />}>
             <Header isAuth={isAuth}/>
         {(isFetchingCurrent)
           ? <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
           : <Routes>
               <Route path="/" element={<PublicRoute isAuth={isAuth} component={HomeView} />} />
-              <Route path="/register" element={<PublicRoute isAuth={isAuth} component={RegisterView} />} />
               <Route path="/main" element={<PublicRoute isAuth={isAuth} component={MainView} />} />
               <Route path="/statistics" element={<PublicRoute isAuth={isAuth} component={StatisticsView} />} />
           </Routes>}
