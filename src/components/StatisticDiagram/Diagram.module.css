@@ -1,0 +1,23 @@
+@import "./../../css/variables.css";
+
+.bar {
+  fill: var(--additional-accent-color);
+}
+.bar {
+  fill: var(--accent-color);
+}
+.containerTablet {
+  width: 100%;
+  margin-bottom: 76px;
+  padding: 15px 20px 15px 20px;
+
+  border-radius: 30px;
+  box-shadow: var(--box-shadow-tablet-desktop);
+}
+@media screen and (min-width: 1280px) {
+  .containerTablet {
+    width: 100%;
+    margin-bottom: 74px;
+    padding: 151px 20px 151px 20px;
+  }
+}

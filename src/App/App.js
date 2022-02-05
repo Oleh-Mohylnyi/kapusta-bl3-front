@@ -1,3 +1,4 @@
+
 import React from 'react'
 import './App.css'
 import Loader from 'react-loader-spinner'
@@ -13,6 +14,10 @@ import { getToken } from '../redux/auth/selectors'
 import { getIsFetchingCurrent } from '../redux/auth/selectors'
 import { ToastContainer } from 'react-toastify'
 import 'react-toastify/dist/ReactToastify.css'
+  
+  
+import DiagramMobile from "../components/StatisticDiagram/DiagramMobile"; 
+import DiagramContainer from "../components/StatisticDiagram/DiagramContainer";
 
 const Header = lazy(() =>
   import('../components/Header/Header' /* webpackChunkName: "header-view" */),
@@ -39,20 +44,25 @@ function App() {
   const isAuth = useSelector(getIsAuth)
   const token = useSelector(getToken)
   const isFetchingCurrent = useSelector(getIsFetchingCurrent)
+
   useEffect(() => {
     token && dispatch(currentUser())
     // eslint-disable-next-line
+  }, [dispatch]);
+
+  let width = window.innerWidth;  
   }, [dispatch])
 
   return (
+    <>
     <div className="app">
-      <p>ВПЕРЕД!</p>
       <Suspense
         fallback={
           <Loader type="ThreeDots" color="orange" height={80} width={80} />
-        }
-      >
+        }>
+          
         <Header isAuth={isAuth} />
+        
         {isFetchingCurrent ? (
           <Loader type="ThreeDots" color="orange" height={80} width={80} />
         ) : (
@@ -63,21 +73,24 @@ function App() {
             />
             <Route
               path="/main"
-              element={<PrivateRoute isAuth={isAuth} component={MainView} />}
+              element={<PublicRoute isAuth={isAuth} component={MainView} />}
             />
             <Route
               path="/statistics"
               element={
-                <PrivateRoute isAuth={isAuth} component={StatisticsView} />
-              }
+                <PublicRoute isAuth={isAuth} component={StatisticsView} />}
             />
           </Routes>
         )}
       </Suspense>
 
       <ToastContainer autoClose={3000} />
-    </div>
-  )
+
+        
+      </div>
+      {width < 768 ? <DiagramMobile /> : <DiagramContainer />}
+      </>
+  );
 }
 
 export default App
