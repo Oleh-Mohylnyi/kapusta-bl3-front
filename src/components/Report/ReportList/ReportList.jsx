@@ -5,8 +5,15 @@ export default function ReportList({ types }) {
   return (
     <section>
       <ul className={s.list}>
-        {types.map({ id, type })}
-        <ReportItem key={id} name={type} />
+        {types
+          .map
+          // { id, type, sum }
+          ()}
+        <ReportItem
+        // key={id}
+        // name={type}
+        // sum={sum}
+        />
       </ul>
     </section>
   );
