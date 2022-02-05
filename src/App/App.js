@@ -1,28 +1,44 @@
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 import Loader from "react-loader-spinner";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import { PrivateRoute } from "../routes/PrivateRoute";
 import { PublicRoute } from "../routes/PublicRoute";
-import { useDispatch, useSelector } from 'react-redux';
-import {currentUser} from '../redux/auth/operations'
-import { useEffect } from 'react';
-import { lazy, Suspense } from 'react';
-import { getIsAuth } from '../redux/auth/selectors';
-import { getToken } from '../redux/auth/selectors';
-import { getIsFetchingCurrent } from '../redux/auth/selectors';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import { useDispatch, useSelector } from "react-redux";
+import { currentUser } from "../redux/auth/operations";
+import { useEffect } from "react";
+import { lazy, Suspense } from "react";
+import { getIsAuth } from "../redux/auth/selectors";
+import { getToken } from "../redux/auth/selectors";
+import { getIsFetchingCurrent } from "../redux/auth/selectors";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
-const Header = lazy(() => import('../components/Header/Header' /* webpackChunkName: "header-view" */));
-const HomeView = lazy(() => import('../views/HomeView/HomeView' /* webpackChunkName: "home-view" */));
-const RegisterView  = lazy(() => import('../views/RegisterView/RegisterView' /* webpackChunkName: "register-view" */));
-const MainView  = lazy(() => import('../views/MainView/MainView' /* webpackChunkName: "contacts-view" */))
-const StatisticsView = lazy(() => import('../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */));
+// import DiagramMobile from "../components/StatisticDiagram/DiagramMobile"; 
+// import DiagramTablet from "../components/StatisticDiagram/DiagramTablet";
+// import DiagramContainer from "../components/StatisticDiagram/DiagramContainer";
+
+const Header = lazy(() =>
+  import("../components/Header/Header" /* webpackChunkName: "header-view" */)
+);
+const HomeView = lazy(() =>
+  import("../views/HomeView/HomeView" /* webpackChunkName: "home-view" */)
+);
+const RegisterView = lazy(() =>
+  import(
+    "../views/RegisterView/RegisterView" /* webpackChunkName: "register-view" */
+  )
+);
+const MainView = lazy(() =>
+  import("../views/MainView/MainView" /* webpackChunkName: "contacts-view" */)
+);
+const StatisticsView = lazy(() =>
+  import(
+    "../views/StatisticsView/StatisticsView" /* webpackChunkName: "login-view" */
+  )
+);
 
 function App() {
-
-  
   const dispatch = useDispatch();
   const isAuth = useSelector(getIsAuth);
   const token = useSelector(getToken);
@@ -31,10 +47,10 @@ function App() {
     token && dispatch(currentUser());
     // eslint-disable-next-line
   }, [dispatch]);
-  
-  
-  
+
+  // let width = window.innerWidth;  
   return (
+    // <>{width < 768 ? <DiagramMobile /> : <DiagramContainer />}</>
     <div className="app">
       <p>ВПЕРЕД!</p>
         <Suspense fallback={ <Loader type="ThreeDots" color="orange" height={80} width={80} />}>
@@ -48,10 +64,10 @@ function App() {
               <Route path="/statistics" element={<PrivateRoute isAuth={isAuth} component={StatisticsView} />} />
           </Routes>}
       </Suspense>
-      
+
       <ToastContainer autoClose={3000} />
       </div>
-    );
+  );
 }
 
 export default App;
