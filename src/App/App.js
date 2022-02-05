@@ -2,7 +2,7 @@ import React from 'react';
 import './App.css';
 import Loader from "react-loader-spinner";
 import { Route, Routes } from 'react-router-dom';
-// import { PrivateRoute } from "../routes/PrivateRoute";
+import { PrivateRoute } from "../routes/PrivateRoute";
 import { PublicRoute } from "../routes/PublicRoute";
 import { useDispatch, useSelector } from 'react-redux';
 import {currentUser} from '../redux/auth/operations'
@@ -44,6 +44,7 @@ function App() {
           ? <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
           : <Routes>
               <Route path="/" element={<PublicRoute isAuth={isAuth} component={HomeView} />} />
+              <Route path="/register" element={<PrivateRoute isAuth={isAuth} component={RegisterView} />} />
               <Route path="/main" element={<PublicRoute isAuth={isAuth} component={MainView} />} />
               <Route path="/statistics" element={<PublicRoute isAuth={isAuth} component={StatisticsView} />} />
           </Routes>}
