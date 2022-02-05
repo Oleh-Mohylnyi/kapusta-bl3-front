@@ -43,11 +43,11 @@ function App() {
   const token = useSelector(getToken);
   const isFetchingCurrent = useSelector(getIsFetchingCurrent);
 
-  // useEffect(() => {
-  //   token && dispatch(currentUser());
+  useEffect(() => {
+    token && dispatch(currentUser());
 
-  //   let width = window.innerWidth;
-  // }, [dispatch]);
+    let width = window.innerWidth;
+  }, [dispatch]);
 
   return (
     <>
@@ -83,7 +83,7 @@ function App() {
 
         <ToastContainer autoClose={3000} />
       </div>
-      {/* {width < 768 ? <DiagramMobile /> : <DiagramContainer />} */}
+      {width < 768 ? <DiagramMobile /> : <DiagramContainer />}
     </>
   );
 }
