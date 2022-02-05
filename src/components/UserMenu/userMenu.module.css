@@ -1,0 +1,47 @@
+.list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  align-items: flex-end;
+  margin-right: 35px;
+  padding-top: 10px;
+}
+
+.span {
+  font-size: 20px;
+  margin-right: 20px;
+}
+
+/* .buttonLogout {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+} */
+
+.personalInf {
+  margin-right: 50px;
+  font-size: 16px;
+  line-height: 18px;
+}
+
+.avatar {
+  margin-right: 20px;
+  padding: 9px;
+}
+
+@media screen and (max-width: 767px) {
+  .name {
+    display: none;
+  }
+  .personalInf {
+    margin: 0;
+    padding: 0;
+  }
+}
+
+@media screen and (min-width: 768px) {
+}
+/* .userName{} */ /*# sourceMappingURL=userMenu.module.css.map */ ;

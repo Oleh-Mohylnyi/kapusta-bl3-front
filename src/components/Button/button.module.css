@@ -1,0 +1,32 @@
+.norm {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 22px;
+  border-radius: 5px;
+  border: 1px solid #505050;
+  cursor: pointer;
+}
+
+.norm:hover {
+  color: white;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.bright {
+  display: block;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 22px;
+  border-radius: 5px;
+  border: 1px solid #505050;
+  cursor: pointer;
+}
+
+.bright:hover {
+  color: white;
+  background-color: orange;
+  border: 1px solid orange;
+}
+/*# sourceMappingURL=button.module.css.map */
