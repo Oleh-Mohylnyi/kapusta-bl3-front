@@ -46,11 +46,10 @@ function App() {
   const isFetchingCurrent = useSelector(getIsFetchingCurrent)
 
   useEffect(() => {
-    token && dispatch(currentUser())
-    // eslint-disable-next-line
-  }, [dispatch]);
-
+  token && dispatch(currentUser())
+    
   let width = window.innerWidth;  
+    
   }, [dispatch])
 
   return (
