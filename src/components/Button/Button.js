@@ -7,6 +7,7 @@ export default function button({ title, handleClick, type }) {
       className={s.button}
       // onClick={handleClick()}
     >
+        
       {title}
     </button>
   )
