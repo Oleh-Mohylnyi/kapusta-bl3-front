@@ -14,9 +14,9 @@ import { getIsFetchingCurrent } from "../redux/auth/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-// import DiagramMobile from "../components/StatisticDiagram/DiagramMobile"; 
-// import DiagramTablet from "../components/StatisticDiagram/DiagramTablet";
-// import DiagramContainer from "../components/StatisticDiagram/DiagramContainer";
+import DiagramMobile from "../components/StatisticDiagram/DiagramMobile"; 
+import DiagramTablet from "../components/StatisticDiagram/DiagramTablet";
+import DiagramContainer from "../components/StatisticDiagram/DiagramContainer";
 
 const Header = lazy(() =>
   import("../components/Header/Header" /* webpackChunkName: "header-view" */)
@@ -48,9 +48,9 @@ function App() {
     // eslint-disable-next-line
   }, [dispatch]);
 
-  // let width = window.innerWidth;  
+  let width = window.innerWidth;  
   return (
-    // <>{width < 768 ? <DiagramMobile /> : <DiagramContainer />}</>
+    <>
     <div className="app">
       <p>ВПЕРЕД!</p>
         <Suspense fallback={ <Loader type="ThreeDots" color="orange" height={80} width={80} />}>
@@ -67,6 +67,8 @@ function App() {
 
       <ToastContainer autoClose={3000} />
       </div>
+      {width < 768 ? <DiagramMobile /> : <DiagramContainer />}
+      </>
   );
 }
 
