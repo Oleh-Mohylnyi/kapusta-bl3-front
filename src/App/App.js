@@ -36,11 +36,11 @@ function App() {
   
   return (
     <div className="app">
-      <p>ВПЕРЕД!</p>
-        <Suspense fallback={ <Loader type="ThreeDots" color="orange" height={80} width={80} />}>
+      <p>EASYGOING ВПЕРЕД!!!</p>
+        <Suspense fallback={ <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />}>
             <Header isAuth={isAuth}/>
         {(isFetchingCurrent)
-          ? <Loader type="ThreeDots" color="orange" height={80} width={80} />
+          ? <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
           : <Routes>
               <Route path="/" element={<PublicRoute isAuth={isAuth} component={HomeView} />} />
               <Route path="/register" element={<PublicRoute isAuth={isAuth} component={RegisterView} />} />
