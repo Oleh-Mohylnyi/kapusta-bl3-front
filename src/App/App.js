@@ -50,9 +50,8 @@ function App() {
       <Suspense
         fallback={
           <Loader type="ThreeDots" color="orange" height={80} width={80} />
-        }
-      >
-        <Header isAuth={isAuth} />
+        } >       
+        <Header isAuth={isAuth} />        
         {isFetchingCurrent ? (
           <Loader type="ThreeDots" color="orange" height={80} width={80} />
         ) : (
@@ -72,7 +71,7 @@ function App() {
               }
             />
           </Routes>
-        )}
+          )}          
       </Suspense>
 
       <ToastContainer autoClose={3000} />
