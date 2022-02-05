@@ -5,13 +5,11 @@ import data from "data/month.json";
 import styles from "./summary.module.scss";
 import * as selectors from "redux/transactions/transactions-selectors";
 import transactionsOperations from "redux/transactions/transactions-operations";
-import OnLoader from "components/OnLoader";
-import { getLoader } from "redux/transactions";
+import Loader from "react-loader-spinner";
 
 const Summary = ({ year }) => {
   const dispatch = useDispatch();
   const totalBalance = useSelector(selectors.getTotalBalance);
-  const loader = useSelector(getLoader);
 
   useEffect(() => {
     if (year > 0) {
@@ -25,7 +23,7 @@ const Summary = ({ year }) => {
 
   return (
     <div className={styles.summaryContainer}>
-      {loader && <OnLoader />}
+      {Loader}
       <h4 className={styles.summaryTitle}>Сводка</h4>
       <ul className={styles.summaryList}>
         {sortedBalances.map(({ month, value }, index) => (
