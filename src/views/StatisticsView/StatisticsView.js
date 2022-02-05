@@ -1,7 +1,4 @@
-
+import Report from "../../components/Report/Report";
 export default function StatisticsView() {
-
-    return (
-      <></>
-    )
+  return <Report />;
 }
