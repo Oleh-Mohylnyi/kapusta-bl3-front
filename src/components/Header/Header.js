@@ -15,7 +15,7 @@ export default function Header() {
           <img src={logo} alt="" width="90" />
         </NavLink>
         {/* {isAuth ? <UserMenu /> : <></>} */}
-        {/* <UserMenu></UserMenu> */}
+        <UserMenu></UserMenu>
       </header>
     </div>
   );
