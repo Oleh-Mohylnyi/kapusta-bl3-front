@@ -13,6 +13,7 @@ export default function ReportList({ types }) {
         // key={id}
         // name={type}
         // sum={sum}
+
         />
       </ul>
     </section>

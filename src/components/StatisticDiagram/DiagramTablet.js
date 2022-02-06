@@ -8,7 +8,8 @@ import {
   Bar,
   ResponsiveContainer,
 } from "recharts";
-// данные для отрисовки
+
+// // данные для отрисовки
 const data = [
   { name: "Мясо", uv: 1500, id: 0 },
   { name: "Сладости", uv: 1050, id: 3 },
@@ -22,7 +23,7 @@ const data = [
   { name: "Хлеб", uv: 50, id: 2 },
 ];
 
-// получаю sortedData
+// // получаю sortedData
 const DiagramTablet = ({ sortedData }) => {
   return (
     <ResponsiveContainer
@@ -33,7 +34,6 @@ const DiagramTablet = ({ sortedData }) => {
     >
       <BarChart data={data} barSize={38}>
         <CartesianGrid vertical={false} />
-
         <YAxis
           type="number"
           dataKey="uv"

@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import DiagramMobile from "../../components/StatisticDiagram/DiagramMobile";
-import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
-import Report from "../../components/Report/Report";
+import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer"
+// import Report from "../../components/Report/Report";
 
 export default function StatisticsView() {
   // const [month, setMonth] = useState(new Date().format("MM"));
@@ -25,4 +25,5 @@ export default function StatisticsView() {
       {width < 768 ? <DiagramMobile /> : <DiagramContainer />}
     </>
   );
+
 }
