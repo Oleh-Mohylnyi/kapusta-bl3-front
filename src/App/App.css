@@ -2,7 +2,8 @@ li {
   list-style: none;
 }
 body {
-  outline: blue;
+
+    outline:#ff751d;
 }
 
 .app {
