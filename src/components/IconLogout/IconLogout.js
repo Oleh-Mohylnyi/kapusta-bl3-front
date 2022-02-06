@@ -8,7 +8,7 @@ export default function IconLogout({ handleClick }) {
         width="16"
         height="16"
         className={styles.icon}
-        onClick={handleClick()}
+        // onClick={handleClick()}
       >
         <use href={`${sprite}#logout-icon`}></use>
       </svg>
