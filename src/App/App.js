@@ -83,7 +83,6 @@ function App() {
 
         <ToastContainer autoClose={3000} />
       </div>
-      {width < 768 ? <DiagramMobile /> : <DiagramContainer />}
     </>
   );
 }
