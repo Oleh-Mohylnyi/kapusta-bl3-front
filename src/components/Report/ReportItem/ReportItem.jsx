@@ -1,12 +1,12 @@
 import ReportIcon from "../ReportIcon/ReportIcon";
 import s from "./ReportItem.module.css";
 
-export default function ReportItem({ sum, id, name }) {
+export default function ReportItem({ key, name, sum }) {
   return (
-    <article>
+    <li key={key}>
       <p className={s.text}>{sum}</p>
-      <ReportIcon id={id} />
+      <ReportIcon name={name} />
       <p className={s.text}>{name}</p>
-    </article>
+    </li>
   );
 }

@@ -8,7 +8,7 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// данные для отрисовки
+// // данные для отрисовки
 const data = [
   { name: "Мясо", uv: 1500, id: 0 },
   { name: "Сладости", uv: 1050, id: 3 },
@@ -22,12 +22,12 @@ const data = [
   { name: "Хлеб", uv: 50, id: 2 },
 ];
 
-// const showId = (e) => {
-//   console.log(e);
-//   console.log(e.uv);
-// };
+// // const showId = (e) => {
+// //   console.log(e);
+// //   console.log(e.uv);
+// // };
 
-//получаю sortedData
+// //получаю sortedData
 const DiagramMobile = ({ sortedData }) => {
   return (
     <ResponsiveContainer
