@@ -1,6 +1,6 @@
-import ReportExpenses from "./ReportExpenses/ReportExpenses";
-import ReportIncome from "./ReportIncome/ReportIncome";
-import sprite from "../../images/sprite.svg";
+// import ReportExpenses from "../ReportExpenses/ReportExpenses";
+// import ReportIncome from "../ReportIncome/ReportIncome";
+import sprite from "../../../images/sprite/report_sprite.svg";
 import s from "./Report.module.scss";
 
 // export default function Report({ month, year, typesIncome, typesExpenses }) {
