@@ -12,9 +12,9 @@ export default function UserMenu() {
   // const avatar = useSelector(getUserAvatar);
   // const dispatch = useDispatch();
 
-  const handleLogout = () => {
-    dispatch(logout());
-  };
+  // const handleLogout = () => {
+  //   dispatch(logout());
+  // };
 
   return (
     <div className={styles.item}>
