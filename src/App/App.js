@@ -33,6 +33,11 @@ const StatisticsView = lazy(() =>
     '../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */
   ),
 )
+const BalanceView = lazy(() => 
+import(
+  '../views/BalanceView/BalanceView'  /* webpackChunkName: "balance-view" */
+  ),
+)
 
 function App() {
   const dispatch = useDispatch()
@@ -60,6 +65,10 @@ function App() {
             <Route
               path="/"
               element={<PublicRoute isAuth={isAuth} component={HomeView} />}
+            />
+            <Route
+              path="/balance"
+              element={<PublicRoute isAuth={isAuth} component={BalanceView} />}
             />
             <Route
               path="/main"
