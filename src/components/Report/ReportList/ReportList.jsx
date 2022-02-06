@@ -1,5 +1,6 @@
-import ReportItem from "../ReportItem/ReportItem";
-import s from "./ReportList.module.css";
+// import ReportItem from "../ReportItem/ReportItem";
+// import s from "./ReportList.module.css";
+
 
 export default function ReportList({ types }) {
   return (
