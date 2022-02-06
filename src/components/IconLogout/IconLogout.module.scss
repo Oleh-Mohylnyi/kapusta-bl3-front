@@ -1,0 +1,14 @@
+@media screen and (max-width: 767px) {
+  .icon {
+    fill: #c7ccdc;
+  }
+  .icon:hover {
+    fill: #ff751d;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .icon {
+    display: none;
+  }
+}
