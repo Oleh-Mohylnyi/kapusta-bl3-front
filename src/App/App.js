@@ -38,6 +38,7 @@ function App() {
   
   return (
     <div className="app">
+
         <Suspense fallback={ <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />}>
             <Header isAuth={isAuth}/>
         {(isFetchingCurrent)
@@ -48,6 +49,7 @@ function App() {
               <Route path="/main" element={<PublicRoute isAuth={isAuth} component={MainView} />} />
               <Route path="/statistics" element={<PublicRoute isAuth={isAuth} component={StatisticsView} />} />
           </Routes>}
+
       </Suspense>
       
       <ToastContainer autoClose={3000} />
