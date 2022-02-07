@@ -5,9 +5,6 @@
 
 export const getIsAuth = (state) => state.auth.isAuth
 
-// ???????????? надо ли??????????
-// export const getUserName = (state) => state.auth.user.email
-
 export const getUserEmail = (state) => state.auth.user.email
 
 export const getIsFetchingCurrent = (state) => state.auth.isFetchingCurrentUser
