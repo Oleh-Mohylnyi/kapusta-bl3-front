@@ -1,42 +1,37 @@
-import React, { useEffect } from "react";
-import { useDispatch, useSelector } from "react-redux";
+import React from "react";
+import s from "./summary.module.scss";
 
-import data from "data/month.json";
-import styles from "./summary.module.scss";
-import * as selectors from "redux/transactions/transactions-selectors";
-import transactionsOperations from "redux/transactions/transactions-operations";
-import Loader from "react-loader-spinner";
-
-const Summary = ({ year }) => {
-  const dispatch = useDispatch();
-  const totalBalance = useSelector(selectors.getTotalBalance);
-
-  useEffect(() => {
-    if (year > 0) {
-      dispatch(transactionsOperations.getMonthlyBalancesYear(year));
-    }
-  }, [totalBalance, year, dispatch]);
-
-  const balances = useSelector(selectors.getMonthlyBalances);
-
-  const sortedBalances = [...balances].sort((a, b) => b.month - a.month);
-
+const Summary = () => {
   return (
-    <div className={styles.summaryContainer}>
-      {Loader}
-      <h4 className={styles.summaryTitle}>Сводка</h4>
-      <ul className={styles.summaryList}>
-        {sortedBalances.map(({ month, value }, index) => (
-          <li key={index} className={styles.summaryItem}>
-            <p className={styles.summaryDescription}>
-              {data.find((monthData) => monthData.id === month).name}
-            </p>
-            <p className={styles.summaryDescription}>{value}</p>
-          </li>
-        ))}
+    <div className={s.summary}>
+      <h4>Сводка</h4>
+      <ul className={s.summary_list}>
+        <li className={s.summary_item}>
+          <span>Ноябрь</span>
+          <span>1 000.00</span>
+        </li>
+        <li className={s.summary_item}>
+          <span>Октябрь</span>
+          <span>1 000.00</span>
+        </li>
+        <li className={s.summary_item}>
+          <span>Сентябрь</span>
+          <span>1 000.00</span>
+        </li>
+        <li className={s.summary_item}>
+          <span>Август</span>
+          <span>1 000.00</span>
+        </li>
+        <li className={s.summary_item}>
+          <span>Июль</span>
+          <span>1 000.00</span>
+        </li>
+        <li className={s.summary_item}>
+          <span>Июнь</span>
+          <span>1 000.00</span>
+        </li>
       </ul>
     </div>
   );
 };
-
 export default Summary;
