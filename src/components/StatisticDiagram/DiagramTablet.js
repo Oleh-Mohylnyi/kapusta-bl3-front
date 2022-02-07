@@ -7,21 +7,25 @@ import {
   CartesianGrid,
   Bar,
   ResponsiveContainer,
+  Cell
 } from "recharts";
 
 // // данные для отрисовки
 const data = [
   { name: "Мясо", uv: 1500, id: 0 },
-  { name: "Сладости", uv: 1050, id: 3 },
-  { name: "Чай", uv: 660, id: 1 },
-  { name: "Овощи", uv: 600, id: 1 },
+  { name: "Сладости", uv: 1050, id: 1 },
+  { name: "Чай", uv: 660, id: 2 },
+  { name: "Овощи", uv: 600, id: 3 },
   { name: "Фастфуд", uv: 530, id: 4 },
-  { name: "Макароны", uv: 500, id: 3 },
-  { name: "Кофе", uv: 400, id: 0 },
-  { name: "Крупы", uv: 300, id: 2 },
-  { name: "Молочка", uv: 150, id: 4 },
-  { name: "Хлеб", uv: 50, id: 2 },
+  { name: "Макароны", uv: 500, id: 5 },
+  { name: "Кофе", uv: 400, id: 6 },
+  { name: "Крупы", uv: 300, id: 7 },
+  { name: "Молочка", uv: 150, id: 8 },
+  { name: "Хлеб", uv: 50, id: 9 },
 ];
+//label
+
+
 
 // // получаю sortedData
 const DiagramTablet = ({ sortedData }) => {
@@ -40,23 +44,28 @@ const DiagramTablet = ({ sortedData }) => {
           hide={true}
           axisLine={false}
           tickLine={false}
+          
         />
         <XAxis
           type="category"
           dataKey="name"
           axisLine={false}
-          tickLine={false}
+          tickLine={false}          
         />
         <Bar
           dataKey="uv"
           id="id"
-          className={s.bar}
-          label={{
-            fill: "#52555F",
-            position: "top",
-          }}
+                
           radius={[10, 10, 0, 0]}
-        />
+        >
+            {data.map((el) => {
+            console.log(el.name);
+            if (el.id === 0 || el.id === 3 || el.id === 6 || el.id === 9) {
+              return <Cell key="id" className={s.bar__accent}  />;
+            }
+            return <Cell key="id" className={s.bar} />            
+            })}          
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );

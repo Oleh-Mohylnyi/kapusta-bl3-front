@@ -1,3 +1,4 @@
+import React from "react";
 import s from "./Diagram.module.css";
 import {
   BarChart,
@@ -6,27 +7,30 @@ import {
   CartesianGrid,
   Bar,
   ResponsiveContainer,
+  Cell
 } from "recharts";
 
 // // данные для отрисовки
 const data = [
   { name: "Мясо", uv: 1500, id: 0 },
-  { name: "Сладости", uv: 1050, id: 3 },
-  { name: "Чай", uv: 660, id: 1 },
-  { name: "Овощи", uv: 600, id: 1 },
+  { name: "Сладости", uv: 1050, id: 1 },
+  { name: "Чай", uv: 660, id: 2 },
+  { name: "Овощи", uv: 600, id: 3 },
   { name: "Сухофрукты", uv: 530, id: 4 },
-  { name: "Макароны", uv: 500, id: 3 },
-  { name: "Кофе", uv: 400, id: 0 },
-  { name: "Крупы", uv: 300, id: 2 },
-  { name: "Молочка", uv: 150, id: 4 },
-  { name: "Хлеб", uv: 50, id: 2 },
+  { name: "Макароны", uv: 500, id: 5 },
+  { name: "Кофе", uv: 400, id: 6 },
+  { name: "Крупы", uv: 300, id: 7 },
+  { name: "Молочка", uv: 150, id: 8 },
+  { name: "Хлеб", uv: 50, id: 9 },
 ];
 
 // // const showId = (e) => {
 // //   console.log(e);
 // //   console.log(e.uv);
 // // };
-
+const formatXAxis = (tickItem) => {
+  return tickItem.toLocaleDateString();
+}
 // //получаю sortedData
 const DiagramMobile = ({ sortedData }) => {
   return (
@@ -39,16 +43,35 @@ const DiagramMobile = ({ sortedData }) => {
       <BarChart data={data} layout="vertical" barSize={15}>
         <CartesianGrid vertical={false} horizontal={false} />
 
-        <XAxis hide={true} type="number" />
+        <XAxis
+          hide={true}
+          type="number"
+          dataKey="uv"          
 
-        <YAxis hide={true} dataKey="name" type="category" />
-
-        <Bar
-          dataKey="uv"
-          // onClick={showId}
-          className={s.bar}
-          radius={[0, 10, 10, 0]}
         />
+
+        <YAxis
+          type="category"
+          dataKey="name"         
+          axisLine={false}
+          tickLine={false}
+          orientation='right'
+          tickFormatter={formatXAxis}  
+ 
+        />
+
+        <Bar dataKey="uv" radius={[0, 10, 10, 0]} >
+          {data.map((el) => {
+            console.log(el.name);
+            if (el.id === 0 || el.id === 3 || el.id === 6 || el.id === 9) {
+              return (
+                <Cell key="id" className={s.bar__accent} />
+              )               
+                
+            }
+            return <Cell key="id" className={s.bar} />;
+          })}
+        </Bar>
       </BarChart>
     </ResponsiveContainer>
   );

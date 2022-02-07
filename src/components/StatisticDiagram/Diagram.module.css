@@ -3,7 +3,7 @@
 .bar {
   fill: var(--additional-accent-color);
 }
-.bar {
+.bar__accent {
   fill: var(--accent-color);
 }
 .containerTablet {
