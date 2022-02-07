@@ -1,33 +1,37 @@
 li {
   list-style: none;
 }
+
+a {
+  text-decoration: none;
+}
+
 body {
   outline: #ff751d;
-  overflow: hidden;
 }
 
 .app {
   text-align: center;
-  margin-left: auto;
+  /* margin-left: auto;
   margin-right: auto;
-  min-width: 320px;
+  min-width: 320px; */
 }
 
-@media screen and (min-width: 320px) {
+/* @media screen and (min-width: 320px) {
+  body {
+    width: 320px;
+  } */
+/* } */
+/* @media screen and (min-width: 768px) {
   .app {
-    max-width: 320px;
-  }
-}
-@media screen and (min-width: 768px) {
-  .app {
-    max-width: 768px;
+    width: 768px;
   }
 }
 @media screen and (min-width: 1280px) {
   app {
-    max-width: 1280px;
+    width: 1280px;
   }
-}
+} */
 
 .hidden {
   position: absolute;

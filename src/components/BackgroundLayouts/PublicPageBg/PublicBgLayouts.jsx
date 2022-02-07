@@ -1,7 +1,7 @@
 import React from "react";
-import CabbageGroup from "../../../images/background/cabbage-svg-group.svg";
+// import CabbageGroup from "../../../images/background/cabbage-svg-group.svg";
 import CabbageNonRotate from "../../../images/background/cabbage-svg-one-r0.svg";
-import CabbageHalfTurn from "../../../images/background/cabbage-svg-one-r-180.svg";
+// import CabbageHalfTurn from "../../../images/background/cabbage-svg-one-r-180.svg";
 import CabbageQuarterTurn from "../../../images/background/cabbage-svg-one-r-90.svg";
 import CabbageShadow from "../../../images/background/cabbage-svg-shadow.svg";
 import s from "./PublicBgLayouts.module.scss";
@@ -11,13 +11,15 @@ function BgLayout() {
   const screenWidth = window.screen.width;
   return (
     <>
+      <span className={s.topCabbage}></span>
       {screenWidth < 768 ? (
         <>
-          <img
+          {/* <img
             src={CabbageHalfTurn}
             className={s.mobileTopCabbage}
             alt="CabbageHalfTurn"
-          />
+          /> */}
+          
           <img
             src={CabbageNonRotate}
             className={s.mobileBottomCabbage}
@@ -25,12 +27,13 @@ function BgLayout() {
           />
         </>
       ) : (
-        <>
-          <img
+          <>
+            {/* <img
             src={CabbageGroup}
             className={s.TopCabbageGroup}
             alt="CabbageTopGroup"
-          />
+            /> */}
+            {/* <span className={s.TopCabbageGroup}></span> */}
           <img
             src={CabbageNonRotate}
             className={s.firstBottomCabbage}

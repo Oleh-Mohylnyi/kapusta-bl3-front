@@ -1,23 +1,23 @@
 .container {
-  // display: block;
+  display: inline-flex;
   text-align: left;
-  // flex-direction: column;
+  flex-direction: column;
   margin-top: 142px;
   margin-left: 39px;
   @media screen and (min-width: 768px) {
     margin-top: 146px;
     margin-left: 119px;
   }
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 1280px) {
     margin-top: 365px;
     margin-left: 120px;
   }
 }
 
 .title {
-  display: block;
+  display: inline-block;
   //   text-align: left;
-  //   width: 183px;
+  width: 183px;
   //   height: 46.3px;
   //   margin: 0;
   //   padding: 0;
@@ -25,18 +25,16 @@
   //   // font-style: normal;
   //   // font-weight: 900;
   //   // color: #000000;
-  //   // font-size: 102px;
-  //   // line-height: 1.176;
-  //   @media screen and (min-width: 768px) {
-  //     // font-size: 102px;
-  //     // line-height: 1.176;
-  //     width: 306.5px;
-  //     height: 77.6px;
-  //   }
-  //   @media screen and (min-width: 1280px) {
-  //     width: 377px;
-  //     height: 120px;
-  //   }
+  @media screen and (min-width: 768px) {
+    //     // font-size: 102px;
+    //     // line-height: 1.176;
+    width: 306.5px;
+    //     height: 77.6px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 377px;
+    //     height: 120px;
+  }
 }
 
 .subtitle {

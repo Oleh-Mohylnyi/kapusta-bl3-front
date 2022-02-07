@@ -1,11 +1,21 @@
 .container {
-  position: relative;
   z-index: -2;
-  width: 100%;
+
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  // width: 100%;
+  min-width: 320px;
+  width: 320px;
+  margin: 0 auto;
   padding: 0 10px;
-  // border: bisque 1px dotted;
+  // border: none;
+  // border: rgb(211, 170, 121) 1px dotted;
   // height: 100vh;
   text-align: center;
+  // overflow: hidden;
   background-position: left top;
   background-size: contain;
   background-repeat: no-repeat;
@@ -20,6 +30,7 @@
   @media screen and (min-width: 768px) {
     background-image: url(../../images/background/rectangle/tablet-bg@1x.png);
     padding: 0 52px;
+    width: 768px;
     min-height: 582px;
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -31,6 +42,9 @@
   @media screen and (min-width: 1280px) {
     background-image: url(../../images/background/rectangle/desktop-bg@1x.png);
     padding: 0 110px;
+    width: 1280px;
+    // flex-direction: row;
+    // overflow: visible;
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
       (min-resolution: 192dpi),

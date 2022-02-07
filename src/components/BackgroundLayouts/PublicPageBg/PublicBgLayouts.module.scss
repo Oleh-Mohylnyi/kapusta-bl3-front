@@ -1,9 +1,30 @@
-.mobileTopCabbage {
+.topCabbage {
+  display: block;
+  width: 49px;
+  height: 89px;
   z-index: -1;
   position: absolute;
   top: 160px;
   left: 271px;
+  background-image: url(../../../images/background/cabbage-svg-one-r-180.svg);
+  @media screen and (min-width: 768px) {
+    top: 85px;
+    left: 10px;
+    width: 758px;
+    height: 232px;
+    background-image: url(../../../images/background/cabbage-svg-group.svg);
+  }
+  @media screen and (min-width: 1280px) {
+    width: 1270px;
+  }
 }
+
+// .mobileTopCabbage {
+//   z-index: -1;
+//   position: absolute;
+//   top: 160px;
+//   left: 271px;
+// }
 
 .mobileBottomCabbage {
   z-index: -1;
@@ -12,12 +33,12 @@
   left: 35px;
 }
 
-.TopCabbageGroup {
-  z-index: -1;
-  position: absolute;
-  top: 85px;
-  left: 10px;
-}
+// .TopCabbageGroup {
+//   z-index: -1;
+//   position: absolute;
+//   top: 85px;
+//   left: 10px;
+// }
 
 .firstBottomCabbage {
   z-index: -1;
