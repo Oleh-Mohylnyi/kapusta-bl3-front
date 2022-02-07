@@ -15,7 +15,12 @@ import s from "./Report.module.scss";
 export default function Report() {
   return (
     <section className={s.section}>
-      <h2 className={s.title}>Расходы</h2>
+      <div className={s.tab}>
+        <button className={s.arrow_left}></button>
+        <h2 className={s.title}>Расходы</h2>
+        <button className={s.arrow_right}></button>
+      </div>
+
       <ul className={s.list}>
         <li className={s.item}>
           <p className={s.text}>5000.00</p>
