@@ -7,7 +7,7 @@ import {
   CartesianGrid,
   Bar,
   ResponsiveContainer,
-  Cell
+  Cell,
 } from "recharts";
 
 // // данные для отрисовки
@@ -28,9 +28,7 @@ const data = [
 // //   console.log(e);
 // //   console.log(e.uv);
 // // };
-const formatXAxis = (tickItem) => {
-  return tickItem.toLocaleDateString();
-}
+
 // //получаю sortedData
 const DiagramMobile = ({ sortedData }) => {
   return (
@@ -43,31 +41,27 @@ const DiagramMobile = ({ sortedData }) => {
       <BarChart data={data} layout="vertical" barSize={15}>
         <CartesianGrid vertical={false} horizontal={false} />
 
-        <XAxis
-          hide={true}
-          type="number"
-          dataKey="uv"          
-
-        />
+        <XAxis hide={true} type="number" dataKey="uv" />
 
         <YAxis
           type="category"
-          dataKey="name"         
+          dataKey="name"
           axisLine={false}
           tickLine={false}
-          orientation='right'
-          tickFormatter={formatXAxis}  
- 
+          orientation="left"
         />
 
-        <Bar dataKey="uv" radius={[0, 10, 10, 0]} >
+        <Bar
+            label={{
+            position: "top",
+          }}
+          dataKey="uv"
+          radius={[0, 10, 10, 0]}
+        >
           {data.map((el) => {
             console.log(el.name);
             if (el.id === 0 || el.id === 3 || el.id === 6 || el.id === 9) {
-              return (
-                <Cell key="id" className={s.bar__accent} />
-              )               
-                
+              return <Cell key="id" className={s.bar__accent} />;
             }
             return <Cell key="id" className={s.bar} />;
           })}
