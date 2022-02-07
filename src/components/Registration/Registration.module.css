@@ -4,7 +4,7 @@
   flex-direction: column;
   width: 300px;
   height: 525px;
-  margin: 199px auto 0 auto;
+  margin: 50px auto 0 auto;
   padding: 40px 0 53px;
   border-radius: 30px;
   background-color: #fff;
@@ -79,7 +79,7 @@
   .form {
     width: 436px;
     height: 535px;
-    margin: 240px auto 0 auto;
+    /* margin: 240px auto 0 auto; */
     padding: 50px 85px 53px 86px;
     text-align: left;
   }
@@ -114,7 +114,8 @@
 @media screen and (min-width: 1280px) {
   .form {
     position: absolute;
-    top: 89px;
+    top: 173.5px;
+    /* margin-top: 173.5px; */
     right: 110px;
     /* left: 734px; */
     margin: 0;
