@@ -14,7 +14,7 @@ import { getToken } from '../redux/auth/selectors';
 import { getIsFetchingCurrent } from '../redux/auth/selectors';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-
+import { Navigation } from '../components/Navigation/Navigation';
 const Header = lazy(() => import('../components/Header/Header' /* webpackChunkName: "header-view" */));
 const HomeView = lazy(() => import('../views/HomeView/HomeView' /* webpackChunkName: "home-view" */));
 
@@ -36,7 +36,7 @@ function App() {
    
   return (
     <div className="app">
-
+      <Navigation/>
         <Suspense fallback={ <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />}>
             <Header isAuth={isAuth}/>
         {(isFetchingCurrent)
