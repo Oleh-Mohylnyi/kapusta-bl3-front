@@ -29,5 +29,5 @@ export default function UserMenu() {
         /*handleClick={() => handleLogout}*/ type="button"
       />
     </div>
-  );
+  )
 }
