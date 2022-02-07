@@ -61,13 +61,13 @@ function App() {
               element={<PublicRoute isAuth={isAuth} component={HomeView} />}
             />
             <Route
-              path="main"
+              path="/main"
               element={<PrivateRoute isAuth={isAuth} component={MainView} />}
             />
             <Route
-              path="statistics"
+              path="/statistics"
               element={
-                <PublicRoute isAuth={isAuth} component={StatisticsView} />
+                <PrivateRoute isAuth={isAuth} component={StatisticsView} />
               }
             >
               <Route path="income" element={<ReportIncome />} />
