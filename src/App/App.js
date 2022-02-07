@@ -13,6 +13,7 @@ import { getToken } from "../redux/auth/selectors";
 import { getIsFetchingCurrent } from "../redux/auth/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import { Navigation } from "../components/Navigation/Navigation";
 import ReportIncome from "../components/Report/ReportIncome/ReportIncome";
 import ReportExpenses from "../components/Report/ReportExpenses/ReportExpenses";
 
@@ -21,12 +22,6 @@ const Header = lazy(() =>
 );
 const HomeView = lazy(() =>
   import("../views/HomeView/HomeView" /* webpackChunkName: "home-view" */)
-);
-
-const RegisterView = lazy(() =>
-  import(
-    "../views/RegisterView/RegisterView" /* webpackChunkName: "register-view" */
-  )
 );
 
 const MainView = lazy(() =>
@@ -50,6 +45,7 @@ function App() {
 
   return (
     <div className="app">
+      <Navigation />
       <Suspense
         fallback={
           <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
@@ -65,14 +61,8 @@ function App() {
               element={<PublicRoute isAuth={isAuth} component={HomeView} />}
             />
             <Route
-              path="register"
-              element={
-                <PrivateRoute isAuth={isAuth} component={RegisterView} />
-              }
-            />
-            <Route
               path="main"
-              element={<PublicRoute isAuth={isAuth} component={MainView} />}
+              element={<PrivateRoute isAuth={isAuth} component={MainView} />}
             />
             <Route
               path="statistics"
@@ -83,6 +73,7 @@ function App() {
               <Route path="income" element={<ReportIncome />} />
               <Route path="expenses" element={<ReportExpenses />} />
             </Route>
+            ;
           </Routes>
         )}
       </Suspense>
