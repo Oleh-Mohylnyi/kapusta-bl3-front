@@ -1,0 +1,104 @@
+.mobileTopCabbage {
+  z-index: -1;
+  position: absolute;
+  top: 160px;
+  left: 271px;
+}
+
+.mobileBottomCabbage {
+  z-index: -1;
+  position: absolute;
+  top: 767px;
+  left: 35px;
+}
+
+.TopCabbageGroup {
+  z-index: -1;
+  position: absolute;
+  top: 85px;
+  left: 10px;
+}
+
+.firstBottomCabbage {
+  z-index: -1;
+  position: absolute;
+  @media screen and (min-width: 768px) {
+    top: 845px;
+    left: 103px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: 677px;
+    left: 230px;
+  }
+}
+
+.firstBottomCabbageShadow {
+  z-index: -1;
+  position: absolute;
+  @media screen and (min-width: 768px) {
+    top: 954px;
+    left: 108px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: 786px;
+    left: 235px;
+  }
+}
+
+.secondBottomCabbage {
+  z-index: -1;
+  position: absolute;
+  @media screen and (min-width: 768px) {
+    top: 826px;
+    left: 197px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: 658px;
+    left: 324px;
+  }
+}
+
+.secondBottomCabbageShadow {
+  z-index: -1;
+  position: absolute;
+  @media screen and (min-width: 768px) {
+    top: 938px;
+    left: 219px;
+  }
+  @media screen and (min-width: 1280px) {
+    top: 770px;
+    left: 346px;
+  }
+}
+
+// .HomePageBottomBgContainer {
+//   width: 100%;
+//   position: absolute;
+//   margin: 0 -10px;
+//   top: 767px;
+//   left: 35px;
+//   @media screen and (min-width: 768px) {
+//     margin: 0 -52px;
+//     top: 826px;
+//     left: 103px;
+//   }
+//   @media screen and (min-width: 1280px) {
+//     margin: 0 -110px;
+//     top: 658px;
+//     left: 230px;
+//   }
+// }
+
+// .cabbagesWithShadowContainer {
+//   position: absolute;
+//   @media screen and (min-width: 768px) {
+//     // margin: 0 -52px;
+//     top: 826px;
+//     left: 103px;
+//   }
+//   @media screen and (min-width: 1280px) {
+//     // margin: 0 -110px;
+//     top: 658px;
+//     left: 230px;
+//   }
+// }
