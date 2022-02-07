@@ -18,8 +18,6 @@ import 'react-toastify/dist/ReactToastify.css';
 const Header = lazy(() => import('../components/Header/Header' /* webpackChunkName: "header-view" */));
 const HomeView = lazy(() => import('../views/HomeView/HomeView' /* webpackChunkName: "home-view" */));
 
-const RegisterView = lazy(() => import('../views/RegisterView/RegisterView' /* webpackChunkName: "register-view" */));
-
 const MainView = lazy(() => import('../views/MainView/MainView' /* webpackChunkName: "contacts-view" */));
 const StatisticsView = lazy(() => import('../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */));
 
@@ -35,8 +33,7 @@ function App() {
     // eslint-disable-next-line
   }, [dispatch]);
   
-  
-  
+   
   return (
     <div className="app">
 
@@ -46,14 +43,15 @@ function App() {
           ? <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
           : <Routes>
               <Route path="/" element={<PublicRoute isAuth={isAuth} component={HomeView} />} />
-              <Route path="/register" element={<PrivateRoute isAuth={isAuth} component={RegisterView} />} />
-              <Route path="/main" element={<PublicRoute isAuth={isAuth} component={MainView} />} />
-              <Route path="/statistics" element={<PublicRoute isAuth={isAuth} component={StatisticsView} />} />
+              <Route path="/main" element={<PrivateRoute isAuth={isAuth} component={MainView} />} />
+              <Route path="/statistics" element={<PrivateRoute isAuth={isAuth} component={StatisticsView} />} />
           </Routes>}
 
       </Suspense>
       
       <ToastContainer autoClose={3000} />
+      
+
       </div>
     );
 }
