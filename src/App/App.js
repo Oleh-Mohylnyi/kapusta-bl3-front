@@ -69,15 +69,10 @@ function App() {
               element={
                 <PrivateRoute isAuth={isAuth} component={StatisticsView} />
               }
-            >
-              <Route path="income" element={<ReportIncome />} />
-              <Route path="expenses" element={<ReportExpenses />} />
-            </Route>
-            ;
+            />
           </Routes>
         )}
       </Suspense>
-
       <ToastContainer autoClose={3000} />
     </div>
   );
