@@ -1,0 +1,65 @@
+@import "../../css/variables.css";
+.container {
+  margin-top: 56px;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  height: 85px;
+  width: 100%;
+  border-radius: 20px;
+  box-shadow: var(--box-shadow-mobile);
+}
+
+.list {
+  display: flex;
+  justify-content: center;
+  height: 100%;
+}
+.item {
+  font-weight: 700;
+  font-style: normal;
+  font-size: 14px;
+}
+.item:first-child {
+  padding-right: 15px;
+  border-right: 1px solid var(--border-color);
+}
+
+.item:last-child {
+  padding-left: 10px;
+}
+.title {
+  font-family: var(--font-family);
+
+  color: var(--main-text-color);
+}
+.costs {
+  color: var(--costs-text-color);
+}
+.incomes {
+  color: var(--incomes-text-color);
+}
+.item__content {
+  padding-top: 13px;
+  padding-bottom: 17px;
+}
+@media screen and (min-width: 768px) {
+  .container {
+    height: 50px;
+    box-shadow: var(--box-shadow-tablet-desktop);
+  }
+  .item__content {
+    display: flex;
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+
+  .item:first-child {
+    padding-right: 21px;
+  }
+  .item:last-child {
+    padding-left: 19px;
+  }
+  .title {
+    padding-right: 15px;
+  }
+}
