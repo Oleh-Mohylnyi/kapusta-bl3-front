@@ -1,3 +1,4 @@
+
 // import { useDispatch, useSelector } from "react-redux";
 // import { logout } from "../../redux/auth/operations";
 // import { getUserName } from "../../redux/auth/selectors";
@@ -29,5 +30,5 @@ export default function UserMenu() {
         /*handleClick={() => handleLogout}*/ type="button"
       />
     </div>
-  );
+  )
 }

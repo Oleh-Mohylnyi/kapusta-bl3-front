@@ -1,9 +1,8 @@
-import DiagramTablet from "./DiagramTablet";
 import s from './Diagram.module.css'
-const DiagramContainer = () => {
+const DiagramContainer = ({children}) => {
   return (
     <div className={s.containerTablet}>
-      <DiagramTablet />
+      {children}
     </div>
   );
 };
