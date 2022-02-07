@@ -1,0 +1,12 @@
+.section {
+  display: flex;
+  justify-content: center;
+}
+
+.link {
+  color: #000000;
+}
+
+.activeLink {
+  color: #ff751d;
+}

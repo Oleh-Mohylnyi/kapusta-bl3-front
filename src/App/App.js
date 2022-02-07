@@ -1,10 +1,10 @@
-
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 import Loader from "react-loader-spinner";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import { PrivateRoute } from "../routes/PrivateRoute";
 import { PublicRoute } from "../routes/PublicRoute";
+
 import { useDispatch, useSelector } from 'react-redux';
 import {currentUser} from '../redux/auth/operations'
 import { useEffect } from 'react';
@@ -22,8 +22,6 @@ const MainView = lazy(() => import('../views/MainView/MainView' /* webpackChunkN
 const StatisticsView = lazy(() => import('../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */));
 
 function App() {
-
-  
   const dispatch = useDispatch();
   const isAuth = useSelector(getIsAuth);
   const token = useSelector(getToken);
@@ -32,6 +30,7 @@ function App() {
     token && dispatch(currentUser());
     // eslint-disable-next-line
   }, [dispatch]);
+
   
    
   return (
@@ -48,8 +47,8 @@ function App() {
           </Routes>}
 
       </Suspense>
-      
       <ToastContainer autoClose={3000} />
+
       
 
       </div>

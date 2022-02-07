@@ -1,0 +1,31 @@
+.item {
+  border-bottom: 1px solid #e0e5eb;
+  flex-basis: 80px;
+  align-items: stretch;
+  padding: 5px;
+  text-align: center;
+  cursor: pointer;
+
+  @media screen and (min-width: 768px) {
+    border-bottom: none;
+    flex-basis: 93px;
+    padding: 0;
+    margin: 5px;
+    margin-bottom: 15px;
+  }
+}
+
+.text {
+  font-family: Roboto;
+  font-style: Regular;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1.17;
+  align-items: center;
+  text-align: center;
+  letter-spacing: 4%;
+  text-transform: uppercase;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  color: #52555f;
+}
