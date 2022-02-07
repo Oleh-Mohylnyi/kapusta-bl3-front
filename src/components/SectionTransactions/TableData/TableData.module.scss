@@ -1,0 +1,142 @@
+.bodyTable {
+  width: 97%;
+  table-layout: fixed;
+  border: none;
+  overflow-x: hidden;
+  height: 344px;
+  overflow-y: auto;
+}
+
+.bodyTableScroll {
+  height: 342px;
+  overflow-x: hidden;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border-bottom: 1px solid #fff;
+}
+
+.main {
+  width: 605px;
+  text-align: center;
+  border-radius: 30px;
+  color: rgb(0, 0, 0);
+  border-radius: 20px 20px 0 0;
+  background-color: #f5f6fb;
+  border-spacing: 0px 2px;
+  border-left: 2px;
+  border-left-style: outset;
+  border-right-style: inset;
+  border-right-color: transparent;
+  border-left-color: transparent;
+}
+
+.mainTbody {
+  border-radius: 0;
+}
+
+.theadTable {
+  display: none;
+  align-items: center;
+  height: 38px;
+  font-size: 13px;
+  font-weight: normal;
+}
+
+.th {
+  padding: 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  font-style: normal;
+}
+
+.td {
+  display: revert;
+  align-items: center;
+  height: 38px;
+  padding: 0 8px;
+  background: #ffffff;
+  color: #52555f;
+  border-bottom: 2px solid #f4f6fb;
+
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1, 17;
+  letter-spacing: 0.04em;
+}
+
+.tdSum {
+  font-weight: bold;
+
+  color: var(--incomes-text-color);
+}
+.tdSumExpense {
+  font-weight: bold;
+  color: var(--costs-text-color);
+}
+
+@media screen and (min-width: 1280px) {
+  .main {
+    width: 760px;
+    height: 344px;
+    overflow-y: scroll;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .theadTable {
+    display: revert;
+  }
+}
+
+.deleteBtn {
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  display: block;
+  width: 18px;
+  height: 18px;
+  padding: 16px;
+  border: transparent;
+  background-color: transparent;
+  background-image: url(../../../images/icons/delete-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.deleteBtnIcon {
+  width: 16px;
+  height: 18px;
+}
+
+.deleteBtn:hover {
+  background-color: var(--bg-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  fill: currentColor;
+}
+
+@media screen and (min-width: 1280px) {
+  .bodyTable {
+    width: 75%;
+  }
+}
+
+#style2::-webkit-scrollbar-track {
+  border-radius: 10px;
+  background-color: #f5f5f5;
+}
+
+#style2::-webkit-scrollbar {
+  width: 6px;
+  background-color: #f5f5f5;
+}
+
+#style2::-webkit-scrollbar-thumb {
+  border-radius: 10px;
+  background-color: var(--accent-color);
+}
