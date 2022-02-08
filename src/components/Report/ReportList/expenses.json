@@ -1,0 +1,13 @@
+[
+  { "id": "3", "type": "Транспорт", "icon": "transport", "sum": 1000 },
+  { "id": "4", "type": "Продукты", "icon": "products", "sum": 10000 },
+  { "id": "5", "type": "Здоровье", "icon": "health", "sum": 2000 },
+  { "id": "6", "type": "Алкоголь", "icon": "alkohol", "sum": 100 },
+  { "id": "7", "type": "Развлечения", "icon": "entertainment", "sum": 500 },
+  { "id": "8", "type": "Всё для дома", "icon": "housing", "sum": 3000 },
+  { "id": "9", "type": "Техника", "icon": "technic", "sum": 600 },
+  { "id": "10", "type": "Коммуналка, связь", "icon": "utilities", "sum": 1000 },
+  { "id": "11", "type": "Спорт, хобби", "icon": "hobby", "sum": 700 },
+  { "id": "12", "type": "Образование", "icon": "education", "sum": 150 },
+  { "id": "13", "type": "Прочее", "icon": "other", "sum": 4000 }
+]

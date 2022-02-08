@@ -1,0 +1,144 @@
+/* .Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1200;
+}
+
+.Modal {
+  max-width: calc(100vw - 48px);
+  max-height: calc(100vh - 24px);
+} */
+
+.Overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 1200;
+}
+
+.Modal {
+  width: 380px;
+  height: 194px;
+
+  background: #ffffff;
+  /* modal */
+
+  box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
+  border-radius: 30px;
+  padding: 50px 57px 60px 58px;
+}
+
+.confirmButton {
+  width: 125px;
+  height: 44px;
+
+  border: 2px solid #f5f6fb;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #52555f;
+
+  border: 2px solid #f5f6fb;
+  box-sizing: border-box;
+  border-radius: 16px;
+
+  margin-right: 15px;
+}
+
+.confirmButton:hover {
+  background: #ff751d;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.declineButton {
+  width: 125px;
+  height: 44px;
+
+  border: 2px solid #f5f6fb;
+  box-sizing: border-box;
+  border-radius: 16px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #52555f;
+
+  border: 2px solid #f5f6fb;
+  box-sizing: border-box;
+  border-radius: 16px;
+}
+
+.declineButton:hover {
+  background: #ff751d;
+  border-radius: 16px;
+  color: #ffffff;
+}
+
+.buttonWrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.text {
+  margin-bottom: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #52555f;
+}
+
+.closeButtonIcon {
+  width: 12px;
+  height: 12px;
+}
+
+.closeButton {
+  position: absolute;
+  top: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  margin-top: 20px;
+  margin-right: 20px;
+  padding: 0;
+
+  width: 12px;
+  height: 12px;
+  border: none;
+  cursor: pointer;
+}
