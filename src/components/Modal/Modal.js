@@ -1,6 +1,6 @@
 import { Component, useState } from 'react';
 import { createPortal } from 'react-dom';
-
+import PropTypes from "prop-types";
 import s from './Modal.module.css';
 import sprite from '../../images/icons/sprite.svg';
 
@@ -47,18 +47,19 @@ export default class Modal extends Component {
             }
         };
 
-        
+    
 
            render() {
+               const {modalContentText} = this.props;
         return createPortal(
             <div className={s.Overlay} onClick={this.handleOverlay}>
             <div className={s.Modal}>
-              <p className={s.text}>Вы действительно хотите выйти?</p>
+              <p className={s.text}>{modalContentText}</p>
               <div className={s.buttonWrapper}>
                 <button className={s.confirmButton}>Да</button>
                 <button className={s.declineButton}>Нет</button>
               </div>
-              <button className={s.closeButton} onClick={this.toggleModal}>
+              <button className={s.closeButton} onClick={this.handleClose}>
                 <svg width="14" height="14" className={s.closeButtonIcon}>
                 <use href={`${sprite}#icon-close`}></use>
                 </svg>
@@ -69,3 +70,7 @@ export default class Modal extends Component {
         )
     }
 }
+
+Modal.propTypes = {
+    modalContentText: PropTypes.string.isRequired,
+};
