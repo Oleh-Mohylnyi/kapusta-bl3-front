@@ -15,4 +15,3 @@ import { createAction } from '@reduxjs/toolkit';
 // export const fetchContactsError = createAction('contacts/fetchContactError');
 
 export const setFilter = createAction('filter/set');
-
