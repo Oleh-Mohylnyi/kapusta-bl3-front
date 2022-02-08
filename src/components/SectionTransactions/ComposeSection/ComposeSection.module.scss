@@ -1,0 +1,19 @@
+.wrapperTables {
+  display: flex;
+
+  flex-direction: column;
+  gap: 30px;
+}
+
+@media screen and (min-width: 768px) {
+  .wrapperTables {
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .wrapperTables {
+    flex-direction: row;
+    padding-top: 0;
+  }
+}
