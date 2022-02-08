@@ -33,6 +33,7 @@ const DiagramTablet = ({ sortedData }) => {
       hight="100%"
       minWidth={630}
       minHeight={380}
+     
     >
       <BarChart data={data} barSize={38}>
         <CartesianGrid vertical={false} />
