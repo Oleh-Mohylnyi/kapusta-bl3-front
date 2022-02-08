@@ -8,6 +8,7 @@ import {
   Bar,
   ResponsiveContainer,
   Cell,
+  LabelList,
 } from "recharts";
 
 // // данные для отрисовки
@@ -24,33 +25,33 @@ const data = [
   { name: "Хлеб", uv: 50, id: 9 },
 ];
 
-const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {
+const customBarLabelPriceMobile = ({ payload, x, y, width, height, value }) => {
   return (
     <text
-      x={x / 2 + width}
+      x={width - 30}
       y={y}
       fill="#52555f"
       fontSize={10}
       textAnchor="start"
-      dy={-4}
+      dy={-5}
     >{`${value}грн`}</text>
   );
 };
 
-const renderCustomAxisTick = ({ x, y, payload }) => {
+const customLabelListNameMobile = ({ payload, x, y, width, height, value }) => {
   return (
     <text
       x={x}
       y={y}
       fill="#52555f"
       fontSize={10}
-      textAnchor="start"
-      dy={+20}
-      dx={+8}
-    >{`${payload.value}`}</text>
+      textAnchor="bottom"
+      dy={+26}
+    >{`${value}`}</text>
   );
 };
-const DiagramMobile = ({ sortedData }) => {
+
+const DiagramMobile = ({ isMobile, sortedData }) => {
   return (
     <ResponsiveContainer
       width="100%"
@@ -61,7 +62,7 @@ const DiagramMobile = ({ sortedData }) => {
       <BarChart
         width={282}
         hide={480}
-        margin={{ top: 0, right: 0, bottom: 0, left: 0 }}
+        margin={{ top: 0, right: 0, bottom: 30, left: 0 }}
         data={data}
         layout="vertical"
         barSize={15}
@@ -71,26 +72,32 @@ const DiagramMobile = ({ sortedData }) => {
         <XAxis hide={true} type="number" dataKey="uv" axisLine={false} />
 
         <YAxis
-          // hide={true}
+          hide={true}
           type="category"
           dataKey="name"
           axisLine={false}
           tickLine={false}
-          orientation="left"
-          tick={renderCustomAxisTick}
+           orientation="left"
         />
         <Bar
-          label={renderCustomBarLabel}
+          label={customBarLabelPriceMobile}
           dataKey="uv"
           radius={[0, 10, 10, 0]}
           minPointSize={50}
           maxBarSize="100%"
         >
-          {data.map((el) => {
-            if (el.id === 0 || el.id === 3 || el.id === 6 || el.id === 9) {
-              return <Cell key="id" className={s.bar__accent} />;
-            }
-            return <Cell key="id" className={s.bar} />;
+          <LabelList dataKey="name" content={customLabelListNameMobile} />          
+          {data.map((el, index) => {
+            return (
+              <Cell
+                key={index}
+                className={
+                  index === 0 || index === 3 || index === 6 || index === 9
+                    ? s.bar__accent
+                    : s.bar
+                }
+              />
+            );
           })}
         </Bar>
       </BarChart>

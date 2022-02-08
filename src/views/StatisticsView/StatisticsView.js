@@ -4,25 +4,31 @@ import DiagramTablet from "../../components/StatisticDiagram/DiagramTablet";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
-// import ViewsContainer from "../../components/ViewsContainer/ViewsContainer";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
 
 export default function StatisticsView() {
-  let width = window.innerWidth;
-  
+
+  const size = useWindowDimensions();
+  const { width } = size;
+  const mobile = () => {
+    if (width < 768) {
+      return true;
+    }
+    return false;
+  };
+  console.log(mobile());
   return (
     <>
-      {/* <ViewsContainer> */}
-        <TotalReport />
-         <Outlet />       
-        {width < 768 ? (
-          <DiagramMobile />
-        ) : (
-          <DiagramContainer>
-            <DiagramTablet />
-          </DiagramContainer>
-        )}
-        <BackgroundImages />
-      {/* </ViewsContainer> */}
+      <TotalReport />
+      <Outlet />
+      {mobile() ? (
+        <DiagramMobile />
+      ) : (
+        <DiagramContainer>
+          <DiagramTablet />
+        </DiagramContainer>
+      )}
+      <BackgroundImages />
     </>
   );
 }
