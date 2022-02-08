@@ -1,0 +1,64 @@
+.bubbleContainer {
+  position: absolute;
+  background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
+  /* shadow 1 */
+
+  box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
+  border-radius: 24px;
+  width: 282px;
+  height: auto;
+  top: 20%;
+}
+
+.bubbleContainer:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 34%;
+  width: 0;
+  height: 0;
+  border: 14px solid transparent;
+  border-bottom-color: #112752;
+  border-top: 0;
+  margin-left: -14x;
+  margin-top: -14px;
+}
+
+.textWrapper {
+  padding: 41px 25px 31px 25px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  color: #ffffff;
+  text-align: left;
+}
+
+.text1 {
+  margin-bottom: 20px;
+  font-size: 14px;
+  line-height: 20px;
+  /* or 143% */
+}
+
+.text2 {
+  font-size: 12px;
+  line-height: 16px;
+  /* or 133% */
+}
+
+@media screen and (min-width: 768px) {
+  .bubbleContainer {
+    top: 9%;
+  }
+
+  .textWrapper {
+    padding: 41px 30px 31px 30px;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .bubbleContainer {
+    top: 8.8%;
+  }
+}
