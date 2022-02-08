@@ -1,9 +1,10 @@
-import { useState } from 'react';
-import { useDispatch } from 'react-redux';
+// import { useState } from 'react';
+// import { useDispatch } from 'react-redux';
 // import { addNewContact } from '../../redux/phoneBook/contacts-thunks';
-import styles from './ContactForm.module.css';
+import Button from '../Button/Button.js'
+import styles from './AddTransactionForm.module.scss';
 
-function ContactForm() {
+function TransactionForm() {
   // const [name, setName] = useState('');
   // const [number, setNumber] = useState('');
   // // const dispatch = useDispatch();
@@ -37,11 +38,37 @@ function ContactForm() {
     <>
       <form className={styles.form} onSubmit={handleSubmit}>
         
-        <input className="input" type="date" name="date" />
-        <input className="input" type="text" name="date" />
-        <input className="input" type="select" name="date" />        
-        <input className="input" type="number" name="date" />
-        <label>
+        <input className="input" type="date" name="date" required placeholder='' />    {/* сделать отдельным компоненстом */}
+      <div>
+        <input className="input" type="text" name="" required placeholder='Описание'/>
+        <div>
+            <input className={`input `} type="select" name="date" placeholder='Категория товара' /> { /* должно быть выпадающим списком*/}
+            <ul className={styles.categoryList}>
+
+            </ul>            
+             {/* <label class="label-country" for="custom-select">
+          <input class="input input-country" type="text" id="country-choice" placeholder="Choose country" autocomplete="off">
+          <div class="input-triangle"></div>
+        <ul class="datalist-country hidden-list" id="datalist-country"> 
+        </ul>
+        </label> */}
+        </div>
+        <input className="input" type="number" name="date" required placeholder=''/>
+      </div>
+        
+        <div>
+        <button className="button" type="submit">
+          Add
+          </button>
+          <button className="button" type="button">
+          Clear
+          </button>
+          </div>
+      </form>
+
+      
+        
+        {/* <label>
           <p>Name</p>
           <input
             className="input"
@@ -68,12 +95,9 @@ function ContactForm() {
             // onChange={handleChange}
             placeholder="Enter new contact number"
           />
-        </label>
-        <button className="button" type="submit">
-          Add contact
-        </button>
-      </form>
+        </label> */}
     </>
   );
 }
-export default ContactForm;
+export default TransactionForm;
+

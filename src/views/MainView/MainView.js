@@ -7,6 +7,7 @@ export default function MainView() {
   return (
     <>
       <BackgroundImages />
+      
       <SectionTransactions />
       <TableData />
       <Summary />
