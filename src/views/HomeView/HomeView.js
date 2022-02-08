@@ -6,7 +6,7 @@ import Title from "../../components/Title";
 export default function HomeView() {
   return (
     <PageContainer>
-      <Title/>
+      <Title />
       <Registration />
       <BackgroundImages />
     </PageContainer>

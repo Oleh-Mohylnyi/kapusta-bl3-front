@@ -1,0 +1,16 @@
+.icon {
+  width: 56px;
+  height: 56px;
+  margin-top: 5px;
+  margin-bottom: 5px;
+  background-image: url("../../../images/background/rectangle.svg");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+  background-size: 59px 46px;
+  &:hover,
+  &:focus,
+  &:active {
+    fill: #ff751d;
+    background-image: url("../../../images/background/rectangle_active.svg");
+  }
+}

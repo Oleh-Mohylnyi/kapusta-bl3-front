@@ -1,3 +1,4 @@
+import { Outlet } from "react-router-dom";
 import DiagramMobile from "../../components/StatisticDiagram/DiagramMobile";
 import DiagramTablet from "../../components/StatisticDiagram/DiagramTablet";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
@@ -6,6 +7,7 @@ import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from '../../components/BackgroundLayouts/PrivatePageBg';
 import ViewsContainer from "../../components/ViewsContainer/ViewsContainer";
 
+
 export default function StatisticsView() {
   let width = window.innerWidth;
   return (
@@ -13,8 +15,7 @@ export default function StatisticsView() {
       <ViewsContainer>
         <TotalReport/>
         <Report />
-        {width < 768 ?  (
-<DiagramMobile />
+        {width < 768 ?(<DiagramMobile />
         ) : (
           <DiagramContainer>
             <DiagramTablet />
@@ -22,6 +23,7 @@ export default function StatisticsView() {
         )}
         <BackgroundImages />
       </ViewsContainer>
+
     </>
   );
 }
