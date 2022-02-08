@@ -45,7 +45,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="appContainer">
+    <div className="app">
       <Navigation />
       <Suspense
         fallback={
@@ -63,16 +63,6 @@ function App() {
             />
             {/* <Route
               path="/main"
-              element={<PrivateRoute isAuth={isAuth} component={MainView} />}
-            />
-            <Route
-              path="statistics"
-              element={
-                <PrivateRoute isAuth={isAuth} component={StatisticsView} />
-              }
-              > */}
-               <Route
-              path="/main"
               element={<PublicRoute isAuth={isAuth} component={MainView} />}
             />
             <Route
@@ -80,7 +70,20 @@ function App() {
               element={
                 <PublicRoute isAuth={isAuth} component={StatisticsView} />
               }
-              > 
+            >
+              <Route path="income" element={<ReportIncome />} />
+              <Route path="expenses" element={<ReportExpenses />} />
+            </Route> */}
+              <Route
+              path="/main"
+              element={<PrivateRoute isAuth={isAuth} component={MainView} />}
+            />
+            <Route
+              path="statistics"
+              element={
+                <PrivateRoute isAuth={isAuth} component={StatisticsView} />
+              }
+            >
               <Route path="income" element={<ReportIncome />} />
               <Route path="expenses" element={<ReportExpenses />} />
             </Route>
