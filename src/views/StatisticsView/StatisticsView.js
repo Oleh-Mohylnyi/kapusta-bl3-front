@@ -13,10 +13,7 @@ export default function StatisticsView() {
       <ViewsContainer>
         <TotalReport/>
         <Report />
-        {width < 768 ?  (
-<DiagramMobile />
-        ) : (
-          <DiagramContainer>
+        {width < 768 ?  (<DiagramMobile />) : (<DiagramContainer>
             <DiagramTablet />
           </DiagramContainer>
         )}
