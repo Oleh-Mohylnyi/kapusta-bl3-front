@@ -1,8 +1,10 @@
 // import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { addNewContact } from '../../redux/phoneBook/contacts-thunks';
-import Button from '../Button/Button.js'
-import styles from './AddTransactionForm.module.scss';
+import { BiCalculator } from 'react-icons/bi'
+import Button from "../Button/Button";
+import DatePickerForm from "../DatePickerForm";
+import styles from "./TransactionForm.module.scss";
 
 function TransactionForm() {
   // const [name, setName] = useState('');
@@ -22,53 +24,80 @@ function TransactionForm() {
   //   }
   // };
 
-  const handleSubmit = e => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     // const newContact = { name, number};
     // dispatch(addNewContact(newContact));
     // resetFormInputs();
   };
 
-  // const resetFormInputs = () => {
-  //   setName('');
-  //   setNumber('');
-  // };
+  const resetFormInputs = () => {
+    console.log("clear button click");
+  };
 
   return (
     <>
-      <form className={styles.form} onSubmit={handleSubmit}>
-        
-        <input className="input" type="date" name="date" required placeholder='' />    {/* сделать отдельным компоненстом */}
-      <div>
-        <input className="input" type="text" name="" required placeholder='Описание'/>
-        <div>
-            <input className={`input `} type="select" name="date" placeholder='Категория товара' /> { /* должно быть выпадающим списком*/}
-            <ul className={styles.categoryList}>
+      <form className={styles.transactionForm} onSubmit={handleSubmit}>
+        <DatePickerForm />
+        {/* <input
+          className="input"
+          type="date"
+          name="date"
+          required
+          placeholder=""
+        /> */}
 
-            </ul>            
-             {/* <label class="label-country" for="custom-select">
+        <div>
+          <input
+            className={`${styles.transactionInput} ${styles.descriptionInput}`}
+            type="text"
+            name="description"
+            required
+            placeholder="Описание"
+          />
+          <div className={styles.categoryContainer}>
+            <input
+              className={`${styles.transactionInput} ${styles.productCategoryInput}`}
+              type="select"
+              name="productCategory"
+              placeholder="Категория товара"
+            />
+            {/* должно быть выпадающим списком*/}
+            <ul className={styles.productCategoryList}></ul>
+            {/* <label class="label-country" for="custom-select">
           <input class="input input-country" type="text" id="country-choice" placeholder="Choose country" autocomplete="off">
           <div class="input-triangle"></div>
         <ul class="datalist-country hidden-list" id="datalist-country"> 
         </ul>
         </label> */}
+          </div>
+          <div className={styles.productSumContainer}>
+            <input
+              className={styles.productSumInput}
+              type="number"
+              name="productSum"
+              required
+              // placeholder=""
+              />
+            <label className={styles.productSumLabel} htmlFor="productSum">  UAH         </label>
+            <span className={styles.productSumIcon}>
+              <BiCalculator />
+            </span>
+          </div>
         </div>
-        <input className="input" type="number" name="date" required placeholder=''/>
-      </div>
-        
-        <div>
-        <button className="button" type="submit">
-          Add
+        <div className={styles.formButtonsContainer}>
+          <Button type={"submit"} title={"Add"} />
+          <Button type={"button"} title={"Add"} handleClick={resetFormInputs} />
+          {/* <button className="button" type="submit">
+            Add
           </button>
           <button className="button" type="button">
-          Clear
-          </button>
-          </div>
+            Clear
+          </button> */}
+        </div>
       </form>
 
-      
-        
-        {/* <label>
+      {/* <label>
           <p>Name</p>
           <input
             className="input"
@@ -100,4 +129,3 @@ function TransactionForm() {
   );
 }
 export default TransactionForm;
-

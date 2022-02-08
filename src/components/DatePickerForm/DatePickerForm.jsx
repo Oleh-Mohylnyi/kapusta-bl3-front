@@ -11,7 +11,7 @@ const DatePickerForm = ({ piker }) => {
   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
     <div className={s.input} onClick={onClick} ref={ref}>
       <div className={s.wrapperSvg}>
-        <svg
+        {/* <svg
           width="20"
           height="20"
                     xmlns=""
@@ -24,7 +24,7 @@ const DatePickerForm = ({ piker }) => {
             
             
           />
-        </svg>
+        </svg> */}
       </div>
       {value}
     </div>
@@ -32,7 +32,7 @@ const DatePickerForm = ({ piker }) => {
 
   return (
     <>
-      <div className={s.wrraper}>
+      <div className={s.wrapper}>
         {piker && (
           <ReactDatePicker
             selected={piker}
