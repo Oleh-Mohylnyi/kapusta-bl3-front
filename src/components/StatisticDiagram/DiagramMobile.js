@@ -63,10 +63,8 @@ const DiagramMobile = ({ sortedData }) => {
           axisLine={false}
           tickLine={false}
           orientation="left"
-          tick={renderCustomAxisTick}
-         
-        />
-
+          tick={renderCustomAxisTick} 
+        /> 
         <Bar
           label={renderCustomBarLabel}
           dataKey="uv"

@@ -24,8 +24,15 @@ const data = [
   { name: "Хлеб", uv: 50, id: 9 },
 ];
 //label
+const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {  
+ 
+  return <text x={x} y={y} fill="#52555f" fontSize={12} textAnchor="top" dy={-10}>{`${value} грн`}</text>;
+};
 
-// // получаю sortedData
+const renderCustomAxisTick = ({ x, y, payload }) => {
+  return <text x={x} y={y} fill="#52555f" fontSize={12} textAnchor="middle"dy={5} angle={25} >{`${payload.value}`}</text>
+}
+
 const DiagramTablet = ({ sortedData }) => {
   return (
     <ResponsiveContainer
@@ -50,13 +57,13 @@ const DiagramTablet = ({ sortedData }) => {
           dataKey="name"
           axisLine={false}
           tickLine={false}
+          tick={renderCustomAxisTick}
+          minTickGap={0}
         />
         <Bar
           dataKey="uv"
           id="id"
-          label={{            
-            position: "top",
-          }}
+          label={renderCustomBarLabel}
           radius={[10, 10, 0, 0]}
         >
           {data.map((el) => {
