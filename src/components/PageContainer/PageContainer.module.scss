@@ -1,21 +1,21 @@
 .container {
   z-index: -2;
 
-  position: relative;
+  // position: relative; //перенес в appContainer
 
-  display: flex;
-  flex-direction: column;
-
+  // display: flex; //перенес в appContainer
+  // flex-direction: column; //перенес в appContainer
+  // pointer-events: none;
   // width: 100%;
-  min-width: 320px;
-  width: 320px;
-  margin: 0 auto;
-  padding: 0 10px;
+  // min-width: 320px; //перенес в appContainer
+  // width: 320px; //перенес в appContainer
+  // margin: 0 auto; //перенес в appContainer
+  // padding: 0 10px; //перенес в appContainer
   // border: none;
   // border: rgb(211, 170, 121) 1px dotted;
   // height: 100vh;
-  text-align: center;
-  // overflow: hidden;
+  // text-align: center; //перенес в appContainer
+  // overflow: hidden; //перенес в appContainer
   background-position: left top;
   background-size: contain;
   background-repeat: no-repeat;
@@ -29,8 +29,8 @@
   }
   @media screen and (min-width: 768px) {
     background-image: url(../../images/background/rectangle/tablet-bg@1x.png);
-    padding: 0 52px;
-    width: 768px;
+    // padding: 0 52px; //перенес в appContainer
+    // width: 768px; //перенес в appContainer
     min-height: 582px;
     @media (min-device-pixel-ratio: 2),
       (-webkit-min-device-pixel-ratio: 2),
@@ -41,8 +41,8 @@
   }
   @media screen and (min-width: 1280px) {
     background-image: url(../../images/background/rectangle/desktop-bg@1x.png);
-    padding: 0 110px;
-    width: 1280px;
+    // padding: 0 110px;
+    // width: 1280px; //перенес в appContainer
     // flex-direction: row;
     // overflow: visible;
     @media (min-device-pixel-ratio: 2),

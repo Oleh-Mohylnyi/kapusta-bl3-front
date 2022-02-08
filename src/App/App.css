@@ -10,28 +10,41 @@ body {
   outline: #ff751d;
 }
 
-.app {
+.appContainer {
   text-align: center;
-  /* margin-left: auto;
-  margin-right: auto;
-  min-width: 320px; */
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+
+  min-height: 100vh;
+  min-width: 320px;
+  width: 320px;
+  margin: 0 auto;
+  padding: 0 10px;
+
+  /*border: rgb(211, 170, 121) 1px dotted; /* можно использовать  во время разработки, чтобы увидеть размер контейнера*/
+
+  overflow: hidden;
 }
 
 /* @media screen and (min-width: 320px) {
-  body {
+  .app {
     width: 320px;
   } */
 /* } */
-/* @media screen and (min-width: 768px) {
-  .app {
+@media screen and (min-width: 768px) {
+  .appContainer {
+    padding: 0 52px;
     width: 768px;
   }
 }
 @media screen and (min-width: 1280px) {
-  app {
+  .appContainer {
     width: 1280px;
+    padding: 0 110px;
   }
-} */
+}
 
 .hidden {
   position: absolute;

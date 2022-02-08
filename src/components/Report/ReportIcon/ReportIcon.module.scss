@@ -1,6 +1,6 @@
 .icon {
-  // width: 56px;
-  // height: 56px;
+  width: 56px;
+  height: 56px;
   margin-top: 5px;
   margin-bottom: 5px;
   background-image: url("../../../images/background/rectangle.svg");
@@ -10,7 +10,7 @@
   &:hover,
   &:focus,
   &:active {
-    stroke: #ff751d;
+    fill: #ff751d;
     background-image: url("../../../images/background/rectangle_active.svg");
   }
 }

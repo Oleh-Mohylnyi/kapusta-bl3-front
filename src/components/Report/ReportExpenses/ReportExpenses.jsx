@@ -1,8 +1,7 @@
 import { NavLink } from "react-router-dom";
 import ReportList from "../ReportList/ReportList";
-import ReportIcon from "../ReportIcon/ReportIcon";
 import type from "../ReportList/expenses.json";
-import s from "./ReportExpenses.scss";
+import s from "./ReportExpenses.module.scss";
 
 export default function ReportExpenses() {
   const typesExpenses = type;
@@ -12,16 +11,16 @@ export default function ReportExpenses() {
       <div className={s.tab}>
         <NavLink
           to="/statistics/income"
-          className={(navData) => (navData.isActive ? s.activeLink : s.link)}
+          // className={(navData) => (navData.isActive ? s.activeLink : s.link)}
         >
-          <ReportIcon name="arrow-left" size="10" />
+          <button className={s.btn_left}></button>
         </NavLink>
         <h2 className={s.title}>Расходы</h2>
         <NavLink
           to="/statistics/income"
-          className={(navData) => (navData.isActive ? s.activeLink : s.link)}
+          // className={(navData) => (navData.isActive ? s.activeLink : s.link)}
         >
-          <ReportIcon name="arrow-right" size="10" />
+          <button className={s.btn_right}></button>
         </NavLink>
       </div>
 
