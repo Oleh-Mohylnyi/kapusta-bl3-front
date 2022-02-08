@@ -1,4 +1,4 @@
-import Registration from "../../components/Registration/Registration";
+import Registration from "../../components/Registration";
 import BackgroundImages from "../../components/BackgroundLayouts/PublicPageBg";
 import PageContainer from "../../components/PageContainer";
 import Title from "../../components/Title";
