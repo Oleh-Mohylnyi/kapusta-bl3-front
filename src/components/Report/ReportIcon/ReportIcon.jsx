@@ -1,9 +1,9 @@
 import icons from "../../../images/sprite.svg";
 import s from "./ReportIcon.module.scss";
 
-export default function ReportIcon({ name, color, size }) {
+export default function ReportIcon({ name }) {
   return (
-    <svg className={s.icon} fill={color} width={size} height={size}>
+    <svg className={s.icon}>
       <use href={`${icons}#icon-${name}`}></use>
     </svg>
   );
