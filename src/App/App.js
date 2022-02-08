@@ -1,29 +1,40 @@
-
-import React from 'react';
-import './App.css';
+import React from "react";
+import "./App.css";
 import Loader from "react-loader-spinner";
-import { Route, Routes } from 'react-router-dom';
+import { Route, Routes } from "react-router-dom";
 import { PrivateRoute } from "../routes/PrivateRoute";
 import { PublicRoute } from "../routes/PublicRoute";
-import { useDispatch, useSelector } from 'react-redux';
-import {currentUser} from '../redux/auth/operations'
-import { useEffect } from 'react';
-import { lazy, Suspense } from 'react';
-import { getIsAuth } from '../redux/auth/selectors';
-import { getToken } from '../redux/auth/selectors';
-import { getIsFetchingCurrent } from '../redux/auth/selectors';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import { Navigation } from '../components/Navigation/Navigation';
-const Header = lazy(() => import('../components/Header/Header' /* webpackChunkName: "header-view" */));
-const HomeView = lazy(() => import('../views/HomeView/HomeView' /* webpackChunkName: "home-view" */));
 
-const MainView = lazy(() => import('../views/MainView/MainView' /* webpackChunkName: "contacts-view" */));
-const StatisticsView = lazy(() => import('../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */));
+import { useDispatch, useSelector } from "react-redux";
+import { currentUser } from "../redux/auth/operations";
+import { useEffect } from "react";
+import { lazy, Suspense } from "react";
+import { getIsAuth } from "../redux/auth/selectors";
+import { getToken } from "../redux/auth/selectors";
+import { getIsFetchingCurrent } from "../redux/auth/selectors";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Navigation } from "../components/Navigation/Navigation";
+import ReportIncome from "../components/Report/ReportIncome/ReportIncome";
+import ReportExpenses from "../components/Report/ReportExpenses/ReportExpenses";
+
+const Header = lazy(() =>
+  import("../components/Header/Header" /* webpackChunkName: "header-view" */)
+);
+const HomeView = lazy(() =>
+  import("../views/HomeView/HomeView" /* webpackChunkName: "home-view" */)
+);
+
+const MainView = lazy(() =>
+  import("../views/MainView/MainView" /* webpackChunkName: "contacts-view" */)
+);
+const StatisticsView = lazy(() =>
+  import(
+    "../views/StatisticsView/StatisticsView" /* webpackChunkName: "login-view" */
+  )
+);
 
 function App() {
-
-  
   const dispatch = useDispatch();
   const isAuth = useSelector(getIsAuth);
   const token = useSelector(getToken);
@@ -32,28 +43,56 @@ function App() {
     token && dispatch(currentUser());
     // eslint-disable-next-line
   }, [dispatch]);
-  
-   
+
   return (
     <div className="app">
-      <Navigation/>
-        <Suspense fallback={ <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />}>
-            <Header isAuth={isAuth}/>
-        {(isFetchingCurrent)
-          ? <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
-          : <Routes>
-              <Route path="/" element={<PublicRoute isAuth={isAuth} component={HomeView} />} />
-              <Route path="/main" element={<PrivateRoute isAuth={isAuth} component={MainView} />} />
-              <Route path="/statistics" element={<PrivateRoute isAuth={isAuth} component={StatisticsView} />} />
-          </Routes>}
-
+      <Navigation />
+      <Suspense
+        fallback={
+          <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
+        }
+      >
+        <Header isAuth={isAuth} />
+        {isFetchingCurrent ? (
+          <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
+        ) : (
+          <Routes>
+            <Route
+              path="/"
+              element={<PublicRoute isAuth={isAuth} component={HomeView} />}
+            />
+            {/* <Route
+              path="/main"
+              element={<PublicRoute isAuth={isAuth} component={MainView} />}
+            />
+            <Route
+              path="statistics"
+              element={
+                <PublicRoute isAuth={isAuth} component={StatisticsView} />
+              }
+            >
+              <Route path="income" element={<ReportIncome />} />
+              <Route path="expenses" element={<ReportExpenses />} />
+            </Route> */}
+              <Route
+              path="/main"
+              element={<PrivateRoute isAuth={isAuth} component={MainView} />}
+            />
+            <Route
+              path="statistics"
+              element={
+                <PrivateRoute isAuth={isAuth} component={StatisticsView} />
+              }
+            >
+              <Route path="income" element={<ReportIncome />} />
+              <Route path="expenses" element={<ReportExpenses />} />
+            </Route>
+          </Routes>
+        )}
       </Suspense>
-      
       <ToastContainer autoClose={3000} />
-      
-
-      </div>
-    );
+    </div>
+  );
 }
 
 export default App;

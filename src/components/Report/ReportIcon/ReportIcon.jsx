@@ -1,5 +1,5 @@
 import icons from "../../../images/sprite.svg";
-import s from "./ReportIcon.module.css";
+import s from "./ReportIcon.module.scss";
 
 export default function ReportIcon({ name }) {
   return (

@@ -1,0 +1,4 @@
+[
+  { "id": "1", "type": "ЗП", "icon": "salary", "sum": 10000 },
+  { "id": "2", "type": "Доп.доход", "icon": "other-incoms", "sum": 5000 }
+]
