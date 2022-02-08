@@ -45,7 +45,7 @@ function App() {
   }, [dispatch]);
 
   return (
-    <div className="app">
+    <div className="appContainer">
       <Navigation />
       <Suspense
         fallback={
