@@ -17,13 +17,13 @@ body {
   display: flex;
   flex-direction: column;
 
-  min-height: 100vh;
+  min-height: 200vh;
   min-width: 320px;
   width: 320px;
   margin: 0 auto;
   padding: 0 10px;
 
-  /*border: rgb(211, 170, 121) 1px dotted; /* можно использовать  во время разработки, чтобы увидеть размер контейнера*/
+  border: rgb(211, 170, 121) 1px dotted; /* можно использовать  во время разработки, чтобы увидеть размер контейнера*/
 
   overflow: hidden;
 }

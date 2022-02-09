@@ -1,4 +1,7 @@
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
+// import SectionTransactions from "../../components/SectionTransactions";
+// import TableData from "./../../components/SectionTransactions/TableData/TableData";
+// import Summary from "./../../components/Summary/Summary";
 import ComposeSection from "../../components/SectionTransactions/ComposeSection";
 import BalanceNavigation from "../../components/Navigation/BalanceNavigation/BalanceNavigation";
 import TransactionsNav from "../../components/SectionTransactions/TransactionsNav";
@@ -6,7 +9,10 @@ import TransactionsNav from "../../components/SectionTransactions/TransactionsNa
 export default function MainView() {
   return (
     <>
-      <BackgroundImages />
+      <BackgroundImages />      
+      {/* <SectionTransactions /> */} {/* УДАЛИТЬ?? */}      
+      {/* <TableData /> */} {/* УДАЛИТЬ?? */}
+      {/* <Summary /> */} {/* УДАЛИТЬ?? */}
       <BalanceNavigation/>
       <TransactionsNav />
       <ComposeSection />
