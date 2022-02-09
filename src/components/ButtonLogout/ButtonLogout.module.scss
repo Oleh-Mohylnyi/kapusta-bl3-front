@@ -1,18 +1,18 @@
-.button {
-  background-color: Transparent;
-  background-repeat: no-repeat;
-  border: none;
-  cursor: pointer;
-  overflow: hidden;
-  text-decoration: underline;
+// .button {
+//   background-color: Transparent;
+//   background-repeat: no-repeat;
+//   border: none;
+//   cursor: pointer;
+//   overflow: hidden;
+//   text-decoration: underline;
 
-  &:hover {
-    color: #ff751d;
-  }
-}
+//   &:hover {
+//     color: #ff751d;
+//   }
+// }
 
-@media screen and (max-width: 767px) {
-  .button {
-    display: none;
-  }
-}
+// @media screen and (max-width: 767px) {
+//   .button {
+//     display: none;
+//   }
+// }

@@ -26,14 +26,52 @@
   color: #e0e5eb;
 }
 
+.text {
+  margin-bottom: 20px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 16px;
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: #52555f;
+}
+
+.button {
+  background-color: Transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  text-decoration: underline;
+
+  &:hover {
+    color: #ff751d;
+  }
+}
+
 @media screen and (max-width: 767px) {
+  .icon {
+    fill: #c7ccdc;
+  }
+  .icon:hover {
+    fill: #ff751d;
+  }
   .personalInf {
     margin: 0;
     padding: 0;
   }
-
+  .button,
   .vector,
   .name {
+    display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .icon_container {
     display: none;
   }
 }
