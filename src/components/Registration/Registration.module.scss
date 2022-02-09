@@ -1,4 +1,5 @@
 @import "../../css/variables.css";
+
 .form {
   position: absolute;
   display: flex;
@@ -7,9 +8,10 @@
   top: 255px;
   width: 300px;
   height: 525px;
-  // margin: 0 auto;
+  // margin-top: 255px;
   left: 0; right: 0;
   margin-left: auto; 
+
   margin-right: auto;
   padding: 40px 0 53px;
   border-radius: 30px;
@@ -66,7 +68,7 @@
   font-size: 10px;
   font-weight: 400;
   line-height: 12px;
-  color: var(--title-color)
+  color: var(--title-color);
 }
 
 .input {
@@ -77,7 +79,7 @@
   border: none;
   border-radius: 30px;
   background-color: var(--bg-color-input);
-  outline:none;
+  outline: none;
 }
 
 .containerButton {
@@ -104,10 +106,11 @@
   filter: var(--button-shadow);
   cursor: pointer;
 
-  &:focus,&:hover {
+  &:focus,
+  &:hover {
     background-color: var(--accent-color);
     color: var(--bg-color);
-    outline:none;
+    outline: none;
     filter: var(--button-shadow-accent);
     transition: 0.1s linear;
   }

@@ -115,7 +115,7 @@ export default function Registration() {
 
         <label className={s.formLabel}>
           <p className={s.label}>
-            {passwordDirty && passwordError  && (
+            {passwordDirty && passwordError && (
               <span style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
                 {errorSymbol}{' '}
               </span>
@@ -135,10 +135,10 @@ export default function Registration() {
             required
           />
           {passwordDirty && passwordError && (
-              <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
-                {passwordError}{' '}
-              </div>
-            )}
+            <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
+              {passwordError}{' '}
+            </div>
+          )}
         </label>
 
         <div className={s.containerButton}>

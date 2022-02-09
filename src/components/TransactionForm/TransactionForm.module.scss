@@ -1,0 +1,378 @@
+@import "../../css/variables.css";
+
+.transactionForm {
+  margin: 15px auto 0;
+  // margin: 100px auto 0; //для тестирования оставляю
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  //background-color: var(--bg-color); //взамен фонового изображения
+
+  @media screen and (min-width: 768px) {
+    // margin-top: 28px;
+    //background-color: lavender; ////для тестирования оставляю
+    //border: 1px solid orange;//для тестирования оставляю
+    width: 604px;
+    justify-content: space-between;
+    padding: 10px 0;
+    @media screen and (min-width: 1280px) {
+      margin-top: 33px;
+      width: 1020px;
+      flex-direction: row;
+    }
+  }
+}
+
+.transactionInputsContainer {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+  }
+}
+
+.transactionInput {
+  display: block;
+  background-color: transparent;
+  border: 2px solid #ffffff;
+  width: 282px;
+  padding: 13px 0 13px 20px;
+
+  font-family: var(--font-family); //вероятно перенести в общак?
+  font-style: normal; //вероятно перенести в общак?
+  font-weight: 400; //вероятно перенести в общак?
+  font-size: 12px; //вероятно перенести в общак?
+  line-height: 1.167; //вероятно перенести в общак?
+  color: var(--additional-text-color);
+  letter-spacing: 0.02em; //вероятно перенести в общак?
+
+  &:active,
+  &:focus {
+    outline: 0;
+    outline-offset: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    border: 2px solid var(--bg-color);
+  }
+}
+
+.productDescriptionInput {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  @media screen and (min-width: 768px) {
+    width: 192px;
+    border-top-right-radius: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 289px;
+  }
+}
+
+.productCategoryInput {
+  border-top: none;
+  border-bottom-right-radius: 16px;
+  @media screen and (min-width: 768px) {
+    border-top: 2px solid var(--bg-color);
+    border-bottom-right-radius: 0;
+    border-left: none;
+    width: 171px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 188px;
+  }
+}
+
+.productCategoryContainer {
+  position: relative;
+  @media screen and (min-width: 768px) {
+  }
+}
+
+// -----!!!иконка "выпадашки"!!!-------//
+// {
+//   position: absolute;
+//   width: 4px;
+//   height: 10px;
+
+//   border: 2px solid #c7ccdc;
+//   transform: rotate(-90deg);
+//   -top: 20px;
+//   -bottom: 20px;
+//   -right: 22px;
+// }
+// }
+
+.productSumContainer {
+  position: relative;
+  margin-top: 30px;
+
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: center;
+
+  width: 183px;
+
+  @media screen and (min-width: 768px) {
+    width: 104px;
+    margin-top: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 124px;
+  }
+}
+
+// input 'сумма'{
+// height: 44px;
+// pt, pb: 12px
+// pl: 3px
+// pr:17px
+// border: 2px solid #FFFFFF;
+// border-radius: 22px 0px 0px 22px;
+// текст {
+//   width: 105px;
+//   height: 20px;
+
+// }
+
+// }
+.productSumInput {
+  position: relative;
+
+  width: 125px;
+  background-color: transparent;
+  padding: 13px 45px 13px 0;
+  border: 2px solid #ffffff;
+  border-radius: 22px 0px 0px 22px;
+
+  font-family: var(--font-family); //вероятно перенести в общак?
+  font-style: normal; //вероятно перенести в общак?
+  font-weight: 700;
+  font-size: 12px; //вероятно перенести в общак?
+  line-height: 1.167; //вероятно перенести в общак?
+  text-align: right;
+  letter-spacing: 0.02em; //вероятно перенести в общак?
+
+  &:active,
+  &:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    border-color: var(--bg-color);
+    font-weight: 400;
+    color: var(--additional-text-color);
+    border-radius: 0;
+    width: 70px;
+    padding-right: 10px;
+    border-left: none;
+    border-right: none;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-right: 6px;
+    width: 80px;
+  }
+}
+
+.productSumLabel {
+  position: absolute;
+  top: 15px;
+  right: 75px;
+
+  font-family: var(--font-family); //вероятно перенести в общак?
+  font-style: normal; //вероятно перенести в общак?
+  font-weight: bold;
+  font-size: 12px; //вероятно перенести в общак?
+  line-height: 1.167; //вероятно перенести в общак?
+  letter-spacing: 0.02em; //вероятно перенести в общак?
+  text-transform: uppercase;
+
+  color: var(--title-color);
+}
+
+// блок "калькулятор"{
+
+// transform: matrix(-1, 0, 0, 1, 0, 0);
+// иконка "калькулятора"{
+// https://react-icons.github.io/react-icons
+// npm install react-icons --save
+//BiCalculator//RiCalculatorLine
+// width: 20px;
+// height: 20px;
+// }
+
+.productSumIcon {
+  display: inline-block;
+  height: 44px;
+  text-align: center;
+  padding: 8px 19px;
+  border: 2px solid #ffffff;
+  border-left: none;
+  border-radius: 0px 22px 22px 0px;
+  @media screen and (min-width: 768px) {
+    border: 2px solid var(--bg-color);
+    border-radius: 0px 16px 16px 0px;
+    border-left: none;
+    padding: 8px 8px 8px 4px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 8px 18px 8px 4px;
+  }
+}
+
+// блок кнопок
+.formButtonsContainer {
+  display: inline-flex;
+  justify-content: space-between;
+
+  margin-top: 83px;
+  width: 265px;
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 0;
+  }
+}
+
+//   button {
+//     pt, pb: 12px
+//     pl, pr: 34px/25px //по заполнению (проверить?)
+//     text {
+//       width: 57px/75px;
+//       height: 20px;
+
+//       font-family: Roboto;
+//       font-style: normal;
+//       font-weight: bold;
+//       font-size: 12px;
+//       line-height: 14px;
+//       display: flex;
+//       align-items: center;
+//       text-align: center;
+//       letter-spacing: 0.02em;
+//       text-transform: uppercase;
+
+//       color: #ffffff;
+//     }
+//   }
+//   active {
+//     position: absolute;
+//     width: 125px;
+//     height: 44px;
+//     left: 27px;
+//     top: 353px;
+
+//     background: #ff751d;
+//     border-radius: 16px;
+//   }
+//   static {
+//     position: absolute;
+//     width: 125px;
+//     height: 44px;
+//     left: 167px;
+//     top: 353px;
+
+//     background: #f5f6fb;
+//     box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
+//     border-radius: 16px;
+//   }
+// }
+
+// -----------
+
+// .form p {
+//   margin-bottom: 5px;
+// }
+
+// .form button {
+//   display: block;
+//   margin: 10px auto 0;
+// }
+
+// .hidden-list {
+//   display: none;
+// }
+
+// .label-country {
+//   position: relative;
+//   display: inline;
+// }
+
+// .datalist-country {
+//   position: absolute;
+//   z-index: 110;
+//   max-height: 170px;
+//   width: 270px;
+//   overflow: auto;
+//   background-color: var(--form-input-background);
+//   backdrop-filter: blur(20px);
+//   cursor: pointer;
+
+//   font-family: Montserrat;
+//   font-style: normal;
+//   font-weight: normal;
+//   font-size: 16px;
+//   line-height: 1.25;
+//   color: var(--form-imput-text-active);
+//   text-align: left;
+//   vertical-align: top;
+//   // :hover,
+//   :focus {
+//     background-color: var(--form-imput-bgc-active);
+//   }
+
+//   &::after {
+//     content: "";
+//     background-image: url(./../images/line.svg);
+//     background-repeat: no-repeat;
+//     position: absolute;
+//     width: 226px;
+//     height: 1px;
+//     left: 22px;
+//     top: 1px;
+//   }
+//   border-radius: 0 0 20px 20px;
+
+//   li {
+//     padding-left: 30px;
+//     padding-top: 2px;
+//     outline: none;
+//   }
+//   :first-child {
+//     margin-top: 6px;
+//   }
+// }
+
+// .datalist-item:hover {
+//   background-color: var(--form-imput-bgc-active);
+// }
+
+// .input-country {
+//   // & :hover,
+//   &:focus {
+//     border-radius: 20px 20px 0 0;
+//   }
+// }
+
+// .datalist-country::-webkit-scrollbar {
+//   width: 11px;
+//   background-color: transparent;
+// }
+
+// .datalist-country::-webkit-scrollbar-thumb {
+//   border-radius: 11px;
+//   height: 43px;
+//   background-color: var(--form-input-text);
+//   background-clip: content-box;
+//   border: 3px solid transparent;
+// }
+
+// .datalist-country::-webkit-scrollbar-track {
+//   border-radius: 11px;
+//   height: 43px;
+//   background-color: transparent;
+// }

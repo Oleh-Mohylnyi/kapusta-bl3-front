@@ -40,7 +40,6 @@ export default function Modal({ onClose, onLogout, children }) {
           <button className={s.confirmButton} onClick={onLogout}>
             Да
           </button>
-
           <button className={s.declineButton} onClick={onClose}>
             Нет
           </button>

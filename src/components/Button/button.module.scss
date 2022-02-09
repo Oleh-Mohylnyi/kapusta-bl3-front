@@ -16,6 +16,7 @@
   color: var(--main-text-color);
   filter: var(--button-shadow);
   cursor: pointer;
+  text-transform: uppercase;
 
   &:hover,
   :focus {

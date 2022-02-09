@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Loader from "react-loader-spinner";
 import { Route, Routes } from "react-router-dom";
-import { PrivateRoute } from "../routes/PrivateRoute";
+// import { PrivateRoute } from "../routes/PrivateRoute";
 import { PublicRoute } from "../routes/PublicRoute";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -15,8 +15,7 @@ import { getIsFetchingCurrent } from "../redux/auth/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navigation } from "../components/Navigation/Navigation";
-import ReportIncome from "../components/Report/ReportIncome/ReportIncome";
-import ReportExpenses from "../components/Report/ReportExpenses/ReportExpenses";
+
 
 const Header = lazy(() =>
   import("../components/Header/Header" /* webpackChunkName: "header-view" */)
@@ -61,7 +60,9 @@ function App() {
               path="/"
               element={<PublicRoute isAuth={isAuth} component={HomeView} />}
             />
-            {/* <Route
+
+              
+            <Route
               path="/main"
               element={<PublicRoute isAuth={isAuth} component={MainView} />}
             />
@@ -71,10 +72,10 @@ function App() {
                 <PublicRoute isAuth={isAuth} component={StatisticsView} />
               }
             >
-              <Route path="income" element={<ReportIncome />} />
-              <Route path="expenses" element={<ReportExpenses />} />
-            </Route> */}
-              <Route
+            </Route>
+
+              
+              {/* <Route
               path="/main"
               element={<PrivateRoute isAuth={isAuth} component={MainView} />}
             />
@@ -86,7 +87,9 @@ function App() {
             >
               <Route path="income" element={<ReportIncome />} />
               <Route path="expenses" element={<ReportExpenses />} />
-            </Route>
+            </Route> */}
+
+              
           </Routes>
         )}
       </Suspense>

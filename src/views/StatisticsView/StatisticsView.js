@@ -1,27 +1,30 @@
-import { Outlet } from "react-router-dom";
-import DiagramMobile from "../../components/StatisticDiagram/DiagramMobile";
-import DiagramTablet from "../../components/StatisticDiagram/DiagramTablet";
+// import { Outlet } from "react-router-dom";
+import Diagram from "../../components/StatisticDiagram/Diagram";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
-import ViewsContainer from "../../components/ViewsContainer/ViewsContainer";
+import Report from "../../components/Report/Report";
+import useWindowDimensions from "../../hooks/useWindowDimensions";
+
 
 export default function StatisticsView() {
-  let width = window.innerWidth;
+  const size = useWindowDimensions();
+  const { width } = size;
+  const mobile = () => {
+    if (width < 768) {
+      return true;
+    }
+    return false;
+  };
   return (
     <>
-      <ViewsContainer>
-        <TotalReport />
-         <Outlet />       
-        {width < 768 ? (
-          <DiagramMobile />
-        ) : (
-          <DiagramContainer>
-            <DiagramTablet />
-          </DiagramContainer>
-        )}
-        <BackgroundImages />
-      </ViewsContainer>
+      <TotalReport />
+      {/* <Outlet /> */}
+      <Report />
+      <DiagramContainer>
+        <Diagram mobile={mobile()}/>
+      </DiagramContainer>      
+      <BackgroundImages />
     </>
   );
 }
