@@ -7,7 +7,7 @@ import s from './BalanceNavigation.module.css';
 export default function BalanceNavigation () {
  const windowSize = useWindowDimensions();
  const desktopAndTabletView = windowSize.width >= 768;
-  const mobileView = windowSize.width < 767.98;
+//   const mobileView = windowSize.width < 767.98;
 
    return (
       
