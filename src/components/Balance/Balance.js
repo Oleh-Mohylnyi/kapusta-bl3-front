@@ -1,4 +1,4 @@
-import {React, useState} from 'react';
+import {React} from 'react';
 // import { useSelector, useDispatch } from "react-redux";
 import Bubble from '../Bubble/Bubble';
 import s from './Balance.module.css';
