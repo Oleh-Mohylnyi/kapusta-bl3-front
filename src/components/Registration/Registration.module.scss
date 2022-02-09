@@ -1,4 +1,5 @@
 @import "../../css/variables.css";
+
 .form {
   position: absolute;
   display: flex;
@@ -7,10 +8,10 @@
   top: 255px;
   width: 300px;
   height: 525px;
-  // margin: 0 auto;
-  left: 0;
-  right: 0;
-  margin-left: auto;
+  // margin-top: 255px;
+  left: 0; right: 0;
+  margin-left: auto; 
+
   margin-right: auto;
   padding: 40px 0 53px;
   border-radius: 30px;
