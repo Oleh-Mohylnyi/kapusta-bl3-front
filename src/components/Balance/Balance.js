@@ -1,4 +1,5 @@
-import React from 'react';
+import {React} from 'react';
+// import { useSelector, useDispatch } from "react-redux";
 import Bubble from '../Bubble/Bubble';
 import s from './Balance.module.css';
 
@@ -7,12 +8,16 @@ import s from './Balance.module.css';
 export default function Balance (){
     
     // const balance = 0;
+    // const [balance, setBalance] = useState("");
+    // const dispatch = useDispatch();
     
     const inputChange = (e) => { 
-    }
+        // setBalance(e.target.value);
+    };
 
     const handleSubmit = (e) => {
-        
+        // e.preventDefault();
+        // dispatch(operations.addBalance({ balance }));
     }
 
     // const initialZeroBalance = balance === 0;
