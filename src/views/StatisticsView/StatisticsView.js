@@ -1,11 +1,9 @@
 import { Outlet } from "react-router-dom";
-import DiagramMobile from "../../components/StatisticDiagram/DiagramMobile";
-import DiagramTablet from "../../components/StatisticDiagram/DiagramTablet";
+import Diagram from "../../components/StatisticDiagram/Diagram";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-
 
 export default function StatisticsView() {
 
@@ -17,18 +15,13 @@ export default function StatisticsView() {
     }
     return false;
   };
-  console.log(mobile());
   return (
     <>
       <TotalReport />
       <Outlet />
-      {mobile() ? (
-        <DiagramMobile />
-      ) : (
-        <DiagramContainer>
-          <DiagramTablet />
-        </DiagramContainer>
-      )}
+      <DiagramContainer>
+        <Diagram mobile={mobile()}/>
+      </DiagramContainer>      
       <BackgroundImages />
     </>
   );

@@ -51,42 +51,73 @@ const customLabelListNameMobile = ({ payload, x, y, width, height, value }) => {
   );
 };
 
-const DiagramMobile = ({ isMobile, sortedData }) => {
+
+const customBarLabelPrice = ({ payload, x, y, width, height, value }) => {  
+ 
+  return <text x={x} y={y} fill="#52555f" fontSize={12} textAnchor="top" dy={-10}>{`${value} грн`}</text>;
+};
+
+const customLabelListName = ({ payload, x, y, width, height, value }) => {
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="#52555f"
+      fontSize={12}
+      textAnchor="middle"
+      dx={+width/2}
+      dy={height+20}
+    >{`${value}`}</text>
+  );
+};
+const Diagram = ({ mobile, sortedData }) => {
   return (
     <ResponsiveContainer
       width="100%"
       hight="100%"
-      minWidth={282}
-      minHeight={480}
+      minWidth={mobile?282:605}
+      minHeight={mobile?480:380}
     >
       <BarChart
-        width={282}
-        hide={480}
+        width={mobile?282:605}
+        hide={mobile?480:380}
         margin={{ top: 0, right: 0, bottom: 30, left: 0 }}
         data={data}
-        layout="vertical"
-        barSize={15}
+        layout={mobile?"vertical":"horizontal"}
+        barSize={mobile?15:38}
       >
-        <CartesianGrid vertical={false} horizontal={false} />
-
-        <XAxis hide={true} type="number" dataKey="uv" axisLine={false} />
-
+        <CartesianGrid
+          vertical={false}
+          horizontal={mobile ? false : true} />
         <YAxis
           hide={true}
-          type="category"
-          dataKey="name"
+          type={mobile?"category":"number"}
+          dataKey={mobile?"name":"uv"}
           axisLine={false}
           tickLine={false}
-           orientation="left"
+          tickCount={9}
+          orientation={"left"}
+        />
+
+        <XAxis
+          hide={true}
+          type={mobile?"number":"category"}
+          dataKey={mobile?"uv":"name"}
+          axisLine={false}
+          tickLine={false}
+          minTickGap={0}
+          padding={{ top: 20, bottom: 20 }}
         />
         <Bar
-          label={customBarLabelPriceMobile}
+          label={mobile?customBarLabelPriceMobile:customBarLabelPrice}
           dataKey="uv"
-          radius={[0, 10, 10, 0]}
-          minPointSize={50}
+          radius={mobile?[0, 10, 10, 0]:[10, 10, 0, 0]}
+          minPointSize={mobile?50:20}
           maxBarSize="100%"
         >
-          <LabelList dataKey="name" content={customLabelListNameMobile} />          
+          <LabelList
+            dataKey="name"
+            content={mobile?customLabelListNameMobile:customLabelListName} />          
           {data.map((el, index) => {
             return (
               <Cell
@@ -105,4 +136,4 @@ const DiagramMobile = ({ isMobile, sortedData }) => {
   );
 };
 
-export default DiagramMobile;
+export default Diagram;
