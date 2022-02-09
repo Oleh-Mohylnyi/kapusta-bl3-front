@@ -13,7 +13,6 @@ export const register = createAsyncThunk(
       if (isSendEmailVerify) {
         toast('Проверьте свой email')
       } else {
-        console.log('Еще раз пройдите регистрацию');
         toast('Еще раз пройдите регистрацию')
       }
       return result
@@ -51,7 +50,7 @@ export const login = createAsyncThunk(
       return result
     } catch (error) {
       //   Notify.error('Incorrect email or password');
-      toast('Некорректный email or password')
+      toast('Выполните регистрацию или проверьте свою почту')
       return rejectWithValue(error.message)
     }
   },

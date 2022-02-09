@@ -1,24 +1,28 @@
-.button{
-    display: block;
-    width: 125px;
-    height: 44px;
-    border: none;
-    border-radius: 16px;
-    padding-top: 12px;
-    padding-bottom: 12px;
-    border: none;
-    border-radius: 16px;
-    font-size: 12px;
-    font-weight: 700;
-    background-color: #f6f7fb;
-    color: #52555f;
-    filter: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
-    cursor: pointer;
+@import "../../css/variables.css";
 
-    &:hover {
-        background-color: #ff751d;
-        color: #fff;
-        filter: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
-        transition: 0.1s linear;
-      }
+.button {
+  display: block;
+  width: 125px;
+  height: 44px;
+  border: none;
+  border-radius: 16px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  border: none;
+  border-radius: 16px;
+  font-size: 12px;
+  font-weight: 700;
+  background-color: var(--bg-color);
+  color: var(--main-text-color);
+  filter: var(--button-shadow);
+  cursor: pointer;
+  text-transform: uppercase;
+
+  &:hover,
+  :focus {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    filter: var(--button-shadow-accent);
+    transition: 0.1s linear;
+  }
 }

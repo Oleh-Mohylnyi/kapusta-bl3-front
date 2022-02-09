@@ -6,6 +6,7 @@ import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 
+
 export default function StatisticsView() {
 
   const size = useWindowDimensions();

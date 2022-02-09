@@ -11,12 +11,15 @@
   --bg-color: #f5f6fb;
   --section-bg-color: #ffffff;
   --border-color: #e0e5eb;
+  --bg-color-input: #f6f7fb;
 
   --costs-text-color: #e53935;
   --incomes-text-color: #407946;
 
   --box-shadow-mobile: 5px 10px 20px 0px #aab2c566;
   --box-shadow-tablet-desktop: 0px 10px 60px 0px #aab2c533;
+  --button-shadow: drop-shadow(1px 3px 5px rgba(82, 85, 95, 0.15));
+  --button-shadow-accent: drop-shadow(1px 3px 5px rgba(255, 107, 8, 0.35));
 
   --font-family: "Roboto", sans-serif;
 }
