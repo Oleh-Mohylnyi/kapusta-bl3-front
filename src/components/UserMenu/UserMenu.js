@@ -1,14 +1,20 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
+
 import { logout } from "../../redux/auth/operations";
-// import { getUserName } from "../../redux/auth/selectors";
-import Button from "../ButtonLogout/ButtonLogout";
-import IconLogout from "../IconLogout/IconLogout";
+import Modal from "../Modal/Modal";
+import sprite from "../../images/sprite.svg";
 import styles from "./userMenu.module.scss";
 
 export default function UserMenu() {
+  const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
   // const name = useSelector(getUserName);
   // const avatar = useSelector(getUserAvatar);
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
 
   const handleLogout = () => {
     dispatch(logout());
@@ -21,8 +27,21 @@ export default function UserMenu() {
         <span className={styles.name}>{/*name*/}User Name</span>
         <span className={styles.vector}>|</span>
       </div>
-      <IconLogout handleClick={() => handleLogout}></IconLogout>
-      <Button title="Выйти" handleClick={() => handleLogout} type="button" />
+
+      <div className={styles.icon_container} onClick={toggleModal}>
+        <svg width="16" height="16" className={styles.icon}>
+          <use href={`${sprite}#logout-icon`}></use>
+        </svg>
+      </div>
+
+      <button type="button" className={styles.button} onClick={toggleModal}>
+        Выйти
+      </button>
+      {showModal && (
+        <Modal onClose={toggleModal} onLogout={handleLogout}>
+          <p className={styles.text}>Вы действительно хотите выйти?</p>
+        </Modal>
+      )}
     </div>
   );
 }
