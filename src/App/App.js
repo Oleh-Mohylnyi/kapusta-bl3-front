@@ -15,8 +15,7 @@ import { getIsFetchingCurrent } from "../redux/auth/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Navigation } from "../components/Navigation/Navigation";
-import ReportIncome from "../components/Report/ReportIncome/ReportIncome";
-import ReportExpenses from "../components/Report/ReportExpenses/ReportExpenses";
+
 
 const Header = lazy(() =>
   import("../components/Header/Header" /* webpackChunkName: "header-view" */)
@@ -73,8 +72,6 @@ function App() {
                 <PublicRoute isAuth={isAuth} component={StatisticsView} />
               }
             >
-              <Route path="income" element={<ReportIncome />} />
-              <Route path="expenses" element={<ReportExpenses />} />
             </Route>
 
               
