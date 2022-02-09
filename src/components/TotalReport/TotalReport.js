@@ -1,5 +1,7 @@
 import s from "./TotalReport.module.css";
 
+
+
 const TotalReport = () => {
   //из редакса берем общие суммы доходов и расходов
   return (

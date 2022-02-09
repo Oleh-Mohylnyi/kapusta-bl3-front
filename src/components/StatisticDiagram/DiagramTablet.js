@@ -8,6 +8,7 @@ import {
   Bar,
   ResponsiveContainer,
   Cell,
+  LabelList
 } from "recharts";
 
 // // данные для отрисовки
@@ -24,25 +25,33 @@ const data = [
   { name: "Хлеб", uv: 50, id: 9 },
 ];
 //label
-const renderCustomBarLabel = ({ payload, x, y, width, height, value }) => {  
+const customBarLabelPrice = ({ payload, x, y, width, height, value }) => {  
  
   return <text x={x} y={y} fill="#52555f" fontSize={12} textAnchor="top" dy={-10}>{`${value} грн`}</text>;
 };
 
-const renderCustomAxisTick = ({ x, y, payload }) => {
-  return <text x={x} y={y} fill="#52555f" fontSize={12} textAnchor="middle"dy={5} angle={25} >{`${payload.value}`}</text>
-}
-
+const customLabelListName = ({ payload, x, y, width, height, value }) => {
+  return (
+    <text
+      x={x}
+      y={y}
+      fill="#52555f"
+      fontSize={12}
+      textAnchor="middle"
+      dx={+width/2}
+      dy={height+20}
+    >{`${value}`}</text>
+  );
+};
 const DiagramTablet = ({ sortedData }) => {
   return (
     <ResponsiveContainer
       width="100%"
       hight="100%"
-      minWidth={630}
-      minHeight={380}
-     
+      minWidth={605}
+      minHeight={380}     
     >
-      <BarChart data={data} barSize={38}>
+      <BarChart data={data} barSize={38}  margin={{ top: 0, right: 0, bottom: 30, left: 0 }}>
         <CartesianGrid vertical={false} />
         <YAxis
           type="number"
@@ -50,6 +59,7 @@ const DiagramTablet = ({ sortedData }) => {
           hide={true}
           axisLine={false}
           tickLine={false}
+          tickCount={9}          
         />
 
         <XAxis
@@ -57,21 +67,31 @@ const DiagramTablet = ({ sortedData }) => {
           dataKey="name"
           axisLine={false}
           tickLine={false}
-          tick={renderCustomAxisTick}
+          hide={true}
           minTickGap={0}
+          padding={{ top: 20, bottom: 20 }}
         />
         <Bar
+          
           dataKey="uv"
           id="id"
-          label={renderCustomBarLabel}
+          label={customBarLabelPrice}
           radius={[10, 10, 0, 0]}
         >
-          {data.map((el) => {
-            if (el.id === 0 || el.id === 3 || el.id === 6 || el.id === 9) {
-              return <Cell key="id" className={s.bar__accent} />;
-            }
-            return <Cell key="id" className={s.bar} />;
-          })}
+           <LabelList dataKey="name" content={customLabelListName} /> 
+          {data.map((el, index) => {
+             return (
+              <Cell
+                key={index}
+                className={
+                  index === 0 || index === 3 || index === 6 || index === 9
+                    ? s.bar__accent
+                    : s.bar
+                }
+              />
+            );
+            }           
+          )}
         </Bar>
       </BarChart>
     </ResponsiveContainer>
