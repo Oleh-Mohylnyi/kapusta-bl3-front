@@ -1,81 +1,135 @@
 @import "../../css/variables.css";
 
 .transactionForm {
+  margin: 15px auto 0;
+  // margin: 100px auto 0; //для тестирования оставляю
   display: flex;
-  // mobile
   flex-direction: column;
-  border: 2px solid #ffffff;
-  border-radius: 16px;
-  border-bottom-left-radius: none;
-  // padding-top: 15px;
+  align-items: center;
+
+  //background-color: var(--bg-color); //взамен фонового изображения
+
+  @media screen and (min-width: 768px) {
+    // margin-top: 28px;
+    //background-color: lavender; ////для тестирования оставляю
+    //border: 1px solid orange;//для тестирования оставляю
+    width: 604px;
+    justify-content: space-between;
+    padding: 10px 0;
+    @media screen and (min-width: 1280px) {
+      margin-top: 33px;
+      width: 1020px;
+      flex-direction: row;
+    }
+  }
 }
 
-// input 'описание товара' {
-// text input 'описание товара'  {
-// width: 155px;
-// height: 40px; } }
+.transactionInputsContainer {
+  @media screen and (min-width: 768px) {
+    display: flex;
+    flex-direction: row;
+  }
+}
 
 .transactionInput {
-  // mobile
-
+  display: block;
+  background-color: transparent;
+  border: 2px solid #ffffff;
   width: 282px;
-  // height: 44px;
-  padding: 2px 0 2px 20px;
-  border-bottom: 2px solid #ffffff;
+  padding: 13px 0 13px 20px;
 
   font-family: var(--font-family); //вероятно перенести в общак?
   font-style: normal; //вероятно перенести в общак?
-  font-weight: normal; //вероятно перенести в общак?
+  font-weight: 400; //вероятно перенести в общак?
   font-size: 12px; //вероятно перенести в общак?
   line-height: 1.167; //вероятно перенести в общак?
   color: var(--additional-text-color);
   letter-spacing: 0.02em; //вероятно перенести в общак?
+
+  &:active,
+  &:focus {
+    outline: 0;
+    outline-offset: 0;
+    border-bottom-right-radius: 0px;
+    border-bottom-color: var(--accent-color);
+  }
+
+  @media screen and (min-width: 768px) {
+    border: 2px solid var(--bg-color);
+  }
 }
 
-// input 'категория товара'  {
-// text input 'категория товара' {
-// }
-// иконка "выпадашки" {
+.productDescriptionInput {
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+  @media screen and (min-width: 768px) {
+    width: 192px;
+    border-top-right-radius: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 289px;
+  }
+}
+
+.productCategoryInput {
+  border-top: none;
+  border-bottom-right-radius: 16px;
+  @media screen and (min-width: 768px) {
+    border-top: 2px solid var(--bg-color);
+    border-bottom-right-radius: 0;
+    border-left: none;
+    width: 171px;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 188px;
+  }
+}
+
+.productCategoryContainer {
+  position: relative;
+  @media screen and (min-width: 768px) {
+  }
+}
+
+// -----!!!иконка "выпадашки"!!!-------//
+// {
 //   position: absolute;
 //   width: 4px;
 //   height: 10px;
 
 //   border: 2px solid #c7ccdc;
 //   transform: rotate(-90deg);
-//   top: 20px;
+//   -top: 20px;
 //   -bottom: 20px;
 //   -right: 22px;
 // }
 // }
 
-.productCategoryInput {
-  //mobile
-  border: none;
-}
-
-// сумма+калькулятор {
-//   width: 183px;
-// height: 44px;
-
 .productSumContainer {
-  //mobile
-  width: 183px;
-  display: flex;
+  position: relative;
+  margin-top: 30px;
+
+  display: inline-flex;
   flex-direction: row;
-  align-items: center;
+  justify-content: center;
+
+  width: 183px;
+
+  @media screen and (min-width: 768px) {
+    width: 104px;
+    margin-top: 0;
+  }
+  @media screen and (min-width: 1280px) {
+    width: 124px;
+  }
 }
 
 // input 'сумма'{
-
-//
 // height: 44px;
-
 // pt, pb: 12px
 // pl: 3px
 // pr:17px
-
 // border: 2px solid #FFFFFF;
-// box-sizing: border-box;
 // border-radius: 22px 0px 0px 22px;
 // текст {
 //   width: 105px;
@@ -84,28 +138,58 @@
 // }
 
 // }
-
-.productSumLabel {
-  //mobile
-  position: absolute;
-  top: 12px;
-  right: 15px;
-}
 .productSumInput {
-  //mobile
   position: relative;
 
   width: 125px;
-  border-right: 2px solid #ffffff;
+  background-color: transparent;
+  padding: 13px 45px 13px 0;
+  border: 2px solid #ffffff;
+  border-radius: 22px 0px 0px 22px;
+
+  font-family: var(--font-family); //вероятно перенести в общак?
+  font-style: normal; //вероятно перенести в общак?
+  font-weight: 700;
+  font-size: 12px; //вероятно перенести в общак?
+  line-height: 1.167; //вероятно перенести в общак?
+  text-align: right;
+  letter-spacing: 0.02em; //вероятно перенести в общак?
+
+  &:active,
+  &:focus {
+    outline: 0;
+    outline-offset: 0;
+  }
+
+  @media screen and (min-width: 768px) {
+    border-color: var(--bg-color);
+    font-weight: 400;
+    color: var(--additional-text-color);
+    border-radius: 0;
+    width: 70px;
+    padding-right: 10px;
+    border-left: none;
+    border-right: none;
+  }
+  @media screen and (min-width: 1280px) {
+    padding-right: 6px;
+    width: 80px;
+  }
+}
+
+.productSumLabel {
+  position: absolute;
+  top: 15px;
+  right: 75px;
 
   font-family: var(--font-family); //вероятно перенести в общак?
   font-style: normal; //вероятно перенести в общак?
   font-weight: bold;
   font-size: 12px; //вероятно перенести в общак?
-  line-height: 1.167px; //вероятно перенести в общак?
-  // text-align: right;
+  line-height: 1.167; //вероятно перенести в общак?
   letter-spacing: 0.02em; //вероятно перенести в общак?
   text-transform: uppercase;
+
   color: var(--title-color);
 }
 
@@ -115,35 +199,43 @@
 // иконка "калькулятора"{
 // https://react-icons.github.io/react-icons
 // npm install react-icons --save
-// usage
-// import { BiCalculator } from 'react-icons/bi';
-// class Question extends React.Component {
-//   render() {
-//     return <h3> Lets go for a <FaBeer />? </h3>
-//   }
-// }
-
 //BiCalculator//RiCalculatorLine
-
 // width: 20px;
 // height: 20px;
 // }
-// }
 
 .productSumIcon {
-  // mobile
-  display: block;
-  width: 60px;
+  display: inline-block;
   height: 44px;
   text-align: center;
-  padding: 12px 20px;
+  padding: 8px 19px;
+  border: 2px solid #ffffff;
+  border-left: none;
+  border-radius: 0px 22px 22px 0px;
+  @media screen and (min-width: 768px) {
+    border: 2px solid var(--bg-color);
+    border-radius: 0px 16px 16px 0px;
+    border-left: none;
+    padding: 8px 8px 8px 4px;
+  }
+  @media screen and (min-width: 1280px) {
+    padding: 8px 18px 8px 4px;
+  }
 }
 
 // блок кнопок
 .formButtonsContainer {
+  display: inline-flex;
+  justify-content: space-between;
+
   margin-top: 83px;
   width: 265px;
-  //   height: 44px;
+  @media screen and (min-width: 768px) {
+    margin-top: 30px;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-top: 0;
+  }
 }
 
 //   button {
@@ -189,13 +281,6 @@
 //     border-radius: 16px;
 //   }
 // }
-
-// .categoryList {
-// }
-
-// tablet
-
-// desktop
 
 // -----------
 

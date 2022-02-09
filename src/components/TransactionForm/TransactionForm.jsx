@@ -1,7 +1,9 @@
 // import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { addNewContact } from '../../redux/phoneBook/contacts-thunks';
-import { BiCalculator } from 'react-icons/bi'
+import { IconContext } from "react-icons";
+import { BiCalculator } from "react-icons/bi";
+import { RiCalculatorLine } from "react-icons/ri";
 import Button from "../Button/Button";
 import DatePickerForm from "../DatePickerForm";
 import styles from "./TransactionForm.module.scss";
@@ -38,7 +40,7 @@ function TransactionForm() {
   return (
     <>
       <form className={styles.transactionForm} onSubmit={handleSubmit}>
-        <DatePickerForm />
+       
         {/* <input
           className="input"
           type="date"
@@ -46,24 +48,30 @@ function TransactionForm() {
           required
           placeholder=""
         /> */}
-
-        <div>
+        <div className={styles.transactionInputsContainer}>
+        <DatePickerForm />
+         <div className={styles.transactionInputsContainer}>
+           
           <input
-            className={`${styles.transactionInput} ${styles.descriptionInput}`}
+            className={`${styles.transactionInput} ${styles.productDescriptionInput}`}
             type="text"
             name="description"
             required
             placeholder="Описание"
           />
-          <div className={styles.categoryContainer}>
+          <div className={styles.productCategoryContainer}>
             <input
               className={`${styles.transactionInput} ${styles.productCategoryInput}`}
-              type="select"
+              type="text"
               name="productCategory"
               placeholder="Категория товара"
             />
             {/* должно быть выпадающим списком*/}
-            <ul className={styles.productCategoryList}></ul>
+            {/* <ul className={styles.productCategoryList}>
+              <li className={styles.productCategoryItem}>Транспорт</li>
+              <li className={styles.productCategoryItem}>Исскуство</li>
+              <li className={styles.productCategoryItem}>Продукты</li>
+            </ul> */}
             {/* <label class="label-country" for="custom-select">
           <input class="input input-country" type="text" id="country-choice" placeholder="Choose country" autocomplete="off">
           <div class="input-triangle"></div>
@@ -74,26 +82,36 @@ function TransactionForm() {
           <div className={styles.productSumContainer}>
             <input
               className={styles.productSumInput}
-              type="number"
+              // className={`${styles.transactionInput} ${styles.productSumInput}`}
+              type="text"
               name="productSum"
               required
-              // placeholder=""
-              />
-            <label className={styles.productSumLabel} htmlFor="productSum">  UAH         </label>
+              placeholder="00.00"
+            />
+            {window.screen.width < 768 && (
+              <label
+                className={styles.productSumLabel}
+                htmlFor="productSum">
+                {`UAH`}
+              </label>
+            )}
             <span className={styles.productSumIcon}>
-              <BiCalculator />
+              <IconContext.Provider
+                value={{ style: { height: "20px", width: "20px" } }}
+              >
+                <RiCalculatorLine />
+              </IconContext.Provider>
             </span>
           </div>
         </div>
+        </div>
         <div className={styles.formButtonsContainer}>
           <Button type={"submit"} title={"Add"} />
-          <Button type={"button"} title={"Add"} handleClick={resetFormInputs} />
-          {/* <button className="button" type="submit">
-            Add
-          </button>
-          <button className="button" type="button">
-            Clear
-          </button> */}
+          <Button
+            type={"button"}
+            title={"Clear"}
+            handleClick={resetFormInputs}
+          />
         </div>
       </form>
 
