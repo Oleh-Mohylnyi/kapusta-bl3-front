@@ -2,7 +2,7 @@
 // import { useDispatch } from 'react-redux';
 // import { addNewContact } from '../../redux/phoneBook/contacts-thunks';
 import { IconContext } from "react-icons";
-import { BiCalculator } from "react-icons/bi";
+// import { BiCalculator } from "react-icons/bi";
 import { RiCalculatorLine } from "react-icons/ri";
 import Button from "../Button/Button";
 import DatePickerForm from "../DatePickerForm";
