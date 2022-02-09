@@ -23,7 +23,11 @@ export default function BalanceNavigation () {
                </>
               
       ) :
-     (<><StatisticsLink /><Balance /></>)}
+     (<>
+     <div className={s.mobileWrapper}>
+     <StatisticsLink /><Balance />
+     </div>
+     </>)}
      </>
       
      
