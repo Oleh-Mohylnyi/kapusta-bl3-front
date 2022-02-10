@@ -2,7 +2,7 @@ import React from "react";
 import "./App.css";
 import Loader from "react-loader-spinner";
 import { Route, Routes } from "react-router-dom";
-// import { PrivateRoute } from "../routes/PrivateRoute";
+import { PrivateRoute } from "../routes/PrivateRoute";
 import { PublicRoute } from "../routes/PublicRoute";
 
 import { useDispatch, useSelector } from "react-redux";
@@ -64,12 +64,12 @@ function App() {
               
             <Route
               path="/main"
-              element={<PublicRoute isAuth={isAuth} component={MainView} />}
+              element={<PrivateRoute isAuth={isAuth} component={MainView} />}
             />
             <Route
               path="statistics"
               element={
-                <PublicRoute isAuth={isAuth} component={StatisticsView} />
+                <PrivateRoute isAuth={isAuth} component={StatisticsView} />
               }
             >
             </Route>
