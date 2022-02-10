@@ -3,9 +3,8 @@ import Diagram from "../../components/StatisticDiagram/Diagram";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
-import Report from "../../components/Report/Report";
+import Report from "../../components/Report/Report/Report";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
-
 
 export default function StatisticsView() {
   const size = useWindowDimensions();
@@ -22,8 +21,8 @@ export default function StatisticsView() {
       {/* <Outlet /> */}
       <Report />
       <DiagramContainer>
-        <Diagram mobile={mobile()}/>
-      </DiagramContainer>      
+        <Diagram mobile={mobile()} />
+      </DiagramContainer>
       <BackgroundImages />
     </>
   );
