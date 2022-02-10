@@ -1,2 +1,0 @@
-(this["webpackJsonpkapusta-bl3-front"]=this["webpackJsonpkapusta-bl3-front"]||[]).push([[2],{72:function(t,n,r){"use strict";r.r(n),r.d(n,"default",(function(){return u}));var s=r(3);function u(){return Object(s.jsx)(s.Fragment,{})}}}]);
-//# sourceMappingURL=home-view.b3242a9b.chunk.js.map
