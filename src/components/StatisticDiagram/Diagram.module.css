@@ -8,15 +8,8 @@
 }
 @media screen and (min-width: 768px) {
   .container {
-    /* width: 100%; */
-    margin-bottom: 76px;
     padding: 15px 20px 15px 20px;
-
-    padding-top: 20px;
-    margin-left: 50px;
-    margin-right: 50px;
     background: #fff;
-
     border-radius: 30px;
     box-shadow: var(--box-shadow-tablet-desktop);
   }
@@ -24,11 +17,6 @@
 
 @media screen and (min-width: 1280px) {
   .container {
-    /* width: 100%; */
-    margin-bottom: 74px;
-    max-width: 1060px;
-    margin-left: 110px;
-    margin-right: 110px;
     padding: 20px 151px 20px 151px;
   }
 }
