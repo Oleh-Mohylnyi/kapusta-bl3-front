@@ -9,6 +9,8 @@
 
 .bodyTableScroll {
   height: 342px;
+  overflow-y: auto;
+
   overflow-x: hidden;
   margin-top: 0px;
   margin-bottom: 20px;
@@ -105,6 +107,7 @@
   background-image: url(../../../images/icons/delete-icon.svg);
   background-position: center;
   background-repeat: no-repeat;
+  color: #52555f;
 }
 
 .deleteBtnIcon {
