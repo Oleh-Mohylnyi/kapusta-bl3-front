@@ -6,6 +6,11 @@
     margin-bottom: 58px;
     margin-top: 97px;
   }
+  .balanceButton {
+    border-radius: 16px;
+    width: 125px;
+    height: 44px;
+  }
 }
 @media screen and (min-width: 1280px) {
 }
@@ -16,4 +21,9 @@
 
 .mobileWrapper {
   margin-top: 86px;
+}
+
+.formWrapper {
+  display: flex;
+  justify-content: center;
 }

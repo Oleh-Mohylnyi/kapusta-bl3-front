@@ -1,6 +1,6 @@
 import {Link} from 'react-router-dom';
 import s from './StatisticsLink.module.css';
-import sprite from '../../images/sprite.svg';
+import sprite from '../../../images/sprite.svg';
 
 export default function StatisticsLink () {
 return(
