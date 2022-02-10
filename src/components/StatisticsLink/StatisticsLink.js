@@ -5,7 +5,7 @@ import sprite from '../../images/sprite.svg';
 export default function StatisticsLink () {
 return(
     <div className={s.linkWrapper}>
-        <Link to="/expenses" className={s.link}>
+        <Link to="/statistics" className={s.link}>
             <p className={s.linkText}>Перейти к отчетам</p>
            {/* <img src={reportIcon} alt="report-icon" className={s.icon}/> */}
 <svg width="14" height="14" className={s.icon}>
