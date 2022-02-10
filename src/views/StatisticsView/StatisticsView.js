@@ -3,7 +3,7 @@ import Diagram from "../../components/StatisticDiagram/Diagram";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
-import Report from "../../components/Report/Report";
+
 import Balance from "../../components/Balance";
 import BackToMain from '../../components/BackToMain';
 import useWindowDimensions from "../../hooks/useWindowDimensions";
