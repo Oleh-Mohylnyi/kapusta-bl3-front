@@ -1,17 +1,17 @@
 .bodyTable {
-  width: 97%;
+  width: 83%;
   table-layout: fixed;
   border: none;
-  overflow-x: hidden;
+  // overflow-x: hidden;
   height: 344px;
-  overflow-y: auto;
 }
-
+// style={{ overflowY: "auto" }}
 .bodyTableScroll {
   height: 342px;
   overflow-y: auto;
 
   overflow-x: hidden;
+
   margin-top: 0px;
   margin-bottom: 20px;
   border-bottom: 1px solid #fff;
@@ -33,7 +33,7 @@
 }
 
 .mainTbody {
-  border-radius: 0;
+  border-radius: 0px;
 }
 
 .theadTable {
@@ -84,7 +84,6 @@
   .main {
     width: 760px;
     height: 344px;
-    overflow-y: scroll;
   }
 }
 
@@ -103,8 +102,9 @@
   height: 18px;
   padding: 16px;
   border: transparent;
-  background-color: transparent;
+  // background-color: transparent;
   background-image: url(../../../images/icons/delete-icon.svg);
+  background-size: 18px;
   background-position: center;
   background-repeat: no-repeat;
   color: #52555f;
@@ -120,12 +120,12 @@
   width: 32px;
   height: 32px;
   border-radius: 50%;
-  fill: currentColor;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 1280px) {
   .bodyTable {
-    width: 75%;
+    width: 72%;
   }
 }
 

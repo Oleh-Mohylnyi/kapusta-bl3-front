@@ -1,0 +1,67 @@
+.itemTransactions {
+  display: flex;
+  justify-content: space-between;
+  height: 38px;
+}
+
+.leftColum {
+  display: flex;
+  flex-direction: column;
+}
+
+.rigthColum {
+  display: flex;
+  align-items: center;
+}
+
+.elem {
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 0.86;
+  letter-spacing: 0.04em;
+
+  color: #52555f;
+  margin-bottom: 3px;
+}
+
+.data {
+  font-style: normal;
+  font-weight: normal;
+  font-size: 8px;
+  line-height: 1, 17;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+
+  color: #52555f;
+}
+
+.data span:last-child {
+  margin-left: 20px;
+}
+
+.total {
+}
+
+.totalIncrement {
+  color: #407946;
+}
+
+.totalDecrement {
+  color: #e7192e;
+}
+
+.deleteBtn {
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  display: block;
+  width: 18px;
+  height: 18px;
+  padding: 16px;
+  border: transparent;
+  background-color: transparent;
+  background-image: url(../../../images/icons/delete-icon.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+}
