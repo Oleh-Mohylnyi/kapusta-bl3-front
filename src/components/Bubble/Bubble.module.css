@@ -8,7 +8,9 @@
   width: 282px;
   height: auto;
   /* top: 27%; */
-  top: 22px;
+  /* top: 22px; */
+  top: 225px;
+  z-index: 100;
 }
 
 .bubbleContainer:after {
@@ -51,7 +53,8 @@
 @media screen and (min-width: 768px) {
   .bubbleContainer {
     /* top: 19%; */
-    top: 15px;
+    /* top: 15px; */
+    top: 155px;
   }
 
   .textWrapper {
@@ -62,6 +65,7 @@
 @media screen and (min-width: 1280px) {
   .bubbleContainer {
     /* top: 18.8%; */
-    top: 14.8px;
+    /* top: 14.8px; */
+    top: 158px;
   }
 }

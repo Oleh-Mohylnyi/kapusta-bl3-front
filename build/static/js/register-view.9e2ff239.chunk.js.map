@@ -1,1 +1,0 @@
-{"version":3,"sources":["views/RegisterView/RegisterView.js"],"names":["RegisterView"],"mappings":"uLACe,SAASA,IAEpB,OACE","file":"static/js/register-view.9e2ff239.chunk.js","sourcesContent":["\nexport default function RegisterView() {\n\n    return (\n      <></>\n    )\n}"],"sourceRoot":""}

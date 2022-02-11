@@ -1,0 +1,22 @@
+@import "./../../css/variables.css";
+
+.bar {
+  fill: var(--additional-accent-color);
+}
+.bar__accent {
+  fill: var(--accent-color);
+}
+@media screen and (min-width: 768px) {
+  .container {
+    padding: 15px 20px 15px 20px;
+    background: #fff;
+    border-radius: 30px;
+    box-shadow: var(--box-shadow-tablet-desktop);
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  .container {
+    padding: 20px 151px 20px 151px;
+  }
+}
