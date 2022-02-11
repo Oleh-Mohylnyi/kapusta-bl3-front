@@ -1,8 +1,9 @@
-import Balance from '../../Balance';
-import StatisticsLink from '../../StatisticsLink';
+import Balance from '../Balance';
+import StatisticsLink from '../StatisticsLink';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import s from './BalanceNavigation.module.css';
-
+import BalanceTitle from "../BalanceTitle";
+import Button from "../Button";
 
 export default function BalanceNavigation () {
  const windowSize = useWindowDimensions();
@@ -10,13 +11,18 @@ export default function BalanceNavigation () {
 //   const mobileView = windowSize.width < 767.98;
 
    return (
+
+   
       
       <>
       {desktopAndTabletView ? (
          
          <>
               <div className={s.wrapper}>
+                 <BalanceTitle/>
+
                <Balance />
+               <Button />
               
                <StatisticsLink />
                </div>
@@ -25,7 +31,12 @@ export default function BalanceNavigation () {
       ) :
      (<>
      <div className={s.mobileWrapper}>
-     <StatisticsLink /><Balance />
+     <StatisticsLink />
+     <BalanceTitle/>
+     <div className={s.formWrapper}>
+     <Balance />
+     <Button />
+     </div>
      </div>
      </>)}
      </>
