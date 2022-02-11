@@ -1,14 +1,14 @@
 @import "../../css/variables.css";
 
 .form {
-  position: absolute;
+  // position: absolute;
+  // top: 255px;
   display: flex;
   align-items: center;
   flex-direction: column;
-  top: 255px;
   width: 300px;
   height: 525px;
-  // margin-top: 255px;
+  margin-top: 50px;
   left: 0; right: 0;
   margin-left: auto; 
 
@@ -118,7 +118,6 @@
 
 @media screen and (min-width: 768px) {
   .form {
-    top: 300px;
     width: 436px;
     height: 535px;
     padding: 50px 85px 53px 86px;
@@ -158,9 +157,7 @@
 
 @media screen and (min-width: 1280px) {
   .form {
-    position: absolute;
-    top: 197px;
-    right: 110px;
-    left: auto;
+    margin-top: 180px;
+    margin-left: 152px;
   }
 }
