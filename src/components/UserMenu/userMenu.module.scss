@@ -7,13 +7,36 @@
 }
 
 .personalInf {
+  display: flex;
+  align-items: center;
+  text-align: center;
   margin-right: 20px;
 }
 
+// .avatar {
+//   margin-right: 20px;
+//   width: 32px;
+//   height: 32px;
+//   text-align: center;
+//   background-color: #c7ccdc;
+//   border-radius: 50%;
+// }
+
 .avatar {
+  position: relative;
+  // display: block;
+  // border: 2px solid white;
+  border-radius: 50%;
+  background-color: #c7ccdc;
+  height: 32px;
+  width: 32px;
   margin-right: 20px;
-  width: 16px;
-  height: 16px;
+}
+
+.avatar span {
+  position: absolute;
+  top: 7px;
+  right: 10px;
 }
 
 .name {

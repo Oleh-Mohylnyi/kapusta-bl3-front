@@ -10,9 +10,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  // width: 100%;
   min-width: 320px;
-  width: 320px;
   margin: 0 auto;
   @media screen and (min-width: 768px) {
     width: 768px;
@@ -22,10 +20,6 @@
   }
 }
 
-.logo {
-  align-items: flex-end;
-}
-
 .logoLink {
-  margin-left: 25px;
+  margin-left: 46px;
 }
