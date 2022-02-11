@@ -1,0 +1,13 @@
+@media screen and (min-width: 768px) {
+  .desktopBalance {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+  }
+
+  .desktopBalanceContainer {
+    display: flex;
+    align-items: center;
+  }
+}
