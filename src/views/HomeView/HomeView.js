@@ -6,6 +6,7 @@ import Title from "../../components/Title";
 export default function HomeView() {
   return (
     <>
+      
       <Title />
       <Registration />
       <BackgroundImages />

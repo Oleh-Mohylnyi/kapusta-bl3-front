@@ -4,9 +4,9 @@ const TableData = ({ isExpense = false }) => {
   return (
     <>
       {
-        <div className={s.bodyTable} id={s.style2}>
-          <table className={s.main}>
-            <thead className={s.theadTable}>
+        <div className={s.bodyTable} >
+          <table className={s.main} >
+            <thead className={s.theadTable} id={s.style2}>
               <tr>
                 <th className={`${s.th} ${s.thData}`}>ДАТА</th>
                 <th className={`${s.th} ${s.thData}`}>ОПИСАНИЕ</th>
@@ -15,7 +15,7 @@ const TableData = ({ isExpense = false }) => {
                 <th className={`${s.th} ${s.thData}`}></th>
               </tr>
             </thead>
-            <tbody>
+            <tbody style={{overflowY: 'auto'}} >
               <tr className={s.td}>
                 <td className={s.thData}>08.02.2022</td>
                 <td className={s.tdDesc}>Бананы</td>

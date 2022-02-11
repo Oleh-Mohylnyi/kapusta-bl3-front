@@ -19,10 +19,12 @@
   text-transform: uppercase;
 
   &:hover,
-  :focus {
+  &:focus {
     background-color: var(--accent-color);
     color: var(--bg-color);
     filter: var(--button-shadow-accent);
     transition: 0.1s linear;
+    outline: 0;
+    outline-offset: 0;
   }
 }

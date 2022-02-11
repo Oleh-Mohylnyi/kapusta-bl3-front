@@ -7,6 +7,10 @@ import { RiCalculatorLine } from "react-icons/ri";
 import Button from "../Button/Button";
 import DatePickerForm from "../DatePickerForm";
 import styles from "./TransactionForm.module.scss";
+import SelectForm from '../../SelectForm/SelectForm'
+const categories = [
+  
+]
 
 function TransactionForm() {
   // const [name, setName] = useState('');
@@ -59,14 +63,16 @@ function TransactionForm() {
             required
             placeholder="Описание"
           />
-          <div className={styles.productCategoryContainer}>
+            <div className={styles.productCategoryContainer}>
+              {/* <SelectForm /> */}
             <input
               className={`${styles.transactionInput} ${styles.productCategoryInput}`}
               type="text"
               name="productCategory"
               placeholder="Категория товара"
-            />
-            {/* должно быть выпадающим списком*/}
+              />
+              
+            {/* должно быть выпадающим списком https://react-select.com/home*/}
             {/* <ul className={styles.productCategoryList}>
               <li className={styles.productCategoryItem}>Транспорт</li>
               <li className={styles.productCategoryItem}>Исскуство</li>
@@ -80,7 +86,8 @@ function TransactionForm() {
         </label> */}
           </div>
           <div className={styles.productSumContainer}>
-            <input
+            {/* https://www.npmjs.com/package/react-numpad */}
+              <input
               className={styles.productSumInput}
               // className={`${styles.transactionInput} ${styles.productSumInput}`}
               type="text"

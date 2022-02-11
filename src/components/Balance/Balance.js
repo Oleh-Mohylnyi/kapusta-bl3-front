@@ -1,5 +1,5 @@
 import React from 'react';
-import Bubble from '../Bubble/Bubble';
+// import Bubble from '../Bubble/Bubble';
 import s from './Balance.module.css';
 
 
@@ -40,7 +40,8 @@ export default function Balance (){
       
             <button className={s.balanceButton}>Подтвердить</button>
             </label>
-             <Bubble/>
+                    {/* <Bubble/> */}{/* ВЕРНУТЬ */}
+                    
             </div>
         {/* ) : (
             <div className={s.activeBalanceWrapper}>

@@ -9,10 +9,10 @@ const ExpensePage = () => {
     <div>
       <SectionTransactions>
         <TransactionForm/>
-        <div className={s.wrapperTables}>
+        {/* <div className={s.wrapperTables}>
           <TableData isExpense={true} />
           <Summary />
-        </div>
+        </div> */}
       </SectionTransactions>
     </div>
   );
