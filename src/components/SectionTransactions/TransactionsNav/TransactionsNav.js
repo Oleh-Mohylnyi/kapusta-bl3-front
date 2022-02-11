@@ -10,7 +10,7 @@ const TransactionsNav = () => {
           to="expense"
           className={({ isActive }) =>
             s.link +
-            (isActive || location.pathname === ""
+            (isActive || location.pathname === "/transactions"
               ? ` ${s.activeLink}`
               : ` ${s.noActiveLink}`)
           }

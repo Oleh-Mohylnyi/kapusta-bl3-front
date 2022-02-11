@@ -1,6 +1,6 @@
 import {Link} from "react-router-dom";
-import sprite from '../../images/sprite.svg';
-import useWindowDimensions from '../../hooks/useWindowDimensions';
+import sprite from '../../../images/sprite.svg';
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import s from "./BackToMain.module.css"
 
 export default function BackToMain () {

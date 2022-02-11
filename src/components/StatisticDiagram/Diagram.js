@@ -1,5 +1,5 @@
 import React from "react";
-import s from "./Diagram.module.css";
+import s from "./Diagram.module.scss";
 import {
   BarChart,
   XAxis,

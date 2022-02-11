@@ -32,7 +32,7 @@
 .Modal {
   position: absolute;
   width: 380px;
-  height: 194px;
+  /* height: 194px; */
 
   background: #ffffff;
   /* modal */
@@ -114,11 +114,11 @@
   justify-content: center;
 }
 
-.closeButtonIcon {
+.icon {
   fill: gold;
 }
 
-.closeButtonIcon:hover {
+.icon:hover {
   fill: #ff751d;
 }
 

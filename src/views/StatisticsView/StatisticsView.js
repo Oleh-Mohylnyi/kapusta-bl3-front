@@ -3,13 +3,10 @@ import Diagram from "../../components/StatisticDiagram/Diagram";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
-
-
-import Balance from "../../components/Balance";
-import BackToMain from '../../components/BackToMain';
 import Report from "../../components/Report/Report/Report";
-
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import MobileStatisticsNavigation from "../../components/MobileStatisticsNavigation";
+import TabletDesktopStatisticsNavigation from "../../components/TabletDesktopStatisticsNavigation/TabletDesktopStatisticsNavigation";
 import s from "./StatisticsView.module.css";
 
 export default function StatisticsView() {
@@ -25,13 +22,18 @@ export default function StatisticsView() {
     }
     return false;
   };
+
+  const mobileView = width <= 767.98;
   return (
     <>
     <div className={s.balanceWrapper}>
-    <BackToMain/>
-  <Balance />
-    
+      {mobileView ? (
+      <MobileStatisticsNavigation/>
+      ) : (
+        <TabletDesktopStatisticsNavigation/> 
+      )}
     </div>
+
       <TotalReport />
       {/* <Outlet /> */}
       <Report />
