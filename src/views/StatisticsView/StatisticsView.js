@@ -3,16 +3,11 @@ import Diagram from "../../components/StatisticDiagram/Diagram";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
-
-
-import Balance from "../../components/BalanceNavigationSection/Balance";
-import BackToMain from "../../components/BalanceNavigationSection/BackToMain";
 import Report from "../../components/Report/Report/Report";
-
 import useWindowDimensions from "../../hooks/useWindowDimensions";
+import MobileStatisticsNavigation from "../../components/MobileStatisticsNavigation";
+import TabletDesktopStatisticsNavigation from "../../components/TabletDesktopStatisticsNavigation/TabletDesktopStatisticsNavigation";
 import s from "./StatisticsView.module.css";
-import BalanceTitle from "../../components/BalanceNavigationSection/BalanceTitle";
-import Button from "../../components/BalanceNavigationSection/Button";
 
 export default function StatisticsView() {
 
@@ -28,18 +23,17 @@ export default function StatisticsView() {
     return false;
   };
 
-  const desktopView = width >= 1280
+  const mobileView = width <= 767.98;
   return (
     <>
     <div className={s.balanceWrapper}>
-    <BackToMain/>
-    <div className={s.desktopBalance}>
-    <BalanceTitle/>
-  <Balance />
-  {desktopView && <Button/>}
-  </div>
-    
+      {mobileView ? (
+      <MobileStatisticsNavigation/>
+      ) : (
+        <TabletDesktopStatisticsNavigation/> 
+      )}
     </div>
+
       <TotalReport />
       {/* <Outlet /> */}
       <Report />

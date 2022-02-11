@@ -17,11 +17,11 @@
 }
 
 @media screen and (min-width: 768px) {
-  .balanceWrapper {
+  /* .balanceWrapper {
     display: flex;
     align-items: center;
     justify-content: space-between;
-  }
+  } */
 
   .desktopBalance {
     display: flex;
