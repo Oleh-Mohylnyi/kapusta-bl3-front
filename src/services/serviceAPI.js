@@ -28,7 +28,7 @@ export async function logout() {
 
 export async function currentUser(userToken) {
   token.set(userToken);
-  const result = await axios.get("/users/current");
+  const result = await axios.get("api/auth/current");
   return result.data.data;
 }
 
@@ -39,3 +39,19 @@ export async function currentUser(userToken) {
 //   console.log(result.data.token);
 //   return result.data;
 // }
+
+export async function getTransactions() {
+  const result = await axios.get("api/transactions");
+  return result.data;
+}
+
+export async function addTransaction(userToken, newTransaction) {
+  token.set(userToken);
+  const result = await axios.post("api/transactions");
+  return result.data;
+}
+
+export async function getTransactions() {
+  const result = await axios.post("api/transactions");
+  return result.data;
+}
