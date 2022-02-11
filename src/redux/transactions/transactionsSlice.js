@@ -1,14 +1,14 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchTransactionsThunk,
-  addTransactionsThunk,
-  deleteTransactionsThunk,
+  addTransactionThunk,
+  deleteTransactionThunk,
 } from "./transactionsThunks";
 
 const transactionsSlice = createSlice({
   name: "transactions",
   initialState: {
-    transaction: [],
+    transactions: [],
     error: "",
     isLoading: false,
   },
@@ -24,7 +24,7 @@ const transactionsSlice = createSlice({
       return {
         ...state,
         isLoading: false,
-        cont: [...payload],
+        transactions: [...payload],
       };
     },
     [fetchTransactionsThunk.rejected](state, action) {
@@ -34,46 +34,46 @@ const transactionsSlice = createSlice({
         error: action.payload,
       };
     },
-    [addTransactionsThunk.pending](state, action) {
+    [addTransactionThunk.pending](state, action) {
       return {
         ...state,
         error: "",
         isLoading: true,
       };
     },
-    [addTransactionsThunk.fulfilled](state, { payload }) {
+    [addTransactionThunk.fulfilled](state, { payload }) {
       return {
         ...state,
         isLoading: false,
-        cont: [...state.cont, payload],
+        transactions: [...state.transactions, payload],
       };
     },
-    [addTransactionsThunk.rejected](state, action) {
+    [addTransactionThunk.rejected](state, {payload}) {
       return {
         ...state,
         isLoading: false,
-        error: action.payload,
+        error: payload,
       };
     },
-    [deleteTransactionsThunk.pending](state, action) {
+    [deleteTransactionThunk.pending](state, action) {
       return {
         ...state,
         error: "",
         isLoading: true,
       };
     },
-    [deleteTransactionsThunk.fulfilled](state, { payload }) {
+    [deleteTransactionThunk.fulfilled](state, { payload }) {
       return {
         ...state,
         isLoading: false,
-        cont: [...payload],
+        transactions: [...payload],
       };
     },
-    [deleteTransactionsThunk.rejected](state, action) {
+    [deleteTransactionThunk.rejected](state,{payload}) {
       return {
         ...state,
         isLoading: false,
-        error: action.payload,
+        error: payload,
       };
     },
   },

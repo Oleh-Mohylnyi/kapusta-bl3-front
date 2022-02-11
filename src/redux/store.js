@@ -1,7 +1,6 @@
 import { configureStore, getDefaultMiddleware } from '@reduxjs/toolkit'
 import authReducer from './auth/slice'
-// import transactionsReducer from './transactions'
-import transactionsReducer from "./transactions_/transactionsSlice";
+import transactionsReducer from "./transactions/transactionsSlice";
 import reportsReducer from "./reports/reportsSlice"
 
 import {

@@ -1,4 +1,4 @@
-import s from './Diagram.module.css'
+import s from './Diagram.module.scss'
 const DiagramContainer = ({children}) => {
   return (
     <div className={s.container}>

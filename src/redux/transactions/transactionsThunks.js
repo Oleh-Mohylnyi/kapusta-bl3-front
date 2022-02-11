@@ -21,7 +21,9 @@ export const fetchTransactionsThunk = createAsyncThunk(
           },
         });
         const data = await response.json();
-        return data;
+
+        return data.data.transactions;
+        
       } catch (error) {
         rejectWithValue(error.message);
       }
@@ -29,8 +31,8 @@ export const fetchTransactionsThunk = createAsyncThunk(
   },
 );
 
-export const addTransactionsThunk = createAsyncThunk(
-  'transactions/add',
+export const addTransactionThunk = createAsyncThunk(
+  'transactions/newTransaction',
   async (newTransactions, { rejectWithValue, getState }) => {
     const state = getState();
 
@@ -44,7 +46,7 @@ export const addTransactionsThunk = createAsyncThunk(
         body: JSON.stringify(newTransactions),
       });
 
-      const data = await response.json();
+      const data = await response.json();   
 
       return data;
     } catch (error) {
@@ -53,8 +55,8 @@ export const addTransactionsThunk = createAsyncThunk(
   },
 );
 
-export const deleteTransactionsThunk = createAsyncThunk(
-  'transactions/delete',
+export const deleteTransactionThunk = createAsyncThunk(
+  'transactions/delTransaction',
   async (id, { rejectWithValue, getState }) => {
     const state = getState();
     if (!state.auth.token) {
