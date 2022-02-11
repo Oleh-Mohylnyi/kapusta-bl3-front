@@ -7,10 +7,7 @@ import { RiCalculatorLine } from "react-icons/ri";
 import Button from "../Button/Button";
 import DatePickerForm from "../DatePickerForm";
 import styles from "./TransactionForm.module.scss";
-import SelectForm from '../../SelectForm/SelectForm'
-const categories = [
-  
-]
+// import SelectForm from '../../SelectForm/SelectForm'
 
 function TransactionForm() {
   // const [name, setName] = useState('');
@@ -63,8 +60,7 @@ function TransactionForm() {
             required
             placeholder="Описание"
           />
-            <div className={styles.productCategoryContainer}>
-              {/* <SelectForm /> */}
+            <div className={styles.productCategoryContainer}>              
             <input
               className={`${styles.transactionInput} ${styles.productCategoryInput}`}
               type="text"
