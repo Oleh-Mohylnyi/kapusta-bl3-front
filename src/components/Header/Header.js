@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 import UserMenu from "../UserMenu/UserMenu";
+import Logo from "../Logo/Logo";
 import { getIsAuth } from "../../redux/auth/selectors";
 import { NavLink } from "react-router-dom";
-import logo from "../../images/logo-header.png";
 import styles from "./headers.module.scss";
 
 export default function Header() {
@@ -12,7 +12,7 @@ export default function Header() {
     <div className={styles.container}>
       <header className={styles.header}>
         <NavLink to="/" className={styles.logoLink}>
-          <img src={logo} alt="" width="90" className={styles.logo} />
+          <Logo />
         </NavLink>
         {isAuth ? <UserMenu /> : <></>}
       </header>

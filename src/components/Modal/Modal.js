@@ -29,7 +29,7 @@ export default function Modal({ onClose, onLogout, children }) {
     <div className={s.Overlay} onClick={handleOverlay}>
       <div className={s.Modal}>
         <div className={s.closeButton} onClick={onClose}>
-          <svg width="14" height="14" className={s.closeButtonIcon}>
+          <svg width="14" height="14" className={s.icon}>
             <use href={`${sprite}#icon-close`}></use>
           </svg>
         </div>
