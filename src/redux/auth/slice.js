@@ -1,97 +1,84 @@
-import { createSlice } from '@reduxjs/toolkit';
-import { register, login, currentUser, logout } from './operations';
+import { createSlice } from '@reduxjs/toolkit'
+import { register, login, currentUser, logout } from './operations'
 
 const initialState = {
-  user: { email: '' },
+  user: { email: '', password: '' },
   token: '',
   error: null,
   isLoading: false,
   isAuth: false,
   isFetchCurrentUser: false,
-  isAuthenticated: false,
-};
+}
 
 const authSlice = createSlice({
   name: 'auth',
   initialState,
 
   extraReducers: {
-    [register.fulfilled]: (state, action) => ({
-      ...state,
-      user: action.payload.user,
-      token: action.payload.token,
-      isLoading: false,
-      isAuth: true,
-    }),
-    [register.pending]: state => ({
-      ...state,
-      isLoading: true,
-      error: null,
-    }),
-    [register.rejected]: (state, action) => ({
-      ...state,
-      error: action.payload,
-      isLoading: false,
-    }),
+    [register.fulfilled]: (state, action) => {
+      state.user.email = action.payload.email
+      state.isAuth = false
+      state.isLoading = false
+    },
+    [register.pending]: (state) => {
+      state.isLoading = true
+      state.error = null
+    },
+    [register.rejected]: (state, action) => {
+      state.error = action.payload
+      state.isLoading = false
+    },
 
-    [login.fulfilled]: (state, action) => ({
-      ...state,
-      user: action.payload.user,
-      token: action.payload.token,
-      isLoading: false,
-      isAuth: true,
-      isAuthenticated: true,
-    }),
-    [login.pending]: state => ({
-      ...state,
-      isLoading: true,
-      error: null,
-    }),
-    [login.rejected]: (state, action) => ({
-      ...state,
-      error: action.payload,
-      isLoading: false,
-      isAuthenticated: false,
-    }),
+    [login.fulfilled]: (state, action) => {
+      state.user.email = action.payload.email
+      state.token = action.payload.token
+      state.isAuth = true
+      state.isLoading = false
+    },
+    [login.pending]: (state) => {
+      state.isLoading = true
+      state.error = null
+    },
+    [login.rejected]: (state, action) => {
+      state.error = action.payload
+      state.isAuth = false
+      state.isLoading = false
+    },
 
-    [currentUser.fulfilled]: (state, action) => ({
-      ...state,
-      user: action.payload,
-      isLoading: false,
-      isAuth: true,
-      isFetchCurrentUser: false,
-    }),
-    [currentUser.pending]: state => ({
-      ...state,
-      isLoading: true,
-      error: null,
-      isFetchCurrentUser: true,
-    }),
-    [currentUser.rejected]: (state, action) => ({
-      ...state,
-      error: action.payload,
-      isLoading: false,
-      isAuth: false,
-      isFetchCurrentUser: false,
-    }),
+    [logout.fulfilled]: (state) => {
+      state.user.email = null
+      state.token = null
+      state.isAuth = false
+      state.isLoading = false
+    },
+    [logout.pending]: (state) => {
+      state.isLoading = true
+      state.error = null
+    },
+    [logout.rejected]: (state, action) => {
+      state.error = action.payload
+      state.isLoading = false
+    },
 
-    [logout.fulfilled]: state => ({
-      user: { name: '', email: '' },
-      token: '',
-      isLoading: false,
-      isAuth: false,
-    }),
-    [logout.pending]: state => ({
-      ...state,
-      isLoading: true,
-      error: null,
-    }),
-    [logout.rejected]: (state, action) => ({
-      ...state,
-      error: action.payload,
-      isLoading: false,
-    }),
+    [currentUser.fulfilled]: (state, action) => {
+      state.user.email = action.payload.email
+      state.isFetchCurrentUser = false
+      state.isAuth = true
+      state.isLoading = false
+    },
+
+    [currentUser.pending]: (state) => {
+      state.isFetchCurrentUser = true
+      state.isLoading = true
+      state.error = null
+    },
+    [currentUser.rejected]: (state, action) => {
+      state.error = action.payload
+      state.isLoading = false
+      state.isAuth = false
+      state.isFetchCurrentUser = false
+    },
   },
-});
+})
 
-export default authSlice.reducer;
+export default authSlice.reducer

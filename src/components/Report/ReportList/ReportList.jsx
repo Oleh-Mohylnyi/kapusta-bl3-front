@@ -4,12 +4,10 @@ import s from "./ReportList.module.scss";
 
 export default function ReportList({ types }) {
   return (
-    <section>
-      <ul className={s.list}>
-        {types.map(({ id, type, icon, sum }) => (
-          <ReportItem key={id} type={type} icon={icon} sum={sum} />
-        ))}
-      </ul>
-    </section>
+    <ul className={s.list}>
+      {types.map(({ type, icon, sum }, index) => {
+        return <ReportItem key={index} type={type} icon={icon} sum={sum} />;
+      })}
+    </ul>
   );
 }

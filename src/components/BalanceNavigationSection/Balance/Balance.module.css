@@ -1,0 +1,112 @@
+/* .balanceTitle {
+  margin-bottom: 6px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 14px;
+
+  text-align: center;
+  letter-spacing: 0.02em;
+
+  color: rgba(82, 85, 95, 0.7);
+} */
+
+.balanceLabel {
+  width: 125px;
+  height: 44px;
+}
+
+.balanceInput {
+  width: 125px;
+  height: 44px;
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+
+  border-radius: 22px 0px 0px 22px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #000000;
+}
+
+/* .balanceButton {
+  width: 125px;
+  height: 44px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: rgba(82, 85, 95, 0.7);
+
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 0px 22px 22px 0px;
+}
+
+.balanceButton:hover {
+  background: #ff751d;
+  border-radius: 0px 22px 22px 0px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+} */
+
+.balanceInputText {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.balanceTitleMargin {
+  margin-bottom: 6px;
+}
+
+@media screen and (min-width: 768px) {
+  .balanceForm {
+    display: flex;
+    align-items: baseline;
+  }
+
+  .balanceButton {
+    border-radius: 16px;
+    width: 125px;
+    height: 44px;
+  }
+
+  .balanceInput {
+    margin-right: 15px;
+  }
+
+  .activeBalanceContainer {
+    display: flex;
+    align-items: baseline;
+  }
+}
+
+.activeBalanceWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

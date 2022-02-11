@@ -7,6 +7,7 @@ const TransactionsNav = () => {
     <nav className={s.navList}>
 <NavLink
           to="expense"
+<<<<<<< HEAD
         className={s.navLink}
           // {({ isActive }) =>
           //   s.link +
@@ -14,6 +15,14 @@ const TransactionsNav = () => {
           //     ? ` ${s.activeLink}`
           //     : ` ${s.noActiveLink}`)
           // }
+=======
+          className={({ isActive }) =>
+            s.link +
+            (isActive || location.pathname === "/transactions"
+              ? ` ${s.activeLink}`
+              : ` ${s.noActiveLink}`)
+          }
+>>>>>>> main
         >
           Расход
         </NavLink>

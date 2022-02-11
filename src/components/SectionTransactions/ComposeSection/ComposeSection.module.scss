@@ -8,6 +8,7 @@
 @media screen and (min-width: 768px) {
   .wrapperTables {
     flex-direction: column;
+    margin-top: 48px;
   }
 }
 
@@ -15,5 +16,6 @@
   .wrapperTables {
     flex-direction: row;
     padding-top: 0;
+    margin-top: 59px;
   }
 }

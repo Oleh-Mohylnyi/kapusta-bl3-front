@@ -30,8 +30,9 @@
 }
 
 .Modal {
+  position: absolute;
   width: 380px;
-  height: 194px;
+  /* height: 194px; */
 
   background: #ffffff;
   /* modal */
@@ -39,6 +40,12 @@
   box-shadow: 10px 10px 30px rgba(82, 85, 95, 0.4);
   border-radius: 30px;
   padding: 50px 57px 60px 58px;
+}
+
+@media screen and (max-width: 767px) {
+  .Modal {
+    width: 300px;
+  }
 }
 
 .confirmButton {
@@ -107,38 +114,16 @@
   justify-content: center;
 }
 
-.text {
-  margin-bottom: 20px;
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: 500;
-  font-size: 14px;
-  line-height: 16px;
-  text-align: center;
-  letter-spacing: 0.02em;
-
-  color: #52555f;
+.icon {
+  fill: gold;
 }
 
-.closeButtonIcon {
-  width: 12px;
-  height: 12px;
+.icon:hover {
+  fill: #ff751d;
 }
 
 .closeButton {
   position: absolute;
-  top: 0;
-  right: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  margin-top: 20px;
-  margin-right: 20px;
-  padding: 0;
-
-  width: 12px;
-  height: 12px;
-  border: none;
-  cursor: pointer;
+  top: 20px;
+  right: 20px;
 }

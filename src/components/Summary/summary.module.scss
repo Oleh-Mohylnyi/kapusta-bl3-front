@@ -14,7 +14,16 @@
     border-radius: 20px 20px 0 0;
   }
 }
-
+@media screen and (max-width: 1280px) {
+  .summary {
+    margin-top: 40px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .summary {
+    display: none;
+  }
+}
 .summary_list {
   padding: 0;
   margin: 0;
