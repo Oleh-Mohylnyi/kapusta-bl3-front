@@ -28,7 +28,7 @@ export async function logout() {
 
 export async function currentUser(userToken) {
   token.set(userToken);
-  const result = await axios.get("api/users/current");
+  const result = await axios.get("api/auth/current");
   return result.data.data;
 }
 
