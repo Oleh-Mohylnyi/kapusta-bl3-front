@@ -6,21 +6,16 @@ import { IconContext } from "react-icons";
 // import { BiCalculator } from "react-icons/bi";
 import { RiCalculatorLine } from "react-icons/ri";
 import Button from "../Button/Button";
-import DatePickerForm from "../DatePickerForm";
-import styles from "./TransactionForm.module.scss";
-// import SelectForm from '../../SelectForm/SelectForm'
+import DatePickerForm from "./DatePickerForm";
 import CustomSelect from './CustomSelect'
 
-const categoryList = [
+import styles from "./TransactionForm.module.scss";
+
+const categoryList = [//надо передавать пропсом, в зависимости от маршрута где отображается
   { id: "1", name: "Транспорт" },
   { id: "2", name: "Продукты" },
   { id: "3", name: "Здоровье" },
   { id: "4", name: "Алкоголь" },
-  // { id: "5", name: "Транспорт" },
-  // { id: "6", name: "Транспорт" },
-  // { id: "7", name: "Транспорт" },
-  // { id: "8", name: "Транспорт" },
-  // { id: "9", name: "Транспорт" },
 ]
 
 
@@ -66,7 +61,8 @@ function TransactionForm({currency}) {
             type="text"
             name="description"
             required
-            placeholder="Описание"
+              placeholder="Описание"
+              autoComplete='off'
           />
             {/* <div> */}
             {/* <div className={styles.productCategoryContainer}> */}
@@ -83,7 +79,8 @@ function TransactionForm({currency}) {
               type="text"
               name="productSum"
               required
-              placeholder="00.00"
+                placeholder="00.00"
+                autoComplete='off'
             />
             {screenWidth < 768 && (
               <span className={styles.productSumLabel}>

@@ -1,21 +1,24 @@
 import React from "react";
-// import SectionTransactions from "../../SectionTransactions/SectionTransactions";
-import Summary from "./Summary/Summary";
+import Summary from "../Summary";
 import TableData from "./TableData";
+import TransactionsNav from "./TransactionsNav"
 import TransactionForm from "../TransactionForm";
-
 import s from "./SectionTransactions.module.scss";
+import styles from "./ComposeSection/ComposeSection.module.scss";
 // import { PropTypes } from "prop-types";
 
 const SectionTransactions = () => {
   return (
-    <div className={s.section}>
-      <TransactionForm currency={"UAH"} />
-      <div className={s.wrapperTables}>
+    <section >
+      <TransactionsNav />
+    <div className={s.sectionContainer}>
+      <TransactionForm />
+      <div className={styles.wrapperTables}>
         <TableData isExpense={true} />
         <Summary />
-      </div>
-    </div>
+        </div>
+        </div>
+    </section>
   );
 };
 

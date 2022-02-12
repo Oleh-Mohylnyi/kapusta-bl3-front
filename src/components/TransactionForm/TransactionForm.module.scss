@@ -1,24 +1,21 @@
 @import "../../css/variables.css";
 
 .transactionForm {
-  margin: 15px auto 0;
-  // margin: 100px auto 0; //для тестирования оставляю
+  margin: 15px auto 0; //нужно править
   display: flex;
   flex-direction: column;
   align-items: center;
 
   background-color: var(--bg-color); //взамен фонового изображения
-  border: 1px solid orange; //для тестирования оставляю
+  // border: 1px solid orange; //для тестирования оставляю
 
   @media screen and (min-width: 768px) {
-    // margin-top: 28px;
-    background-color: lavender; ////для тестирования оставляю
-
+    // background-color: lavender; ////для тестирования оставляю
+    background: none; ////пока нет фоновой картинки
     width: 604px;
     justify-content: space-between;
     padding: 10px 0;
     @media screen and (min-width: 1280px) {
-      margin-top: 33px;
       width: 1020px;
       flex-direction: row;
     }
@@ -32,33 +29,18 @@
   }
 }
 
-// .transactionInput {
-// display: block;
-// background-color: transparent;
-// border: 2px solid #ffffff;
-// width: 282px;
-// padding: 13px 0 13px 20px;
-
-// font-family: var(--font-family); //вероятно перенести в общак?
-// font-style: normal; //вероятно перенести в общак?
-// font-weight: 400; //вероятно перенести в общак?
-// font-size: 12px; //вероятно перенести в общак?
-// line-height: 1.167; //вероятно перенести в общак?
-// color: var(--additional-text-color);
-// letter-spacing: 0.02em; //вероятно перенести в общак?
-
-// &:active,
-// &:focus {
-//   outline: 0;
-//   outline-offset: 0;
-//   border-bottom-right-radius: 0px;
-//   border-bottom-color: var(--accent-color);
-// }
-
-// @media screen and (min-width: 768px) {
-//   border: 2px solid var(--bg-color);
-// }
-// }
+.dateInputContainer {
+  margin: 0 auto;
+  display: inline-block;
+  cursor: pointer;
+  @media screen and (min-width: 768px) {
+    margin-right: 33px;
+    padding: 2px 0;
+  }
+  @media screen and (min-width: 1280px) {
+    margin-right: 25px;
+  }
+}
 
 .productDescriptionInput {
   display: block;
@@ -72,13 +54,6 @@
   padding: 13px 0 13px 20px;
 
   color: var(--additional-text-color);
-
-  // font-family: var(--font-family); //вероятно перенести в общак?
-  // font-style: normal; //вероятно перенести в общак?
-  // font-weight: 400; //вероятно перенести в общак?
-  // font-size: 12px; //вероятно перенести в общак?
-  // line-height: 1.167; //вероятно перенести в общак?
-  // letter-spacing: 0.02em; //вероятно перенести в общак?
 
   &:active,
   &:focus {
@@ -112,20 +87,8 @@
   background-color: transparent;
 
   text-align: left;
-
-  // font-family: var(--font-family); //вероятно перенести в общак?
-  // font-style: normal; //вероятно перенести в общак?
-  // font-weight: 400; //вероятно перенести в общак?
-  // font-size: 12px; //вероятно перенести в общак?
-  // line-height: 1.167; //вероятно перенести в общак?
-  // letter-spacing: 0.02em; //вероятно перенести в общак?
-
-  &:active,
-  &:focus {
-    outline: 0;
-    outline-offset: 0;
+  &.active {
     border-radius: 0;
-    border-bottom-color: var(--accent-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -143,23 +106,8 @@
 
 .productCategoryContainer {
   position: relative;
-  @media screen and (min-width: 768px) {
-  }
+  cursor: pointer;
 }
-
-// -----!!!иконка "выпадашки"!!!-------//
-// {
-//   position: absolute;
-//   width: 4px;
-//   height: 10px;
-
-//   border: 2px solid #c7ccdc;
-//   transform: rotate(-90deg);
-//   -top: 20px;
-//   -bottom: 20px;
-//   -right: 22px;
-// }
-// }
 
 .productSumContainer {
   position: relative;
@@ -203,18 +151,24 @@
   border: 2px solid #ffffff;
   border-radius: 22px 0px 0px 22px;
 
-  // font-family: var(--font-family); //вероятно перенести в общак?
-  // font-style: normal; //вероятно перенести в общак?
   font-weight: 700;
-  // font-size: 12px; //вероятно перенести в общак?
-  // line-height: 1.167; //вероятно перенести в общак?
   text-align: right;
-  // letter-spacing: 0.02em; //вероятно перенести в общак?
+  // font-family: var(--font-family); //перенес в index.css
+  // font-style: normal; //перенес в index.css
+
+  // font-size: 12px; //перенес в index.css
+  // line-height: 1.167; //перенес в index.css
+
+  // letter-spacing: 0.02em; //перенес в index.css
 
   &:active,
   &:focus {
     outline: 0;
     outline-offset: 0;
+  }
+
+  &::placeholder {
+    text-decoration-color: var(--additional-text-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -238,15 +192,17 @@
   top: 15px;
   right: 75px;
 
-  font-family: var(--font-family); //вероятно перенести в общак?
-  font-style: normal; //вероятно перенести в общак?
   font-weight: bold;
-  font-size: 12px; //вероятно перенести в общак?
-  line-height: 1.167; //вероятно перенести в общак?
-  letter-spacing: 0.02em; //вероятно перенести в общак?
+
   text-transform: uppercase;
 
   color: var(--title-color);
+
+  // font-family: var(--font-family); //перенес в index.css
+  // font-style: normal; //перенес в index.css
+  //   font-size: 12px; //перенес в index.css
+  // line-height: 1.167; //перенес в index.css
+  // letter-spacing: 0.02em; //перенес в index.css
 }
 
 // блок "калькулятор"{
@@ -336,4 +292,33 @@
 //     box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
 //     border-radius: 16px;
 //   }
+// }
+
+//----свалка---//
+// .transactionInput {
+// display: block;
+// background-color: transparent;
+// border: 2px solid #ffffff;
+// width: 282px;
+// padding: 13px 0 13px 20px;
+
+// font-family: var(--font-family); //вероятно перенести в общак?
+// font-style: normal; //вероятно перенести в общак?
+// font-weight: 400; //вероятно перенести в общак?
+// font-size: 12px; //вероятно перенести в общак?
+// line-height: 1.167; //вероятно перенести в общак?
+// color: var(--additional-text-color);
+// letter-spacing: 0.02em; //вероятно перенести в общак?
+
+// &:active,
+// &:focus {
+//   outline: 0;
+//   outline-offset: 0;
+//   border-bottom-right-radius: 0px;
+//   border-bottom-color: var(--accent-color);
+// }
+
+// @media screen and (min-width: 768px) {
+//   border: 2px solid var(--bg-color);
+// }
 // }

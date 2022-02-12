@@ -1,4 +1,3 @@
-
 import useWResize from "../../../hooks/useWindowDimensions";
 import s from "./TableData.module.scss";
 import sMobile from "./TableDataMobile.module.scss";
