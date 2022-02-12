@@ -3,7 +3,7 @@ import {
   fetchBalanceThunk,
   getIncomeThunk,
   getExpensesThunk,
-  getMonthlyIncomeThunk,
+  getMonthlyIncomesThunk,
   getMonthlyExpensesThunk,
   // getDetailsThunk,
 } from "./reportsThunk";
@@ -77,21 +77,21 @@ export const reportsSlice = createSlice({
     [getExpensesThunk.rejected](state, { payload }) {
       return { ...state, isLoading: false, error: payload };
     },
-    [getMonthlyIncomeThunk.pending](state, { payload }) {
+    [getMonthlyIncomesThunk.pending](state, { payload }) {
       return {
         ...state,
         error: "",
         isLoading: true,
       };
     },
-    [getMonthlyIncomeThunk.fulfilled](state, { payload }) {
+    [getMonthlyIncomesThunk.fulfilled](state, { payload }) {
       return {
         ...state,
         isLoading: false,
         monthlyIncome: payload,
       };
     },
-    [getMonthlyIncomeThunk.rejected](state, { payload }) {
+    [getMonthlyIncomesThunk.rejected](state, { payload }) {
       return {
         ...state,
         isLoading: false,

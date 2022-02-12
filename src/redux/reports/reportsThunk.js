@@ -101,7 +101,7 @@ export const getExpensesThunk = createAsyncThunk(
   }
 );
 
-export const getMonthlyIncomeThunk = createAsyncThunk(
+export const getMonthlyIncomesThunk = createAsyncThunk(
   "report/monthlyIncome",
   async (_, { rejectWithValue, getState }) => {
     const state = getState();
