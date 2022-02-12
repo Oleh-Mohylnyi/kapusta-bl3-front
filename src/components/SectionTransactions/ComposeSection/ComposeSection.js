@@ -6,15 +6,15 @@ import s from "./ComposeSection.module.scss";
 
 const ExpensePage = () => {
   return (
-    <div>
+    // <div> //НЕ НУЖЕН?
       <SectionTransactions>
-        <TransactionForm/>
-        {/* <div className={s.wrapperTables}>
+        <TransactionForm currency={'UAH'}/>
+        <div className={s.wrapperTables}>
           <TableData isExpense={true} />
           <Summary />
-        </div> */}
+        </div>
       </SectionTransactions>
-    </div>
+    // </div> //НЕ НУЖЕН?
   );
 };
 

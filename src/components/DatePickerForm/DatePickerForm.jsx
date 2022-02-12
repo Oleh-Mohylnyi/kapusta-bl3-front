@@ -10,48 +10,7 @@ import "react-datepicker/dist/react-datepicker.css";
 // import { PropTypes } from "prop-types";
 import s from "./DatePickerForm.module.scss";
 
-// ------pervious----
-// const DatePickerForm = ({ piker }) => {
-//   // const dispatch = useDispatch();
 
-//   const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
-//     <div className={s.input} onClick={onClick} ref={ref}>
-//       <div className={s.wrapperSvg}>
-//         {/* <svg
-//           width="20"
-//           height="20"
-//                     xmlns=""
-//         >
-//           <path
-
-//           />
-//           <path
-
-//           />
-//         </svg> */}
-//       </div>
-//       {value}
-//     </div>
-//   ));
-
-//   return (
-//     <>
-//       <div className={s.wrapper}>
-//         {piker && (
-//           <ReactDatePicker
-//             selected={piker}
-//             dateFormat="dd.MM.y"
-//             maxDate={new Date()}
-//             // onChange={(date) =>
-//             //   dispatch(userActions.changeCurrentDay(date.getTime()))
-//             // }
-//             customInput={<ExampleCustomInput />}
-//                       />
-//         )}
-//       </div>
-//     </>
-//   );
-// };
 
 const DatePickerForm = () => {
   const [startDate, setStartDate] = useState(new Date());
@@ -73,12 +32,7 @@ const DatePickerForm = () => {
       {value}
     </div>
   ));
-  //     const ExampleCustomInput = forwardRef(({ value, onClick }, ref) => (
-  //   <button className="example-custom-input" onClick={onClick} ref={ref}>
-  //     {value}
-  //   </button>
-  // ));
-
+ 
   return (
     <div className={s.wrapper}>
       {/* <div style={{display: 'block', width:'104px', height:'40px'}}>     */}

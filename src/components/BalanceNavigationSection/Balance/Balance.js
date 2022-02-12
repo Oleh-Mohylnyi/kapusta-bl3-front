@@ -1,11 +1,6 @@
-<<<<<<< HEAD:src/components/Balance/Balance.js
-import React from 'react';
-// import Bubble from '../Bubble/Bubble';
-=======
 import {React} from 'react';
 // import { useSelector, useDispatch } from "react-redux";
 import Bubble from '../../Bubble/Bubble';
->>>>>>> main:src/components/BalanceNavigationSection/Balance/Balance.js
 import s from './Balance.module.css';
 
 
@@ -54,7 +49,7 @@ export default function Balance (){
       
             
             </label>
-                    {/* <Bubble/> */}{/* ВЕРНУТЬ */}
+                    <Bubble/>{/* ВЕРНУТЬ */}
                     
             </div>
         ) : (

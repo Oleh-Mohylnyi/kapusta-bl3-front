@@ -7,12 +7,13 @@
   flex-direction: column;
   align-items: center;
 
-  //background-color: var(--bg-color); //взамен фонового изображения
+  background-color: var(--bg-color); //взамен фонового изображения
+  border: 1px solid orange; //для тестирования оставляю
 
   @media screen and (min-width: 768px) {
     // margin-top: 28px;
-    //background-color: lavender; ////для тестирования оставляю
-    //border: 1px solid orange;//для тестирования оставляю
+    background-color: lavender; ////для тестирования оставляю
+
     width: 604px;
     justify-content: space-between;
     padding: 10px 0;
@@ -31,20 +32,53 @@
   }
 }
 
-.transactionInput {
+// .transactionInput {
+// display: block;
+// background-color: transparent;
+// border: 2px solid #ffffff;
+// width: 282px;
+// padding: 13px 0 13px 20px;
+
+// font-family: var(--font-family); //вероятно перенести в общак?
+// font-style: normal; //вероятно перенести в общак?
+// font-weight: 400; //вероятно перенести в общак?
+// font-size: 12px; //вероятно перенести в общак?
+// line-height: 1.167; //вероятно перенести в общак?
+// color: var(--additional-text-color);
+// letter-spacing: 0.02em; //вероятно перенести в общак?
+
+// &:active,
+// &:focus {
+//   outline: 0;
+//   outline-offset: 0;
+//   border-bottom-right-radius: 0px;
+//   border-bottom-color: var(--accent-color);
+// }
+
+// @media screen and (min-width: 768px) {
+//   border: 2px solid var(--bg-color);
+// }
+// }
+
+.productDescriptionInput {
   display: block;
+
   background-color: transparent;
   border: 2px solid #ffffff;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
+
   width: 282px;
   padding: 13px 0 13px 20px;
 
-  font-family: var(--font-family); //вероятно перенести в общак?
-  font-style: normal; //вероятно перенести в общак?
-  font-weight: 400; //вероятно перенести в общак?
-  font-size: 12px; //вероятно перенести в общак?
-  line-height: 1.167; //вероятно перенести в общак?
   color: var(--additional-text-color);
-  letter-spacing: 0.02em; //вероятно перенести в общак?
+
+  // font-family: var(--font-family); //вероятно перенести в общак?
+  // font-style: normal; //вероятно перенести в общак?
+  // font-weight: 400; //вероятно перенести в общак?
+  // font-size: 12px; //вероятно перенести в общак?
+  // line-height: 1.167; //вероятно перенести в общак?
+  // letter-spacing: 0.02em; //вероятно перенести в общак?
 
   &:active,
   &:focus {
@@ -56,13 +90,6 @@
 
   @media screen and (min-width: 768px) {
     border: 2px solid var(--bg-color);
-  }
-}
-
-.productDescriptionInput {
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  @media screen and (min-width: 768px) {
     width: 192px;
     border-top-right-radius: 0;
   }
@@ -72,13 +99,42 @@
 }
 
 .productCategoryInput {
+  display: block;
+
+  width: 282px;
+  padding: 13px 0 13px 20px;
+
+  border: 2px solid #ffffff;
   border-top: none;
   border-bottom-right-radius: 16px;
+
+  color: var(--additional-text-color);
+  background-color: transparent;
+
+  text-align: left;
+
+  // font-family: var(--font-family); //вероятно перенести в общак?
+  // font-style: normal; //вероятно перенести в общак?
+  // font-weight: 400; //вероятно перенести в общак?
+  // font-size: 12px; //вероятно перенести в общак?
+  // line-height: 1.167; //вероятно перенести в общак?
+  // letter-spacing: 0.02em; //вероятно перенести в общак?
+
+  &:active,
+  &:focus {
+    outline: 0;
+    outline-offset: 0;
+    border-radius: 0;
+    border-bottom-color: var(--accent-color);
+  }
+
   @media screen and (min-width: 768px) {
-    border-top: 2px solid var(--bg-color);
-    border-bottom-right-radius: 0;
-    border-left: none;
     width: 171px;
+
+    border: 2px solid var(--bg-color);
+    // border-top: 2px solid var(--bg-color);
+    border-left: none;
+    border-bottom-right-radius: 0;
   }
   @media screen and (min-width: 1280px) {
     width: 188px;
@@ -147,13 +203,13 @@
   border: 2px solid #ffffff;
   border-radius: 22px 0px 0px 22px;
 
-  font-family: var(--font-family); //вероятно перенести в общак?
-  font-style: normal; //вероятно перенести в общак?
+  // font-family: var(--font-family); //вероятно перенести в общак?
+  // font-style: normal; //вероятно перенести в общак?
   font-weight: 700;
-  font-size: 12px; //вероятно перенести в общак?
-  line-height: 1.167; //вероятно перенести в общак?
+  // font-size: 12px; //вероятно перенести в общак?
+  // line-height: 1.167; //вероятно перенести в общак?
   text-align: right;
-  letter-spacing: 0.02em; //вероятно перенести в общак?
+  // letter-spacing: 0.02em; //вероятно перенести в общак?
 
   &:active,
   &:focus {
@@ -280,99 +336,4 @@
 //     box-shadow: 1px 2px 5px rgba(170, 178, 197, 0.4);
 //     border-radius: 16px;
 //   }
-// }
-
-// -----------
-
-// .form p {
-//   margin-bottom: 5px;
-// }
-
-// .form button {
-//   display: block;
-//   margin: 10px auto 0;
-// }
-
-// .hidden-list {
-//   display: none;
-// }
-
-// .label-country {
-//   position: relative;
-//   display: inline;
-// }
-
-// .datalist-country {
-//   position: absolute;
-//   z-index: 110;
-//   max-height: 170px;
-//   width: 270px;
-//   overflow: auto;
-//   background-color: var(--form-input-background);
-//   backdrop-filter: blur(20px);
-//   cursor: pointer;
-
-//   font-family: Montserrat;
-//   font-style: normal;
-//   font-weight: normal;
-//   font-size: 16px;
-//   line-height: 1.25;
-//   color: var(--form-imput-text-active);
-//   text-align: left;
-//   vertical-align: top;
-//   // :hover,
-//   :focus {
-//     background-color: var(--form-imput-bgc-active);
-//   }
-
-//   &::after {
-//     content: "";
-//     background-image: url(./../images/line.svg);
-//     background-repeat: no-repeat;
-//     position: absolute;
-//     width: 226px;
-//     height: 1px;
-//     left: 22px;
-//     top: 1px;
-//   }
-//   border-radius: 0 0 20px 20px;
-
-//   li {
-//     padding-left: 30px;
-//     padding-top: 2px;
-//     outline: none;
-//   }
-//   :first-child {
-//     margin-top: 6px;
-//   }
-// }
-
-// .datalist-item:hover {
-//   background-color: var(--form-imput-bgc-active);
-// }
-
-// .input-country {
-//   // & :hover,
-//   &:focus {
-//     border-radius: 20px 20px 0 0;
-//   }
-// }
-
-// .datalist-country::-webkit-scrollbar {
-//   width: 11px;
-//   background-color: transparent;
-// }
-
-// .datalist-country::-webkit-scrollbar-thumb {
-//   border-radius: 11px;
-//   height: 43px;
-//   background-color: var(--form-input-text);
-//   background-clip: content-box;
-//   border: 3px solid transparent;
-// }
-
-// .datalist-country::-webkit-scrollbar-track {
-//   border-radius: 11px;
-//   height: 43px;
-//   background-color: transparent;
 // }

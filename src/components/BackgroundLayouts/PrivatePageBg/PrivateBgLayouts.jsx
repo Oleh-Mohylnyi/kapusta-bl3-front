@@ -1,4 +1,5 @@
 import React from "react";
+import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import CabbageGroup from '../../../images/background/cabbage-svg-group.svg'
 import CabbageNonRotate from "../../../images/background/cabbage-svg-one-r0.svg";
 import CabbageQuarterTurn from "../../../images/background/cabbage-svg-one-r-90.svg";
@@ -6,7 +7,7 @@ import CabbageShadow from "../../../images/background/cabbage-svg-shadow.svg";
 import s from "./PrivateBgLayouts.module.scss";
 
 function BgLayout() {
-  const screenWidth = window.screen.width;
+  const screenWidth = useWindowDimensions();
   return (
     <>
       { (screenWidth >= 768 && screenWidth<1280) && (
