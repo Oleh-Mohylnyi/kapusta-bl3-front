@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchBalanceThunk, getIncomeThunk, getExpensesThunk, setBalanceThunk} from "./reportsThunk";
+import { fetchBalanceThunk, getIncomeThunk, getExpensesThunk} from "./reportsThunk";
 
 export const reportsSlice = createSlice({
     name: "reports",
