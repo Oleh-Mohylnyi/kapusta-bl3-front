@@ -1,0 +1,52 @@
+.customSelectContainer {
+  display: inline-block;
+  min-width: 250px;
+  text-align: center;
+  position: relative;
+
+  // &:hover .icon {
+  //   // transform: rotate(180);
+  //   transition: top 0.1s 0.25s ease-in, rotate 0.1s ease-in;
+  // }
+}
+
+.selectOptionsList {
+  z-index: 2;
+
+  position: absolute;
+  opacity: 1;
+
+  width: 100%;
+  background: #ffffff;
+  border: 2px solid #f5f6fb;
+  box-shadow: 0px 3px 4px rgba(170, 178, 197, 0.4);
+
+  &.isHidden {
+    opacity: 0;
+    pointer-events: none;
+  }
+}
+
+.selectOptionsItem {
+  height: 32px;
+  padding: 9px 20px;
+  color: #c7ccdc;
+  text-align: left;
+  cursor: pointer;
+
+  &:hover,
+  &:focus {
+    background: #f5f6fb;
+    color: #52555f;
+  }
+}
+
+.icon {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+
+  display: block;
+  width: 12px;
+  height: 7px;
+}

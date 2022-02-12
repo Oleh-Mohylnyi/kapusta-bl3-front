@@ -120,5 +120,11 @@
 <symbol id="icon-arrow-back" viewBox="0 0 48 32">
 <path fill="#ff751d" style="fill: var(--color1, #ff751d)" d="M48 13.333h-37.787l9.547-9.573-3.76-3.76-16 16 16 16 3.76-3.76-9.547-9.573h37.787v-5.333z"></path>
 </symbol>
+<symbol id="icon-select-arrow-down" viewBox="0 0 17 10">
+<path fill="none" stroke="#c7ccdc" style="stroke: var(--color1, #c7ccdc)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.8571" d="M1.429 1.429l7.143 5.714 7.143-5.714"></path>
+</symbol>
+<symbol id="icon-select-arrow-up" viewBox="0 0 17 10">
+<path fill="none" stroke="#c7ccdc" style="stroke: var(--color1, #c7ccdc)" stroke-linejoin="miter" stroke-linecap="butt" stroke-miterlimit="4" stroke-width="2.8571" d="M1.429 8.571l7.143-5.714 7.143 5.714"></path>
+</symbol>
 </defs>
 </svg>

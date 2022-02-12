@@ -49,7 +49,8 @@ export default function Balance (){
       
             
             </label>
-             <Bubble/>
+                    <Bubble/>{/* ВЕРНУТЬ */}
+                    
             </div>
         ) : (
             <div className={s.activeBalanceContainer}>

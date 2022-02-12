@@ -1,14 +1,26 @@
 // import { useState } from 'react';
 // import { useDispatch } from 'react-redux';
 // import { addNewContact } from '../../redux/phoneBook/contacts-thunks';
+import useWindowDimensions from '../../hooks/useWindowDimensions';
 import { IconContext } from "react-icons";
 // import { BiCalculator } from "react-icons/bi";
 import { RiCalculatorLine } from "react-icons/ri";
 import Button from "../Button/Button";
-import DatePickerForm from "../DatePickerForm";
+import DatePickerForm from "./DatePickerForm";
+import CustomSelect from './CustomSelect'
+
 import styles from "./TransactionForm.module.scss";
 
-function TransactionForm() {
+const categoryList = [//надо передавать пропсом, в зависимости от маршрута где отображается
+  { id: "1", name: "Транспорт" },
+  { id: "2", name: "Продукты" },
+  { id: "3", name: "Здоровье" },
+  { id: "4", name: "Алкоголь" },
+]
+
+
+function TransactionForm({currency}) {
+  const screenWidth = useWindowDimensions();
   // const [name, setName] = useState('');
   // const [number, setNumber] = useState('');
   // // const dispatch = useDispatch();
@@ -40,14 +52,6 @@ function TransactionForm() {
   return (
     <>
       <form className={styles.transactionForm} onSubmit={handleSubmit}>
-       
-        {/* <input
-          className="input"
-          type="date"
-          name="date"
-          required
-          placeholder=""
-        /> */}
         <div className={styles.transactionInputsContainer}>
         <DatePickerForm />
          <div className={styles.transactionInputsContainer}>
@@ -57,43 +61,31 @@ function TransactionForm() {
             type="text"
             name="description"
             required
-            placeholder="Описание"
+              placeholder="Описание"
+              autoComplete='off'
           />
-          <div className={styles.productCategoryContainer}>
-            <input
-              className={`${styles.transactionInput} ${styles.productCategoryInput}`}
-              type="text"
-              name="productCategory"
-              placeholder="Категория товара"
-            />
-            {/* должно быть выпадающим списком*/}
-            {/* <ul className={styles.productCategoryList}>
-              <li className={styles.productCategoryItem}>Транспорт</li>
-              <li className={styles.productCategoryItem}>Исскуство</li>
-              <li className={styles.productCategoryItem}>Продукты</li>
-            </ul> */}
-            {/* <label class="label-country" for="custom-select">
-          <input class="input input-country" type="text" id="country-choice" placeholder="Choose country" autocomplete="off">
-          <div class="input-triangle"></div>
-        <ul class="datalist-country hidden-list" id="datalist-country"> 
-        </ul>
-        </label> */}
-          </div>
+            {/* <div> */}
+            {/* <div className={styles.productCategoryContainer}> */}
+              {/* кастомный выпадающий списом*/}
+              <CustomSelect
+                optionsList={categoryList}
+                placeholderText={"Категория товара"} />
+          {/* </div> */}
           <div className={styles.productSumContainer}>
-            <input
+            {/* необходимо добавить NumPad https://www.npmjs.com/package/react-numpad */}
+              <input
               className={styles.productSumInput}
               // className={`${styles.transactionInput} ${styles.productSumInput}`}
               type="text"
               name="productSum"
               required
-              placeholder="00.00"
+                placeholder="00.00"
+                autoComplete='off'
             />
-            {window.screen.width < 768 && (
-              <label
-                className={styles.productSumLabel}
-                htmlFor="productSum">
-                {`UAH`}
-              </label>
+            {screenWidth < 768 && (
+              <span className={styles.productSumLabel}>
+                {currency}
+              </span>
             )}
             <span className={styles.productSumIcon}>
               <IconContext.Provider
@@ -121,9 +113,7 @@ function TransactionForm() {
             className="input"
             type="text"
             name="name"
-            // value={name}
-            pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
-            title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
+            // value={name}            
             required
             // onChange={handleChange}
             placeholder="Enter new contact name"
@@ -135,9 +125,7 @@ function TransactionForm() {
             className="input"
             type="tel"
             name="number"
-            // value={number}
-            pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
-            title="Номер телефона должен состоять из цифр и может содержать пробелы, тире, круглые скобки и может начинаться с +"
+            // value={number}            
             required
             // onChange={handleChange}
             placeholder="Enter new contact number"

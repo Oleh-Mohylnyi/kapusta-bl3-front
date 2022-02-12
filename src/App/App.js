@@ -14,7 +14,7 @@ import { getToken } from "../redux/auth/selectors";
 import { getIsFetchingCurrent } from "../redux/auth/selectors";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-import { Navigation } from "../components/Navigation/Navigation";
+// import { Navigation } from "../components/Navigation/Navigation";
 
 
 const Header = lazy(() =>
@@ -25,7 +25,7 @@ const HomeView = lazy(() =>
 );
 
 const MainView = lazy(() =>
-  import("../views/MainView/MainView" /* webpackChunkName: "contacts-view" */)
+  import("../views/MainView/MainView" /* webpackChunkName: "main-view" */)
 );
 const StatisticsView = lazy(() =>
   import(
@@ -45,7 +45,7 @@ function App() {
 
   return (
     <div className="appContainer">
-      <Navigation />
+      {/* <Navigation /> */}
       <Suspense
         fallback={
           <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />
