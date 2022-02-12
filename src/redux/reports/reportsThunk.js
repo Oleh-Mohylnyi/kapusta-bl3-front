@@ -4,7 +4,7 @@ const BASE_URL = " https://kapusta-smart-finances.herokuapp.com/api/reports";
 const balance = "/balance ";
 const monthlyIncome = "/summary_income ";
 const monthlyExpenses = "/summary_cost ";
-const details = "/detail?";
+// const details = "/detail?";
 
 export const fetchBalanceThunk = createAsyncThunk(
   "report/fetchBalance",
