@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { fetchBalanceThunk, getIncomeThunk, getExpensesThunk} from "./reportsThunk";
+import { fetchBalanceThunk, getIncomeThunk, getExpensesThunk, setBalanceThunk} from "./reportsThunk";
 
 export const reportsSlice = createSlice({
     name: "reports",
@@ -9,8 +9,10 @@ export const reportsSlice = createSlice({
         totalExpenses: 0,
         error: "",
         isLoading: false,
+        
     },
     extraReducers: {
+        
         [fetchBalanceThunk.pending](state, action) {
             return {
                 ...state,

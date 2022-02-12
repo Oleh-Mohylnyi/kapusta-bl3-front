@@ -1,28 +1,28 @@
-import {React} from 'react';
-// import { useSelector, useDispatch } from "react-redux";
+import React from 'react';
+
 import Bubble from '../../Bubble/Bubble';
 import s from './Balance.module.css';
 
 
-
 export default function Balance (){
-    
-    const balance = 5000;
-    // const [balance, setBalance] = useState("");
-    // const dispatch = useDispatch();
-   
-   
-    
+
+const balance = 0;
+
+
+
+
     const inputChange = (e) => { 
-        // setBalance(e.target.value);
+        
     };
 
+    
+
     const handleSubmit = (e) => {
-        // e.preventDefault();
-        // dispatch(operations.addBalance({ balance }));
+        e.preventDefault();
+        
     }
 
-    const initialZeroBalance = balance === 0;
+    const initialZeroBalance =  balance === 0;
 
    
 
@@ -31,8 +31,9 @@ export default function Balance (){
 
 
     return (
+        
         <div>
-            <form onSubmit={handleSubmit} className={s.balanceForm}> 
+            <form  onSubmit={handleSubmit} className={s.balanceForm}> 
         
         {initialZeroBalance ? (
 
@@ -42,6 +43,7 @@ export default function Balance (){
             <input 
             type="text"
             name="balance"
+            value={balance}
             placeholder="00.00 UAH"
             autoComplete="off"
             onChange={inputChange}

@@ -3,6 +3,8 @@ import { createAsyncThunk } from "@reduxjs/toolkit";
 const BASE_URL = " https://kapusta-smart-finances.herokuapp.com/api";
 const balance = "/reports/balance ";
 
+
+
 export const fetchBalanceThunk = createAsyncThunk(
   "balance/fetch",
   async (_, { rejectWithValue, getState }) => {
