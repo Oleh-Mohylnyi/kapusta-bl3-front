@@ -11,6 +11,7 @@ export const reportsSlice = createSlice({
         isLoading: false,
         
     },
+    
     extraReducers: {
         
         [fetchBalanceThunk.pending](state, action) {
