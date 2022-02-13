@@ -68,6 +68,20 @@ export const currentUser = createAsyncThunk(
   },
 );
 
+
+export const userFromGoogleAuth = createAsyncThunk('/google-redirect',
+  async (email, { rejectWithValue }) => {
+    try {
+      const data = await serviceAPI.getGoogleUser(email)
+      console.log(`data in auth-operation`, data)
+      return data
+    } catch (error) {
+      console.log(`error in auth-operation`, error)
+      return rejectWithValue(error.message)
+    }
+  },
+)
+
 // export const verification = createAsyncThunk(
 //   'users/verification',
 //   async (user, { rejectWithValue }) => {
