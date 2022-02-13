@@ -1,4 +1,5 @@
 import styles from "./Title.module.scss";
+// import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import DesktopTitle from "../../images/title/title-desktop.svg";
 import TabletTitle from "../../images/title/title-tablet.svg";
 import MobileTitle from "../../images/title/title-mobile.svg";
