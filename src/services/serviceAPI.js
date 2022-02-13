@@ -62,7 +62,3 @@ export async function addTransaction(userToken, newTransaction) {
   return result.data;
 }
 
-export async function getTransactions() {
-  const result = await axios.post("api/transactions");
-  return result.data;
-}
