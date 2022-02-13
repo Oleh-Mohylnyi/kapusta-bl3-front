@@ -28,6 +28,8 @@
   color: #000000;
   margin-right: 15px;
   margin-left: 15px;
+  justify-content: center;
+  width: 120px;
 }
 
 .button {
@@ -35,6 +37,8 @@
   align-items: center;
   background: transparent;
   border: none;
+  cursor: pointer;
+  padding: 5px 8px;
 }
 
 .container {
