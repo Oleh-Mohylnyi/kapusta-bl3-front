@@ -5,22 +5,15 @@ import s from './Balance.module.css';
 
 
 
-export default function Balance (){
+export default function Balance ({onInputChange, balance, onHandleSubmit}){
     
-    const balance = 5000;
+    // const balance = 5000;
     // const [balance, setBalance] = useState("");
     // const dispatch = useDispatch();
    
    
     
-    const inputChange = (e) => { 
-        // setBalance(e.target.value);
-    };
-
-    const handleSubmit = (e) => {
-        // e.preventDefault();
-        // dispatch(operations.addBalance({ balance }));
-    }
+    
 
     const initialZeroBalance = balance === 0;
 
@@ -32,7 +25,7 @@ export default function Balance (){
 
     return (
         <div>
-            <form onSubmit={handleSubmit} className={s.balanceForm}> 
+            <form onSubmit={onHandleSubmit} className={s.balanceForm}> 
         
         {initialZeroBalance ? (
 
@@ -44,7 +37,7 @@ export default function Balance (){
             name="balance"
             placeholder="00.00 UAH"
             autoComplete="off"
-            onChange={inputChange}
+            onChange={onInputChange}
             className={s.balanceInput}/>
       
             
