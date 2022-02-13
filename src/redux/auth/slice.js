@@ -1,5 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
-import { register, login, currentUser, logout } from './operations'
+import { register, login, currentUser, logout, userFromGoogleAuth } from './operations'
 
 const initialState = {
   user: { email: '', password: '' },
@@ -66,7 +66,6 @@ const authSlice = createSlice({
       state.isAuth = true
       state.isLoading = false
     },
-
     [currentUser.pending]: (state) => {
       state.isFetchCurrentUser = true
       state.isLoading = true
@@ -77,6 +76,14 @@ const authSlice = createSlice({
       state.isLoading = false
       state.isAuth = false
       state.isFetchCurrentUser = false
+    },
+
+    [userFromGoogleAuth.fulfilled]: (state, action) => {
+      state.user.email = action.payload.email
+      // state.user.avatarURL = action.payload.user.avatarURL
+      state.token = action.payload.token
+      state.isLoading = true
+      state.isAuth = true
     },
   },
 })
