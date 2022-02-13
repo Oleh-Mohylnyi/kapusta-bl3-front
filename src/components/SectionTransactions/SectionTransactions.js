@@ -12,7 +12,7 @@ const SectionTransactions = () => {
     <section >
       <TransactionsNav />
     <div className={s.sectionContainer}>
-      <TransactionForm />
+        <TransactionForm currency='UAH'/>
       <div className={styles.wrapperTables}>
         <TableData isExpense={true} />
         <Summary />

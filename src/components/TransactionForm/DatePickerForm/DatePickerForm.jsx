@@ -1,28 +1,22 @@
-import { forwardRef } from "react"; //https://learn-reactjs.ru/core/forwarding-refs
-// import ReactDatePicker from "react-datepicker";
-
-import React, { useState } from "react";
+import React from "react";
+import { forwardRef } from "react";
+//https://learn-reactjs.ru/core/forwarding-refs
 import DatePicker from "react-datepicker";
 
 import "react-datepicker/dist/react-datepicker.css";
-// import { useDispatch } from "react-redux";
-// import * as userActions from "";
-// import { PropTypes } from "prop-types";
 import s from "./DatePickerForm.module.scss";
 import styles from '../TransactionForm.module.scss'
 
 
 
-const DatePickerForm = () => {
-  const [startDate, setStartDate] = useState(new Date());
-  //  const handleChange = e => {
-  //   const { name, value } = e.target;
-  //     name==='date' && setStartDate(value)
+const DatePickerForm = ({ cbSetDate, date }) => {
 
-  // };
-
-  const CustomInput = forwardRef(({ value, onClick }, ref) => (    
-    <div className={s.customInput} onClick={onClick} ref={ref}>
+   const handleChange = (date) => {
+     cbSetDate(date)
+  };
+  
+  const CustomInput = forwardRef(({value, onClick }, ref) => (    
+    <div className={s.customInput} onClick={onClick} ref={ref} data-dateinput>
       <div className={s.customInputIcon}>
         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20">
           <path d="M17.475 2.067h-1.312v-.321a.586.586 0 1 0-1.172 0v.321h-1.617v-.321a.586.586 0 1 0-1.172 0v.321h-1.617v-.321a.586.586 0 1 0-1.172 0v.321H7.796v-.321a.586.586 0 1 0-1.172 0v.321H5.007v-.321a.586.586 0 1 0-1.172 0v.321H2.523A2.528 2.528 0 0 0-.002 4.592v11.724a2.528 2.528 0 0 0 2.525 2.525h14.951a2.528 2.528 0 0 0 2.525-2.525V4.592a2.528 2.528 0 0 0-2.525-2.525zm1.353 14.249c0 .746-.607 1.353-1.353 1.353H2.524a1.355 1.355 0 0 1-1.353-1.353V6.733h17.656v9.583zm0-10.756H1.172v-.969c0-.746.607-1.353 1.353-1.353h1.312v.227a.586.586 0 1 0 1.172 0v-.227h1.617v.227a.586.586 0 1 0 1.172 0v-.227h1.617v.227a.586.586 0 1 0 1.172 0v-.227h1.617v.227a.586.586 0 1 0 1.172 0v-.227h1.617v.227a.586.586 0 1 0 1.172 0v-.227h1.312c.746 0 1.353.607 1.353 1.353v.969z" />
@@ -37,26 +31,16 @@ const DatePickerForm = () => {
   return (
     <div className={styles.dateInputContainer}>      
       <DatePicker
-        selected={startDate}
+        data-name="date"//вдруг нужно будет, не используется        
+        selected={date}
         dateFormat="dd.MM.yyyy"
         maxDate={new Date()}
-        // onKeyDown=
-        onChange={(date) => setStartDate(date)}
+        onChange={handleChange}
         closeOnScroll={true}
-        customInput={<CustomInput />}
+        customInput={<CustomInput />}        
       />
     </div>
   );
 };
 
-
-// DatePickerForm.propTypes = {
-//   piker: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
-// };
-
 export default DatePickerForm;
-
-// <span class="datepicker-toggle">
-//   <span class="datepicker-toggle-button"></span>
-//   <input type="date" class="datepicker-input">
-// </span>

@@ -65,13 +65,17 @@ function App() {
             <Route
               path="/main"
               element={<PrivateRoute isAuth={isAuth} component={MainView} />}
-            />
+              >
+              {/* <Route path="income" element={<IncomeView />} />
+              <Route path="expenses" element={<ExpensesView />} /> */}
+               </Route>
             <Route
               path="statistics"
               element={
                 <PrivateRoute isAuth={isAuth} component={StatisticsView} />
               }
-            >
+              >
+              
             </Route>
 
               
