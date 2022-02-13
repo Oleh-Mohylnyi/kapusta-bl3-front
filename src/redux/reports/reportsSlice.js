@@ -6,6 +6,7 @@ import {
   getMonthlyIncomesThunk,
   getMonthlyExpensesThunk,
   // getDetailsThunk,
+  addBalanceThunk,
 } from "./reportsThunk";
 
 export const reportsSlice = createSlice({
@@ -21,6 +22,27 @@ export const reportsSlice = createSlice({
     isLoading: false,
   },
   extraReducers: {
+    [addBalanceThunk.pending](state, action) {
+      return {
+        ...state,
+        error: "",
+        isLoading: true,
+      };
+    },
+    [addBalanceThunk.fulfilled](state, { payload }) {
+      return {
+        ...state,
+        isLoading: false,
+        balance:  payload,
+      };
+    },
+    [addBalanceThunk.rejected](state, {payload}) {
+      return {
+        ...state,
+        isLoading: false,
+        error: payload,
+      };
+    },
     [fetchBalanceThunk.pending](state, action) {
       return {
         ...state,

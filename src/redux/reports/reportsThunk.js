@@ -6,6 +6,32 @@ const monthlyIncome = "/summary_income ";
 const monthlyExpenses = "/summary_cost ";
 // const details = "/detail?";
 
+export const addBalanceThunk = createAsyncThunk(
+  'balance/addBalance',
+  async (_, { rejectWithValue, getState }) => {
+    const state = getState();
+    if (!state.auth.token) {
+      console.log(state.auth.token);
+      return;
+    } else {
+    try {
+      const response = await fetch(BASE_URL + balance, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${state.auth.token}`,
+        },
+      });
+      const data = await response.json();
+
+      return data.data;
+    } catch (error) {
+      rejectWithValue(error.message);
+    }
+  }
+});
+
+
 export const fetchBalanceThunk = createAsyncThunk(
   "report/fetchBalance",
   async (_, { rejectWithValue, getState }) => {
