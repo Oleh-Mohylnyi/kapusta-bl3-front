@@ -1,0 +1,15 @@
+[
+  { "id": "1", "name": "ЗП", "type": "income" },
+  { "id": "2", "name": "Доп.доход", "type": "income" },
+  { "id": "3", "name": "Транспорт", "type": "expenses"},
+  { "id": "4", "name": "Продукты", "type": "expenses"},
+  { "id": "5", "name": "Здоровье", "type": "expenses"},
+  { "id": "6", "name": "Алкоголь", "type": "expenses"},
+  { "id": "7", "name": "Развлечения", "type": "expenses"},
+  { "id": "8", "name": "Всё для дома", "type": "expenses"},
+  { "id": "9", "name": "Техника", "type": "expenses"},
+  { "id": "10", "name": "Коммуналка, связь", "type": "expenses"},
+  { "id": "11", "name": "Спорт, хобби", "type": "expenses"},
+  { "id": "12", "name": "Образование", "type": "expenses"},
+  { "id": "13", "name": "Прочее", "type": "expenses" }
+]

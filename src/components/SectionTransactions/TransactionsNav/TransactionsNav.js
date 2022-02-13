@@ -7,7 +7,7 @@ const TransactionsNav = () => {
     <ul className={s.navList}>
       <li>
         <NavLink
-          to="expense"
+          to="expenses"
           className={({ isActive }) =>
             s.link +
             (isActive || location.pathname === "/transactions"
@@ -43,7 +43,7 @@ export default TransactionsNav;
 //   return (
 //     <nav className={s.navList}>
 // <NavLink
-//           to="expense"
+//           to="expenses"
 //           className={s.navLink}
 //           // className={({ isActive }) =>
 //           //   s.link +

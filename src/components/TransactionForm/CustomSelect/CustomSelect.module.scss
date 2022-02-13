@@ -1,3 +1,4 @@
+@import "../../../css/variables.css";
 .customSelectContainer {
   display: inline-block;
   min-width: 250px;
@@ -11,7 +12,7 @@
 }
 
 .selectOptionsList {
-  z-index: 2;
+  z-index: 1;
 
   position: absolute;
   opacity: 1;
@@ -19,6 +20,7 @@
   width: 100%;
   background: #ffffff;
   border: 2px solid #f5f6fb;
+  border-top-color: var(--accent-color);
   box-shadow: 0px 3px 4px rgba(170, 178, 197, 0.4);
 
   &.isHidden {

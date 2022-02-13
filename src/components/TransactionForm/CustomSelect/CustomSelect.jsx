@@ -4,6 +4,8 @@ import s from "./CustomSelect.module.scss";
 import styles from "../TransactionForm.module.scss";
 
 function CustomSelect({
+  inputValue,
+  cbSetCategory,
   optionsList,
   placeholderText,
   // containerStyle, //чтобы уневерсилизировать компонент, когда будет время чистки кода
@@ -12,7 +14,7 @@ function CustomSelect({
   // optionStyle //чтобы уневерсилизировать компонент, когда будет время чистки кода
 }) {
   
-  const [inputValue, setInputValue] = useState(undefined);
+  // const [inputValue, setInputValue] = useState(undefined);
   const [isListShown, setIsListShown] = useState(false);
   // const [placeholderValue, setPlaceholderValue] = useState(placeholderText); //если сделать ипут, может пригодится
 
@@ -31,12 +33,18 @@ function CustomSelect({
     };
   }, []);
 
+  // useEffect(() => {
+  //   !inputValue && cbSetCategory(inputValue);
+  //   // eslint-disable-next-line
+  // },[inputValue])
+
   const handleListDisplay = () => {
     setIsListShown(!isListShown);
   };
 
   const handleOptionClick = (e) => {
-    setInputValue(e.target.getAttribute("data-name"));
+    // setInputValue(e.target.getAttribute("data-name"));
+    cbSetCategory(e.target.getAttribute("data-name"))
     setIsListShown(false);
   };
 

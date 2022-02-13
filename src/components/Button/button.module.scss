@@ -18,8 +18,8 @@
   cursor: pointer;
   text-transform: uppercase;
 
-  &:hover,
-  &:focus {
+  &:hover, //, &:focus
+   &:active {
     background-color: var(--accent-color);
     color: var(--bg-color);
     filter: var(--button-shadow-accent);
