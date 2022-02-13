@@ -6,7 +6,10 @@ import Period from '../../components/Period';
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import s from "./TabletDesktopStatisticsNavigation.module.css";
 
-export default function TabletDesktopStatisticsNavigation () {
+export default function TabletDesktopStatisticsNavigation ({handlePreviousPeriod,
+    periodMonth,
+    periodYear,
+    handleNextPeriod}) {
     const windowSize = useWindowDimensions();
     const desktopView = windowSize.width >= 1280;
    
@@ -20,7 +23,7 @@ export default function TabletDesktopStatisticsNavigation () {
     {desktopView && <Button disabled/>}
     </div>
     
-    <Period />
+    <Period handlePreviousPeriod={handlePreviousPeriod} periodMonth={periodMonth} periodYear={periodYear} handleNextPeriod={handleNextPeriod}/>
     </div>
     )
 }
