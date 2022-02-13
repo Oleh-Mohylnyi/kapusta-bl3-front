@@ -2,11 +2,12 @@ import sprite from "../../images/sprite.svg";
 import moment from "moment";
 import "moment/locale/ru";
 import s from "./Period.module.css";
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
 
 function Period() {
   const date = new Date();
+  // eslint-disable-next-line no-unused-vars
   const [periodDate, setPeriodDate] = useState(moment(date));
   const [periodMonth, setPeriodMonth] = useState(moment(date).format('MM'));
   const [periodYear, setPeriodYear] = useState(moment(date).format('YYYY'));
