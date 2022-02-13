@@ -1,0 +1,19 @@
+ [
+    {
+    "_id": "61fda0abcd0e228d49e13013",
+    "type": true, 
+    "sum": 40000,
+    "date": "2022-02-10T10:14:29.466+00:00",
+    "category": "Зарплата",
+    "description": "аванс","currency":"UAH"
+    },
+    {
+      "_id":"620956654b9c7240eb529690",
+      "type": false, 
+    "sum": 400,
+    "date": "2021-08-04T16:48:06.000+00:00",
+    "category": "Техника",
+    "description": "Чайник",
+    "currency":"UAH"
+    }
+  ]
