@@ -1,8 +1,8 @@
 import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
-// import SectionTransactions from "../../components/SectionTransactions";
+import SectionTransactions from "../../components/SectionTransactions";
 // import TableData from "./../../components/SectionTransactions/TableData/TableData";
 // import Summary from "./../../components/Summary/Summary";
-import SectionTransactions from '../../components/SectionTransactions'
+// import SectionTransactions from '../../components/SectionTransactions'
 import BalanceNavigation from "../../components/BalanceNavigationSection/BalanceNavigation";
 import { useEffect } from "react";
 // import TransactionsNav from "../../components/SectionTransactions/TransactionsNav";
@@ -10,22 +10,22 @@ import {fetchTransactionsThunk} from "../../redux/transactions/transactionsThunk
 import { useDispatch } from 'react-redux';
 
 export default function MainView() {
-const dispatch = useDispatch()
+  const dispatch = useDispatch()
 
-  useEffect(() => {
-    dispatch(fetchTransactionsThunk())    
-  },[dispatch])
-  
+    useEffect(() => {
+      dispatch(fetchTransactionsThunk())    
+    },[dispatch])
+
 
   return (
     <>
       <BackgroundImages />
       {/* <SectionTransactions /> */} {/* УДАЛИТЬ?? */}
-      {/* <TableData /> */} {/* УДАЛИТЬ?? */}
+      {/*<TableData />*/} {/* УДАЛИТЬ?? */}
       {/* <Summary /> */} {/* УДАЛИТЬ?? */}
       <BalanceNavigation />
       {/* <TransactionsNav /> */}{/* перенес в SectionTransactions */}
-      <SectionTransactions /> 
+      <SectionTransactions />
     </>
   );
 }

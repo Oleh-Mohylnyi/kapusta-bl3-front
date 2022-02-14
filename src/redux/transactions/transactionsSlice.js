@@ -66,7 +66,7 @@ const transactionsSlice = createSlice({
       return {
         ...state,
         isLoading: false,
-        transactions: [...payload],
+        transactions: [...payload] //state.transactions.filter(({id})=>id!==payload),
       };
     },
     [deleteTransactionThunk.rejected](state,{payload}) {
