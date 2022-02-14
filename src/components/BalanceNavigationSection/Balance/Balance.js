@@ -27,7 +27,7 @@ export default function Balance ({onInputChange, balance, onHandleSubmit}){
         <div>
             <form onSubmit={onHandleSubmit} className={s.balanceForm}> 
         
-        {initialZeroBalance ? (
+        {balance === null ? (
 
             <div className={s.inputWrapper}>
             <label htmlFor='balance' className={s.balanceLabel}>
@@ -35,10 +35,14 @@ export default function Balance ({onInputChange, balance, onHandleSubmit}){
             <input 
             type="text"
             name="balance"
-            placeholder="00.00 UAH"
+            placeholder={"00.00 UAH"}
             autoComplete="off"
             onChange={onInputChange}
-            className={s.balanceInput}/>
+            className={s.balanceInput}
+            value={balance}
+            // value={balance}
+            />
+            
       
             
             </label>
@@ -49,7 +53,7 @@ export default function Balance ({onInputChange, balance, onHandleSubmit}){
             <div className={s.activeBalanceContainer}>
                 
                 <div className={s.activeBalanceWrapper}>
-            <p className={`${s.balanceInput} ${s.balanceInputText}`}>{`${balance}`}.00 UAH</p>
+            <p className={`${s.balanceInput} ${s.balanceInputText}`}>{balance}.00 UAH</p>
             
             </div>
             </div>
