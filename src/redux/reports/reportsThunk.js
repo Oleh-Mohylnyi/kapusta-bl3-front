@@ -4,7 +4,7 @@ const BASE_URL = " https://kapusta-smart-finances.herokuapp.com/api/reports";
 const balance = "/balance ";
 const monthlyIncome = "/summary_income ";
 const monthlyExpenses = "/summary_cost ";
-// const details = "/detail?";
+const details = "/detail?";
 
 export const addBalanceThunk = createAsyncThunk(
   'balance/addBalance',
@@ -170,23 +170,23 @@ export const getMonthlyExpensesThunk = createAsyncThunk(
   }
 );
 
-// export const getDetailsThunk = createAsyncThunk(
-//   "report/monthlyExpenses",
-//   async (period, { rejectWithValue, getState }) => {
-//     const state = getState();
-//     try {
-//       const response = await fetch(BASE_URL + details, {
-//         method: "GET",
-//         headers: {
-//           "Content-Type": "application/json",
-//           Authorization: `Bearer ${state.auth.token}year=${period.year}&month=${period.month}`,
-//         },
-//       });
-//       const data = await response.json();
+export const getDetailsThunk = createAsyncThunk(
+  "report/monthlyExpenses",
+  async (period, { rejectWithValue, getState }) => {
+    const state = getState();
+    try {
+      const response = await fetch(BASE_URL + `${details}year=${period.year}&month=${period.month}`, {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${state.auth.token}`,
+        },
+      });
+      const data = await response.json();
 
-//       return data.data;
-//     } catch (error) {
-//       rejectWithValue(error.message);
-//     }
-//   }
-// );
+      return data.data;
+    } catch (error) {
+      rejectWithValue(error.message);
+    }
+  }
+);

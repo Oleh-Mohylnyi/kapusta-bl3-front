@@ -71,7 +71,8 @@ export const deleteTransactionThunk = createAsyncThunk(
             Authorization: `Bearer ${state.auth.token}`,
           },
         });
-        const data = state.transactions.filter(transaction=> transaction.id !== id);
+        const data = state.transactions.filter(transaction => transaction.id !== id);
+        
         return data;
       } catch (error) {
         rejectWithValue(error.message);
