@@ -5,8 +5,13 @@ import {
   getExpensesThunk,
   getMonthlyIncomesThunk,
   getMonthlyExpensesThunk,
-  // getDetailsThunk,
+
+,
   updateBalanceThunk,
+
+  getDetailsThunk,
+  addBalanceThunk,
+
 } from "./reportsThunk";
 
 export const reportsSlice = createSlice({
@@ -17,7 +22,7 @@ export const reportsSlice = createSlice({
     totalExpenses: 0,
     monthlyIncome: {},
     monthlyExpenses: {},
-    // detail: {},
+    details: {},
     error: "",
     isLoading: false,
   },
@@ -141,27 +146,27 @@ export const reportsSlice = createSlice({
         error: payload,
       };
     },
-    // [getDetailsThunk.pending](state, { payload }) {
-    //   return {
-    //     ...state,
-    //     error: "",
-    //     isLoading: true,
-    //   };
-    // },
-    // [getDetailsThunk.fulfilled](state, { payload }) {
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     details: payload,
-    //   };
-    // },
-    // [getDetailsThunk.rejected](state, { payload }) {
-    //   return {
-    //     ...state,
-    //     isLoading: false,
-    //     error: payload,
-    //   };
-    // },
+    [getDetailsThunk.pending](state, { payload }) {
+      return {
+        ...state,
+        error: "",
+        isLoading: true,
+      };
+    },
+    [getDetailsThunk.fulfilled](state, { payload }) {
+      return {
+        ...state,
+        isLoading: false,
+        details: payload,
+      };
+    },
+    [getDetailsThunk.rejected](state, { payload }) {
+      return {
+        ...state,
+        isLoading: false,
+        error: payload,
+      };
+    },
   },
 });
 export default reportsSlice.reducer;
