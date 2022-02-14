@@ -41,7 +41,7 @@ function App() {
   useEffect(() => {
     token && dispatch(currentUser());
     // eslint-disable-next-line
-  }, [dispatch]);
+  }, [dispatch, token]);
 
   return (
     <div className="appContainer">

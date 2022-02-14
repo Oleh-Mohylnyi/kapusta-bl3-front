@@ -25,15 +25,9 @@ export const login = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const result = await serviceAPI.login(user)
-      //   Notify.success(
-      //     "Login successful!\n",
-      //     `Welcome back, ${result.user.name}!`,
-      //     3000
-      //   );
       toast(`Вы успешно залогинились!`)
       return result
     } catch (error) {
-      //   Notify.error('Incorrect email or password');
       toast('Выполните регистрацию')
       return rejectWithValue(error.message)
     }

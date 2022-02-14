@@ -82,7 +82,7 @@ const authSlice = createSlice({
       state.user.email = action.payload.email
       // state.user.avatarURL = action.payload.user.avatarURL
       state.token = action.payload.token
-      state.isLoading = true
+      state.isLoading = false
       state.isAuth = true
     },
   },
