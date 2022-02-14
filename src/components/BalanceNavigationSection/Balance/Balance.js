@@ -15,7 +15,7 @@ export default function Balance ({onInputChange, balance, onHandleSubmit}){
     
     
 
-    const initialZeroBalance = balance === 0;
+    // const initialZeroBalance = balance === 0;
 
    
 

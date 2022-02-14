@@ -6,7 +6,7 @@ import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import s from './BalanceNavigation.module.css';
 import BalanceTitle from "../BalanceTitle";
 import Button from "../Button";
-import {updateBalance, getBalance} from "../../../redux/reports/reportsSelectors";
+import {getBalance} from "../../../redux/reports/reportsSelectors";
 import {fetchBalanceThunk} from "../../../redux/reports/reportsThunk";
 import {updateBalanceThunk} from "../../../redux/reports/reportsThunk";
 
