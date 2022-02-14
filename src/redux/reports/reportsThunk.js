@@ -6,30 +6,37 @@ const monthlyIncome = "/summary_income ";
 const monthlyExpenses = "/summary_cost ";
 const details = "/detail?";
 
-export const addBalanceThunk = createAsyncThunk(
-  'balance/addBalance',
+
+export const updateBalanceThunk = createAsyncThunk(
+  "reports/updateBalance",
   async (_, { rejectWithValue, getState }) => {
     const state = getState();
     if (!state.auth.token) {
       console.log(state.auth.token);
       return;
     } else {
-    try {
-      const response = await fetch(BASE_URL + balance, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${state.auth.token}`,
-        },
-      });
-      const data = await response.json();
+      try {
+        const response = await fetch(BASE_URL + balance, {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${state.auth.token}`,
+          },
+          body: JSON.stringify(balance),
+        });
 
-      return data.data;
-    } catch (error) {
-      rejectWithValue(error.message);
+        const data = await response.json();
+        console.log(response.json());  
+
+          return data.data;
+        
+        
+      } catch (error) {
+        rejectWithValue(error.message);
+      }
     }
   }
-});
+);
 
 
 export const fetchBalanceThunk = createAsyncThunk(
@@ -47,6 +54,7 @@ export const fetchBalanceThunk = createAsyncThunk(
             "Content-Type": "application/json",
             Authorization: `Bearer ${state.auth.token}`,
           },
+          
         });
 
         const data = await response.json();

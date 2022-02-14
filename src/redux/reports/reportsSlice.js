@@ -5,14 +5,19 @@ import {
   getExpensesThunk,
   getMonthlyIncomesThunk,
   getMonthlyExpensesThunk,
+
+
+  updateBalanceThunk,
+
   getDetailsThunk,
-  addBalanceThunk,
+//   addBalanceThunk,
+
 } from "./reportsThunk";
 
 export const reportsSlice = createSlice({
   name: "reports",
   initialState: {
-    balance: 0,
+    balance: null,
     totalIncomes: 0,
     totalExpenses: 0,
     monthlyIncome: {},
@@ -22,21 +27,21 @@ export const reportsSlice = createSlice({
     isLoading: false,
   },
   extraReducers: {
-    [addBalanceThunk.pending](state, action) {
+    [updateBalanceThunk.pending](state, action) {
       return {
         ...state,
         error: "",
         isLoading: true,
       };
     },
-    [addBalanceThunk.fulfilled](state, { payload }) {
+    [updateBalanceThunk.fulfilled](state, { payload }) {
       return {
         ...state,
         isLoading: false,
         balance:  payload,
       };
     },
-    [addBalanceThunk.rejected](state, {payload}) {
+    [updateBalanceThunk.rejected](state, {payload}) {
       return {
         ...state,
         isLoading: false,

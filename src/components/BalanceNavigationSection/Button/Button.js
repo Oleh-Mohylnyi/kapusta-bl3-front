@@ -9,7 +9,7 @@ export default function Button ({onHandleSubmit, balance}) {
         {initialBalance ? (
             <button type="submit" onSubmit={onHandleSubmit} className={s.balanceButton}>Подтвердить</button>
         ) : (
-            <button className={s.balanceButton} disabled>Подтвердить</button>
+            <button  type="submit" onSubmit={onHandleSubmit} className={s.balanceButton}>Подтвердить</button>
         )}
         </>
        
