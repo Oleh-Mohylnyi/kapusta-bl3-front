@@ -1,5 +1,6 @@
 import axios from "axios";
 axios.defaults.baseURL = "https://kapusta-smart-finances.herokuapp.com/";
+// axios.defaults.baseURL = 'http://localhost:4000/'
 
 const token = {
   set(token) {
@@ -32,6 +33,16 @@ export async function currentUser(userToken) {
   return result.data.data;
 }
 
+export async function getGoogleUser(email) {
+  // const result = await axios.get(`api/auth/${email}`)
+  // token.set(result.data.user.token)
+  // return result.data
+  const { data } = await axios.get(`api/auth/${email}`)
+  console.log(data);
+  token.set(data.user.token)
+  return data
+}
+
 // export async function verification(user) {
 //   const result = await axios.post('api/users/verify/:token', user);
 //   console.log(result);
@@ -39,3 +50,15 @@ export async function currentUser(userToken) {
 //   console.log(result.data.token);
 //   return result.data;
 // }
+
+export async function getTransactions() {
+  const result = await axios.get("api/transactions");
+  return result.data;
+}
+
+export async function addTransaction(userToken, newTransaction) {
+  token.set(userToken);
+  const result = await axios.post("api/transactions");
+  return result.data;
+}
+

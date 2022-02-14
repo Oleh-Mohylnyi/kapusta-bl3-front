@@ -1,0 +1,17 @@
+.buttonGoogle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 160px;
+    min-height: 40px;
+    margin-bottom: 30px;
+    border: none;
+    border-radius: 20px;
+    background-color: var(--bg-color-input);
+    filter: var(--button-shadow);
+    cursor: pointer;
+  }
+  
+  .textGoogle {
+    margin-left: 10px;
+  }

@@ -35,7 +35,8 @@ export const addTransactionThunk = createAsyncThunk(
   'transactions/newTransaction',
   async (newTransactions, { rejectWithValue, getState }) => {
     const state = getState();
-
+    console.log('addTransactionThunk state :>> ', state);
+    console.log('addTransactionThunk newTransactions :>> ', state);
     try {
       const response = await fetch(BASE_URL + transactions, {
         method: 'POST',
@@ -47,11 +48,12 @@ export const addTransactionThunk = createAsyncThunk(
       });
 
       const data = await response.json();   
-      console.log(data);
+      console.log('addTransactionThunk data:>>', data);
   
       return data;
     } catch (error) {
       rejectWithValue(error.message);
+      console.log('addTransactionThunk error :>> ', error);
     }
   },
 );
@@ -61,14 +63,14 @@ export const deleteTransactionThunk = createAsyncThunk(
   async (id, { rejectWithValue, getState }) => {
     const state = getState();
     if (!state.auth.token) {
-      return;
-    } else {
+      throw new Error('no authorization yet')
+    } 
       try {
         await fetch(BASE_URL + `${delTransaction}${id}`, {
           method: 'DELETE',
           headers: {
-            'Content-Type': 'application/json',
             Authorization: `Bearer ${state.auth.token}`,
+            'Content-Type': 'application/json',            
           },
         });
         const data = state.transactions.filter(transaction => transaction.id !== id);
@@ -77,6 +79,6 @@ export const deleteTransactionThunk = createAsyncThunk(
       } catch (error) {
         rejectWithValue(error.message);
       }
-    }
+    
   },
 );
