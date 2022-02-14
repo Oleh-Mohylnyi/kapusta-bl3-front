@@ -1,21 +1,20 @@
-import React from "react";
-import "./App.css";
-import Loader from "react-loader-spinner";
-import { Route, Routes } from "react-router-dom";
-import { PrivateRoute } from "../routes/PrivateRoute";
-import { PublicRoute } from "../routes/PublicRoute";
+import React from 'react'
+import './App.css'
+import Loader from 'react-loader-spinner'
+import { Route, Routes } from 'react-router-dom'
+import { PrivateRoute } from '../routes/PrivateRoute'
+import { PublicRoute } from '../routes/PublicRoute'
 
-import { useDispatch, useSelector } from "react-redux";
-import { currentUser } from "../redux/auth/operations";
-import { useEffect } from "react";
-import { lazy, Suspense } from "react";
-import { getIsAuth } from "../redux/auth/selectors";
-import { getToken } from "../redux/auth/selectors";
-import { getIsFetchingCurrent } from "../redux/auth/selectors";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useDispatch, useSelector } from 'react-redux'
+import { currentUser } from '../redux/auth/operations'
+import { useEffect } from 'react'
+import { lazy, Suspense } from 'react'
+import { getIsAuth } from '../redux/auth/selectors'
+import { getToken } from '../redux/auth/selectors'
+import { getIsFetchingCurrent } from '../redux/auth/selectors'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 // import { Navigation } from "../components/Navigation/Navigation";
-
 
 const Header = lazy(() =>
   import("../components/Header/Header" /* webpackChunkName: "header-view" */)
@@ -41,7 +40,7 @@ function App() {
   useEffect(() => {
     token && dispatch(currentUser());
     // eslint-disable-next-line
-  }, [dispatch, token]);
+  }, [dispatch]);
 
   return (
     <div className="appContainer">

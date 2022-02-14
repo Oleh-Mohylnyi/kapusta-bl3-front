@@ -9,10 +9,12 @@ export const register = createAsyncThunk(
       const result = await serviceAPI.register(user)
       const isSendEmailVerify = result.isSendEmailVerify
       if (isSendEmailVerify) {
-        toast('Проверьте свой email')
+        toast('Success registration! Check your email')
       } else {
-        toast('Еще раз пройдите регистрацию')
+        toast('Register again')
       }
+      console.log(result)
+      console.log(isSendEmailVerify)
       return result
     } catch (error) {
       rejectWithValue(error.message)
@@ -25,10 +27,10 @@ export const login = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const result = await serviceAPI.login(user)
-      toast(`Вы успешно залогинились!`)
+      toast('Successful login!')
       return result
     } catch (error) {
-      toast('Выполните регистрацию')
+      toast.warning('Something went wrong! Check your credentials')
       return rejectWithValue(error.message)
     }
   },
@@ -39,8 +41,9 @@ export const logout = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await serviceAPI.logout()
-      toast('Вы успешно разлогинились')
+      toast('You are logged out of your account')
     } catch (error) {
+      toast.warning('Something went wrong!')
       rejectWithValue(error.message)
     }
   },
@@ -49,28 +52,27 @@ export const logout = createAsyncThunk(
 export const currentUser = createAsyncThunk(
   'users/currentUser',
   async (_, { rejectWithValue, getState }) => {
-    const state = getState();
-    const token = state.auth.token;
-    if (!token) return rejectWithValue('Token Error');
-   
+    const state = getState()
+    const token = state.auth.token
+    if (!token) return rejectWithValue('Token Error')
+
     try {
-      const result = await serviceAPI.currentUser(token);
-     return result;
+      const result = await serviceAPI.currentUser(token)
+      return result
     } catch (error) {
-      return  rejectWithValue(error.message);
+      return rejectWithValue(error.message)
     }
   },
-);
+)
 
-
-export const userFromGoogleAuth = createAsyncThunk('/google-redirect',
-  async (email, { rejectWithValue }) => {
+export const userFromGoogleAuth = createAsyncThunk(
+  'users/google',
+  async (token, { rejectWithValue }) => {
     try {
-      const data = await serviceAPI.getGoogleUser(email)
-      console.log(`data in auth-operation`, data)
-      return data
+      await serviceAPI.getGoogleUser(token)
+      toast('Successful Google Authorization!')
     } catch (error) {
-      console.log(`error in auth-operation`, error)
+      toast.warning('Google login error')
       return rejectWithValue(error.message)
     }
   },

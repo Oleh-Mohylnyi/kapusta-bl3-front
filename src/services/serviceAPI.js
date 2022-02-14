@@ -1,6 +1,6 @@
 import axios from "axios";
-axios.defaults.baseURL = "https://kapusta-smart-finances.herokuapp.com/";
-// axios.defaults.baseURL = 'http://localhost:4000/'
+// axios.defaults.baseURL = "https://kapusta-smart-finances.herokuapp.com/";
+axios.defaults.baseURL = 'http://localhost:4000/'
 
 const token = {
   set(token) {
@@ -33,14 +33,10 @@ export async function currentUser(userToken) {
   return result.data.data;
 }
 
-export async function getGoogleUser(email) {
-  // const result = await axios.get(`api/auth/${email}`)
-  // token.set(result.data.user.token)
-  // return result.data
-  const { data } = await axios.get(`api/auth/${email}`)
-  console.log(data);
-  token.set(data.user.token)
-  return data
+export async function getGoogleUser(userToken) {
+  token.set(userToken);
+  // console.log(userToken);
+  // return userToken
 }
 
 // export async function verification(user) {

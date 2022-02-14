@@ -11,9 +11,9 @@ export default function UserMenu() {
   const [showModal, setShowModal] = useState(false);
   const dispatch = useDispatch();
 
-  const name = useSelector(authSelectors.getUserEmail);
-  const userName = name.split("@")[0];
-  const userAvatar = name.substring(0, 1).toUpperCase();
+  // const name = useSelector(authSelectors.getUserEmail);
+  // const userName = name.split("@")[0];
+  // const userAvatar = name.substring(0, 1).toUpperCase();
 
   const toggleModal = () => {
     setShowModal(!showModal);
@@ -27,9 +27,9 @@ export default function UserMenu() {
     <div className={styles.item}>
       <div className={styles.personalInf}>
         <span className={styles.avatar}>
-          <span>{userAvatar}</span>
+          {/* <span>{userAvatar}</span> */}
         </span>
-        <span className={styles.name}>{userName}</span>
+        {/* <span className={styles.name}>{userName}</span> */}
         <span className={styles.vector}>|</span>
       </div>
 

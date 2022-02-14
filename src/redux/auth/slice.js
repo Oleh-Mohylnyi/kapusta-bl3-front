@@ -3,7 +3,7 @@ import { register, login, currentUser, logout, userFromGoogleAuth } from './oper
 
 const initialState = {
   user: { email: '', password: '' },
-  token: '',
+  token: null,
   error: null,
   isLoading: false,
   isAuth: false,
@@ -78,13 +78,17 @@ const authSlice = createSlice({
       state.isFetchCurrentUser = false
     },
 
-    [userFromGoogleAuth.fulfilled]: (state, action) => {
-      state.user.email = action.payload.email
-      // state.user.avatarURL = action.payload.user.avatarURL
-      state.token = action.payload.token
-      state.isLoading = false
-      state.isAuth = true
-    },
+    // [userFromGoogleAuth.fulfilled]: (state, action) => {
+    //   // state.user.email = action.payload.email
+    //   // state.user.avatarURL = action.payload.user.avatarURL
+    //   state.token = action.payload
+    //   state.isLoading = false
+    //   state.isAuth = true
+    // },
+    // [userFromGoogleAuth.pending]: (state, action) => {
+    //   state.isLoading = true
+    //   state.error = null
+    // },
   },
 })
 
