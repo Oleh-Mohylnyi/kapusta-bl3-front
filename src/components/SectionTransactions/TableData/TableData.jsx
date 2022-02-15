@@ -4,14 +4,27 @@ import sMobile from "./TableDataMobile.module.scss";
 // import SimpleBar from 'simplebar-react';
 // import 'simplebar/dist/simplebar.min.css';
 // <SimpleBar style={{ maxHeight: 300 }}></SimpleBar>
+// import dataTransactions from "../../../assets/transactionsData.json"
+import { useSelector, useDispatch } from 'react-redux';
+import {getTransactions} from '../../../redux/transactions/transactionsSelectors'
+import {deleteTransactionThunk} from "../../../redux/transactions/transactionsThunks"
 
-const TableData = ({
-  dataTransactions = [],
-
-  isExpense = false,
-}) => {
+const TableData = ({currency}) => {
   const viewPort = useWResize();
+  const dataTransactions = useSelector(getTransactions);
+  const dispatch = useDispatch();
 
+  const handleRemoveTransaction = (e) => {
+    dispatch(deleteTransactionThunk(e.target.id))
+  }
+//   type(pin):false
+// sum(pin):5000
+// date(pin):"1970-01-01T00:00:00.029Z"
+// category(pin):"Техника"
+// description(pin):"TV"
+// createdAt(pin):"2022-02-13T15:43:42.768Z"
+// updatedAt(pin):"2022-02-13T15:43:42.768Z"
+// id(pin):"6209272e4b9c7240eb529577"
   return (
     <>
       {viewPort.width >= 768 && (
@@ -32,153 +45,21 @@ const TableData = ({
             <table>
               <tbody>
                 {dataTransactions.map(
-                  ({ _id, date, description, category, amount }) => (
-                    <tr className={s.td} key={_id}>
+                  ({ id, type, date, description, category, sum }) => (
+                    <tr className={s.td} key={id}>
                       <td className={s.thData}>{date}</td>
+                      {/* .${date.getMonth()+1}.${date.getFullYear()} */}
                       <td className={s.tdDesc}>{description}</td>
                       <td className={s.thCateg}>{category}</td>
-                      <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                        {isExpense ? " - " : ""}
-                        {amount}.00 грн.
+                      <td className={type ? s.tdSum:s.tdSumExpense}>
+                        {type ? '':"-"} {sum}.00 {currency}
                       </td>
                       <td className={s.thIcon}>
-                        <button className={s.deleteBtn}></button>
+                        <button className={s.deleteBtn} onClick={handleRemoveTransaction} id={id}></button>
                       </td>
                     </tr>
                   )
                 )}
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
-
-                <tr className={s.td}>
-                  <td className={s.thData}>10.02.2022</td>
-                  <td className={s.tdDesc}>Метро</td>
-                  <td className={s.thCateg}>Транспорт</td>
-                  <td className={isExpense ? s.tdSumExpense : s.tdSum}>
-                    -30,00 грн
-                  </td>
-                  <td className={s.thIcon}>
-                    <button className={sMobile.deleteBtn}></button>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -187,9 +68,10 @@ const TableData = ({
 
       {viewPort.width < 768 && (
         <div>
+          <ul className={sMobile.listTransactions}>
           {dataTransactions.map(
-            ({ _id, date, description, category, amount }) => (
-              <li className={sMobile.itemTransactions} key={_id}>
+            ({ id, type, date, description, category, sum }) => (
+              <li className={sMobile.itemTransactions} key={id}>
                 <div className={sMobile.leftColum}>
                   <p className={sMobile.elem}>
                     <span>{description}</span>
@@ -202,40 +84,19 @@ const TableData = ({
                 <div className={sMobile.rigthColum}>
                   <p
                     className={
-                      sMobile[isExpense ? "totalDecrement" : "totalIncrement"]
+                      sMobile[type ? "totalDecrement" : "totalIncrement"]
                     }
                   >
-                    {isExpense ? "- " : ""}
-                    {amount}.00 грн.
+                    {type ? "- " : ""}
+                    {sum}.00 {currency}
                   </p>
-                  <button className={sMobile.deleteBtn}></button>
+                  <button className={sMobile.deleteBtn} onClick={handleRemoveTransaction} id={id}></button>
                 </div>
               </li>
+             
             )
           )}
-          <ul className={sMobile.listTransactions}>
-            <li className={sMobile.itemTransactions}>
-              <div className={sMobile.leftColum}>
-                <p className={sMobile.elem}>
-                  <span>Метро</span>
-                </p>
-                <p className={sMobile.data}>
-                  <span>10.02.2022</span>
-                  <span>Транспорт</span>
-                </p>
-              </div>
-              <div className={sMobile.rigthColum}>
-                <p
-                  className={
-                    sMobile[isExpense ? "totalDecrement" : "totalIncrement"]
-                  }
-                >
-                  -30.00 грн
-                </p>
-                <button className={sMobile.deleteBtn}></button>
-              </div>
-            </li>
-          </ul>
+           </ul>
         </div>
       )}
     </>

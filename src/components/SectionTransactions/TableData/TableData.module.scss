@@ -44,84 +44,82 @@
 //   font-weight: normal;
 // }
 
-// .th {
-//   padding: 10px;
-//   text-transform: uppercase;
-//   color: rgb(0, 0, 0);
-//   align-items: center;
-//   letter-spacing: 0.02em;
-//   font-weight: bold;
-//   font-style: normal;
-// }
+.th {
+  padding: 10px;
+  text-transform: uppercase;
+  color: rgb(0, 0, 0);
+  align-items: center;
+  letter-spacing: 0.02em;
+  font-weight: bold;
+  font-style: normal;
+}
 
-// .td {
-//   display: revert;
-//   align-items: center;
-//   height: 38px;
-//   padding: 0 8px;
-//   background: #ffffff;
-//   color: #52555f;
-//   border-bottom: 2px solid #f4f6fb;
+.td {
+  display: revert;
+  align-items: center;
+  height: 38px;
+  padding: 0 8px;
+  background: #ffffff;
+  color: #52555f;
+  border-bottom: 2px solid #f4f6fb;
 
-//   font-style: normal;
-//   font-weight: 400;
-//   font-size: 12px;
-//   line-height: 1, 17;
-//   letter-spacing: 0.04em;
-// }
+  font-style: normal;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 1, 17;
+  letter-spacing: 0.04em;
+}
 
-// .tdSum {
-//   font-weight: bold;
+.tdSum {
+  font-weight: bold;
 
-//   color: var(--incomes-text-color);
-// }
-// .tdSumExpense {
-//   font-weight: bold;
-//   color: var(--costs-text-color);
-// }
+  color: var(--incomes-text-color);
+}
+.tdSumExpense {
+  font-weight: bold;
+  color: var(--costs-text-color);
+}
 
-// @media screen and (min-width: 1280px) {
-//   .main {
-//     width: 760px;
-//     height: 344px;
-//   }
-// }
+@media screen and (min-width: 1280px) {
+  .main {
+    width: 760px;
+  }
+}
 
-// @media screen and (min-width: 768px) {
-//   .theadTable {
-//     display: revert;
-//   }
-// }
+@media screen and (min-width: 768px) {
+  .theadTable {
+    display: revert;
+  }
+}
 
-// .deleteBtn {
-//   margin-right: auto;
-//   margin-left: auto;
-//   cursor: pointer;
-//   display: block;
-//   width: 18px;
-//   height: 18px;
-//   padding: 16px;
-//   border: transparent;
-//   // background-color: transparent;
-//   background-image: url(../../../images/icons/delete-icon.svg);
-//   background-size: 18px;
-//   background-position: center;
-//   background-repeat: no-repeat;
-//   color: #52555f;
-// }
+.deleteBtn {
+  margin-right: auto;
+  margin-left: auto;
+  cursor: pointer;
+  display: block;
+  width: 18px;
+  height: 18px;
+  padding: 16px;
+  border: transparent;
+  background-color: transparent;
+  background-image: url(../../../images/icons/delete-icon.svg);
+  background-size: 18px;
+  background-position: center;
+  background-repeat: no-repeat;
+  color: #52555f;
+}
 
 // .deleteBtnIcon {
 //   width: 16px;
 //   height: 18px;
 // }
 
-// .deleteBtn:hover {
-//   background-color: var(--bg-color);
-//   width: 32px;
-//   height: 32px;
-//   border-radius: 50%;
-//   cursor: pointer;
-// }
+.deleteBtn:hover {
+  background-color: var(--bg-color);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
 
 // @media screen and (min-width: 1280px) {
 //   .bodyTable {

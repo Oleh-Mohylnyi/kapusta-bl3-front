@@ -1,3 +1,3 @@
-const getTransactions = (state) => state.transactions.transaction;
+const getTransactions = (state) => state.transactions.transactions;
 
 export {getTransactions}

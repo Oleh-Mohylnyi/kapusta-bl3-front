@@ -1,5 +1,5 @@
 [
-  { "id": "1", "name": "ЗП", "type": "income" },
+  { "id": "1", "name": "Зарплата", "type": "income" },
   { "id": "2", "name": "Доп.доход", "type": "income" },
   { "id": "3", "name": "Транспорт", "type": "expenses"},
   { "id": "4", "name": "Продукты", "type": "expenses"},
