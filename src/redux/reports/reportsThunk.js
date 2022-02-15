@@ -9,7 +9,7 @@ const details = "/detail?";
 
 export const updateBalanceThunk = createAsyncThunk(
   "reports/updateBalance",
-  async (_, { rejectWithValue, getState }) => {
+  async (dataBalance, { rejectWithValue, getState }) => {
     const state = getState();
     if (!state.auth.token) {
       console.log(state.auth.token);
@@ -22,13 +22,13 @@ export const updateBalanceThunk = createAsyncThunk(
             "Content-Type": "application/json",
             Authorization: `Bearer ${state.auth.token}`,
           },
-          body: JSON.stringify(balance),
+          body: JSON.stringify(dataBalance),
         });
 
         const data = await response.json();
-        console.log(response.json());  
-
-          return data.data;
+        console.log(data);  
+        console.log(data.data);
+          return data.data.balance;
         
         
       } catch (error) {
@@ -59,14 +59,8 @@ export const fetchBalanceThunk = createAsyncThunk(
 
         const data = await response.json();
 
-        if (data.data[0]) {
-          if (data.data[0] && data.data[1]) {
-            return Math.abs(data.data[0].total - data.data[1].total);
-          }
-
-          return data.data[0].total;
-        }
-        return 0;
+        
+        return data.data.balance;
       } catch (error) {
         rejectWithValue(error.message);
       }

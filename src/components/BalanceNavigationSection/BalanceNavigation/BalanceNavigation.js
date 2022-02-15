@@ -6,40 +6,13 @@ import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import s from './BalanceNavigation.module.css';
 import BalanceTitle from "../BalanceTitle";
 import Button from "../Button";
-import {getBalance} from "../../../redux/reports/reportsSelectors";
-import {fetchBalanceThunk} from "../../../redux/reports/reportsThunk";
-import {updateBalanceThunk} from "../../../redux/reports/reportsThunk";
+
 
 export default function BalanceNavigation () {
  const windowSize = useWindowDimensions();
  const desktopAndTabletView = windowSize.width >= 768;
 //   const mobileView = windowSize.width < 767.98;
-const balance = useSelector(getBalance);
-const dispatch = useDispatch();
 
-const [currentBalance, setCurrentBalance] = useState(balance);
-
-
-
-
-const inputChange = (e) => { 
-   setCurrentBalance(e.target.value);
-};
-
-
-
-const handleSubmit = (e) => {
-   e.preventDefault();
-   dispatch(updateBalanceThunk({ balance }),
-   [ balance]
-   )
-   
-}
-
-useEffect(() => {
-   dispatch(fetchBalanceThunk())
-   setCurrentBalance(balance);
-   }, [dispatch, balance]);
 
 
 
@@ -56,21 +29,21 @@ useEffect(() => {
               <div className={s.wrapper}>
                  <BalanceTitle/>
 
-               <Balance onInputChange={inputChange} balance={balance} onHandleSubmit={handleSubmit}/>
-               <Button onHandleSubmit={handleSubmit} balance={balance}/>
+               <Balance />
+               <Button />
               
                <StatisticsLink />
                </div>
                </>
-              
+            //   onInputChange={inputChange} currentBalance={balance} onHandleSubmit={handleSubmit}
       ) :
      (<>
      <div className={s.mobileWrapper}>
      <StatisticsLink />
      <BalanceTitle/>
      <div className={s.formWrapper}>
-     <Balance onInputChange={inputChange} balance={currentBalance} onHandleSubmit={handleSubmit}/>
-     <Button onHandleSubmit={handleSubmit} balance={currentBalance}/>
+     <Balance />
+     <Button />
      </div>
      </div>
      </>)}
