@@ -94,6 +94,7 @@ export default function StatisticsView() {
     });
   };
   detailsSorter();
+
   const data = (arr) => {
     if (arr.length > 0) {
       return arr.map((el) => {
@@ -127,7 +128,7 @@ export default function StatisticsView() {
         )}
       </div>
 
-      <TotalReport />
+      <TotalReport incomes ={incomesArr} expenses={expensesArr} />
       <Report onClick={switcher} />
       <DiagramContainer>
         <Diagram
