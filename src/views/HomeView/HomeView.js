@@ -12,18 +12,10 @@ export default function HomeView() {
   const dispatch = useDispatch()
 
   const token = new URLSearchParams(document.location.search).get('token')
-  const email = new URLSearchParams(document.location.search).get('email')
+  // const email = new URLSearchParams(document.location.search).get('email')
   if (token) {
     dispatch(authOperations.userFromGoogleAuth(token))
   }
-  console.log(token);
-  console.log(email);
-  // const newUser = {
-  //   email,
-  //   token,
-  // };
-  // dispatch(userFromGoogleAuth(newUser));
-
 
   return (
     <>

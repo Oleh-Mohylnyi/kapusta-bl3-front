@@ -7,10 +7,9 @@ export const register = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const result = await serviceAPI.register(user)
-      console.log(result);
       const isSendEmailVerify = result.isSendEmailVerify
       if (isSendEmailVerify) {
-        toast('Success registration! Check your email')
+        toast.success('Success registration! Check your email')
       } else {
         toast('Register again')
       }
@@ -28,7 +27,7 @@ export const login = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const result = await serviceAPI.login(user)
-      toast('Successful login!')
+      toast.success('Successful login!')
       return result
     } catch (error) {
       toast.warning('Something went wrong! Check your credentials')
@@ -42,7 +41,7 @@ export const logout = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await serviceAPI.logout()
-      toast('You are logged out of your account')
+      toast.success('You are logged out of your account')
     } catch (error) {
       toast.warning('Something went wrong!')
       rejectWithValue(error.message)
@@ -56,7 +55,6 @@ export const currentUser = createAsyncThunk(
     const state = getState()
     const token = state.auth.token
     if (!token) return rejectWithValue('Token Error')
-
     try {
       const result = await serviceAPI.currentUser(token)
       return result
@@ -70,8 +68,9 @@ export const userFromGoogleAuth = createAsyncThunk(
   'users/google',
   async (token, { rejectWithValue }) => {
     try {
-      await serviceAPI.getGoogleUser(token)
-      toast('Successful Google Authorization!')
+      const result = await serviceAPI.getGoogleUser(token)
+      toast.success('Successful Google Authorization!')
+      return result
     } catch (error) {
       toast.warning('Google login error')
       return rejectWithValue(error.message)

@@ -9,7 +9,6 @@ const initialState = {
   isAuth: false,
   isFetchingCurrentUser: false,
 }
-
 const authSlice = createSlice({
   name: 'auth',
   initialState,
@@ -61,7 +60,8 @@ const authSlice = createSlice({
     },
 
     [currentUser.fulfilled]: (state, action) => {
-      state.user.email = action.payload.email
+      // state.user.email = action.payload.email
+      state.token = action.payload
       state.isFetchingCurrentUser = false
       state.isAuth = true
       state.isLoading = false
@@ -85,9 +85,14 @@ const authSlice = createSlice({
       state.isLoading = false
       state.isAuth = true
     },
-    [userFromGoogleAuth.pending]: (state, action) => {
+    [userFromGoogleAuth.pending]: (state) => {
       state.isLoading = true
       state.error = null
+    },
+    [userFromGoogleAuth.rejected]: (state, action) => {
+      state.error = action.payload
+      state.isLoading = false
+      state.isAuth = false
     },
   },
 })
