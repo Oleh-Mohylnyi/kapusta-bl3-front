@@ -1,6 +1,6 @@
 import axios from "axios";
-// axios.defaults.baseURL = "https://kapusta-smart-finances.herokuapp.com/";
-axios.defaults.baseURL = 'http://localhost:4000/'
+axios.defaults.baseURL = "https://kapusta-smart-finances.herokuapp.com/";
+// axios.defaults.baseURL = 'http://localhost:4000/'
 
 const token = {
   set(token) {

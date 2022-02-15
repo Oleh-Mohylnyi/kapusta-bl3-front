@@ -17,30 +17,29 @@ import 'react-toastify/dist/ReactToastify.css'
 // import { Navigation } from "../components/Navigation/Navigation";
 
 const Header = lazy(() =>
-  import("../components/Header/Header" /* webpackChunkName: "header-view" */)
-);
+  import('../components/Header/Header' /* webpackChunkName: "header-view" */),
+)
 const HomeView = lazy(() =>
-  import("../views/HomeView/HomeView" /* webpackChunkName: "home-view" */)
-);
+  import('../views/HomeView/HomeView' /* webpackChunkName: "home-view" */),
+)
 
 const MainView = lazy(() =>
-  import("../views/MainView/MainView" /* webpackChunkName: "main-view" */)
-);
+  import('../views/MainView/MainView' /* webpackChunkName: "main-view" */),
+)
 const StatisticsView = lazy(() =>
-  import(
-    "../views/StatisticsView/StatisticsView" /* webpackChunkName: "login-view" */
+  import('../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */
   )
-);
+)
 
 function App() {
-  const dispatch = useDispatch();
-  const isAuth = useSelector(getIsAuth);
-  const token = useSelector(getToken);
-  const isFetchingCurrent = useSelector(getIsFetchingCurrent);
+  const dispatch = useDispatch()
+  const isAuth = useSelector(getIsAuth)
+  const token = useSelector(getToken)
+  const isFetchingCurrent = useSelector(getIsFetchingCurrent)
   useEffect(() => {
-    token && dispatch(currentUser());
+    token && dispatch(currentUser())
     // eslint-disable-next-line
-  }, [dispatch]);
+  }, [dispatch])
 
   return (
     <div className="appContainer">
@@ -60,25 +59,21 @@ function App() {
               element={<PublicRoute isAuth={isAuth} component={HomeView} />}
             />
 
-              
             <Route
               path="/main"
               element={<PrivateRoute isAuth={isAuth} component={MainView} />}
-              >
+            >
               {/* <Route path="income" element={<IncomeView />} />
               <Route path="expenses" element={<ExpensesView />} /> */}
-               </Route>
+            </Route>
             <Route
               path="statistics"
               element={
                 <PrivateRoute isAuth={isAuth} component={StatisticsView} />
               }
-              >
-              
-            </Route>
+            ></Route>
 
-              
-              {/* <Route
+            {/* <Route
               path="/main"
               element={<PrivateRoute isAuth={isAuth} component={MainView} />}
             />
@@ -91,14 +86,12 @@ function App() {
               <Route path="income" element={<ReportIncome />} />
               <Route path="expenses" element={<ReportExpenses />} />
             </Route> */}
-
-              
           </Routes>
         )}
       </Suspense>
       <ToastContainer autoClose={3000} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App

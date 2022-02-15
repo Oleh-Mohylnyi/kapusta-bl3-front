@@ -7,7 +7,7 @@ const initialState = {
   error: null,
   isLoading: false,
   isAuth: false,
-  isFetchCurrentUser: false,
+  isFetchingCurrentUser: false,
 }
 
 const authSlice = createSlice({
@@ -62,12 +62,12 @@ const authSlice = createSlice({
 
     [currentUser.fulfilled]: (state, action) => {
       state.user.email = action.payload.email
-      state.isFetchCurrentUser = false
+      state.isFetchingCurrentUser = false
       state.isAuth = true
       state.isLoading = false
     },
     [currentUser.pending]: (state) => {
-      state.isFetchCurrentUser = true
+      state.isFetchingCurrentUser = true
       state.isLoading = true
       state.error = null
     },
@@ -75,20 +75,20 @@ const authSlice = createSlice({
       state.error = action.payload
       state.isLoading = false
       state.isAuth = false
-      state.isFetchCurrentUser = false
+      state.isFetchingCurrentUser = false
     },
 
-    // [userFromGoogleAuth.fulfilled]: (state, action) => {
-    //   // state.user.email = action.payload.email
-    //   // state.user.avatarURL = action.payload.user.avatarURL
-    //   state.token = action.payload
-    //   state.isLoading = false
-    //   state.isAuth = true
-    // },
-    // [userFromGoogleAuth.pending]: (state, action) => {
-    //   state.isLoading = true
-    //   state.error = null
-    // },
+    [userFromGoogleAuth.fulfilled]: (state, action) => {
+      // state.user.email = action.payload.email
+      // state.user.avatarURL = action.payload.user.avatarURL
+      state.token = action.payload
+      state.isLoading = false
+      state.isAuth = true
+    },
+    [userFromGoogleAuth.pending]: (state, action) => {
+      state.isLoading = true
+      state.error = null
+    },
   },
 })
 

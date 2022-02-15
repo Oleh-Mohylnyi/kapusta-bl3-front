@@ -7,6 +7,7 @@ export const register = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const result = await serviceAPI.register(user)
+      console.log(result);
       const isSendEmailVerify = result.isSendEmailVerify
       if (isSendEmailVerify) {
         toast('Success registration! Check your email')

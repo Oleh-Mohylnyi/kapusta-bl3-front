@@ -6,7 +6,7 @@ import s from './HomeView.module.scss'
 
 import { useDispatch } from 'react-redux'
 import { authOperations } from '../../redux/auth/index'
-import {userFromGoogleAuth} from '../../redux/auth/operations'
+// import { userFromGoogleAuth } from '../../redux/auth/operations'
 
 export default function HomeView() {
   const dispatch = useDispatch()
@@ -18,11 +18,11 @@ export default function HomeView() {
   }
   console.log(token);
   console.log(email);
-  const newUser = {
-    email,
-    token,
-  };
-  dispatch(userFromGoogleAuth(newUser));
+  // const newUser = {
+  //   email,
+  //   token,
+  // };
+  // dispatch(userFromGoogleAuth(newUser));
 
 
   return (
