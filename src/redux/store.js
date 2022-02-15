@@ -3,6 +3,7 @@ import authReducer from './auth/slice'
 import transactionsReducer from "./transactions/transactionsSlice";
 import reportsReducer from "./reports/reportsSlice"
 
+
 import {
   persistStore,
   persistReducer,
@@ -33,7 +34,9 @@ export const store = configureStore({
   reducer: {
     auth: persistReducer(authPersistConfig, authReducer),
     transactions: transactionsReducer,
-    reports: reportsReducer,
+    reports: reportsReducer, 
+   
+    
   },
   middleware,
   devTools: true,

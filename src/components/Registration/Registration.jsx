@@ -1,7 +1,7 @@
-import { ReactComponent as GoogleIcon } from '../../images/google.svg'
 import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { register, login } from '../../redux/auth/operations'
+import GoogleAuth from '../GoogleAuth'
 // import Button from '../Button/Button'
 import s from './Registration.module.scss'
 
@@ -77,10 +77,7 @@ export default function Registration() {
         <p className={s.title}>
           Вы можете авторизоваться с помощью Google Account:
         </p>
-        <button type="submit" className={s.buttonGoogle}>
-          <GoogleIcon />
-          <span className={s.textGoogle}>Google</span>
-        </button>
+        <GoogleAuth />
         <p className={s.text}>
           Или зайти с помощью e-mail и пароля, предварительно
           зарегистрировавшись:
@@ -104,7 +101,7 @@ export default function Registration() {
             className={s.input}
             pattern="[A-Za-zА-Яа-яЁёЄєЇї0-9._%+-]+@[A-Za-zА-Яа-яЁёЄєЇї0-9.-]+\.[A-Za-zА-Яа-яЁёЄєЇї]{2,4}$"
             title="Email может, сoстоять из букв цифр и обязательного символа '@'"
-            required
+            // required
           />
           {emailDirty && emailError && (
             <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
@@ -132,7 +129,7 @@ export default function Registration() {
             className={s.input}
             pattern="[0-9A-Za-zА-Яа-яЁёЄєЇї!@#$%^&*]{6,}"
             title="Пароль может, сoстоять не меньше чем из шести букв цифр и символов '!@#$%^&*'"
-            required
+            // required
           />
           {passwordDirty && passwordError && (
             <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>

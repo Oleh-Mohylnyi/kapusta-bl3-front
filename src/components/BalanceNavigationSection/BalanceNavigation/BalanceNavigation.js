@@ -8,31 +8,38 @@ import BalanceTitle from "../BalanceTitle";
 import Button from "../Button";
 import {getBalance} from "../../../redux/reports/reportsSelectors";
 import {fetchBalanceThunk} from "../../../redux/reports/reportsThunk";
-import {addBalanceThunk} from "../../../redux/reports/reportsThunk";
+import {updateBalanceThunk} from "../../../redux/reports/reportsThunk";
 
 export default function BalanceNavigation () {
  const windowSize = useWindowDimensions();
  const desktopAndTabletView = windowSize.width >= 768;
 //   const mobileView = windowSize.width < 767.98;
-
-const [balance, setBalance] = useState("");
-const currentBalance = useSelector(getBalance);
+const balance = useSelector(getBalance);
 const dispatch = useDispatch();
 
-useEffect(() => {
-dispatch(fetchBalanceThunk);
-}, [dispatch]);
+const [currentBalance, setCurrentBalance] = useState(balance);
+
+
+
 
 const inputChange = (e) => { 
-   setBalance(e.target.value);
+   setCurrentBalance(e.target.value);
 };
+
+
 
 const handleSubmit = (e) => {
    e.preventDefault();
-   dispatch(addBalanceThunk({ balance }));
+   dispatch(updateBalanceThunk({ balance }),
+   [ balance]
+   )
+   
 }
 
-
+useEffect(() => {
+   dispatch(fetchBalanceThunk())
+   setCurrentBalance(balance);
+   }, [dispatch, balance]);
 
 
 
@@ -49,8 +56,8 @@ const handleSubmit = (e) => {
               <div className={s.wrapper}>
                  <BalanceTitle/>
 
-               <Balance onInputChange={inputChange} balance={currentBalance} onHandleSubmit={handleSubmit}/>
-               <Button onHandleSubmit={handleSubmit} balance={currentBalance}/>
+               <Balance onInputChange={inputChange} balance={balance} onHandleSubmit={handleSubmit}/>
+               <Button onHandleSubmit={handleSubmit} balance={balance}/>
               
                <StatisticsLink />
                </div>
