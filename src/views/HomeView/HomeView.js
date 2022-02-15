@@ -1,8 +1,8 @@
-import Registration from '../../components/Registration'
-import BackgroundImages from '../../components/BackgroundLayouts/PublicPageBg'
+import Registration from "../../components/Registration";
+import BackgroundImages from "../../components/BackgroundLayouts/PublicPageBg";
 // import PageContainer from "../../components/PageContainer";
-import Title from '../../components/Title'
-import s from './HomeView.module.scss'
+import Title from "../../components/Title";
+import s from "./HomeView.module.scss";
 
 import { useDispatch } from 'react-redux'
 import { authOperations } from '../../redux/auth/index'
@@ -23,7 +23,8 @@ export default function HomeView() {
         <Title />
         <Registration />
       </div>
+
       <BackgroundImages />
     </>
-  )
+  );
 }

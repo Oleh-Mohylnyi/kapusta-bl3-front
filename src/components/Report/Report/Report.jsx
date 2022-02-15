@@ -3,11 +3,13 @@ import ReportIncome from "../ReportIncome/ReportIncome";
 import { useState } from "react";
 import s from "./Report.module.scss";
 
-const Report = () => {
+const Report = ({onClick }) => {
+  
   const [toggle, setToggle] = useState(true);
 
   const toggler = (e) => {
     setToggle(!toggle);
+    onClick(toggle)
   };
   return (
     <div className={s.section}>

@@ -10,7 +10,7 @@
   /* top: 27%; */
   /* top: 22px; */
   top: 225px;
-  z-index: 100;
+  z-index: 1;
 }
 
 .bubbleContainer:after {

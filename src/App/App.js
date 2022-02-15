@@ -62,6 +62,7 @@ function App() {
             <Route
               path="/main"
               element={<PrivateRoute isAuth={isAuth} component={MainView} />}
+              className="mainBg"
             >
               {/* <Route path="income" element={<IncomeView />} />
               <Route path="expenses" element={<ExpensesView />} /> */}

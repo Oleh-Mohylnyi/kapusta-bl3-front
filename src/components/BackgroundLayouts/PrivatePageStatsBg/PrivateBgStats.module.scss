@@ -5,7 +5,7 @@
   z-index: -1;
   position: absolute;
   @media screen and (min-width: 1280px) {
-    top: 785px;
+    top: 1030px;
     left: 10px;
     width: 1270px;
     height: 232px;
@@ -14,29 +14,29 @@
 }
 
 .firstTabletCabbage {
-  z-index: 3;
+  z-index: -1;
   position: absolute;
-  top: 1052px;
+  top: 1092px;
   left: 497px;
 }
 
 .firstTabletCabbageShadow {
-  z-index: 3;
+  z-index: -1;
   position: absolute;
-  top: 1161px;
+  top: 1201px;
   left: 502px;
 }
 
 .secondTabletCabbage {
-  z-index: 3;
+  z-index: -1;
   position: absolute;
-  top: 1033px;
+  top: 1073px;
   left: 591px;
 }
 
 .secondTabletCabbageShadow {
-  z-index: 3;
+  z-index: -1;
   position: absolute;
-  top: 1145px;
+  top: 1185px;
   left: 613px;
 }
