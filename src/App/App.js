@@ -16,7 +16,6 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 // import { Navigation } from "../components/Navigation/Navigation";
 
-
 const Header = lazy(() =>
   import("../components/Header/Header" /* webpackChunkName: "header-view" */)
 );
@@ -61,25 +60,22 @@ function App() {
               element={<PublicRoute isAuth={isAuth} component={HomeView} />}
             />
 
-              
             <Route
               path="/main"
               element={<PrivateRoute isAuth={isAuth} component={MainView} />}
-              >
+              className="mainBg"
+            >
               {/* <Route path="income" element={<IncomeView />} />
               <Route path="expenses" element={<ExpensesView />} /> */}
-               </Route>
+            </Route>
             <Route
               path="statistics"
               element={
                 <PrivateRoute isAuth={isAuth} component={StatisticsView} />
               }
-              >
-              
-            </Route>
+            ></Route>
 
-              
-              {/* <Route
+            {/* <Route
               path="/main"
               element={<PrivateRoute isAuth={isAuth} component={MainView} />}
             />
@@ -92,8 +88,6 @@ function App() {
               <Route path="income" element={<ReportIncome />} />
               <Route path="expenses" element={<ReportExpenses />} />
             </Route> */}
-
-              
           </Routes>
         )}
       </Suspense>

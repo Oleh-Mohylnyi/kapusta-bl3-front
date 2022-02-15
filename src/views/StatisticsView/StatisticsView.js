@@ -1,7 +1,7 @@
 import Diagram from "../../components/StatisticDiagram/Diagram";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
-import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageBg";
+import BackgroundImages from "../../components/BackgroundLayouts/PrivatePageStatsBg";
 import Report from "../../components/Report/Report/Report";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import MobileStatisticsNavigation from "../../components/MobileStatisticsNavigation";
@@ -62,7 +62,6 @@ export default function StatisticsView() {
   const period = useMemo(() => {
     return { year: periodYear, month: queryPeriodMonth };
   }, [periodYear, queryPeriodMonth]);
- 
 
   useEffect(() => {
     //getDetails
@@ -128,7 +127,7 @@ export default function StatisticsView() {
         )}
       </div>
 
-      <TotalReport incomes ={incomesArr} expenses={expensesArr} />
+      <TotalReport incomes={incomesArr} expenses={expensesArr} />
       <Report onClick={switcher} />
       <DiagramContainer>
         <Diagram
