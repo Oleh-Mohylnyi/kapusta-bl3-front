@@ -15,7 +15,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
 
 export default function StatisticsView() {
-  const dispatch = useDispatch();  
+  const dispatch = useDispatch();
 
   // ====added by Y.S.=====
   const date = new Date();
@@ -23,7 +23,7 @@ export default function StatisticsView() {
   const [periodDate, setPeriodDate] = useState(moment(date));
   const [periodMonth, setPeriodMonth] = useState(moment(date).format("MM"));
   const [periodYear, setPeriodYear] = useState(moment(date).format("YYYY"));
-  const [toggle, setToggle] = useState(false);//switch from expenses to income === added by T.Y.
+  const [toggle, setToggle] = useState(false); //switch from expenses to income === added by T.Y.
 
   const size = useWindowDimensions();
   const { width } = size;
@@ -49,24 +49,46 @@ export default function StatisticsView() {
     indexOfMonth && setPeriodYear(nextYear());
   };
   // ===== added by T.Y.
+
+  const queryPeriodMonth = useMemo(() => {
+    if (periodMonth[0] === "0") {
+      const queryMonth = periodMonth.split("");
+      queryMonth.splice(0, 1);
+      return queryMonth.join("");
+    }
+    return periodMonth;
+  }, [periodMonth]);
+
   const period = useMemo(() => {
-    return { year: periodYear, month: periodMonth };
-  }, [periodYear, periodMonth]);
+    return { year: periodYear, month: queryPeriodMonth };
+  }, [periodYear, queryPeriodMonth]);
  
-  useEffect(() => {//getDetails
+
+  useEffect(() => {
+    //getDetails
     dispatch(getDetailsThunk(period));
-     }, [period, dispatch]);
+  }, [period, dispatch]);
 
   const details = useSelector((state) => state.reports.details);
 
   let incomesArr = [];
   let expensesArr = [];
-
+  const updateMonth = () => {
+    if (periodMonth[0] === "0") {
+      const queryMonth = periodMonth.split("");
+      queryMonth.splice(0, 1);
+      return queryMonth.join("");
+    }
+    return periodMonth;
+  };
   const detailsSorter = () => {
     Object.keys(details).forEach((key) => {
-      if (details[key]._id.type === true) {
+      const month = details[key]._id.month;
+      const queryMonth = Number(updateMonth());
+
+      if (details[key]._id.type === true && month === queryMonth) {
         incomesArr.push(details[key]);
-      } else if (details[key]._id.type === false) {
+      } else if (details[key]._id.type === false && month === queryMonth) {
         expensesArr.push(details[key]);
       }
     });
@@ -76,15 +98,16 @@ export default function StatisticsView() {
   const data = (arr) => {
     if (arr.length > 0) {
       return arr.map((el) => {
-        return {name: el._id.category, uv:el.totalValueCategory}
+        return { name: el._id.category, uv: el.totalValueCategory };
       });
     }
-  };  
+  };
 
-  const switcher = (val) => {//switch from expenses to income
-   setToggle(val);
-  }
- 
+  const switcher = (val) => {
+    //switch from expenses to income
+    setToggle(val);
+  };
+
   return (
     <>
       <div className={s.balanceWrapper}>
@@ -105,10 +128,13 @@ export default function StatisticsView() {
         )}
       </div>
 
-      <TotalReport />
-      <Report onClick={switcher}/>
+      <TotalReport incomes ={incomesArr} expenses={expensesArr} />
+      <Report onClick={switcher} />
       <DiagramContainer>
-        <Diagram mobile={mobileView} dataArr={toggle?data(incomesArr):data(expensesArr) }/>
+        <Diagram
+          mobile={mobileView}
+          dataArr={toggle ? data(incomesArr) : data(expensesArr)}
+        />
       </DiagramContainer>
       <BackgroundImages />
     </>
