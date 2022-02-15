@@ -17,7 +17,7 @@ import {
 export const reportsSlice = createSlice({
   name: "reports",
   initialState: {
-    balance: null,
+    balance: 0,
     totalIncomes: 0,
     totalExpenses: 0,
     monthlyIncome: {},
