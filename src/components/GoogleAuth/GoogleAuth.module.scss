@@ -1,17 +1,48 @@
 .buttonGoogle {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 160px;
-    min-height: 40px;
-    margin-bottom: 30px;
-    border: none;
-    border-radius: 20px;
-    background-color: var(--bg-color-input);
-    filter: var(--button-shadow);
-    cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 160px;
+  min-height: 40px;
+  margin-bottom: 30px;
+  border: none;
+  border-radius: 20px;
+  background-color: var(--bg-color-input);
+  filter: var(--button-shadow);
+  cursor: pointer;
+  -webkit-animation: pulsate-bck 1s ease-in-out infinite both;
+  animation: pulsate-bck 1s ease-in-out infinite both;
+}
+
+.textGoogle {
+  margin-left: 10px;
+}
+
+@-webkit-keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
   }
-  
-  .textGoogle {
-    margin-left: 10px;
+  50% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
   }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
+@keyframes pulsate-bck {
+  0% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+  50% {
+    -webkit-transform: scale(0.9);
+    transform: scale(0.9);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+  }
+}
