@@ -1,46 +1,45 @@
-import React from "react";
-import "./App.css";
-import Loader from "react-loader-spinner";
-import { Route, Routes } from "react-router-dom";
-import { PrivateRoute } from "../routes/PrivateRoute";
-import { PublicRoute } from "../routes/PublicRoute";
+import React from 'react'
+import './App.css'
+import Loader from 'react-loader-spinner'
+import { Route, Routes } from 'react-router-dom'
+import { PrivateRoute } from '../routes/PrivateRoute'
+import { PublicRoute } from '../routes/PublicRoute'
 
-import { useDispatch, useSelector } from "react-redux";
-import { currentUser } from "../redux/auth/operations";
-import { useEffect } from "react";
-import { lazy, Suspense } from "react";
-import { getIsAuth } from "../redux/auth/selectors";
-import { getToken } from "../redux/auth/selectors";
-import { getIsFetchingCurrent } from "../redux/auth/selectors";
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+import { useDispatch, useSelector } from 'react-redux'
+import { currentUser } from '../redux/auth/operations'
+import { useEffect } from 'react'
+import { lazy, Suspense } from 'react'
+import { getIsAuth } from '../redux/auth/selectors'
+import { getToken } from '../redux/auth/selectors'
+import { getIsFetchingCurrent } from '../redux/auth/selectors'
+import { ToastContainer } from 'react-toastify'
+import 'react-toastify/dist/ReactToastify.css'
 // import { Navigation } from "../components/Navigation/Navigation";
 
 const Header = lazy(() =>
-  import("../components/Header/Header" /* webpackChunkName: "header-view" */)
-);
+  import('../components/Header/Header' /* webpackChunkName: "header-view" */),
+)
 const HomeView = lazy(() =>
-  import("../views/HomeView/HomeView" /* webpackChunkName: "home-view" */)
-);
+  import('../views/HomeView/HomeView' /* webpackChunkName: "home-view" */),
+)
 
 const MainView = lazy(() =>
-  import("../views/MainView/MainView" /* webpackChunkName: "main-view" */)
-);
+  import('../views/MainView/MainView' /* webpackChunkName: "main-view" */),
+)
 const StatisticsView = lazy(() =>
-  import(
-    "../views/StatisticsView/StatisticsView" /* webpackChunkName: "login-view" */
+  import('../views/StatisticsView/StatisticsView' /* webpackChunkName: "login-view" */
   )
-);
+)
 
 function App() {
-  const dispatch = useDispatch();
-  const isAuth = useSelector(getIsAuth);
-  const token = useSelector(getToken);
-  const isFetchingCurrent = useSelector(getIsFetchingCurrent);
+  const dispatch = useDispatch()
+  const isAuth = useSelector(getIsAuth)
+  const token = useSelector(getToken)
+  const isFetchingCurrent = useSelector(getIsFetchingCurrent)
   useEffect(() => {
-    token && dispatch(currentUser());
+    token && dispatch(currentUser())
     // eslint-disable-next-line
-  }, [dispatch]);
+  }, [dispatch])
 
   return (
     <div className="appContainer">
@@ -93,7 +92,7 @@ function App() {
       </Suspense>
       <ToastContainer autoClose={3000} />
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
