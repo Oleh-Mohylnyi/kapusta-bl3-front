@@ -1,8 +1,8 @@
-import Registration from '../../components/Registration'
-import BackgroundImages from '../../components/BackgroundLayouts/PublicPageBg'
+import Registration from "../../components/Registration";
+import BackgroundImages from "../../components/BackgroundLayouts/PublicPageBg";
 // import PageContainer from "../../components/PageContainer";
-import Title from '../../components/Title'
-import s from './HomeView.module.scss'
+import Title from "../../components/Title";
+import s from "./HomeView.module.scss";
 
 export default function HomeView() {
   return (
@@ -11,7 +11,8 @@ export default function HomeView() {
         <Title />
         <Registration />
       </div>
+
       <BackgroundImages />
     </>
-  )
+  );
 }
