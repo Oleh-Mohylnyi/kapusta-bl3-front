@@ -1,5 +1,7 @@
-.link {
+.button {
   display: flex;
+  justify-content: center;
+  align-items: center;
   /* justify-content: center;
     align-items: baseline; */
 
@@ -17,11 +19,13 @@
   width: 24px;
   height: 24px;
   margin-bottom: 10px;
+  border: none;
+  background: transparent;
 }
 
-.linkText {
+/* .buttonText {
   margin-right: 15px;
-}
+} */
 
 /* .icon {
     color: #52555f;
@@ -29,11 +33,11 @@
     max-height: 24px;
   } */
 
-.linkWrapper {
+.buttonWrapper {
   margin-bottom: 43px;
 }
 
-.linkText {
+.buttonText {
   font-family: Roboto;
   font-style: normal;
   font-weight: normal;
@@ -46,24 +50,30 @@
   color: rgba(82, 85, 95, 0.7);
 }
 
-.secondLink {
+.secondButton {
   display: flex;
   align-items: center;
 }
 
 @media screen and (min-width: 768px) {
-  .linkWrapper {
+  .buttonWrapper {
     margin-left: 111px;
     margin-bottom: 0;
   }
 
-  .icon {
+  .buttonIcon {
     margin-right: 15px;
+  }
+
+  .button {
+    width: auto;
+    height: auto;
+    margin-bottom: 0;
   }
 }
 
 @media screen and (min-width: 1280px) {
-  .linkWrapper {
+  .buttonWrapper {
     margin-left: 205px;
     margin-bottom: 0;
   }

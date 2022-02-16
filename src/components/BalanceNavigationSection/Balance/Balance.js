@@ -7,14 +7,16 @@ import {fetchBalanceThunk} from "../../../redux/reports/reportsThunk";
 import {updateBalanceThunk} from "../../../redux/reports/reportsThunk";
 import { useDispatch, useSelector } from "react-redux";
 
-export default function Balance (){
+
+
+
+
+export default function Balance ({currency, setNotVisible}){
     
     const balance = useSelector(getBalance);
     const dispatch = useDispatch();
     
-    const [currentBalance, setCurrentBalance] = useState(Number(balance).toFixed(2));
-    
-    
+    let [currentBalance, setCurrentBalance] = useState(Number(balance).toFixed(2));
     
     
     const inputChange = (e) => { 
@@ -36,54 +38,65 @@ export default function Balance (){
     setCurrentBalance(balance);
            }, [balance, dispatch]);
 
-   
-
+ 
 
     
-
+const zeroBalance = balance === 0 || currentBalance === 0;
 
     return (
-        <div>
-            <form onSubmit={handleSubmit} className={s.balanceForm}> 
-        
-        {balance === 0 ? (
-
+<div>
+{setNotVisible ? (
+    <div>
+               
+    <div>
+        <form onSubmit={handleSubmit} className={s.balanceForm}>
             <div className={s.inputWrapper}>
+                <label htmlFor='balance' className={s.balanceLabel}>
+                    <input
+                        type="text"
+                        name="balance"
+                        placeholder={"00.00 UAH"}
+                        autoComplete="off"
+                        className={`${s.balanceInputSecond} ${s.balanceInput}`}
+                        value={currentBalance}
+                        // currency={currency} 
+                        disabled
+                        />
+                        
+                </label>
+                <span className={s.currency}>{currency}</span>
+            </div>
+        </form>
+    </div>
+
+</div>
+) : (
+    <div>
+    <form onSubmit={handleSubmit} className={s.balanceForm}>
+        <div className={s.inputWrapper}>
             <label htmlFor='balance' className={s.balanceLabel}>
-                
-            <input 
-            type="number"
-            name="balance"
-            placeholder={"00.00 UAH"}
-            autoComplete="off"
-            onChange={inputChange}
-            className={s.balanceInput}
-            value={Number(currentBalance)}
-            // value={balance}
-            />
-            
-      
-            
+                <input
+                    type="text"
+                    name="balance"
+                    placeholder={"00.00 UAH"}
+                    autoComplete="off"
+                    onChange={inputChange}
+                    className={s.balanceInput}
+                    value={currentBalance}
+                    // currency={currency}
+                     />
+                    <span className={s.currency}>{currency}</span>
             </label>
-                    <Bubble/>{/* ВЕРНУТЬ */}
-                    
-            </div>
-        ) : (
-            <div className={s.activeBalanceContainer}>
-                
-                <div className={s.activeBalanceWrapper}>
-            <p className={`${s.balanceInput} ${s.balanceInputText}`}>{Number(currentBalance)}.00 UAH</p>
+            <button type="submit" onClick={handleSubmit} className={s.balanceButton}>Подтвердить</button>
+           {zeroBalance && <Bubble />}
             
-            </div>
-            </div>
-            
-        )
-    
-    } 
-
-
-</form>
-        
         </div>
+    </form>
+</div>
+)}
+
+</div>
+   
+
     )
 }

@@ -6,11 +6,13 @@ import Period from '../../components/Period';
 export default function MobileStatisticsNavigation ({ handlePreviousPeriod,
     periodMonth,
     periodYear,
-    handleNextPeriod}) {
+    handleNextPeriod,
+    onGoBackClick,
+    setNotVisible}) {
 return (
-    <><BackToMain />
+    <><BackToMain goBackClick={onGoBackClick} />
     <Period handlePreviousPeriod={handlePreviousPeriod} periodMonth={periodMonth} periodYear={periodYear} handleNextPeriod={handleNextPeriod}/>
     <BalanceTitle />
-    <Balance /></>
+    <Balance setNotVisible={setNotVisible}/></>
 )
 }
