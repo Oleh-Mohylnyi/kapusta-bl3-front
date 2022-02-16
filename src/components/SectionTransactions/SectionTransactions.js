@@ -1,9 +1,10 @@
 import React from "react";
 import Summary from "../Summary";
 import TableData from "./TableData";
-import TransactionsNav from "./TransactionsNav";
+// import TransactionsNav from "./TransactionsNav";
 import TransactionForm from "../TransactionForm";
-import useWindowDimensions from "../../hooks/useWindowDimensions";
+// import useWindowDimensions from "../../hooks/useWindowDimensions";
+import styles from "./ComposeSection/ComposeSection.module.scss";
 import s from "./SectionTransactions.module.scss";
 
 // import styles from "./ComposeSection/ComposeSection.module.scss";
@@ -81,7 +82,6 @@ const SectionTransactions = () => {
           <Summary incomes={monthlyIncomeData} expenses={monthlyExpensesData} />
         </div>
       </div>
-      {viewPort.width < 1280 && <Summary />}
     </section>
   );
 };
