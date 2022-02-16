@@ -13,7 +13,6 @@ import "moment/locale/ru";
 import { getDetailsThunk } from "../../redux/reports/reportsThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
-// import Loader from 'react-loader-spinner'
 
 export default function StatisticsView() {
   const dispatch = useDispatch();
@@ -25,7 +24,6 @@ export default function StatisticsView() {
   const [periodMonth, setPeriodMonth] = useState(moment(date).format("MM"));
   const [periodYear, setPeriodYear] = useState(moment(date).format("YYYY"));
   const [toggle, setToggle] = useState(false); //switch from expenses to income === added by T.Y.
-  // const isLoading = useSelector(state=>state.reports.isLoading)
 
   const size = useWindowDimensions();
   const { width } = size;
@@ -65,15 +63,16 @@ export default function StatisticsView() {
     return { year: periodYear, month: queryPeriodMonth };
   }, [periodYear, queryPeriodMonth]);
 
-  useEffect(() => {
-    //getDetails
+  useEffect(() => {    
     dispatch(getDetailsThunk(period));
   }, [period, dispatch]);
 
   const details = useSelector((state) => state.reports.details);
 
+
   let incomesArr = [];
   let expensesArr = [];
+
   const updateMonth = () => {
     if (periodMonth[0] === "0") {
       const queryMonth = periodMonth.split("");
@@ -82,19 +81,29 @@ export default function StatisticsView() {
     }
     return periodMonth;
   };
+
+
+
   const detailsSorter = () => {
-    Object.keys(details).forEach((key) => {
+    if (Object.keys(details).length !== 0) {
+      Object.keys(details).forEach((key) => {
       const month = details[key]._id.month;
       const queryMonth = Number(updateMonth());
 
       if (details[key]._id.type === true && month === queryMonth) {
+        
         incomesArr.push(details[key]);
       } else if (details[key]._id.type === false && month === queryMonth) {
+        console.log(details[key]._id.type === false && month === queryMonth);
         expensesArr.push(details[key]);
       }
-    });
+      });
+      
+    }
+    
   };
   detailsSorter();
+
 
   const data = (arr) => {
     if (arr.length > 0) {
@@ -102,16 +111,18 @@ export default function StatisticsView() {
         return { name: el._id.category, uv: el.totalValueCategory };
       });
     }
+    return []
   };
 
   const switcher = (val) => {
     //switch from expenses to income
     setToggle(val);
   };
+ 
   const incomes = data(incomesArr);
   const expenses = data(expensesArr);
- 
-
+  
+  
   return (
     <>
       <div className={s.balanceWrapper}>
@@ -134,23 +145,15 @@ export default function StatisticsView() {
 
       <TotalReport incomes={incomesArr} expenses={expensesArr} />
       <Report onClick={switcher} />
-      {/* {isLoading & <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />} */}
-      {incomes === void 0 || expenses === void 0 ? (<p className={s.notification}>ПО ЭТОМУ ПЕРИОДУ НЕТ ДАННЫХ</p>) :
-        (<DiagramContainer>
+
+      <DiagramContainer>
         <Diagram
           mobile={mobileView}
           dataArr={toggle ? incomes : expenses}
         />
       </DiagramContainer>
-      )}
-      
-      {/* <DiagramContainer>
-        <Diagram
-          mobile={mobileView}
-          dataArr={toggle ? incomes : expenses}
-        />
-      </DiagramContainer> */}
       <BackgroundImages />
+
     </>
   );
 }

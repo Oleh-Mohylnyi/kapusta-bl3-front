@@ -16,14 +16,14 @@ const result = arr.reduce(function (accumulator, currentValue) {
       <ul className={s.list}>
         <li className={s.item}>
           <div className={s.item__content}>
-            <h3 className={s.title}>Расходы:</h3>
-            <span className={s.costs}>- {totalExpenses} грн</span>
+            <p className={s.title}>Доходы:</p>
+            <p className={s.incomes}>+{totalIncomes}грн</p>
           </div>
         </li>
         <li className={s.item}>
           <div className={s.item__content}>
-            <h3 className={s.title}>Доходы:</h3>
-            <span className={s.incomes}>+{totalIncomes}грн</span>
+            <p className={s.title}>Paсходы:</p>
+            <p className={s.costs}>- {totalExpenses} грн</p>
           </div>
         </li>
       </ul>
