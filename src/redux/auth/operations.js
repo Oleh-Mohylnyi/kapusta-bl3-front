@@ -9,12 +9,10 @@ export const register = createAsyncThunk(
       const result = await serviceAPI.register(user)
       const isSendEmailVerify = result.isSendEmailVerify
       if (isSendEmailVerify) {
-        toast.success('Success registration! Check your email')
+        toast.success('Успешная регистрация! Проверьте свою почту!')
       } else {
-        toast('Register again')
+        toast.warning('Пройдите регистрацию снова')
       }
-      console.log(result)
-      console.log(isSendEmailVerify)
       return result
     } catch (error) {
       rejectWithValue(error.message)
@@ -27,10 +25,10 @@ export const login = createAsyncThunk(
   async (user, { rejectWithValue }) => {
     try {
       const result = await serviceAPI.login(user)
-      toast.success('Successful login!')
+      toast.success('Вы успешно вошли в свой аккаунт!')
       return result
     } catch (error) {
-      toast.warning('Something went wrong! Check your credentials')
+      toast.warning('Ошибка! Проверьте свои учетные данные')
       return rejectWithValue(error.message)
     }
   },
@@ -41,9 +39,9 @@ export const logout = createAsyncThunk(
   async (_, { rejectWithValue }) => {
     try {
       await serviceAPI.logout()
-      toast.success('You are logged out of your account')
+      toast.success('Вы вышли из своего аккаунта!')
     } catch (error) {
-      toast.warning('Something went wrong!')
+      toast.warning('Ошибка выхода из учетной записи')
       rejectWithValue(error.message)
     }
   },
@@ -69,25 +67,11 @@ export const userFromGoogleAuth = createAsyncThunk(
   async (token, { rejectWithValue }) => {
     try {
       const result = await serviceAPI.getGoogleUser(token)
-      toast.success('Successful Google Authorization!')
+      toast.success('Успешная Google авторизация!')
       return result
     } catch (error) {
-      toast.warning('Google login error')
+      toast.warning('Ошибка входа через Google аккаунт')
       return rejectWithValue(error.message)
     }
   },
 )
-
-// export const verification = createAsyncThunk(
-//   'users/verification',
-//   async (user, { rejectWithValue }) => {
-//     try {
-//       const result = await serviceAPI.verification(user);
-//     //   Notify.success('You have successfully registered!');
-//     toast('You have successfully verification!')
-//       return result;
-//     } catch (error) {
-//       rejectWithValue(error.message);
-//     }
-//   },
-// );

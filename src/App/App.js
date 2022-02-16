@@ -38,7 +38,7 @@ function App() {
   const isFetchingCurrent = useSelector(getIsFetchingCurrent)
   useEffect(() => {
     token && dispatch(currentUser())
-    // eslint-disable-next-line
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [dispatch])
 
   return (
