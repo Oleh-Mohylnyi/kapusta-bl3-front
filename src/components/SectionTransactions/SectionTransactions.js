@@ -1,10 +1,13 @@
 import React from "react";
 import Summary from "../Summary";
 import TableData from "./TableData";
-import TransactionsNav from "./TransactionsNav";
+// import TransactionsNav from "./TransactionsNav";
 import TransactionForm from "../TransactionForm";
-import s from "./SectionTransactions.module.scss";
+// import useWindowDimensions from "../../hooks/useWindowDimensions";
 import styles from "./ComposeSection/ComposeSection.module.scss";
+import s from "./SectionTransactions.module.scss";
+
+// import styles from "./ComposeSection/ComposeSection.module.scss";
 // import { PropTypes } from "prop-types";
 import {
   getMonthlyIncomesThunk,
@@ -36,7 +39,7 @@ const SectionTransactions = () => {
     }
   };
   previousMonth();
- 
+
   let monthlyExpensesData = [];
   let monthlyIncomeData = [];
 
@@ -69,10 +72,11 @@ const SectionTransactions = () => {
   getMonthlyData(monthlyExpenses, monthlyExpensesData, months);
   getMonthlyData(monthlyIncomes, monthlyIncomeData, months);
   return (
-    <section>
-      <TransactionsNav />
+    <section className={s.transactionsSection}>
+      {/* <TransactionsNav /> */}
       <div className={s.sectionContainer}>
         <TransactionForm currency="UAH" />
+
         <div className={styles.wrapperTables}>
           <TableData currency="UAH" />
           <Summary incomes={monthlyIncomeData} expenses={monthlyExpensesData} />
