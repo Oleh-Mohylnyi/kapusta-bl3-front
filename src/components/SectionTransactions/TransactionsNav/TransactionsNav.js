@@ -8,23 +8,30 @@ const TransactionsNav = ({ onClick }) => {
 
   const [toggle, setToggle] = useState(true);
 
-  const toggler = (e) => {
-    setToggle(!toggle);
-    onClick(toggle);
+  const toggleFalse = (e) => {
+    setToggle(false);
+  };
+
+  const  toggleTrue = (e) => {
+    setToggle(true);
   };
 
   return (
     <>
       <div className={s.navList}>
-        <button onClick={toggler} className={s.link}>
-          <h2 className={s.title}>Доход</h2>
-        </button>
-
-        <button onClick={toggler} className={s.link}>
+        <button onClick={toggleFalse} className={
+             (!toggle ? ` ${s.link + s.active}` : ` ${s.link}`)
+            }>
           <h2 className={s.title}>Расход</h2>
         </button>
+
+        <button onClick={toggleTrue} className={
+             (toggle ? ` ${s.link + s.active}` : ` ${s.link}`)
+            }>
+          <h2 className={s.title}>Доход</h2>
+        </button>
       </div>
-      {toggle && <SectionTransactions />}
+      <SectionTransactions toggle={toggle}/>
     </>
   );
 };

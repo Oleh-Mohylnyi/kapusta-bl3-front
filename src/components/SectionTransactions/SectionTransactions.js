@@ -20,10 +20,11 @@ import moment from "moment";
 import "moment/locale/ru";
 // import { createLogger } from "redux-logger";
 
-const SectionTransactions = () => {
+const SectionTransactions = ({ toggle }) => {
   const dispatch = useDispatch();
-  const monthlyExpenses = useSelector((state) => state.reports.monthlyIncome);
-  const monthlyIncomes = useSelector((state) => state.reports.monthlyExpenses);
+  const monthlyExpenses = useSelector((state) => state.reports.monthlyExpenses);
+  const monthlyIncome = useSelector((state) => state.reports.monthlyIncome);
+  // const transactions = useSelector((state) => state.tramsactions.tramsactions);
 
   useEffect(() => {
     dispatch(getMonthlyIncomesThunk());
@@ -68,18 +69,18 @@ const SectionTransactions = () => {
       arr.push(el);
     });
   };
-
   getMonthlyData(monthlyExpenses, monthlyExpensesData, months);
-  getMonthlyData(monthlyIncomes, monthlyIncomeData, months);
+  getMonthlyData(monthlyIncome, monthlyIncomeData, months);
   return (
     <section className={s.transactionsSection}>
       {/* <TransactionsNav /> */}
       <div className={s.sectionContainer}>
-        <TransactionForm currency="UAH" />
+        <TransactionForm currency="UAH" type={toggle}/>
 
         <div className={styles.wrapperTables}>
-          <TableData currency="UAH" />
-          <Summary incomes={monthlyIncomeData} expenses={monthlyExpensesData} />
+          <TableData currency="UAH" currentType={toggle} />
+          <Summary data={toggle ? monthlyIncomeData : monthlyExpensesData} />
+          {/* <Summary incomes={monthlyIncomeData} expenses={monthlyExpensesData}  /> */}
         </div>
       </div>
     </section>
