@@ -13,7 +13,7 @@ import "moment/locale/ru";
 import { getDetailsThunk } from "../../redux/reports/reportsThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
-import Loader from 'react-loader-spinner'
+// import Loader from 'react-loader-spinner'
 
 export default function StatisticsView() {
   const dispatch = useDispatch();
@@ -25,7 +25,7 @@ export default function StatisticsView() {
   const [periodMonth, setPeriodMonth] = useState(moment(date).format("MM"));
   const [periodYear, setPeriodYear] = useState(moment(date).format("YYYY"));
   const [toggle, setToggle] = useState(false); //switch from expenses to income === added by T.Y.
-  const isLoading = useSelector(state=>state.reports.isLoading)
+  // const isLoading = useSelector(state=>state.reports.isLoading)
 
   const size = useWindowDimensions();
   const { width } = size;
