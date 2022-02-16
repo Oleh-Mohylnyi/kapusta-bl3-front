@@ -4,7 +4,7 @@ import StatisticsLink from '../StatisticsLink';
 import useWindowDimensions from '../../../hooks/useWindowDimensions';
 import s from './BalanceNavigation.module.css';
 import BalanceTitle from "../BalanceTitle";
-import Button from "../Button";
+// import Button from "../Button";
 
 
 export default function BalanceNavigation () {
