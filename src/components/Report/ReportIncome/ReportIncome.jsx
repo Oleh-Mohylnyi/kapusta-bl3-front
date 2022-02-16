@@ -1,7 +1,7 @@
 import ReportList from "../ReportList/ReportList";
-import type from "../ReportList/income.json";
+// import type from "../ReportList/income.json";
 
-export default function ReportIncome() {
-  const typesIncome = type;
-  return <>{typesIncome.length > 0 && <ReportList types={typesIncome} />}</>;
+export default function ReportIncome({ categories }) {
+  // const typesIncome = type;
+  return <>{categories.length > 0 && <ReportList types={categories} />}</>;
 }

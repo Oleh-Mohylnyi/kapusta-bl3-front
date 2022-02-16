@@ -110,7 +110,6 @@ export default function StatisticsView() {
   };
   const incomes = data(incomesArr);
   const expenses = data(expensesArr);
- 
 
   return (
     <>
@@ -133,17 +132,22 @@ export default function StatisticsView() {
       </div>
 
       <TotalReport incomes={incomesArr} expenses={expensesArr} />
-      <Report onClick={switcher} />
+
       {/* {isLoading & <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />} */}
-      {incomes === void 0 || expenses === void 0 ? (<p className={s.notification}>ПО ЭТОМУ ПЕРИОДУ НЕТ ДАННЫХ</p>) :
-        (<DiagramContainer>
-        <Diagram
-          mobile={mobileView}
-          dataArr={toggle ? incomes : expenses}
-        />
-      </DiagramContainer>
+      {incomes === void 0 || expenses === void 0 ? (
+        <p className={s.notification}>ПО ЭТОМУ ПЕРИОДУ НЕТ ДАННЫХ</p>
+      ) : (
+        <>
+          <Report onClick={switcher} dataArr={toggle ? incomes : expenses} />
+          <DiagramContainer>
+            <Diagram
+              mobile={mobileView}
+              dataArr={toggle ? incomes : expenses}
+            />
+          </DiagramContainer>
+        </>
       )}
-      
+
       {/* <DiagramContainer>
         <Diagram
           mobile={mobileView}
