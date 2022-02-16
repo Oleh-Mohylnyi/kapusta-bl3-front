@@ -1,10 +1,10 @@
-import { NavLink, useLocation } from "react-router-dom";
+// import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import SectionTransactions from "../SectionTransactions";
 import s from "./TransactionsNav.module.scss";
 
 const TransactionsNav = ({ onClick }) => {
-  const location = useLocation();
+  // const location = useLocation();
 
   const [toggle, setToggle] = useState(true);
 
