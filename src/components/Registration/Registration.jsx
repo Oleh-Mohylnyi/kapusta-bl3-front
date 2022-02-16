@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { register, login } from '../../redux/auth/operations'
 import GoogleAuth from '../GoogleAuth'
-// import Button from '../Button/Button'
+import { toast } from 'react-toastify'
 import s from './Registration.module.scss'
 
 export default function Registration() {
@@ -53,23 +53,23 @@ export default function Registration() {
     }
   }
 
+
   const handleSubmitLogin = (e) => {
     e.preventDefault()
     const user = { email, password }
     dispatch(login(user))
   }
 
-  const handleSubmitRegistration = (e) => {
+   const handleSubmitRegistration = (e) => {
     e.preventDefault()
-    const user = { email, password }
-    dispatch(register(user))
-    // reset()
+    if (emailError ==='Некорректный email' || passwordError==='Пароль должен быть не меньше 6 символов') {
+      toast.warning('Введите корректные данные для почты')
+      return
+    } else {
+      const user = { email, password }
+      dispatch(register(user))
+    }
   }
-
-  // const reset = () => {
-  //   setEmail('')
-  //   setPassword('')
-  // }
 
   return (
     <div className={s.registrationForm}>
@@ -101,7 +101,6 @@ export default function Registration() {
             className={s.input}
             pattern="[A-Za-zА-Яа-яЁёЄєЇї0-9._%+-]+@[A-Za-zА-Яа-яЁёЄєЇї0-9.-]+\.[A-Za-zА-Яа-яЁёЄєЇї]{2,4}$"
             title="Email может, сoстоять из букв цифр и обязательного символа '@'"
-            // required
           />
           {emailDirty && emailError && (
             <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
@@ -129,7 +128,6 @@ export default function Registration() {
             className={s.input}
             pattern="[0-9A-Za-zА-Яа-яЁёЄєЇї!@#$%^&*]{6,}"
             title="Пароль может, сoстоять не меньше чем из шести букв цифр и символов '!@#$%^&*'"
-            // required
           />
           {passwordDirty && passwordError && (
             <div style={{ color: 'red', fontSize: 10, paddingTop: 4 }}>
@@ -139,15 +137,8 @@ export default function Registration() {
         </label>
 
         <div className={s.containerButton}>
-          {/* <Button title={'ВОЙТИ'} type={'submit'} onClick={handleSubmitLogin} />
-          <Button
-            title={'РЕГИСТРАЦИЯ'}
-            type={'submit'}
-            onClick={handleSubmitRegistration}
-            
-          /> */}
           <button
-            type="submit"
+            type="button"
             className={s.button}
             onClick={handleSubmitLogin}
           >

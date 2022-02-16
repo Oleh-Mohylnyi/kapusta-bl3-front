@@ -6,6 +6,35 @@
   padding: 0;
   margin: 0;
   list-style-type: none;
+  @media screen and (min-width: 768px) {
+    display: flex;
+    position: static;
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+  }
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+
+  padding: 5px 25px;
+  color: #000000;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  @media screen and (min-width: 768px) {
+    &:hover,
+    &:focus,
+    &:active {
+      color: #ff751d;
+    }
+  }
 }
 
 .link {
@@ -20,28 +49,17 @@
   line-height: calc(14 / 12);
   text-transform: uppercase;
   letter-spacing: 0.02em;
-}
-
-.activeLink {
-  color: #fefefe;
-  background: #ff751d;
-}
-
-.noActiveLink {
-  color: #000000;
-  background: #fafbfd;
-}
-
-@media screen and (min-width: 768px) {
-  .navList {
-    display: flex;
-    position: static;
-    padding: 0;
-    margin: 0;
-    list-style-type: none;
+  cursor: pointer;
+  border: none;
+  &:hover,
+  &:focus,
+  &:active {
+    background: #ff751d;
+    @media screen and (min-width: 768px) {
+      background: #fafbfd;
+    }
   }
-
-  .link {
+  @media screen and (min-width: 768px) {
     text-decoration: none;
     display: flex;
     align-items: center;
@@ -55,17 +73,56 @@
     text-transform: uppercase;
     letter-spacing: 0.02em;
   }
-
-  .activeLink {
-    color: #ff751d;
-    background: #fefefe;
-  }
-
-  .noActiveLink {
-    color: #000000;
-    background: #fafbfd;
-  }
 }
+
+// .activeLink {
+//   color: #fefefe;
+//   background: #ff751d;
+//   @media screen and (min-width: 768px) {
+//     color: #ff751d;
+//     background: #fefefe;
+//   }
+// }
+
+// .noActiveLink {
+//   color: #000000;
+//   background: #fafbfd;
+// }
+
+// @media screen and (min-width: 768px) {
+//   .navList {
+//     display: flex;
+//     position: static;
+//     padding: 0;
+//     margin: 0;
+//     list-style-type: none;
+//   }
+
+//   .link {
+//     text-decoration: none;
+//     display: flex;
+//     align-items: center;
+//     justify-content: center;
+//     width: 138px;
+//     height: 40px;
+//     border-radius: 20px 20px 0 0;
+//     font-weight: 700;
+//     font-size: 12px;
+//     line-height: calc(14 / 12);
+//     text-transform: uppercase;
+//     letter-spacing: 0.02em;
+//   }
+
+//   .activeLink {
+//     color: #ff751d;
+//     background: #fefefe;
+//   }
+
+//   .noActiveLink {
+//     color: #000000;
+//     background: #fafbfd;
+//   }
+// }
 
 // .navList {
 //   position: fixed;

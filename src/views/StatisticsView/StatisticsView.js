@@ -13,7 +13,9 @@ import "moment/locale/ru";
 import { getDetailsThunk } from "../../redux/reports/reportsThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
+
 import { useLocation, useNavigate } from 'react-router-dom';
+// import Loader from 'react-loader-spinner'
 
 
 export default function StatisticsView() {
@@ -26,6 +28,7 @@ export default function StatisticsView() {
   const [periodMonth, setPeriodMonth] = useState(moment(date).format("MM"));
   const [periodYear, setPeriodYear] = useState(moment(date).format("YYYY"));
   const [toggle, setToggle] = useState(false); //switch from expenses to income === added by T.Y.
+  // const isLoading = useSelector(state=>state.reports.isLoading)
 
   const size = useWindowDimensions();
   const { width } = size;
@@ -110,6 +113,9 @@ export default function StatisticsView() {
     //switch from expenses to income
     setToggle(val);
   };
+  const incomes = data(incomesArr);
+  const expenses = data(expensesArr);
+ 
 
  
 
@@ -148,12 +154,22 @@ export default function StatisticsView() {
 
       <TotalReport incomes={incomesArr} expenses={expensesArr} />
       <Report onClick={switcher} />
-      <DiagramContainer>
+      {/* {isLoading & <Loader type="ThreeDots" color="#ff751d" height={80} width={80} />} */}
+      {incomes === void 0 || expenses === void 0 ? (<p className={s.notification}>ПО ЭТОМУ ПЕРИОДУ НЕТ ДАННЫХ</p>) :
+        (<DiagramContainer>
         <Diagram
           mobile={mobileView}
-          dataArr={toggle ? data(incomesArr) : data(expensesArr)}
+          dataArr={toggle ? incomes : expenses}
         />
       </DiagramContainer>
+      )}
+      
+      {/* <DiagramContainer>
+        <Diagram
+          mobile={mobileView}
+          dataArr={toggle ? incomes : expenses}
+        />
+      </DiagramContainer> */}
       <BackgroundImages />
     </>
   );
