@@ -28,7 +28,7 @@ const TableData = ({currency}) => {
   return (
     <>
       {viewPort.width >= 768 && (
-        <div className={s.scroll_table} id={s.style2}>
+        <div className={s.scroll_table}>
           <table className={s.main}>
             <thead className={s.theadTable}>
               <tr>
@@ -67,11 +67,11 @@ const TableData = ({currency}) => {
       )}
 
       {viewPort.width < 768 && (
-        <div>
-          <ul className={sMobile.listTransactions}>
+        
+          <ul className={sMobile.transactionsList}>
           {dataTransactions.map(
             ({ id, type, date, description, category, sum }) => (
-              <li className={sMobile.itemTransactions} key={id}>
+              <li className={sMobile.transactionsItem} key={id}>
                 <div className={sMobile.leftColum}>
                   <p className={sMobile.elem}>
                     <span>{description}</span>
@@ -81,13 +81,13 @@ const TableData = ({currency}) => {
                     <span>{category}</span>
                   </p>
                 </div>
-                <div className={sMobile.rigthColum}>
+                <div className={sMobile.rightColum}>
                   <p
                     className={
                       sMobile[type ? "totalDecrement" : "totalIncrement"]
                     }
                   >
-                    {type ? "- " : ""}
+                    {type ? "-" : ""}
                     {sum}.00 {currency}
                   </p>
                   <button className={sMobile.deleteBtn} onClick={handleRemoveTransaction} id={id}></button>
@@ -96,8 +96,7 @@ const TableData = ({currency}) => {
              
             )
           )}
-           </ul>
-        </div>
+           </ul>        
       )}
     </>
   );

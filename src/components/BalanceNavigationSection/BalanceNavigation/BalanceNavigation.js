@@ -12,14 +12,7 @@ export default function BalanceNavigation () {
  const desktopAndTabletView = windowSize.width >= 768;
 //   const mobileView = windowSize.width < 767.98;
 
-
-
-
-
-
-   return (
-
-   
+  return (
       
       <>
       {desktopAndTabletView ? (

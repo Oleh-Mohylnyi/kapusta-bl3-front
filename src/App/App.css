@@ -18,7 +18,7 @@ body {
   display: flex;
   flex-direction: column;
 
-  min-height: 200vh;
+  /* min-height: 200vh; */
   min-width: 320px;
   width: 320px;
   margin: 0 auto;

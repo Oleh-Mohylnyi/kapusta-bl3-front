@@ -6,12 +6,12 @@
   flex-direction: column;
   align-items: center;
 
-  background-color: var(--bg-color); //взамен фонового изображения
+  // background-color: var(--bg-color); //взамен фонового изображения
   // border: 1px solid orange; //для тестирования оставляю
 
   @media screen and (min-width: 768px) {
     // background-color: lavender; ////для тестирования оставляю
-    background: none; ////пока нет фоновой картинки
+    // background: none; ////пока нет фоновой картинки
     width: 604px;
     justify-content: space-between;
     padding: 10px 0;

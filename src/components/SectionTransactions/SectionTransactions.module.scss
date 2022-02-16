@@ -8,8 +8,34 @@
     background: #ffffff;
     box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
     border-radius: 0px 30px 30px 30px;
+    margin-bottom: 45px;
   }
   @media screen and (min-width: 1280px) {
     padding: 33px 20px 61px;
+    margin-bottom: 83px;
+  }
+}
+
+// .wrapperTables {
+//   display: flex;
+
+//   flex-direction: column;
+//   gap: 30px;
+// }
+
+// @media screen and (min-width: 768px) {
+//   .wrapperTables {
+//     flex-direction: column;
+//     margin-top: 48px;
+//   }
+// }
+
+@media screen and (min-width: 1280px) {
+  .wrapperTables {
+    display: flex;
+    gap: 30px;
+    flex-direction: row;
+    padding-top: 0;
+    margin-top: 59px;
   }
 }

@@ -4,7 +4,7 @@ import SectionTransactions from "../../components/SectionTransactions";
 // import Summary from "./../../components/Summary/Summary";
 import BalanceNavigation from "../../components/BalanceNavigationSection/BalanceNavigation";
 import { useEffect } from "react";
-// import TransactionsNav from "../../components/SectionTransactions/TransactionsNav";
+import TransactionsNav from "../../components/SectionTransactions/TransactionsNav";
 import { fetchTransactionsThunk } from "../../redux/transactions/transactionsThunks";
 import { useDispatch } from "react-redux";
 
@@ -20,9 +20,8 @@ export default function MainView() {
       {/* <SectionTransactions /> */} {/* УДАЛИТЬ?? */}
       {/*<TableData />*/} {/* УДАЛИТЬ?? */}
       {/* <Summary /> */} {/* УДАЛИТЬ?? */}
-      <BalanceNavigation />
-      {/* <TransactionsNav /> */}
-      {/* перенес в SectionTransactions */}
+      <BalanceNavigation /> 
+      <TransactionsNav />      
       <SectionTransactions />
       <BackgroundImages />
     </>

@@ -1,40 +1,35 @@
-// .bodyTable {
-//   width: 83%;
-//   table-layout: fixed;
-//   border: none;
-//   // overflow-x: hidden;
-//   height: 344px;
-// }
-// // style={{ overflowY: "auto" }}
-// .bodyTableScroll {
-//   height: 342px;
-//   overflow-y: auto;
+@import url(../../../css/variables.css);
 
-//   overflow-x: hidden;
+// ---шапка таблицы--//
+.main {
+  // border: 2px solid #f5f6fb;
+  width: 605px;
+  border-radius: 20px 20px 0px 0px;
+  background-color: var(--bg-color);
+  table-layout: fixed;
+  border: none;
 
-//   margin-top: 0px;
-//   margin-bottom: 20px;
-//   border-bottom: 1px solid #fff;
-// }
+  @media screen and (min-width: 1280px) {
+    width: 760px;
+  }
 
-// .main {
-//   width: 605px;
-//   text-align: center;
-//   border-radius: 30px;
-//   color: rgb(0, 0, 0);
-//   border-radius: 20px 20px 0 0;
-//   background-color: #f5f6fb;
-//   border-spacing: 0px 2px;
-//   border-left: 2px;
-//   border-left-style: outset;
-//   border-right-style: inset;
-//   border-right-color: transparent;
-//   border-left-color: transparent;
-// }
+  // .main {
+  //   text-align: center;
+  //   color: var(--title-color);
+  //   border-spacing: 0px 2px;
+  //   border-left: 2px;
+  //   border-left-style: outset;
+  //   border-right-style: inset;
+  //   border-right-color: transparent;
+  //   border-left-color: transparent;
 
-// .mainTbody {
-//   border-radius: 0px;
-// }
+  // .scroll_table table {
+  //   // width: 100%;
+  //   table-layout: fixed;
+  //   border: none;
+  // }
+  // }
+}
 
 // .theadTable {
 //   display: none;
@@ -44,14 +39,48 @@
 //   font-weight: normal;
 // }
 
-.th {
-  padding: 10px;
-  text-transform: uppercase;
-  color: rgb(0, 0, 0);
-  align-items: center;
-  letter-spacing: 0.02em;
+@media screen and (min-width: 768px) {
+  .theadTable {
+    display: revert;
+  }
+}
+
+.scroll_table thead th {
   font-weight: bold;
-  font-style: normal;
+  text-align: left;
+  border: none;
+  padding: 10px 15px;
+  // font-size: 12px;
+  text-transform: uppercase;
+
+  //   .th {
+  //   padding: 10px;
+  //   text-transform: uppercase;
+  //   color: rgb(0, 0, 0);
+  //   align-items: center;
+  //   // letter-spacing: 0.02em;
+  //   font-weight: bold;
+  //   // font-style: normal;
+  // }
+}
+
+.scroll_table tbody td {
+  text-align: left;
+  padding: 5px 15px;
+  font-size: 12px;
+  // vertical-align: top;
+  border-bottom: 2px solid #f4f6fb;
+}
+
+.scroll_table__body {
+  height: 344px;
+  overflow-x: auto;
+  margin-top: 0px;
+  margin-bottom: 20px;
+  border: 2px solid #f5f6fb;
+  @media screen and (min-width: 768px) {
+    height: 346px;
+  }
 }
 
 .td {
@@ -80,18 +109,6 @@
   color: var(--costs-text-color);
 }
 
-@media screen and (min-width: 1280px) {
-  .main {
-    width: 760px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .theadTable {
-    display: revert;
-  }
-}
-
 .deleteBtn {
   margin-right: auto;
   margin-left: auto;
@@ -107,75 +124,12 @@
   background-position: center;
   background-repeat: no-repeat;
   color: #52555f;
-}
-
-// .deleteBtnIcon {
-//   width: 16px;
-//   height: 18px;
-// }
-
-.deleteBtn:hover {
-  background-color: var(--bg-color);
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
-// @media screen and (min-width: 1280px) {
-//   .bodyTable {
-//     width: 72%;
-//   }
-// }
-
-// #style2::-webkit-scrollbar-track {
-//   border-radius: 10px;
-//   background-color: #f5f5f5;
-// }
-
-// #style2::-webkit-scrollbar {
-//   width: 6px;
-//   background-color: #f5f5f5;
-// }
-
-// #style2::-webkit-scrollbar-thumb {
-//   border-radius: 10px;
-//   background-color: var(--accent-color);
-// }
-
-.main {
-  border: 2px solid #f5f6fb;
-  border-radius: 20px 20px 0px 0px;
-  background-color: #f5f6fb;
-}
-.scroll_table__body {
-  height: 344px;
-  overflow-x: auto;
-  margin-top: 0px;
-  margin-bottom: 20px;
-  border: 2px solid #f5f6fb;
-  @media screen and (min-width: 768px) {
-    height: 346px;
+  &:hover {
+    background-color: var(--bg-color);
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
   }
-}
-
-.scroll_table table {
-  width: 100%;
-  table-layout: fixed;
-  border: none;
-}
-.scroll_table thead th {
-  font-weight: bold;
-  text-align: left;
-  border: none;
-  padding: 10px 15px;
-  font-size: 12px;
-}
-.scroll_table tbody td {
-  text-align: left;
-  padding: 5px 15px;
-  font-size: 12px;
-  // vertical-align: top;
-  border-bottom: 2px solid #f4f6fb;
 }
 
 /* Стили для скролла */
