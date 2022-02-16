@@ -39,10 +39,12 @@ const Diagram = ({ mobile, dataArr }) => {
     setData(dataArr)
   }
 },[dataArr])
-
-  return (  
-   <>
-    <ResponsiveContainer
+;
+  return ( 
+    
+    <>
+      {dataArr.length === 0? (<p className={s.notification}> ПО ДАННОМУ ПЕРИОДУ НЕТ ДАННЫХ</p>) : (
+        <ResponsiveContainer
       width="100%"
       hight="100%"
       minWidth={mobile ? 282 : 605}
@@ -81,7 +83,7 @@ const Diagram = ({ mobile, dataArr }) => {
           dataKey="uv"
           radius={mobile ? [0, 10, 10, 0] : [10, 10, 0, 0]}
           minPointSize={mobile ? 50 : 20}
-          maxBarSize="100%"
+          maxBarSize="95%"
         >
           <LabelList
             dataKey="name"
@@ -102,6 +104,8 @@ const Diagram = ({ mobile, dataArr }) => {
         </Bar>
       </BarChart>
       </ResponsiveContainer>
+      )}
+    
       </>)
 };
 

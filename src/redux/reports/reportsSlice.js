@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 import {
   fetchBalanceThunk,
-  getIncomeThunk,
-  getExpensesThunk,
+  // getIncomeThunk,
+  // getExpensesThunk,
   getMonthlyIncomesThunk,
   getMonthlyExpensesThunk,
 
@@ -69,41 +69,41 @@ export const reportsSlice = createSlice({
         error: payload,
       };
     },
-    [getIncomeThunk.pending](state, { payload }) {
-      return {
-        ...state,
-        error: "",
-        isLoading: true,
-      };
-    },
-    [getIncomeThunk.fulfilled](state, { payload }) {
-      return {
-        ...state,
-        isLoading: false,
-        totalIncomes: payload,
-      };
-    },
-    [getIncomeThunk.rejected](state, { payload }) {
-      return { ...state, isLoading: false, error: payload };
-    },
+    // [getIncomeThunk.pending](state, { payload }) {
+    //   return {
+    //     ...state,
+    //     error: "",
+    //     isLoading: true,
+    //   };
+    // },
+    // [getIncomeThunk.fulfilled](state, { payload }) {
+    //   return {
+    //     ...state,
+    //     isLoading: false,
+    //     totalIncomes: payload,
+    //   };
+    // },
+    // [getIncomeThunk.rejected](state, { payload }) {
+    //   return { ...state, isLoading: false, error: payload };
+    // },
 
-    [getExpensesThunk.pending](state, { payload }) {
-      return {
-        ...state,
-        error: "",
-        isLoading: true,
-      };
-    },
-    [getExpensesThunk.fulfilled](state, { payload }) {
-      return {
-        ...state,
-        isLoading: false,
-        totalExpenses: payload,
-      };
-    },
-    [getExpensesThunk.rejected](state, { payload }) {
-      return { ...state, isLoading: false, error: payload };
-    },
+    // [getExpensesThunk.pending](state, { payload }) {
+    //   return {
+    //     ...state,
+    //     error: "",
+    //     isLoading: true,
+    //   };
+    // },
+    // [getExpensesThunk.fulfilled](state, { payload }) {
+    //   return {
+    //     ...state,
+    //     isLoading: false,
+    //     totalExpenses: payload,
+    //   };
+    // },
+    // [getExpensesThunk.rejected](state, { payload }) {
+    //   return { ...state, isLoading: false, error: payload };
+    // },
     [getMonthlyIncomesThunk.pending](state, { payload }) {
       return {
         ...state,

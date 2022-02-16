@@ -57,9 +57,7 @@ export const fetchBalanceThunk = createAsyncThunk(
           
         });
 
-        const data = await response.json();
-
-        
+        const data = await response.json();        
         return data.data.balance;
       } catch (error) {
         rejectWithValue(error.message);
@@ -68,66 +66,66 @@ export const fetchBalanceThunk = createAsyncThunk(
   }
 );
 
-export const getIncomeThunk = createAsyncThunk(
-  "report/totalIncomes",
-  async (_, { rejectWithValue, getState }) => {
-    const state = getState();
+// export const getIncomeThunk = createAsyncThunk(
+//   "report/totalIncomes",
+//   async (_, { rejectWithValue, getState }) => {
+//     const state = getState();
 
-    try {
-      const response = await fetch(BASE_URL + balance, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${state.auth.token}`,
-        },
-      });
+//     try {
+//       const response = await fetch(BASE_URL + balance, {
+//         method: "GET",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer ${state.auth.token}`,
+//         },
+//       });
 
-      const data = await response.json();
+//       const data = await response.json();
 
-      if (data.data[0]) {
-        if (data.data[0]._id === true) {
-          return data.data[0].total;
-        } else if (data.data[1]._id === true) {
-          return data.data[1].total;
-        }
-      }
+//       if (data.data[0]) {
+//         if (data.data[0]._id === true) {
+//           return data.data[0].total;
+//         } else if (data.data[1]._id === true) {
+//           return data.data[1].total;
+//         }
+//       }
 
-      return;
-    } catch (error) {
-      rejectWithValue(error.message);
-    }
-  }
-);
+//       return;
+//     } catch (error) {
+//       rejectWithValue(error.message);
+//     }
+//   }
+// );
 
-export const getExpensesThunk = createAsyncThunk(
-  "report/totalExpenses",
-  async (_, { rejectWithValue, getState }) => {
-    const state = getState();
+// export const getExpensesThunk = createAsyncThunk(
+//   "report/totalExpenses",
+//   async (_, { rejectWithValue, getState }) => {
+//     const state = getState();
 
-    try {
-      const response = await fetch(BASE_URL + balance, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${state.auth.token}`,
-        },
-      });
+//     try {
+//       const response = await fetch(BASE_URL + balance, {
+//         method: "GET",
+//         headers: {
+//           "Content-Type": "application/json",
+//           Authorization: `Bearer ${state.auth.token}`,
+//         },
+//       });
 
-      const data = await response.json();
+//       const data = await response.json();
 
-      if (data.data[0] && data.data[1]) {
-        if (data.data[0]._id === false) {
-          return data.data[0].total;
-        } else if (data.data[1]._id === false) {
-          return data.data[1].total;
-        }
-      }
-      return 0;
-    } catch (error) {
-      rejectWithValue(error.message);
-    }
-  }
-);
+//       if (data.data[0] && data.data[1]) {
+//         if (data.data[0]._id === false) {
+//           return data.data[0].total;
+//         } else if (data.data[1]._id === false) {
+//           return data.data[1].total;
+//         }
+//       }
+//       return 0;
+//     } catch (error) {
+//       rejectWithValue(error.message);
+//     }
+//   }
+// );
 
 export const getMonthlyIncomesThunk = createAsyncThunk(
   "report/monthlyIncome",
