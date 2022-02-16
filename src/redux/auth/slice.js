@@ -61,7 +61,6 @@ const authSlice = createSlice({
 
     [currentUser.fulfilled]: (state, action) => {
       state.user.email = action.payload.email
-      // state.token = action.payload
       state.isFetchingCurrentUser = false
       state.isAuth = true
       state.isLoading = false
