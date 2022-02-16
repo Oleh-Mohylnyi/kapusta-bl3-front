@@ -13,7 +13,10 @@ import "moment/locale/ru";
 import { getDetailsThunk } from "../../redux/reports/reportsThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
+
+import { useLocation, useNavigate } from 'react-router-dom';
 // import Loader from 'react-loader-spinner'
+
 
 export default function StatisticsView() {
   const dispatch = useDispatch();
@@ -30,6 +33,8 @@ export default function StatisticsView() {
   const size = useWindowDimensions();
   const { width } = size;
   const mobileView = width <= 767.98;
+  const navigate = useNavigate();
+  const location = useLocation();
 
   const nextMonth = () => periodDate.add(1, "month").format("MM");
 
@@ -112,6 +117,17 @@ export default function StatisticsView() {
   const expenses = data(expensesArr);
  
 
+ 
+
+
+     const onGoBackClick = () => {
+         navigate(location?.state ?? "./main");
+         console.log(location)
+     }
+
+     const notVisible = location.pathname === `/statistics`;
+
+
   return (
     <>
       <div className={s.balanceWrapper}>
@@ -121,6 +137,8 @@ export default function StatisticsView() {
             periodMonth={periodMonth}
             periodYear={periodYear}
             handleNextPeriod={handleNextPeriod}
+            onGoBackClick={onGoBackClick}
+            setNotVisible={notVisible}
           />
         ) : (
           <TabletDesktopStatisticsNavigation
@@ -128,6 +146,8 @@ export default function StatisticsView() {
             periodMonth={periodMonth}
             periodYear={periodYear}
             handleNextPeriod={handleNextPeriod}
+            onGoBackClick={onGoBackClick}
+            setNotVisible={notVisible}
           />
         )}
       </div>
