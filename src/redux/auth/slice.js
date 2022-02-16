@@ -60,8 +60,7 @@ const authSlice = createSlice({
     },
 
     [currentUser.fulfilled]: (state, action) => {
-      // state.user.email = action.payload.email
-      state.token = action.payload
+      state.user.email = action.payload.email
       state.isFetchingCurrentUser = false
       state.isAuth = true
       state.isLoading = false
@@ -79,13 +78,13 @@ const authSlice = createSlice({
     },
 
     [userFromGoogleAuth.fulfilled]: (state, action) => {
-      // state.user.email = action.payload.email
-      // state.user.avatarURL = action.payload.user.avatarURL
-      state.token = action.payload
+      state.user.email = action.payload.email
+      state.token = action.payload.token
       state.isLoading = false
       state.isAuth = true
     },
     [userFromGoogleAuth.pending]: (state) => {
+      state.token=''
       state.isLoading = true
       state.error = null
     },

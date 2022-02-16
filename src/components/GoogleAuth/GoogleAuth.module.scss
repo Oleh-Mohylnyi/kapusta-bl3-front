@@ -2,7 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 160px;
+  width: 122px;
   min-height: 40px;
   margin-bottom: 30px;
   border: none;
@@ -12,10 +12,21 @@
   cursor: pointer;
   -webkit-animation: pulsate-bck 1s ease-in-out infinite both;
   animation: pulsate-bck 1s ease-in-out infinite both;
+
+  &:hover {
+    background-color: var(--accent-color);
+    color: var(--bg-color);
+    outline: none;
+    filter: var(--button-shadow-accent);
+    transition: 0.1s linear;
+  }
 }
 
 .textGoogle {
   margin-left: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 16px;
 }
 
 @-webkit-keyframes pulsate-bck {
