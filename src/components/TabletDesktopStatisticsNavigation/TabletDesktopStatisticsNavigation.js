@@ -9,18 +9,20 @@ import s from "./TabletDesktopStatisticsNavigation.module.css";
 export default function TabletDesktopStatisticsNavigation ({handlePreviousPeriod,
     periodMonth,
     periodYear,
-    handleNextPeriod}) {
+    handleNextPeriod,
+    onGoBackClick, 
+    setNotVisible}) {
     const windowSize = useWindowDimensions();
     const desktopView = windowSize.width >= 1280;
    
     return (
         <div className={s.desktopBalance}>
                
-            <BackToMain />
+            <BackToMain goBackClick={onGoBackClick}/>
             <div className={s.desktopBalanceContainer}>
             <BalanceTitle />
-            <Balance />
-    {desktopView && <Button disabled/>}
+            <Balance setNotVisible={setNotVisible}/>
+   
     </div>
     
     <Period handlePreviousPeriod={handlePreviousPeriod} periodMonth={periodMonth} periodYear={periodYear} handleNextPeriod={handleNextPeriod}/>

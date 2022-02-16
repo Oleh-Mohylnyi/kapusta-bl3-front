@@ -18,6 +18,7 @@
 }
 
 .balanceInput {
+  position: relative;
   width: 125px;
   height: 44px;
   border: 2px solid #ffffff;
@@ -32,9 +33,32 @@
   text-align: right;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-
+  padding-right: 50px;
   color: #000000;
 }
+
+.balanceInputSecond {
+  border-radius: 16px;
+}
+
+.currency {
+  position: absolute;
+  top: 181px;
+  left: 114px;
+  border-radius: 22px 0px 0px 22px;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: right;
+  letter-spacing: 0.02em;
+  color: #000000;
+}
+
+/* .balanceInputSecond {
+  text-align: center;
+} */
 
 /* .balanceButton {
   width: 125px;
@@ -86,7 +110,7 @@
 @media screen and (min-width: 768px) {
   .balanceForm {
     display: flex;
-    align-items: baseline;
+    align-items: center;
   }
 
   .balanceButton {
@@ -97,16 +121,81 @@
 
   .balanceInput {
     margin-right: 15px;
+    border-radius: 16px;
   }
 
   .activeBalanceContainer {
     display: flex;
     align-items: baseline;
   }
+
+  .activeBalanceWrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+
+  .currency {
+    top: 112px;
+    left: 275px;
+  }
 }
 
-.activeBalanceWrapper {
+/* .activeBalanceWrapper {
   display: flex;
   align-items: center;
   justify-content: center;
+} */
+
+.balanceButton {
+  width: 125px;
+  height: 44px;
+
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  text-align: center;
+
+  color: rgba(82, 85, 95, 0.7);
+
+  border: 2px solid #ffffff;
+  box-sizing: border-box;
+  border-radius: 0px 22px 22px 0px;
+}
+
+.balanceButton:hover {
+  background: #ff751d;
+  border-radius: 0px 22px 22px 0px;
+  padding: 0;
+  font-family: Roboto;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 14px;
+  text-align: center;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+
+  color: #ffffff;
+}
+
+@media screen and (min-width: 768px) {
+  .balanceButton {
+    border-radius: 16px;
+    width: 125px;
+    height: 44px;
+  }
+
+  .balanceButton:hover {
+    border-radius: 16px;
+  }
+
+  .currency {
+    left: 633px;
+  }
 }

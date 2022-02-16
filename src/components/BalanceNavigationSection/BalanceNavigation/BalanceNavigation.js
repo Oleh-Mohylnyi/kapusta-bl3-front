@@ -28,8 +28,8 @@ export default function BalanceNavigation () {
               <div className={s.wrapper}>
                  <BalanceTitle/>
 
-               <Balance />
-               <Button />
+               <Balance currency="UAH"/>
+               {/* <Button /> */}
               
                <StatisticsLink />
                </div>
@@ -41,8 +41,8 @@ export default function BalanceNavigation () {
      <StatisticsLink />
      <BalanceTitle/>
      <div className={s.formWrapper}>
-     <Balance />
-     <Button />
+     <Balance currency="UAH"/>
+     {/* <Button /> */}
      </div>
      </div>
      </>)}
