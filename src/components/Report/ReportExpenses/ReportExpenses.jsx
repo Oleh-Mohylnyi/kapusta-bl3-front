@@ -3,7 +3,6 @@ import type from "../ReportList/expenses.json";
 
 export default function ReportExpenses({data}) {
   const typesExpenses = type;
-
   
   let dataItems = [];
 
@@ -22,6 +21,6 @@ export default function ReportExpenses({data}) {
  setDataForRender()
 
   return (
-    <><ReportList types={dataItems.length>0&&dataItems} /></>
+    <><ReportList types={dataItems.length>0 && dataItems} /></>
   );
 }

@@ -13,9 +13,6 @@ import "moment/locale/ru";
 import { getDetailsThunk } from "../../redux/reports/reportsThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
-
-
-
 import { useLocation, useNavigate } from 'react-router-dom';
 // import Loader from 'react-loader-spinner'
 
@@ -133,13 +130,12 @@ const transactions = useSelector(state=>state.transactions.transactions)
    setExpenses(data(expensesArr)); 
     // eslint-disable-next-line 
  }, [period,transactions,details])
-  // const incomes = data(incomesArr);
-  // const expenses = data(expensesArr); 
+  
 
 
      const onGoBackClick = () => {
          navigate(location?.state ?? "./main");
-         console.log(location)
+      
      }
 
      const notVisible = location.pathname === `/statistics`;
