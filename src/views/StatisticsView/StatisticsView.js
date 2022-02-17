@@ -87,7 +87,6 @@ const transactions = useSelector(state=>state.transactions.transactions)
     return periodMonth;
   };
 
-
   const detailsSorter = () => {
     if (Object.keys(details).length !== 0) {
       Object.keys(details).forEach((key) => {
@@ -107,7 +106,6 @@ const transactions = useSelector(state=>state.transactions.transactions)
   };
   detailsSorter();
 
-
   const data = (arr) => {
     if (arr.length > 0) {
       return arr.map((el) => {
@@ -126,21 +124,15 @@ const transactions = useSelector(state=>state.transactions.transactions)
  
  
   useEffect(() => {
-   setIncomes(data(incomesArr)) ;
-   setExpenses(data(expensesArr)); 
+    setIncomes(data(incomesArr));
+    setExpenses(data(expensesArr));
     // eslint-disable-next-line 
- }, [period,transactions,details])
-  
-
+  }, [period, transactions, details]); 
 
      const onGoBackClick = () => {
-         navigate(location?.state ?? "./main");
-      
+         navigate(location?.state ?? "./main");      
      }
-
      const notVisible = location.pathname === `/statistics`;
-
-
   return (
     <>
       <div className={s.balanceWrapper}>

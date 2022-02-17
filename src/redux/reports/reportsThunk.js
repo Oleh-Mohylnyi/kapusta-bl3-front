@@ -6,13 +6,11 @@ const monthlyIncome = "/summary_income";
 const monthlyExpenses = "/summary_cost";
 const details = "/detail?";
 
-
 export const updateBalanceThunk = createAsyncThunk(
   "reports/updateBalance",
   async (dataBalance, { rejectWithValue, getState }) => {
     const state = getState();
     if (!state.auth.token) {
-      console.log(state.auth.token);
       return;
     } else {
       try {
@@ -26,11 +24,7 @@ export const updateBalanceThunk = createAsyncThunk(
         });
 
         const data = await response.json();
-        console.log(data);  
-        console.log(data.data);
-          return data.data.balance;
-        
-        
+        return data.data.balance;
       } catch (error) {
         rejectWithValue(error.message);
       }
@@ -38,13 +32,11 @@ export const updateBalanceThunk = createAsyncThunk(
   }
 );
 
-
 export const fetchBalanceThunk = createAsyncThunk(
   "report/fetchBalance",
   async (_, { rejectWithValue, getState }) => {
     const state = getState();
     if (!state.auth.token) {
-      console.log(state.auth.token);
       return;
     } else {
       try {
@@ -54,10 +46,9 @@ export const fetchBalanceThunk = createAsyncThunk(
             "Content-Type": "application/json",
             Authorization: `Bearer ${state.auth.token}`,
           },
-          
         });
 
-        const data = await response.json();        
+        const data = await response.json();
         return data.data.balance;
       } catch (error) {
         rejectWithValue(error.message);
@@ -173,13 +164,16 @@ export const getDetailsThunk = createAsyncThunk(
   async (period, { rejectWithValue, getState }) => {
     const state = getState();
     try {
-      const response = await fetch(BASE_URL + `${details}year=${period.year}&month=${period.month}`, {
-        method: "GET",
-        headers: {
-          "Content-Type": "application/json",
-          Authorization: `Bearer ${state.auth.token}`,
-        },
-      });
+      const response = await fetch(
+        BASE_URL + `${details}year=${period.year}&month=${period.month}`,
+        {
+          method: "GET",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${state.auth.token}`,
+          },
+        }
+      );
       const data = await response.json();
 
       return data.data;
