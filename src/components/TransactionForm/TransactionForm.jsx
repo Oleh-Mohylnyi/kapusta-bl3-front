@@ -14,7 +14,7 @@ import styles from "./TransactionForm.module.scss";
 
 import categoryList from "../../assets/categories.json";
 
-function TransactionForm({ currency, type=false }) { // когда решу откуда и как придет 'type', убрать значение по умолчанию
+function TransactionForm({ currency, type=true }) { // когда решу откуда и как придет 'type', убрать значение по умолчанию
   // const screenWidth = useWindowDimensions();
   const startDate = new Date();
   const typeToString = type?'income':'expenses'
@@ -105,7 +105,7 @@ function TransactionForm({ currency, type=false }) { // когда решу от
              className={styles.customSelect}            
               inputValue={category}
               optionsList={filteredCategoryList}
-              placeholderText={"Категория товара"}
+              placeholderText={"Категория"}
               cbSetCategory={setCategory}
               required
             />

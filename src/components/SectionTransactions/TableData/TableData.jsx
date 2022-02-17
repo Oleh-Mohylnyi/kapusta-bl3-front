@@ -9,7 +9,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import {getTransactions} from '../../../redux/transactions/transactionsSelectors'
 import {deleteTransactionThunk} from "../../../redux/transactions/transactionsThunks"
 
-const TableData = ({currency}) => {
+const TableData = ({currency, currentType=true}) => {
   const viewPort = useWResize();
   const dataTransactions = useSelector(getTransactions);
   const dispatch = useDispatch();
@@ -44,7 +44,7 @@ const TableData = ({currency}) => {
           <div className={s.scroll_table__body}>
             <table>
               <tbody>
-                {dataTransactions.map(
+                {dataTransactions.filter(({type}) => type === currentType ).map(
                   ({ id, type, date, description, category, sum }) => (
                     <tr className={s.td} key={id}>
                       <td className={s.thData}>{date}</td>
@@ -84,10 +84,10 @@ const TableData = ({currency}) => {
                 <div className={sMobile.rigthColum}>
                   <p
                     className={
-                      sMobile[type ? "totalDecrement" : "totalIncrement"]
+                      sMobile[type ?  "totalIncrement" : "totalDecrement"]
                     }
                   >
-                    {type ? "- " : ""}
+                    {type ? "" : "- "}
                     {sum}.00 {currency}
                   </p>
                   <button className={sMobile.deleteBtn} onClick={handleRemoveTransaction} id={id}></button>
