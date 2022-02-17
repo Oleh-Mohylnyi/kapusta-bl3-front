@@ -20,5 +20,5 @@ export default function ReportIncome({data}) {
     }  
 
  setDataForRender()
-  return <>{data.length>0?<ReportList types={dataItems} />: (<p className={s.notification}>В этом месяце нет затрат.</p>)} </>;
+  return <>{data.length>0?<ReportList types={dataItems} />: (<p className={s.notification}>В этом месяце нет прибыли.</p>)} </>;
 }
