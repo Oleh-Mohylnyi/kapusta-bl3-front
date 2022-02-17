@@ -85,7 +85,7 @@ const TableData = ({currency, currentType=true}) => {
                         <td className={s.tdDesc}>{description}</td>
                         <td className={s.thCateg}>{category}</td>
                         <td className={type ? s.tdSum : s.tdSumExpense}>
-                          {type ? '' : "-"} {sum}.00 {currency}
+                          {type ? '' : "-"} {parseFloat(sum).toFixed(2)} {currency}
                         </td>
                         <td className={s.thIcon}>
                           <button className={s.deleteBtn} onClick={handleRemoveTransaction} id={id}></button>
@@ -122,7 +122,7 @@ const TableData = ({currency, currentType=true}) => {
                     }
                   >
                     {type ? "" : "- "}
-                    {sum}.00 {currency}
+                    {parseFloat(sum).toFixed(2)} {currency}
                   </p>
                   <button className={sMobile.deleteBtn} onClick={handleRemoveTransaction} id={id}></button>
                 </div>

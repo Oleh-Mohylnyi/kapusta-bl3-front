@@ -1,14 +1,10 @@
 .bubbleContainer {
   position: absolute;
   background: linear-gradient(117.84deg, #1d346a 2.84%, #031634 67.28%);
-  /* shadow 1 */
-
   box-shadow: 0px 10px 60px rgba(170, 178, 197, 0.2);
   border-radius: 24px;
   width: 282px;
   height: auto;
-  /* top: 27%; */
-  /* top: 22px; */
   top: 225px;
   z-index: 1;
 }
@@ -29,10 +25,6 @@
 
 .textWrapper {
   padding: 41px 25px 31px 25px;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
   color: #ffffff;
   text-align: left;
 }
@@ -40,23 +32,17 @@
 .text1 {
   margin-bottom: 20px;
   font-size: 14px;
-  line-height: 20px;
-  /* or 143% */
+  line-height: 1.43;
 }
 
 .text2 {
-  font-size: 12px;
-  line-height: 16px;
-  /* or 133% */
+  line-height: 1.33;
 }
 
 @media screen and (min-width: 768px) {
   .bubbleContainer {
-    /* top: 19%; */
-    /* top: 15px; */
     top: 155px;
   }
-
   .textWrapper {
     padding: 41px 30px 31px 30px;
   }
@@ -64,8 +50,6 @@
 
 @media screen and (min-width: 1280px) {
   .bubbleContainer {
-    /* top: 18.8%; */
-    /* top: 14.8px; */
     top: 158px;
   }
 }
