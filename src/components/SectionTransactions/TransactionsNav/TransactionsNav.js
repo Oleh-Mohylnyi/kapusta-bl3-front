@@ -6,7 +6,7 @@ import s from "./TransactionsNav.module.scss";
 const TransactionsNav = ({ onClick }) => {
   // const location = useLocation();
 
-  const [toggle, setToggle] = useState(true);
+  const [toggle, setToggle] = useState(false);
 
   const toggleFalse = (e) => {
     setToggle(false);

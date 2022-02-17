@@ -43,7 +43,7 @@ export default function UserMenu() {
         Выйти
       </button>
       {showModal && (
-        <Modal onClose={toggleModal} onLogout={handleLogout}>
+        <Modal onClose={toggleModal} okClick={handleLogout}>
           <p className={styles.text}>Вы действительно хотите выйти?</p>
         </Modal>
       )}

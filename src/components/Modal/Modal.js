@@ -5,7 +5,7 @@ import sprite from "../../images/sprite.svg";
 
 const modalRoot = document.querySelector("#modal-root");
 
-export default function Modal({ onClose, onLogout, children }) {
+export default function Modal({ onClose, okClick, children }) {
   useEffect(() => {
     const handleKeyDown = (evt) => {
       if (evt.code === "Escape") {
@@ -37,7 +37,7 @@ export default function Modal({ onClose, onLogout, children }) {
         <div>{children}</div>
 
         <div className={s.buttonWrapper}>
-          <button className={s.confirmButton} onClick={onLogout}>
+          <button className={s.confirmButton} onClick={okClick}>
             Да
           </button>
           <button className={s.declineButton} onClick={onClose}>
