@@ -171,7 +171,7 @@ export const getMonthlyExpensesThunk = createAsyncThunk(
 );
 
 export const getDetailsThunk = createAsyncThunk(
-  "report/monthlyExpenses",
+  "report/Details",
   async (period, { rejectWithValue, getState }) => {
     const state = getState();
     try {
