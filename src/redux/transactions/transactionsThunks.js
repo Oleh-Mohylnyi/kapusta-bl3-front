@@ -78,7 +78,7 @@ export const deleteTransactionThunk = createAsyncThunk(
         });
     // console.log('deleteTransactionThunk response :>> ', response);
         if (response.ok) {
-        toast('Запис видалено. Заходьте ще!')
+        toast('Запись удалена!')
         const data = transactions.filter(transaction => transaction.id !== id);
         // console.log('deleteTransactionThunk data :>> ', data);
         return data;

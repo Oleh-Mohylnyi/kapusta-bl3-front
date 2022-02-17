@@ -5,18 +5,40 @@ import sMobile from "./TableDataMobile.module.scss";
 // import 'simplebar/dist/simplebar.min.css';
 // <SimpleBar style={{ maxHeight: 300 }}></SimpleBar>
 // import dataTransactions from "../../../assets/transactionsData.json"
+import { useState } from "react";
+import Modal from "../../../components/Modal/Modal";
 import { useSelector, useDispatch } from 'react-redux';
 import {getTransactions} from '../../../redux/transactions/transactionsSelectors'
 import {deleteTransactionThunk} from "../../../redux/transactions/transactionsThunks"
+import {
+  getMonthlyIncomesThunk,
+  getMonthlyExpensesThunk,
+  fetchBalanceThunk
+} from "../../../redux/reports/reportsThunk";
 
 const TableData = ({currency, currentType=true}) => {
   const viewPort = useWResize();
   const dataTransactions = useSelector(getTransactions);
   const dispatch = useDispatch();
-
+  const [showModal, setShowModal] = useState(false);
+  const [currentId, setCurrentId] = useState("");
+  
+  
   const handleRemoveTransaction = (e) => {
-    dispatch(deleteTransactionThunk(e.target.id))
+    setShowModal(!showModal);
+    setCurrentId(e.target.id);
   }
+
+  const toggleModal = () => {
+    setShowModal(!showModal);
+  };
+
+  const handleDelete = (currentId) => {
+    dispatch(deleteTransactionThunk(currentId))
+    dispatch(getMonthlyIncomesThunk());
+    dispatch(getMonthlyExpensesThunk());
+    dispatch(fetchBalanceThunk());
+  };
 
  const dataConverter = (date) => {
   const allDate = date.slice(0, 10);
@@ -110,6 +132,11 @@ const TableData = ({currency, currentType=true}) => {
           )}
            </ul>
         </div>
+      )}
+        {showModal && (
+        <Modal onClose={toggleModal} onLogout={handleDelete(currentId)}>
+          <p className={s.textModal}>Вы уверены?</p>
+        </Modal>
       )}
     </>
   );
