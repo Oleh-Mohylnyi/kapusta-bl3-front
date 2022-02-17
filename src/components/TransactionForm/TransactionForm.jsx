@@ -138,7 +138,7 @@ function TransactionForm({ currency, type=true }) { // когда решу от�
           </div>
         </div>
         <div className={styles.formButtonsContainer}>
-          <Button type={"submit"} title={"Добавить"} />
+          <Button className={styles.buttonNew} type={"submit"} title={"Добавить"} />
           <Button
             type={"button"}
             title={"Очистить"}

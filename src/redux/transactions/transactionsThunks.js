@@ -2,6 +2,7 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 import { toast } from 'react-toastify'
 
 const BASE_URL = ' https://kapusta-smart-finances.herokuapp.com/api';
+// const BASE_URL = " http://localhost:4000/api";
 const transactions = '/transactions';
 const delTransaction = '/transactions/';
 

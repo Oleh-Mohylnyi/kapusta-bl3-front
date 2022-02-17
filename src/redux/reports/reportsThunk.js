@@ -1,6 +1,8 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const BASE_URL = " https://kapusta-smart-finances.herokuapp.com/api/reports";
+// const BASE_URL = " http://localhost:4000/api/reports";
+
 const balance = "/balance ";
 const monthlyIncome = "/summary_income";
 const monthlyExpenses = "/summary_cost";
