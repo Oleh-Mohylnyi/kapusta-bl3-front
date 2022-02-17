@@ -3,7 +3,7 @@ import ReportIncome from "../ReportIncome/ReportIncome";
 import { useState } from "react";
 import s from "./Report.module.scss";
 
-const Report = ({onClick }) => {
+const Report = ({onClick, data }) => {
   
   const [toggle, setToggle] = useState(true);
 
@@ -11,6 +11,7 @@ const Report = ({onClick }) => {
     setToggle(!toggle);
     onClick(toggle)
   };
+  
   return (
     <div className={s.section}>
       <div className={s.tab}>
@@ -18,7 +19,7 @@ const Report = ({onClick }) => {
         <h2 className={s.title}>{toggle ? "Расходы" : "Доходы"}</h2>
         <button onClick={toggler} className={s.btn_right}></button>
       </div>
-      {toggle ? <ReportExpenses /> : <ReportIncome />}
+      {toggle ? <ReportExpenses data={data} /> : <ReportIncome data={data} />}
     </div>
   );
 };
