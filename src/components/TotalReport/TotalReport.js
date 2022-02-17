@@ -17,13 +17,13 @@ const result = arr.reduce(function (accumulator, currentValue) {
         <li className={s.item}>
           <div className={s.item__content}>
             <p className={s.title}>Доходы:</p>
-            <p className={s.incomes}>+{totalIncomes}грн</p>
+            <p className={s.incomes}>+{totalIncomes} UAH</p>
           </div>
         </li>
         <li className={s.item}>
           <div className={s.item__content}>
             <p className={s.title}>Paсходы:</p>
-            <p className={s.costs}>- {totalExpenses} грн</p>
+            <p className={s.costs}>- {totalExpenses} UAH</p>
           </div>
         </li>
       </ul>

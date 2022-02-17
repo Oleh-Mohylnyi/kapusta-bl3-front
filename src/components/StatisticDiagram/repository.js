@@ -7,7 +7,9 @@ const customBarLabelPriceMobile = ({ payload, x, y, width, height, value }) => {
       fontSize={10}
       textAnchor="start"
       dy={-5}
-    >{`${parseFloat(value).toFixed(2)}грн`}</text>
+
+    >{`${parseFloat(value).toFixed(2)}UAH`}</text>
+
   );
 };
 
@@ -33,7 +35,9 @@ const customBarLabelPrice = ({ payload, x, y, width, height, value }) => {
       fontSize={12}
       textAnchor="top"
       dy={-10}
-    >{`${parseFloat(value).toFixed(2)} грн`}</text>
+
+    >{`${parseFloat(value).toFixed(2)} UAH`}</text>
+
   );
 };
 
