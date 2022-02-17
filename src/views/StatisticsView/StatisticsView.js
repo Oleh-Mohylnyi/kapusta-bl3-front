@@ -1,3 +1,7 @@
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect, useMemo } from "react";
+import { useState } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
 import Diagram from "../../components/StatisticDiagram/Diagram";
 import DiagramContainer from "../../components/StatisticDiagram/DiagramContainer";
 import TotalReport from "../../components/TotalReport/TotalReport";
@@ -6,25 +10,15 @@ import Report from "../../components/Report/Report/Report";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import MobileStatisticsNavigation from "../../components/MobileStatisticsNavigation";
 import TabletDesktopStatisticsNavigation from "../../components/TabletDesktopStatisticsNavigation/TabletDesktopStatisticsNavigation";
-import s from "./StatisticsView.module.css";
-import { useState } from "react";
+import { getDetailsThunk } from "../../redux/reports/reportsThunk";
 import moment from "moment";
 import "moment/locale/ru";
-import { getDetailsThunk } from "../../redux/reports/reportsThunk";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect, useMemo } from "react";
+import s from "./StatisticsView.module.css";
 
-
-
-import { useLocation, useNavigate } from 'react-router-dom';
 // import Loader from 'react-loader-spinner'
-
-
 
 export default function StatisticsView() {
   const dispatch = useDispatch();
-
-  // ====added by Y.S.=====
   const date = new Date();
   // eslint-disable-next-line no-unused-vars
   const [periodDate, setPeriodDate] = useState(moment(date));
@@ -58,7 +52,7 @@ export default function StatisticsView() {
     indexOfMonth && setPeriodYear(nextYear());
   };
   // ===== added by T.Y.
-const transactions = useSelector(state=>state.transactions.transactions)
+  const transactions = useSelector((state) => state.transactions.transactions);
   const queryPeriodMonth = useMemo(() => {
     if (periodMonth[0] === "0") {
       const queryMonth = periodMonth.split("");
@@ -72,7 +66,7 @@ const transactions = useSelector(state=>state.transactions.transactions)
     return { year: periodYear, month: queryPeriodMonth };
   }, [periodYear, queryPeriodMonth]);
 
-  useEffect(() => {    
+  useEffect(() => {
     dispatch(getDetailsThunk(period));
   }, [period, dispatch, transactions]);
 
@@ -90,27 +84,22 @@ const transactions = useSelector(state=>state.transactions.transactions)
     return periodMonth;
   };
 
-
   const detailsSorter = () => {
     if (Object.keys(details).length !== 0) {
       Object.keys(details).forEach((key) => {
-      const month = details[key]._id.month;
-      const queryMonth = Number(updateMonth());
+        const month = details[key]._id.month;
+        const queryMonth = Number(updateMonth());
 
-      if (details[key]._id.type === true && month === queryMonth) {
-        
-        incomesArr.push(details[key]);
-      } else if (details[key]._id.type === false && month === queryMonth) {
-        console.log(details[key]._id.type === false && month === queryMonth);
-        expensesArr.push(details[key]);
-      }
+        if (details[key]._id.type === true && month === queryMonth) {
+          incomesArr.push(details[key]);
+        } else if (details[key]._id.type === false && month === queryMonth) {
+          console.log(details[key]._id.type === false && month === queryMonth);
+          expensesArr.push(details[key]);
+        }
       });
-      
     }
-    
   };
   detailsSorter();
-
 
   const data = (arr) => {
     if (arr.length > 0) {
@@ -118,7 +107,7 @@ const transactions = useSelector(state=>state.transactions.transactions)
         return { name: el._id.category, uv: el.totalValueCategory };
       });
     }
-    return []
+    return [];
   };
 
   const switcher = (val) => {
@@ -127,24 +116,21 @@ const transactions = useSelector(state=>state.transactions.transactions)
   };
   const [incomes, setIncomes] = useState([]);
   const [expenses, setExpenses] = useState([]);
- 
- 
+
   useEffect(() => {
-   setIncomes(data(incomesArr)) ;
-   setExpenses(data(expensesArr)); 
-    // eslint-disable-next-line 
- }, [period,transactions,details])
+    setIncomes(data(incomesArr));
+    setExpenses(data(expensesArr));
+    // eslint-disable-next-line
+  }, [period, transactions, details]);
   // const incomes = data(incomesArr);
-  // const expenses = data(expensesArr); 
+  // const expenses = data(expensesArr);
 
+  const onGoBackClick = () => {
+    navigate(location?.state ?? "./main");
+    console.log(location);
+  };
 
-     const onGoBackClick = () => {
-         navigate(location?.state ?? "./main");
-         console.log(location)
-     }
-
-     const notVisible = location.pathname === `/statistics`;
-
+  const notVisible = location.pathname === `/statistics`;
 
   return (
     <>
@@ -171,16 +157,11 @@ const transactions = useSelector(state=>state.transactions.transactions)
       </div>
 
       <TotalReport incomes={incomesArr} expenses={expensesArr} />
-      <Report onClick={switcher} data={toggle?incomes:expenses} />
-
+      <Report onClick={switcher} data={toggle ? incomes : expenses} />
       <DiagramContainer>
-        <Diagram
-          mobile={mobileView}
-          dataArr={toggle ? incomes : expenses}
-        />
+        <Diagram mobile={mobileView} dataArr={toggle ? incomes : expenses} />
       </DiagramContainer>
       <BackgroundImages />
-
     </>
   );
 }

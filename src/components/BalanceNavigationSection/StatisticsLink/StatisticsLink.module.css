@@ -2,17 +2,7 @@
   display: flex;
   justify-content: center;
   align-items: baseline;
-
-  font-family: Roboto;
-  font-style: normal;
-  font-weight: normal;
-  font-size: 12px;
-  line-height: 14px;
-  /* identical to box height */
-
   text-align: center;
-  letter-spacing: 0.04em;
-
   color: rgba(82, 85, 95, 0.7);
   text-decoration: none;
 }
@@ -20,12 +10,6 @@
 .linkText {
   margin-right: 15px;
 }
-
-/* .icon {
-  color: #52555f;
-  max-width: 24px;
-  max-height: 24px;
-} */
 
 .linkWrapper {
   margin-bottom: 43px;
