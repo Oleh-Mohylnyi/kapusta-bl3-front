@@ -8,11 +8,9 @@ import {updateBalanceThunk} from "../../../redux/reports/reportsThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { toast } from 'react-toastify';
 
-
-
-
 export default function Balance ({currency, setNotVisible}){
     
+   
     const balance = useSelector(getBalance);
     const dispatch = useDispatch();
     
@@ -21,6 +19,7 @@ export default function Balance ({currency, setNotVisible}){
     
     const inputChange = (e) => { 
         setCurrentBalance(e.target.value);
+        // console.log(typeof(e.target.value));
       };
     
     
@@ -28,7 +27,10 @@ export default function Balance ({currency, setNotVisible}){
     const handleSubmit = (e) => {
         
        e.preventDefault();
-       
+      
+       if(isNaN(currentBalance)) {
+          return toast.error("Введите пожалуйста сумму в виде чисел!")
+       }
       
        dispatch(updateBalanceThunk({ balance: currentBalance }),
        [ balance]
@@ -51,6 +53,7 @@ export default function Balance ({currency, setNotVisible}){
 const zeroBalance = balance === 0 || currentBalance === 0;
 
     return (
+        
 <div>
 {setNotVisible ? (
     <div>
@@ -93,7 +96,8 @@ const zeroBalance = balance === 0 || currentBalance === 0;
                     onChange={inputChange}
                     className={s.balanceInput}
                     value={currentBalance}
-                   
+                   pattern="[0-9]"
+                   title="Сумма должна состоять из чисел от нуля до девяти!"
                     // currency={currency}
                    
                    
