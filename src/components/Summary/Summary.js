@@ -27,7 +27,7 @@ const Summary = ({data}) => {
             {summary.map((el, index) => (
                 <li key={index} className={s.summary_item}>
                   <span>{el.month}</span>
-                  <span>{el.value}</span>
+                  <span>{parseFloat(el.value).toFixed(2)}</span>
                 </li>
               ))}
           </ul>

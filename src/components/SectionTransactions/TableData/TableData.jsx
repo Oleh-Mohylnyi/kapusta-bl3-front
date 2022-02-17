@@ -71,7 +71,7 @@ const TableData = ({ currency, currentType = true }) => {
                       <td className={s.tdDesc}>{description}</td>
                       <td className={s.thCateg}>{category}</td>
                       <td className={type ? s.tdSum : s.tdSumExpense}>
-                        {type ? "" : "-"} {sum}
+                        {type ? "" : "-"} {parseFloat(sum).toFixed(2)}
                       </td>
                       <td className={s.thIcon}>
                         <button
@@ -99,7 +99,7 @@ const TableData = ({ currency, currentType = true }) => {
                       <span>{description}</span>
                     </p>
                     <p className={sMobile.data}>
-                      <span>{date}</span>
+                      <span>{dataConverter(date)}</span>
                       <span>{category}</span>
                     </p>
                   </div>
@@ -110,7 +110,7 @@ const TableData = ({ currency, currentType = true }) => {
                       }
                     >
                       {type ? "" : "- "}
-                      {sum}.00 {currency}
+                      {parseFloat(sum).toFixed(2)} 
                     </p>
                     <button
                       className={sMobile.deleteBtn}
