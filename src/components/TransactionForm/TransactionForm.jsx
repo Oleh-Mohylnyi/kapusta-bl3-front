@@ -36,7 +36,7 @@ function TransactionForm({ currency, type=false }) { // когда решу от
   // },[date, description, category, sum])
 
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value } = e.target;    
     switch (name) {
       case "description":
         setDescription(value);
