@@ -1,9 +1,11 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 
 const BASE_URL = " https://kapusta-smart-finances.herokuapp.com/api/reports";
+// const BASE_URL = " http://localhost:4000/api/reports";
+
 const balance = "/balance ";
-const monthlyIncome = "/summary_income ";
-const monthlyExpenses = "/summary_cost ";
+const monthlyIncome = "/summary_income";
+const monthlyExpenses = "/summary_cost";
 const details = "/detail?";
 
 
@@ -141,7 +143,6 @@ export const getMonthlyIncomesThunk = createAsyncThunk(
         },
       });
       const data = await response.json();
-
       return data.data;
     } catch (error) {
       rejectWithValue(error.message);
@@ -162,7 +163,6 @@ export const getMonthlyExpensesThunk = createAsyncThunk(
         },
       });
       const data = await response.json();
-
       return data.data;
     } catch (error) {
       rejectWithValue(error.message);
@@ -171,7 +171,7 @@ export const getMonthlyExpensesThunk = createAsyncThunk(
 );
 
 export const getDetailsThunk = createAsyncThunk(
-  "report/monthlyExpenses",
+  "report/Details",
   async (period, { rejectWithValue, getState }) => {
     const state = getState();
     try {

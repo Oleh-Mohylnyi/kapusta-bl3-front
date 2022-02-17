@@ -4,22 +4,19 @@ import { useState, useEffect } from "react";
 import useWindowDimensions from "../../hooks/useWindowDimensions";
 import s from "./summary.module.scss";
 
-const Summary = ({incomes, expenses}) => {
+const Summary = ({data}) => {
   const viewPort = useWindowDimensions();
- 
   const [summary, setSummary] = useState([
-    { month: "Ноябрь", value: 1000.0 },
-    { month: "Октябрь", value: 2000.0 },
-    { month: "Сентябрь", value: 3000.0 },
-    { month: "Декабрь", value: 4000.0 },
-    { month: "Август", value: 5000.0 },
-    { month: "Июль", value: 6000.0 },
+    // { month: "Ноябрь", value: 0.0},
+    // { month: "Октябрь", value: 0.0},
+    // { month: "Сентябрь", value: 0.0},
+    { month: "Декабрь", value: 0.0},
+    { month: "Август", value: 0.0 },
+    { month: "Июль", value: 0.0 },
   ]);
   useEffect(() => {
-    if (expenses) {
-       setSummary(expenses)
-    }  
- },[expenses])
+       setSummary(data)
+ },[data])
 
   return (
     <>

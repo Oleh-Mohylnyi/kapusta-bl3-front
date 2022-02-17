@@ -21,6 +21,7 @@
   margin-bottom: 10px;
   border: none;
   background: transparent;
+  cursor: pointer;
 }
 
 /* .buttonText {

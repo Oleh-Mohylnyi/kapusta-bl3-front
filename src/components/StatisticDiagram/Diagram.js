@@ -16,6 +16,7 @@ import {
   customLabelListNameMobile,
   customBarLabelPriceMobile
 } from "./repository";
+import { useSelector } from "react-redux";
 
 
 
@@ -34,11 +35,12 @@ const Diagram = ({ mobile, dataArr }) => {
   { name: "Молочка", uv: 150, id: 8 },
   { name: "Хлеб", uv: 50, id: 9 },
   ])
+  const transactions = useSelector(state=>state.transactions.transactions)
   useEffect(() => {
     if (dataArr !== void 0) {
     setData(dataArr)
   }
-},[dataArr])
+},[dataArr, transactions])
 ;
   return ( 
     
@@ -67,6 +69,7 @@ const Diagram = ({ mobile, dataArr }) => {
           tickLine={false}
           tickCount={9}
           orientation={"left"}
+          padding={{ top: 30}} 
         />
 
         <XAxis

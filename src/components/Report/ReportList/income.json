@@ -1,4 +1,4 @@
 [
-  { "id": "1", "type": "ЗП", "icon": "salary", "sum": 10000 },
-  { "id": "2", "type": "Доп.доход", "icon": "other-incoms", "sum": 5000 }
+  { "id": "1", "type": "Зарплата", "icon": "salary", "sum": 0 },
+  { "id": "2", "type": "Доп.доход", "icon": "other-incoms", "sum": 0 }
 ]
