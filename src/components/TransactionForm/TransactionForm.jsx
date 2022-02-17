@@ -118,9 +118,9 @@ function TransactionForm({ currency, type}) {
                 onChange={handleChange}
               />
               {/* {screenWidth < 768 && ( */}
-              {window.screen.width < 768 && (
+              {/* {window.screen.width < 768 && (
                 <span className={styles.productSumLabel}>{currency}</span>
-              )}
+              )} */}
               <span className={styles.productSumIcon}>
                 <IconContext.Provider
                   value={{ style: { height: "20px", width: "20px" } }}
