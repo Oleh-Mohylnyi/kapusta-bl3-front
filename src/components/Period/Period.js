@@ -18,7 +18,7 @@ return (
     <p className={s.title}>Текущий период:</p>
     <div className={s.dateWrapper}>
       
-        <button  type="button" onClick={handlePreviousPeriod} className={`${s.button} ${s.buttonLeft}`}>
+        <button  type="button" onClick={handlePreviousPeriod} className={`${s.periodButton} ${s.buttonLeft}`}>
         <svg width="6.146" height="13.785" className={`${s.icon} ${s.iconLeft}`}>
             <use href={`${sprite}#icon-arrow-left`}></use>
         </svg>
@@ -28,7 +28,7 @@ return (
 
     <p className={s.date}> {moment(periodMonth).format("MMMM")} {periodYear}</p>
 
-    <button  type="button" onClick={handleNextPeriod} className={`${s.button} ${s.buttonRight}`}>
+    <button  type="button" onClick={handleNextPeriod} className={`${s.periodButton} ${s.buttonRight}`}>
         <svg width="6.146" height="13.785" className={`${s.icon} ${s.iconRight}`}>
             <use href={`${sprite}#icon-arrow-right`}></use>
         </svg>
