@@ -58,7 +58,7 @@ export default function StatisticsView() {
     indexOfMonth && setPeriodYear(nextYear());
   };
   // ===== added by T.Y.
-
+const transactions = useSelector(state=>state.transactions.transactions)
   const queryPeriodMonth = useMemo(() => {
     if (periodMonth[0] === "0") {
       const queryMonth = periodMonth.split("");
@@ -74,10 +74,9 @@ export default function StatisticsView() {
 
   useEffect(() => {    
     dispatch(getDetailsThunk(period));
-  }, [period, dispatch]);
+  }, [period, dispatch, transactions]);
 
   const details = useSelector((state) => state.reports.details);
-
 
   let incomesArr = [];
   let expensesArr = [];
@@ -90,7 +89,6 @@ export default function StatisticsView() {
     }
     return periodMonth;
   };
-
 
 
   const detailsSorter = () => {
@@ -127,14 +125,17 @@ export default function StatisticsView() {
     //switch from expenses to income
     setToggle(val);
   };
+  const [incomes, setIncomes] = useState([]);
+  const [expenses, setExpenses] = useState([]);
  
-  const incomes = data(incomesArr);
-  const expenses = data(expensesArr);
-
-
  
-
- 
+  useEffect(() => {
+   setIncomes(data(incomesArr)) ;
+   setExpenses(data(expensesArr)); 
+    // eslint-disable-next-line 
+ }, [period,transactions,details])
+  // const incomes = data(incomesArr);
+  // const expenses = data(expensesArr); 
 
 
      const onGoBackClick = () => {
@@ -143,7 +144,6 @@ export default function StatisticsView() {
      }
 
      const notVisible = location.pathname === `/statistics`;
-
 
 
   return (
@@ -171,7 +171,7 @@ export default function StatisticsView() {
       </div>
 
       <TotalReport incomes={incomesArr} expenses={expensesArr} />
-      <Report onClick={switcher} />
+      <Report onClick={switcher} data={toggle?incomes:expenses} />
 
       <DiagramContainer>
         <Diagram
