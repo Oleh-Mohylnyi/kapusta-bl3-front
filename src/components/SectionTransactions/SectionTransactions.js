@@ -1,30 +1,27 @@
 import React from "react";
 import Summary from "../Summary";
 import TableData from "./TableData";
-// import TransactionsNav from "./TransactionsNav";
 import TransactionForm from "../TransactionForm";
-// import useWindowDimensions from "../../hooks/useWindowDimensions";
+
 import styles from "./ComposeSection/ComposeSection.module.scss";
 import s from "./SectionTransactions.module.scss";
 
-// import styles from "./ComposeSection/ComposeSection.module.scss";
-// import { PropTypes } from "prop-types";
+
 import {
   getMonthlyIncomesThunk,
   getMonthlyExpensesThunk,
 } from "../../redux/reports/reportsThunk";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-// import { useState } from "react";
+
 import moment from "moment";
 import "moment/locale/ru";
-// import { createLogger } from "redux-logger";
+
 
 const SectionTransactions = ({ toggle }) => {
   const dispatch = useDispatch();
   const monthlyExpenses = useSelector((state) => state.reports.monthlyExpenses);
   const monthlyIncome = useSelector((state) => state.reports.monthlyIncome);
-  // const transactions = useSelector((state) => state.tramsactions.tramsactions);
 
   useEffect(() => {
     dispatch(getMonthlyIncomesThunk());
@@ -73,15 +70,12 @@ const SectionTransactions = ({ toggle }) => {
   getMonthlyData(monthlyExpenses, monthlyExpensesData, months);
   getMonthlyData(monthlyIncome, monthlyIncomeData, months);
   return (
-    <section className={s.transactionsSection}>
-      {/* <TransactionsNav /> */}
+    <section className={s.transactionsSection}>      
       <div className={s.sectionContainer}>
         <TransactionForm currency="UAH" type={toggle}/>
-
         <div className={styles.wrapperTables}>
           <TableData currency="UAH" currentType={toggle} />
-          <Summary data={toggle ? monthlyIncomeData : monthlyExpensesData} />
-          {/* <Summary incomes={monthlyIncomeData} expenses={monthlyExpensesData}  /> */}
+          <Summary data={toggle ? monthlyIncomeData : monthlyExpensesData} />          
         </div>
       </div>
     </section>

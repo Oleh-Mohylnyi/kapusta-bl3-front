@@ -1,17 +1,14 @@
 @import "../../css/variables.css";
 
 .transactionForm {
-  margin: 15px auto 0; //нужно править
+  margin: 0 auto 20px; //нужно править
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  background-color: var(--bg-color); //взамен фонового изображения
-  // border: 1px solid orange; //для тестирования оставляю
-
+  // background-color: var(--bg-color);
   @media screen and (min-width: 768px) {
-    // background-color: lavender; ////для тестирования оставляю
-    background: none; ////пока нет фоновой картинки
+    // background: none; ////пока нет фоновой картинки
     width: 604px;
     justify-content: space-between;
     padding: 10px 0;
@@ -30,9 +27,10 @@
 }
 
 .dateInputContainer {
-  margin: 0 auto;
+  margin: 5px auto;
   display: inline-block;
   cursor: pointer;
+
   @media screen and (min-width: 768px) {
     margin-right: 33px;
     padding: 2px 0;
@@ -54,7 +52,7 @@
   padding: 13px 0 13px 20px;
 
   color: var(--title-color);
- 
+
   &:active,
   &:focus {
     outline: 0;
@@ -83,23 +81,20 @@
   border-top: none;
   border-bottom-right-radius: 16px;
 
-  // color: var(--title-color);
-
   color: var(--additional-text-color);
-  
+
   background-color: transparent;
 
   text-align: left;
   &.active {
     border-radius: 0;
-      color: var(--title-color);
+    color: var(--title-color);
   }
 
   @media screen and (min-width: 768px) {
     width: 171px;
 
     border: 2px solid var(--bg-color);
-    // border-top: 2px solid var(--bg-color);
     border-left: none;
     border-bottom-right-radius: 0;
   }
@@ -132,26 +127,12 @@
   }
 }
 
-// input 'сумма'{
-// height: 44px;
-// pt, pb: 12px
-// pl: 3px
-// pr:17px
-// border: 2px solid #FFFFFF;
-// border-radius: 22px 0px 0px 22px;
-// текст {
-//   width: 105px;
-//   height: 20px;
-
-// }
-
-// }
 .productSumInput {
   position: relative;
 
   width: 125px;
-  background-color: transparent;
-  padding: 13px 45px 13px 0;
+  background-color: var(--bg-color);
+  padding: 13px 50px 13px 0;
   border: 2px solid #ffffff;
   border-radius: 22px 0px 0px 22px;
 
@@ -172,11 +153,8 @@
     }
   }
 
-  // &::placeholder {
-  //   text-decoration-color: var(--additional-text-color);
-  // }
-
   @media screen and (min-width: 768px) {
+    background-color: transparent;
     border-color: var(--bg-color);
     font-weight: 400;
     border-radius: 0;
@@ -201,30 +179,11 @@
   text-transform: uppercase;
 
   color: var(--title-color);
-
-  // font-family: var(--font-family); //перенес в index.css
-  // font-style: normal; //перенес в index.css
-  //   font-size: 12px; //перенес в index.css
-  // line-height: 1.167; //перенес в index.css
-  // letter-spacing: 0.02em; //перенес в index.css
 }
-
-// блок "калькулятор"{
-
-// transform: matrix(-1, 0, 0, 1, 0, 0);
-// иконка "калькулятора"{
-// https://react-icons.github.io/react-icons
-// npm install react-icons --save
-//BiCalculator//RiCalculatorLine
-// width: 20px;
-// height: 20px;
-// }
-
 
 .customSelect {
   color: var(--title-color);
 }
-
 
 .productSumIcon {
   display: inline-block;
@@ -250,7 +209,7 @@
   display: inline-flex;
   justify-content: space-between;
 
-  margin-top: 83px;
+  margin-top: 20px;
   width: 265px;
   @media screen and (min-width: 768px) {
     margin-top: 30px;
@@ -336,15 +295,19 @@
 // }
 // }
 
-::-webkit-input-placeholder { /* WebKit browsers */
-  color:    var(--additional-text-color);
+::-webkit-input-placeholder {
+  /* WebKit browsers */
+  color: var(--additional-text-color);
 }
-:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
-  color:    var(--additional-text-color);
+:-moz-placeholder {
+  /* Mozilla Firefox 4 to 18 */
+  color: var(--additional-text-color);
 }
-::-moz-placeholder { /* Mozilla Firefox 19+ */
-  color:  var(--additional-text-color);
+::-moz-placeholder {
+  /* Mozilla Firefox 19+ */
+  color: var(--additional-text-color);
 }
-:-ms-input-placeholder { /* Internet Explorer 10+ */
-  color:   var(--additional-text-color);
+:-ms-input-placeholder {
+  /* Internet Explorer 10+ */
+  color: var(--additional-text-color);
 }

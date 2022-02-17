@@ -1,6 +1,7 @@
 import { useState } from "react";
-// import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
+import { toast } from 'react-toastify'
+import categoryList from "../../assets/categories.json";
 import { addTransactionThunk } from "../../redux/transactions/transactionsThunks";
 import {
   getMonthlyIncomesThunk,
@@ -8,17 +9,15 @@ import {
   fetchBalanceThunk
 } from "../../redux/reports/reportsThunk";
 
-// import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { IconContext } from "react-icons";
-// import { BiCalculator } from "react-icons/bi";
 import { RiCalculatorLine } from "react-icons/ri";
 import Button from "../Button/Button";
 import DatePickerForm from "./DatePickerForm";
 import CustomSelect from "./CustomSelect";
 
+
 import styles from "./TransactionForm.module.scss";
-import { toast } from 'react-toastify'
-import categoryList from "../../assets/categories.json";
+
 
 function TransactionForm({ currency, type}) { 
   
@@ -91,10 +90,7 @@ function TransactionForm({ currency, type}) {
               placeholder="Описание"
               autoComplete="off"
               onChange={handleChange}              
-            />
-            {/* <div> */}
-            {/* <div className={styles.productCategoryContainer}> */}
-            {/* кастомный выпадающий списом*/}
+            />            
             <CustomSelect  
              className={styles.customSelect}            
               inputValue={category}
@@ -102,22 +98,21 @@ function TransactionForm({ currency, type}) {
               placeholderText={"Категория"}
               cbSetCategory={setCategory}
               required
-            />
-            {/* </div> */}
+            />            
             <div className={styles.productSumContainer}>
-              {/* вероятно необходимо добавить NumPad https://www.npmjs.com/package/react-numpad */}
+             
               <input
                 className={styles.productSumInput}
-                // className={`${styles.transactionInput} ${styles.productSumInput}`}
                 type="text"
                 name="sum"
                 value={sum}
                 required
                 placeholder="00.00"
                 autoComplete="off"
+            //     pattern="\d+(\.\d{2})?"
+            // title="введите сумму используя цифры (0-9) и знак точки (.) для разделения"
                 onChange={handleChange}
               />
-              {/* {screenWidth < 768 && ( */}
               {window.screen.width < 768 && (
                 <span className={styles.productSumLabel}>{currency}</span>
               )}

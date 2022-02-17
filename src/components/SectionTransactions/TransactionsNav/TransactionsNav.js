@@ -1,10 +1,8 @@
-// import { NavLink, useLocation } from "react-router-dom";
 import { useState } from "react";
 import SectionTransactions from "../SectionTransactions";
 import s from "./TransactionsNav.module.scss";
 
-const TransactionsNav = ({ onClick }) => {
-  // const location = useLocation();
+const TransactionsNav = () => {
 
   const [toggle, setToggle] = useState(false);
 
@@ -37,45 +35,3 @@ const TransactionsNav = ({ onClick }) => {
 };
 
 export default TransactionsNav;
-
-// import { NavLink, useLocation } from "react-router-dom";
-// import s from "./TransactionsNav.module.scss";
-
-// const TransactionsNav = () => {
-//   const location = useLocation();
-//   return (
-//     <nav className={s.navList}>
-// <NavLink
-//           to="expenses"
-//           className={s.navLink}
-//           // className={({ isActive }) =>
-//           //   s.link +
-//           //   (isActive || location.pathname === "/transactions"
-//           //     ? ` ${s.activeLink}`
-//           //     : ` ${s.noActiveLink}`)
-//           // }
-//         >
-//           Расход
-//         </NavLink>
-//       <NavLink
-//           to="income"
-//           className={s.navLink}
-//           // className={({ isActive }) =>
-//           //   s.link + (isActive ? ` ${s.activeLink}` : ` ${s.noActiveLink}`)
-//           // }
-//         >
-//           Доход
-//         </NavLink>
-//     </nav>
-//     // <ul className={s.navList}>
-//     //   <li className={s.navItem}>
-
-//     //   </li>
-//     //   <li className={s.navItem}>
-
-//     //   </li>
-//     // </ul>
-//   );
-// };
-
-// export default TransactionsNav;

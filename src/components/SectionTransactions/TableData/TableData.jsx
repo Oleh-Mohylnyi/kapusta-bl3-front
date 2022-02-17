@@ -19,10 +19,12 @@ const TableData = ({ currency, currentType = true }) => {
   const [currentId, setCurrentId] = useState("");
   const dispatch = useDispatch();
 
-  const handleRemove = (e) => {
+   const handleRemove = (e) => {
     toggleModal()
     setCurrentId(e.target.id);
   }
+
+  console.log(dataTransactions)
 
   const handleRemoveTransaction = (id) => {
     dispatch(deleteTransactionThunk(id));
@@ -64,7 +66,7 @@ const TableData = ({ currency, currentType = true }) => {
             <table>
               <tbody>
                 {dataTransactions
-                  .filter(({ type }) => type === currentType)
+                  .filter(({ type }) => type === currentType).sort(({createdAt})=>createdAt.b-createdAt.a)
                   .map(({ id, type, date, description, category, sum }) => (
                     <tr className={s.td} key={id}>
                       <td className={s.thData}>{dataConverter(date)}</td>                      
@@ -110,7 +112,7 @@ const TableData = ({ currency, currentType = true }) => {
                       }
                     >
                       {type ? "" : "- "}
-                      {sum}.00 {currency}
+                      {sum}
                     </p>
                     <button
                       className={sMobile.deleteBtn}

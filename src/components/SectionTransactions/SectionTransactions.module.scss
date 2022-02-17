@@ -1,7 +1,4 @@
 .sectionContainer {
-  // max-width: 1060px;
-  // height: 579px;
-
   @media screen and (min-width: 768px) {
     padding: 33px 30px 43px;
 
@@ -15,20 +12,6 @@
     margin-bottom: 83px;
   }
 }
-
-// .wrapperTables {
-//   display: flex;
-
-//   flex-direction: column;
-//   gap: 30px;
-// }
-
-// @media screen and (min-width: 768px) {
-//   .wrapperTables {
-//     flex-direction: column;
-//     margin-top: 48px;
-//   }
-// }
 
 @media screen and (min-width: 1280px) {
   .wrapperTables {
