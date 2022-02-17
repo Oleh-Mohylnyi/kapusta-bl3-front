@@ -1,5 +1,6 @@
 import ReportList from "../ReportList/ReportList";
 import type from "../ReportList/income.json";
+import s from "../../StatisticDiagram/Diagram.module.scss";
 
 export default function ReportIncome({data}) {
   const typesIncome = type;
@@ -19,5 +20,5 @@ export default function ReportIncome({data}) {
     }  
 
  setDataForRender()
-  return <> <ReportList types={data.length>0&&dataItems} /></>;
+  return <>{data.length>0?<ReportList types={dataItems} />: (<p className={s.notification}>В этом месяце нет затрат.</p>)} </>;
 }
