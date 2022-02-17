@@ -1,30 +1,27 @@
 import ReportList from "../ReportList/ReportList";
 import type from "../ReportList/expenses.json";
+import s from "../../StatisticDiagram/Diagram.module.scss";
 
 export default function ReportExpenses({data}) {
   const typesExpenses = type;
-
   
   let dataItems = [];
 
   const setDataForRender = () => {
-     typesExpenses.forEach(el => {
-       data.forEach(dataEl => {
-        
-         if (el.type.toUpperCase() === dataEl.name.toUpperCase()) {
-
-         el.sum = dataEl.uv
-        
-         }
-        //      
+     data.forEach(el => {
+       typesExpenses.forEach(dataEl => {
+       if (el.name === dataEl.type) {
+         el.icon = dataEl.icon;
+         el.type = dataEl.type;
+         el.sum = el.uv;
+       }        
      })
      dataItems.push(el)
        })
     }   
-
  setDataForRender()
-console.log(dataItems);
+
   return (
-    <>{typesExpenses.length > 0 && <ReportList types={typesExpenses} />}</>
+    <>{dataItems.length>0 ? <ReportList types={dataItems} />: (<p className={s.notification}>В этом месяце нет прибыли.</p>)}</>
   );
 }

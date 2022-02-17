@@ -7,6 +7,7 @@ function Period({
   handlePreviousPeriod,
   periodMonth,
   periodYear,
+
   handleNextPeriod,
 }) {
   return (
@@ -40,6 +41,7 @@ function Period({
             height="13.785"
             className={`${s.icon} ${s.iconRight}`}
           >
+
             <use href={`${sprite}#icon-arrow-right`}></use>
           </svg>
         </button>

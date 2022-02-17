@@ -29,7 +29,8 @@ const SectionTransactions = ({ toggle }) => {
   useEffect(() => {
     dispatch(getMonthlyIncomesThunk());
     dispatch(getMonthlyExpensesThunk());
-  }, [dispatch]);
+  
+  }, [dispatch ]);
   //список предществующих месяцев
   let months = [0, 1, 2, 3, 4, 5];
   let prevMonthList = [];

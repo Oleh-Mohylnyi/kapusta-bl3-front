@@ -2,6 +2,12 @@ import { useState } from "react";
 // import { useLocation } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { addTransactionThunk } from "../../redux/transactions/transactionsThunks";
+import {
+  getMonthlyIncomesThunk,
+  getMonthlyExpensesThunk,
+  fetchBalanceThunk
+} from "../../redux/reports/reportsThunk";
+
 // import useWindowDimensions from "../../hooks/useWindowDimensions";
 import { IconContext } from "react-icons";
 // import { BiCalculator } from "react-icons/bi";
@@ -11,7 +17,7 @@ import DatePickerForm from "./DatePickerForm";
 import CustomSelect from "./CustomSelect";
 
 import styles from "./TransactionForm.module.scss";
-
+import { toast } from 'react-toastify'
 import categoryList from "../../assets/categories.json";
 
 function TransactionForm({ currency, type=true }) { // когда решу откуда и как придет 'type', убрать значение по умолчанию
@@ -50,6 +56,7 @@ function TransactionForm({ currency, type=true }) { // когда решу от�
   };
 
   const handleSubmit = (e) => {
+
     e.preventDefault();
     
     const newTransaction = {
@@ -60,8 +67,11 @@ function TransactionForm({ currency, type=true }) { // когда решу от�
       sum
     };
     console.log("TransactionForm submit", newTransaction);
-    
+    toast.success('Запись успешно добавлена!')
     dispatch(addTransactionThunk(newTransaction));
+    dispatch(getMonthlyIncomesThunk());
+    dispatch(getMonthlyExpensesThunk());
+    dispatch(fetchBalanceThunk());
     resetForm();
   };
 

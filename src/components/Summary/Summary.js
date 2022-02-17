@@ -7,10 +7,10 @@ import s from "./summary.module.scss";
 const Summary = ({data}) => {
   const viewPort = useWindowDimensions();
   const [summary, setSummary] = useState([
-    { month: "Ноябрь", value: 0.0 },
-    { month: "Октябрь", value: 0.0 },
-    { month: "Сентябрь", value: 0.0 },
-    { month: "Декабрь", value: 0.0 },
+    // { month: "Ноябрь", value: 0.0},
+    // { month: "Октябрь", value: 0.0},
+    // { month: "Сентябрь", value: 0.0},
+    { month: "Декабрь", value: 0.0},
     { month: "Август", value: 0.0 },
     { month: "Июль", value: 0.0 },
   ]);

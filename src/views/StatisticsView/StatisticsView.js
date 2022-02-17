@@ -14,7 +14,6 @@ import { getDetailsThunk } from "../../redux/reports/reportsThunk";
 import moment from "moment";
 import "moment/locale/ru";
 import s from "./StatisticsView.module.css";
-
 // import Loader from 'react-loader-spinner'
 
 export default function StatisticsView() {
@@ -87,15 +86,16 @@ export default function StatisticsView() {
   const detailsSorter = () => {
     if (Object.keys(details).length !== 0) {
       Object.keys(details).forEach((key) => {
-        const month = details[key]._id.month;
-        const queryMonth = Number(updateMonth());
 
-        if (details[key]._id.type === true && month === queryMonth) {
-          incomesArr.push(details[key]);
-        } else if (details[key]._id.type === false && month === queryMonth) {
-          console.log(details[key]._id.type === false && month === queryMonth);
-          expensesArr.push(details[key]);
-        }
+      const month = details[key]._id.month;
+      const queryMonth = Number(updateMonth());
+
+      if (details[key]._id.type === true && month === queryMonth) {
+        
+        incomesArr.push(details[key]);
+      } else if (details[key]._id.type === false && month === queryMonth) {
+       expensesArr.push(details[key]);
+      }
       });
     }
   };
@@ -120,17 +120,14 @@ export default function StatisticsView() {
   useEffect(() => {
     setIncomes(data(incomesArr));
     setExpenses(data(expensesArr));
-    // eslint-disable-next-line
-  }, [period, transactions, details]);
-  // const incomes = data(incomesArr);
-  // const expenses = data(expensesArr);
 
-  const onGoBackClick = () => {
-    navigate(location?.state ?? "./main");
-    console.log(location);
-  };
+    // eslint-disable-next-line 
+  }, [period, transactions, details]); 
 
-  const notVisible = location.pathname === `/statistics`;
+     const onGoBackClick = () => {
+         navigate(location?.state ?? "./main");      
+     }
+     const notVisible = location.pathname === `/statistics`;
 
   return (
     <>
