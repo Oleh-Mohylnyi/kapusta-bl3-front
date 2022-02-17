@@ -37,7 +37,7 @@ export const addTransactionThunk = createAsyncThunk(
     const state = getState();
     // console.log('addTransactionThunk state :>> ', state);
     // console.log('addTransactionThunk newTransactions :>> ', state);
-    console.log(newTransactions);
+ 
     try {
       const response = await fetch(BASE_URL + transactions, {
         method: 'POST',
@@ -49,7 +49,7 @@ export const addTransactionThunk = createAsyncThunk(
       });
 
       const {data:{transaction}} = await response.json();   
-      console.log('addTransactionThunk data:>>', transaction);
+  
   
       return transaction;
     } catch (error) {
