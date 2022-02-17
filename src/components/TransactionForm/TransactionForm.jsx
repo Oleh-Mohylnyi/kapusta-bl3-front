@@ -101,7 +101,8 @@ function TransactionForm({ currency, type=true }) { // когда решу от�
             {/* <div> */}
             {/* <div className={styles.productCategoryContainer}> */}
             {/* кастомный выпадающий списом*/}
-            <CustomSelect              
+            <CustomSelect  
+             className={styles.customSelect}            
               inputValue={category}
               optionsList={filteredCategoryList}
               placeholderText={"Категория"}
@@ -137,7 +138,7 @@ function TransactionForm({ currency, type=true }) { // когда решу от�
           </div>
         </div>
         <div className={styles.formButtonsContainer}>
-          <Button type={"submit"} title={"Добавить"} />
+          <Button className={styles.buttonNew} type={"submit"} title={"Добавить"} />
           <Button
             type={"button"}
             title={"Очистить"}
