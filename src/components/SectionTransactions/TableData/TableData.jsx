@@ -17,6 +17,16 @@ const TableData = ({currency, currentType=true}) => {
   const handleRemoveTransaction = (e) => {
     dispatch(deleteTransactionThunk(e.target.id))
   }
+
+ const dataConverter = (date) => {
+  const allDate = date.slice(0, 10);
+  const year = allDate.slice(0, 4);
+  const month = allDate.slice(-5, -3);
+  const day = allDate.slice(-2);
+  const newDate = `${day}.${month}.${year}`;
+
+  return newDate;
+};
 //   type(pin):false
 // sum(pin):5000
 // date(pin):"1970-01-01T00:00:00.029Z"
@@ -46,19 +56,21 @@ const TableData = ({currency, currentType=true}) => {
               <tbody>
                 {dataTransactions.filter(({type}) => type === currentType ).map(
                   ({ id, type, date, description, category, sum }) => (
-                    <tr className={s.td} key={id}>
-                      <td className={s.thData}>{date}</td>
-                      {/* .${date.getMonth()+1}.${date.getFullYear()} */}
-                      <td className={s.tdDesc}>{description}</td>
-                      <td className={s.thCateg}>{category}</td>
-                      <td className={type ? s.tdSum:s.tdSumExpense}>
-                        {type ? '':"-"} {sum}.00 {currency}
-                      </td>
-                      <td className={s.thIcon}>
-                        <button className={s.deleteBtn} onClick={handleRemoveTransaction} id={id}></button>
-                      </td>
-                    </tr>
-                  )
+     
+                     ( <tr className={s.td} key={id}>
+                        <td className={s.thData}>{dataConverter(date)}</td>
+                        {/* .${date.getMonth()+1}.${date.getFullYear()} */}
+                        <td className={s.tdDesc}>{description}</td>
+                        <td className={s.thCateg}>{category}</td>
+                        <td className={type ? s.tdSum : s.tdSumExpense}>
+                          {type ? '' : "-"} {sum}.00 {currency}
+                        </td>
+                        <td className={s.thIcon}>
+                          <button className={s.deleteBtn} onClick={handleRemoveTransaction} id={id}></button>
+                        </td>
+                      </tr>)
+                    
+                )
                 )}
               </tbody>
             </table>

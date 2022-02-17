@@ -78,7 +78,6 @@ const transactions = useSelector(state=>state.transactions.transactions)
 
   const details = useSelector((state) => state.reports.details);
 
-
   let incomesArr = [];
   let expensesArr = [];
 
@@ -90,7 +89,6 @@ const transactions = useSelector(state=>state.transactions.transactions)
     }
     return periodMonth;
   };
-
 
 
   const detailsSorter = () => {
@@ -133,7 +131,7 @@ const transactions = useSelector(state=>state.transactions.transactions)
  
   useEffect(() => {
    setIncomes(data(incomesArr)) ;
-    setExpenses(data(expensesArr)); 
+   setExpenses(data(expensesArr)); 
     // eslint-disable-next-line 
  }, [period,transactions,details])
   // const incomes = data(incomesArr);
