@@ -1,7 +1,6 @@
 .navList {
   z-index: +2;
   display: flex;
-  padding: 0;
   margin: 0;
   margin-left: 0;
   position: fixed;
@@ -14,10 +13,10 @@
   }
 }
 
-button {
-  display: inline-block;
+.link {
   text-align: center;
-  width: 155px;
+  padding: 0;
+  width: 148px;
   height: 53px;
   border-radius: 0 0 0 0;
   border-right: 2px solid white;
@@ -28,9 +27,9 @@ button {
   outline: none;
 
   &:hover,
-  &:focus,
-  &:active {
+  &:focus {
     background: #ff751d;
+    color: white;
     transition: 0.1s linear;
   }
 
@@ -40,95 +39,66 @@ button {
     background-color: #fafbfd;
     width: 138px;
     height: 40px;
+    color: black;
 
     &:hover,
-    &:focus,
-    &:active {
-      // background: #fafbfd;
-      // color: #ff751d;
-      background: #ff751d;
-      color: #fafbfd ;
+    &:focus {
+      color: #ff751d;
+      background-color: #fafbfd;
+    }
+  }
+}
+
+.active {
+  text-align: center;
+  width: 148px;
+  height: 53px;
+  border-radius: 0 0 0 0;
+  border-right: 2px solid white;
+  border-left: 2px solid white;
+  background-color: #f5f6fb;
+  border: none;
+  outline: none;
+  color: #ff751d;
+
+  &:hover,
+    &:focus
+    // &:active
+  {
+    background: #ff751d;
+    color: white;
+    transition: 0.1s linear;
+  }
+
+  @media screen and (min-width: 768px) {
+    border-radius: 20px 20px 0 0;
+    border: none;
+    background-color: #fafbfd;
+    width: 138px;
+    height: 40px;
+    color: #ff751d;
+
+    &:hover,
+    &:focus {
+      background: #fafbfd;
+      color: #ff751d;
       transition: 0.1s linear;
     }
   }
+}
 
-.title {
-  text-align: center;
-  padding: 5px 25px;
-  color: #000000;
+.titleActive {
   font-weight: 700;
   font-size: 12px;
   line-height: 1.143;
   letter-spacing: 0.02em;
   text-transform: uppercase;
-
-  // &:hover,
-  //   &:focus,
-  //   &:active {
-  // color: white;
-  //   }
-
-  // @media screen and (min-width: 768px) {
-  //   &:hover,
-  //   &:focus,
-  //   &:active {
-  //     color: #fafbfd ;
-  
-  //   }
-  // }
 }
+
+.titleLink{
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.143;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
 }
-// .link {
-//   display: flex;
-//   align-items: center;
-//   justify-content: center;
-//   background-color: F5F6FB;
-//   box-sizing: border-box;
-//   text-decoration: none;
-//   height: 53px;
-//   font-weight: 700;
-//   font-size: 12px;
-//   line-height: calc(14 / 12);
-//   text-transform: uppercase;
-//   letter-spacing: 0.02em;
-//   cursor: pointer;
-//   border: none;
-//   outline: none;
-//   &:hover,
-//   &:focus,
-//   &:active {
-//     background: #ff751d;
-//     outline: none;
-//     @media screen and (min-width: 768px) {
-//       background: #fafbfd;
-//       width: 138px;
-//       height: 40px;
-//       color: #ff751d
-//     }
-//   }
-
-//   @media screen and (min-width: 768px) {
-//     text-decoration: none;
-//     display: flex;
-//     align-items: center;
-//     justify-content: center;
-//     width: 138px;
-//     height: 40px;
-//     border-radius: 20px 20px 0 0;
-//     font-weight: 700;
-//     font-size: 12px;
-//     line-height: calc(14 / 12);
-//     text-transform: uppercase;
-//     letter-spacing: 0.02em;
-//   }
-//   &.active {
-//     color: #fefefe;
-//     background: #ff751d;
-//   }
-// }
-
-// .active {
-//   color: #fefefe;
-//   background: #ff751d;
-//   color: #ff751d
-// }

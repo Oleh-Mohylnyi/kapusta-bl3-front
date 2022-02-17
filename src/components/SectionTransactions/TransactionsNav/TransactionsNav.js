@@ -20,15 +20,15 @@ const TransactionsNav = ({ onClick }) => {
     <>
       <div className={s.navList}>
         <button onClick={toggleFalse} className={
-             (!toggle ? ` ${s.link + s.active}` : ` ${s.link}`)
+             !toggle ? ` ${s.active}` : ` ${s.link}`
             }>
-          <h2 className={s.title}>Расход</h2>
+          <h2 className={ !toggle ? ` ${s.titleActive}` : ` ${s.titleLink}`}>Расход</h2>
         </button>
 
         <button onClick={toggleTrue} className={
-             (toggle ? ` ${s.link + s.active}` : ` ${s.link}`)
+             toggle ? ` ${s.active}` : ` ${s.link}`
             }>
-          <h2 className={s.title}>Доход</h2>
+          <h2 className={ toggle ? ` ${s.titleActive}` : ` ${s.titleLink}`}>Доход</h2>
         </button>
       </div>
       <SectionTransactions toggle={toggle}/>

@@ -23,20 +23,15 @@
 // }
 
 .avatar {
-  position: relative;
-  // display: block;
-  // border: 2px solid white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
   border-radius: 50%;
   background-color: #c7ccdc;
   height: 32px;
   width: 32px;
   margin-right: 20px;
-}
-
-.avatar span {
-  position: absolute;
-  top: 7px;
-  right: 10px;
 }
 
 .name {
