@@ -4,7 +4,7 @@ import { useState } from "react";
 import s from "./Report.module.scss";
 
 const Report = ({onClick, data }) => {
-  
+  console.log(data);
   const [toggle, setToggle] = useState(true);
 
   const toggler = (e) => {

@@ -101,8 +101,7 @@ const transactions = useSelector(state=>state.transactions.transactions)
         
         incomesArr.push(details[key]);
       } else if (details[key]._id.type === false && month === queryMonth) {
-        console.log(details[key]._id.type === false && month === queryMonth);
-        expensesArr.push(details[key]);
+       expensesArr.push(details[key]);
       }
       });
       

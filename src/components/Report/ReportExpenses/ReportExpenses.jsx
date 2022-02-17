@@ -8,23 +8,20 @@ export default function ReportExpenses({data}) {
   let dataItems = [];
 
   const setDataForRender = () => {
-     typesExpenses.forEach(el => {
-       data.forEach(dataEl => {
-        
-         if (el.type.toUpperCase() === dataEl.name.toUpperCase()) {
-
-         el.sum = dataEl.uv
-        
-         }
-        //      
+     data.forEach(el => {
+       typesExpenses.forEach(dataEl => {
+       if (el.name === dataEl.type) {
+         el.icon = dataEl.icon;
+         el.type = dataEl.type;
+         el.sum = el.uv;
+       }        
      })
      dataItems.push(el)
        })
     }   
-
  setDataForRender()
-console.log(dataItems);
+
   return (
-    <>{typesExpenses.length > 0 && <ReportList types={typesExpenses} />}</>
+    <><ReportList types={dataItems.length>0&&dataItems} /></>
   );
 }

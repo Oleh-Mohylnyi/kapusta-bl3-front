@@ -5,19 +5,19 @@ export default function ReportIncome({data}) {
   const typesIncome = type;
     let dataItems = [];
 
-  const setDataForRender = () => {
-     typesIncome.forEach(el => {
-       data.forEach(dataEl => {
-       if (el.type.toUpperCase() === dataEl.name.toUpperCase()) {
-         el.sum = dataEl.uv
-        
-       } else if (el.type.toUpperCase() !== dataEl.name.toUpperCase())
-         el.sum = 0;       
+    const setDataForRender = () => {
+     data.forEach(el => {
+       typesIncome.forEach(dataEl => {
+       if (el.name === dataEl.type) {
+         el.icon = dataEl.icon;
+         el.type = dataEl.type;
+         el.sum = el.uv;
+       }        
      })
      dataItems.push(el)
        })
-    }   
+    }  
 
  setDataForRender()
-  return <>{typesIncome.length > 0 && <ReportList types={dataItems} />}</>;
+  return <> <ReportList types={data.length>0&&dataItems} /></>;
 }
