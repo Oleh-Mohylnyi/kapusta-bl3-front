@@ -13,9 +13,6 @@ import "moment/locale/ru";
 import { getDetailsThunk } from "../../redux/reports/reportsThunk";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect, useMemo } from "react";
-
-
-
 import { useLocation, useNavigate } from 'react-router-dom';
 // import Loader from 'react-loader-spinner'
 
@@ -90,7 +87,6 @@ const transactions = useSelector(state=>state.transactions.transactions)
     return periodMonth;
   };
 
-
   const detailsSorter = () => {
     if (Object.keys(details).length !== 0) {
       Object.keys(details).forEach((key) => {
@@ -101,8 +97,7 @@ const transactions = useSelector(state=>state.transactions.transactions)
         
         incomesArr.push(details[key]);
       } else if (details[key]._id.type === false && month === queryMonth) {
-        console.log(details[key]._id.type === false && month === queryMonth);
-        expensesArr.push(details[key]);
+       expensesArr.push(details[key]);
       }
       });
       
@@ -110,7 +105,6 @@ const transactions = useSelector(state=>state.transactions.transactions)
     
   };
   detailsSorter();
-
 
   const data = (arr) => {
     if (arr.length > 0) {
@@ -130,22 +124,15 @@ const transactions = useSelector(state=>state.transactions.transactions)
  
  
   useEffect(() => {
-   setIncomes(data(incomesArr)) ;
-   setExpenses(data(expensesArr)); 
+    setIncomes(data(incomesArr));
+    setExpenses(data(expensesArr));
     // eslint-disable-next-line 
- }, [period,transactions,details])
-  // const incomes = data(incomesArr);
-  // const expenses = data(expensesArr); 
-
+  }, [period, transactions, details]); 
 
      const onGoBackClick = () => {
-         navigate(location?.state ?? "./main");
-         console.log(location)
+         navigate(location?.state ?? "./main");      
      }
-
      const notVisible = location.pathname === `/statistics`;
-
-
   return (
     <>
       <div className={s.balanceWrapper}>
