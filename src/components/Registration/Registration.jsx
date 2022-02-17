@@ -138,14 +138,14 @@ export default function Registration() {
 
         <div className={s.containerButton}>
           <button
-            type="button"
+            type="submit"
             className={s.button}
             onClick={handleSubmitLogin}
           >
             ВОЙТИ{' '}
           </button>
           <button
-            type="submit"
+            type="button"
             className={s.button}
             onClick={handleSubmitRegistration}
           >

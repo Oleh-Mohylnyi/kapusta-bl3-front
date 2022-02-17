@@ -53,8 +53,8 @@
   width: 282px;
   padding: 13px 0 13px 20px;
 
-  color: var(--additional-text-color);
-
+  color: var(--title-color);
+ 
   &:active,
   &:focus {
     outline: 0;
@@ -83,12 +83,16 @@
   border-top: none;
   border-bottom-right-radius: 16px;
 
+  // color: var(--title-color);
+
   color: var(--additional-text-color);
+  
   background-color: transparent;
 
   text-align: left;
   &.active {
     border-radius: 0;
+      color: var(--title-color);
   }
 
   @media screen and (min-width: 768px) {
@@ -153,6 +157,7 @@
 
   font-weight: 700;
   text-align: right;
+  color: var(--title-color);
 
   &:active,
   &:focus {
@@ -167,14 +172,13 @@
     }
   }
 
-  &::placeholder {
-    text-decoration-color: var(--additional-text-color);
-  }
+  // &::placeholder {
+  //   text-decoration-color: var(--additional-text-color);
+  // }
 
   @media screen and (min-width: 768px) {
     border-color: var(--bg-color);
     font-weight: 400;
-    color: var(--additional-text-color);
     border-radius: 0;
     width: 70px;
     padding-right: 10px;
@@ -215,6 +219,12 @@
 // width: 20px;
 // height: 20px;
 // }
+
+
+.customSelect {
+  color: var(--title-color);
+}
+
 
 .productSumIcon {
   display: inline-block;
@@ -322,3 +332,16 @@
 //   border: 2px solid var(--bg-color);
 // }
 // }
+
+::-webkit-input-placeholder { /* WebKit browsers */
+  color:    var(--additional-text-color);
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+  color:    var(--additional-text-color);
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+  color:  var(--additional-text-color);
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+  color:   var(--additional-text-color);
+}

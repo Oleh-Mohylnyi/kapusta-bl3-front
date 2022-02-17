@@ -101,7 +101,8 @@ function TransactionForm({ currency, type=false }) { // когда решу от
             {/* <div> */}
             {/* <div className={styles.productCategoryContainer}> */}
             {/* кастомный выпадающий списом*/}
-            <CustomSelect              
+            <CustomSelect  
+             className={styles.customSelect}            
               inputValue={category}
               optionsList={filteredCategoryList}
               placeholderText={"Категория товара"}
